@@ -39,10 +39,10 @@
       <HintPath>C:\Users\saeed\Desktop\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="FarsiLibrary.Resources">
-      <HintPath>C:\Users\saeed\Desktop\FarsiLibrary.Resources.dll</HintPath>
+      <HintPath>C:\Users\Mostafa Taghipour\Downloads\Compressed\farsilibrary\FarsiLibrary.Resources.dll</HintPath>
     </Reference>
     <Reference Include="FarsiLibrary.Utils">
-      <HintPath>C:\Users\saeed\Desktop\FarsiLibrary.Utils.dll</HintPath>
+      <HintPath>C:\Users\Mostafa Taghipour\Downloads\Compressed\farsilibrary\FarsiLibrary.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
