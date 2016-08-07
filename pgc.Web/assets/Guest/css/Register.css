@@ -1,0 +1,88 @@
+﻿
+#main-content {
+    margin-top: 4em;
+}
+
+
+    #main-content header {
+        text-align: center;
+    }
+
+    #main-content h1 {
+        font-size: 1.6em;
+        /*margin: 1.5em 0;*/
+    }
+
+    #main-content hr {
+        border-top: 1px solid #ccc;
+        margin-top: 0 !important;
+    }
+
+    #main-content .fa {
+        font-size: 1em;
+        padding-left: .5em;
+    }
+
+.form-control {
+    margin-bottom: 0 !important;
+    margin-top: 20px !important;
+}
+
+.btn-captch {
+    font-family: FontAwesome;
+    background: none;
+    font-size: 1.2em;
+    color: #808080;
+    /*margin-right: 1em;*/
+    border: none;
+}
+
+    .btn-captch:hover {
+        background: none;
+        color: #ea7c1b;
+    }
+
+#captcha {
+    margin-top: 19px;
+}
+select{
+    width:100% !important;
+    margin-top: 20px;
+    margin-bottom: -15px !important;
+    height: 34px;
+    border-radius:4px;
+}
+/*------------*/
+
+.btnLoginForm, .btnRegisterForm {
+    margin-right: 20%;
+    font-size: 1em;
+    padding: 10px;
+    color: #F3F2F0;
+    border-radius: 4px;
+    border: none;
+    background-color: #7a7a7a;
+}
+
+    .btnLoginForm:hover, .btnRegisterForm:hover {
+        background-color: #ea7c1b;
+        color: #fff;
+        transition: all .5s ease;
+    }
+
+.btnRegisterForm {
+    width: 60%;
+    margin-top: 20px;
+}
+
+
+.btnEndLoginForm {
+    margin: 3em 2em;
+    width: 25%;
+}
+
+#captcha a {
+    color: grey;
+    margin-top: 2.7em;
+    margin-right: 1.4em;
+}

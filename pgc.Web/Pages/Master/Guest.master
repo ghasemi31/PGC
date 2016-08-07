@@ -16,7 +16,7 @@
     <link href="/assets/Template/css/colors.css" rel="stylesheet" />
 
 
-    
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -24,7 +24,7 @@
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
     <script src="/assets/Template/js/modernizr-2.6.1.min.js"></script>
 
-    
+
 </head>
 <body>
     <div id="globalWrapper">
@@ -37,7 +37,7 @@
                             <div class="clearfix col-sm-6 col-md-6">
                                 <ul class="quickMenu">
                                     <li><a href="<%=GetRouteUrl("guest-login",null) %>">ورود به سایت</a></li>
-                                    <li><a href="javascript:;">ثبت نام</a></li>
+                                    <li><a href="<%=GetRouteUrl("guest-signup",null) %>">ثبت نام</a></li>
                                 </ul>
                             </div>
                             <div class="clearfix col-sm-6 col-md-6">
@@ -57,16 +57,14 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <%--<div class="navbar-header">--%>
-                            <a href="index.html" class="navbar-brand">
-                                <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
-                            </a>
-                       <%-- </div>--%>
+                        <a href="index.html" class="navbar-brand">
+                            <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
+                        </a>
+                        <%-- </div>--%>
                         <nav id="mainMenu">
                             <ul class="list-inline">
                                 <li>
                                     <a href="<%=GetRouteUrl("guest-default",null) %>" class="firstLevel">صفحه اصلی</a>
-                                </li>
-                                <li><a href="#" class="firstLevel">مراکز بازی</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;" class="firstLevel">بازیها</a>
@@ -133,11 +131,11 @@
     <script src="/assets/Template/easing/jquery.easing.1.3.js"></script>
     <script src="/assets/Template/jquery-cookie/jquery.cookie.js"></script>
     <%--<script src="/assets/Template/camera/camera.min.js"></script>--%>
-   
+
     <!-- Custom  -->
     <script src="/assets/Template/js/custom.js"></script>
 
     <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
- 
+
 </body>
 </html>

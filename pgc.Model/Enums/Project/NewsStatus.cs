@@ -12,6 +12,8 @@ namespace pgc.Model.Enums
         Show = 1,
         [PersianTitle("پنهان")]
         Hide = 2,
+        [PersianTitle("پیش نمایش")]
+        Preview =3,
 
     }
 }

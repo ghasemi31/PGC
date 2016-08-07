@@ -38,13 +38,11 @@
     <Reference Include="EntityFramework">
       <HintPath>C:\Users\saeed\Desktop\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="FarsiLibrary.Resources, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\FarsiLibrary.Resources.dll</HintPath>
+    <Reference Include="FarsiLibrary.Resources">
+      <HintPath>C:\Users\saeed\Desktop\FarsiLibrary.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="FarsiLibrary.Utils, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\FarsiLibrary.Utils.dll</HintPath>
+    <Reference Include="FarsiLibrary.Utils">
+      <HintPath>C:\Users\saeed\Desktop\FarsiLibrary.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
