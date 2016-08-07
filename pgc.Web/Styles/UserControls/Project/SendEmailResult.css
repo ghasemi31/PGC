@@ -1,0 +1,158 @@
+﻿.sendresult
+{
+     width:805px;
+}
+.sendresult .countresult .title ,
+.sendresult .financeresult .title
+{
+    text-align:center;
+    padding:15px 5px 15px 5px;
+    font-weight:bold;
+}
+.sendresult .countresult .sum
+{
+    text-align:center;
+    padding:15px 5px 15px 5px;
+}
+.sendresult .countresult
+{
+    /*background-color:#f7eded;    */
+    float:right;
+    width:280px;
+    min-height:137px;
+    border:1px solid #b99191;
+    -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-khtml-border-left-radius: 10px;
+	-khtml-border-right-radius: 10px;
+	margin:15px 40px 10px 10px;
+	font-size:12px;
+	color:#666;
+}
+.sendresult .countresult .resultdetail
+{
+    background-color:#e7d3c3;
+    width:180px;
+    height:27px;
+    border:1px solid #d1d1d1;
+    -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-khtml-border-left-radius: 6px;
+	-khtml-border-right-radius: 6px;
+	margin:4px 43px 4px 40px;
+	padding:2px 5px 2px 10px;
+	cursor:pointer;
+	vertical-align:middle;
+}
+/*
+.sendresult .financeresult
+{
+    background-color:#edf6f7;    
+    float:right;
+    width:350px;
+    
+    border:1px solid #d8e2e4;
+    -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-khtml-border-left-radius: 10px;
+	-khtml-border-right-radius: 10px;
+	margin:15px 40px 10px 10px;
+	font-size:12px;
+	color:#666;
+}
+
+.sendresult .financeresult .resultdetail
+{
+    background-color:#e7d3c3;    
+    width:286px;
+    height:27px;
+    border:1px solid #caa8a5;
+    -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-khtml-border-left-radius: 6px;
+	-khtml-border-right-radius: 6px;
+	margin:4px 25px 4px 25px;
+	padding:2px 5px 2px 10px;
+	cursor:pointer;
+}
+*/
+.sendresult .countresult .resultdetail:hover,
+.sendresult .financeresult .resultdetail:hover
+{
+    background-color:#dce5df;
+}
+.sendresult .countresult .resultdetail .succeed
+{
+    float:right;
+    width:25px;
+    height:25px;
+    background-image:url('../../../../images/sendresult_succeed.png');
+    margin:2px 0 2px 10px;
+}
+.sendresult .countresult .resultdetail .fail
+{
+    float:right;
+    width:25px;
+    height:25px;
+    background-image:url('../../../../images/sendresult_fail.png');
+    margin:2px 0 2px 10px;    
+}
+.sendresult .countresult .resultdetail .unknown
+{
+    float:right;
+    width:25px;
+    height:25px;
+    background-image:url('../../../../images/sendresult_unknown.png');
+    margin:2px 0 2px 10px;
+}
+.sendresult .countresult .resultdetail .error
+{
+    float:right;
+    width:25px;
+    height:25px;
+    background-image:url('../../../../images/sendresult_error.png');
+    margin:2px 0 2px 10px;
+}
+
+.sendresult .countresult .resultdetail span ,
+.sendresult .countresult .resultdetail label ,
+.sendresult .financeresult .resultdetail span ,
+.sendresult .financeresult .resultdetail label 
+{
+    vertical-align:middle;
+    top:5px;
+    position:relative;
+    cursor:pointer;
+}

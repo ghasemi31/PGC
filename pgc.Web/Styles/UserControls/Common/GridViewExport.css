@@ -1,0 +1,108 @@
+﻿#file-dropdown {
+	padding:0px 0 0 0;
+	width:140px;
+	text-align:center;
+	position:relative;
+	float:left;
+}
+
+.export {
+	padding:7px;
+	color:#888;
+	display:block;
+	float:left;
+	text-align:center;
+
+	background-image:url('images/Export-Button.png');
+	background-repeat:no-repeat;
+	width:114px;
+	height:16px;
+}
+
+.export:hover, #file-dropdown.active .export
+{
+    background-image:url('images/Export-Button-Hover.png');
+	color:#555;
+}
+
+#file-dropdown ul {
+	margin:0;
+	padding:10px;
+	list-style:none;
+	width:160px;
+	position:absolute;
+	top:27px;
+	left:0px;
+	z-index:9;
+	
+	-moz-border-top-left-radius: 5px;
+	-khtml-border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	
+	-moz-border-top-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+    -khtml-border-top-right-radius: 5px;
+    -khtml-border-bottom-right-radius: 5px;
+    -khtml-border-bottom-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+	background-color:#d8e2e4;
+	border-right:1px solid #b2c4c8;
+	border-bottom:1px solid #b2c4c8;
+	display:none;
+}
+
+#file-dropdown.active ul {
+	display:block;
+}
+
+#file-dropdown ul li {
+	width:160px;
+	height:35px;
+	margin-bottom:1px;
+	float:right;
+	
+	
+}
+
+#file-dropdown ul li:hover {
+	background-color:#ecf4f5;
+}
+
+#file-dropdown li a {
+	padding:0 35px 0 0;
+	width:145px;
+	height:35px;
+	line-height:35px;
+	display:block;
+	text-align:right;
+	font-size:11px;
+	font-weight:bold;
+	color:#357597;
+	
+}
+
+#file-dropdown li a:hover {
+	color:#61447c;
+}
+
+#file-dropdown li a.html {
+	background:url(images/Export-html.png) right center no-repeat;
+	margin-right:10px;
+}
+
+#file-dropdown li a.word {
+	background:url(images/Export-word.png) right center no-repeat;
+	margin-right:10px;
+}
+
+#file-dropdown li a.excel {
+	background:url(images/Export-excel.png) right center no-repeat;
+	margin-right:10px;
+}

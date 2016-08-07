@@ -1,0 +1,266 @@
+
+@charset 'UTF-8';
+/*
+ * jQuery File Upload Plugin CSS Example 5.0
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://creativecommons.org/licenses/MIT/
+ */
+
+body {
+  font-family:Tahoma, Verdana, Arial, sans-serif;
+  font-size: 10px;
+  margin: 0;
+  padding:0;
+}
+
+
+a {
+  color: #222;
+}
+
+
+@charset 'UTF-8';
+/*
+ * jQuery File Upload UI Plugin CSS 5.0.6
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://creativecommons.org/licenses/MIT/
+ */
+.fileupload-buttonbar .ui-button input {
+  position:relative;
+  top: 0;
+  right: 0;
+  margin: 0;
+  
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -o-transform: translate(250px, -50px) scale(1);
+  -moz-transform: translate(-300px, 0) scale(4);
+  cursor: pointer;
+}
+
+.fileinput-button {
+  overflow: hidden;
+  
+}
+
+/* Fix for IE 6: */
+*html .fileinput-button {
+  
+}
+
+/* Fix for IE 7: */
+*+html .fileinput-button {
+  
+}
+
+.fileupload-buttonbar {
+  
+  border:none;
+  float:right;
+  background:none;
+}
+
+
+
+.fileupload-content {
+  
+  border:none;
+}
+
+.fileupload-content .ui-progressbar {
+  width: 80px;
+  height: 15px;
+}
+
+.fileupload-content .ui-progressbar-value {
+  background: url(images/pbar-ani.gif);
+}
+
+.fileupload-content .fileupload-progressbar {
+  width: 400px;
+  display:none;
+}
+
+.files {
+ direction:ltr;
+  position:relative;
+  left:0;
+  top:0;
+}
+.files tr , .files td
+{
+    line-height:15px;
+}
+.files table td 
+{
+    padding:2px;
+}
+
+.files img {
+  border: none;
+}
+
+.files {
+    width: 245px;
+    display: inline-block;
+}
+.files .name
+{
+    display:none;
+}
+.name-holder
+{
+    width:130px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    background:url('images/fup-tick.png') 0 center no-repeat;
+    padding-left:20px;
+}
+a.name-holder
+{
+    color:#078dae;
+    text-decoration:none;
+}
+a.name-holder:hover
+{
+    text-decoration:underline;
+}
+.preview img:hover
+{
+    opacity:0.7;
+    filter:Alpha(opacity=70);
+}
+.files .size {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.files .delete
+{
+    
+}
+
+.ui-state-disabled .ui-state-disabled {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.ui-state-disabled input {
+  cursor: default;
+}
+.template-download
+{
+    position:relative;
+    top:0;
+    left:0;
+}
+
+/* -------------------------------*/
+
+.btn-delete
+{
+    width:29px;
+    height:26px;
+    background-image: url(images/del.png);
+    background-color:transparent;
+    border:none;
+    cursor:pointer;
+}
+.btn-delete:hover
+{
+    opacity:0.7;
+    filter:Alpha(opacity=70);
+    background-color:White;
+}
+/* -------------------------------*/
+
+.loadedview {
+  border:none;
+  display:inline-block;
+  font-size:12px;
+  color:Black;
+  width:245px;
+  height:78px;
+  
+}
+.loadedview a
+{
+    font-size:12px;
+}
+.newview
+{
+    
+}
+
+.defaultview iframe
+{
+    width:245px;
+    height:78px;   
+    border:none;
+    padding:0px;
+    background-color:transparent;
+}
+.validator-fileupload
+{
+    position:relative;
+    z-index:10;
+    top:-73px;
+    left:-245px;
+}
+
+/* -------------------------------*/
+.new-preview
+{
+    float:left;
+    width:80px;
+    height:80px;
+    margin-left:2px;
+}
+.new-filename
+{
+    float:left;
+    width:155px;
+    height:17px;
+    text-align:left;
+    line-height:17px;
+    padding:0 0px 0px 5px;
+}
+.new-name
+{
+    float:left;
+    display:none;
+    text-align:left;
+    line-height:17px;
+    padding:0 0px 0 5px;
+    line-height:17px;
+}
+.new-delete
+{
+    float:left;
+    width:155px;
+    height:17px;
+    text-align:left;
+    line-height:17px;
+    padding:0 0px 0 5px;
+}
+.new-size
+{
+    float:left;
+    width:155px;
+    height:17px;
+    text-align:left;
+    line-height:17px;
+    padding:0 0px 0 5px;
+    direction:ltr;
+}

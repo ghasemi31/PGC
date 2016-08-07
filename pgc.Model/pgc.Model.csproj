@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{831C6A75-5B84-4555-9B0E-586FC4C58F3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pgc.Model</RootNamespace>
+    <AssemblyName>pgc.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>C:\Users\saeed\Desktop\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\Common\ConfirmStatus.cs" />
+    <Compile Include="Enums\Common\DaysOfMonth.cs" />
+    <Compile Include="Enums\Common\DaysOfWeek.cs" />
+    <Compile Include="Enums\Common\ExceptionLogType.cs" />
+    <Compile Include="Enums\Common\MonthsOfYear.cs" />
+    <Compile Include="Enums\Common\OptionKey.cs" />
+    <Compile Include="Enums\Common\OptionLookupKey.cs" />
+    <Compile Include="Enums\Common\OptionType.cs" />
+    <Compile Include="Enums\Common\PersianTitleAttribute.cs" />
+    <Compile Include="Enums\Common\QueryStringKeys.cs" />
+    <Compile Include="Enums\Common\UserActivityStatus.cs" />
+    <Compile Include="Enums\Project\BooleanStatus.cs" />
+    <Compile Include="Enums\Project\BranchType.cs" />
+    <Compile Include="Enums\Project\CommentStatus.cs" />
+    <Compile Include="Enums\Project\Device.cs" />
+    <Compile Include="Enums\Project\Finance\BranchPaymentTypeForSearch.cs" />
+    <Compile Include="Enums\Project\Finance\BranchCreditStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchOrderStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchReturnOrderStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchTransactionTypeForSearch.cs" />
+    <Compile Include="Enums\Project\Finance\BranchFinanceLogActionType.cs" />
+    <Compile Include="Enums\Project\Finance\BranchOrderedTitleStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchSoldType.cs" />
+    <Compile Include="Enums\Project\Finance\BranchLackOrderStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchFinanceLogType.cs" />
+    <Compile Include="Enums\Project\Finance\OnlinePaymentStatus.cs" />
+    <Compile Include="Enums\Project\Finance\OfflineBankAccountStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchOrderTitleStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchTransactionType.cs" />
+    <Compile Include="Enums\Project\Finance\BranchPaymentType.cs" />
+    <Compile Include="Enums\Project\Finance\BranchOfflinePaymentStatus.cs" />
+    <Compile Include="Enums\Project\Finance\BranchOfflineReceiptType.cs" />
+    <Compile Include="Enums\Project\IconPickerIconset.cs" />
+    <Compile Include="Enums\Project\IconPickerMode.cs" />
+    <Compile Include="Enums\Project\OrderPaymentStatus.cs" />
+    <Compile Include="Enums\Project\PrivateNoStatus.cs" />
+    <Compile Include="Enums\Project\NewsStatus.cs" />
+    <Compile Include="Enums\Project\TransactionStatus.cs" />
+    <Compile Include="Enums\Project\EmailSendAttemptStatus.cs" />
+    <Compile Include="Enums\Project\EventActionType.cs" />
+    <Compile Include="Enums\Project\EventType.cs" />
+    <Compile Include="Enums\Project\HrefTarget.cs" />
+    <Compile Include="Enums\Project\SendSMSStatus.cs" />
+    <Compile Include="Enums\Project\MessageType.cs" />
+    <Compile Include="Enums\Project\LotteryStatus.cs" />
+    <Compile Include="Enums\Project\PaymentType.cs" />
+    <Compile Include="Enums\Project\OrderStatus.cs" />
+    <Compile Include="Enums\Project\SentEmailBlockStatus.cs" />
+    <Compile Include="Enums\Project\SMSSendAttemptStatus.cs" />
+    <Compile Include="Enums\Project\Statuse.cs" />
+    <Compile Include="Enums\Project\LocationType.cs" />
+    <Compile Include="Enums\Project\Gender.cs" />
+    <Compile Include="Enums\Project\SystemEventKey.cs" />
+    <Compile Include="Enums\Project\UserCommentStatus.cs" />
+    <Compile Include="Enums\Project\UserCommentType.cs" />
+    <Compile Include="Enums\Project\Role.cs" />
+    <Compile Include="Enums\Project\Sample.cs" />
+    <Compile Include="Enums\Common\UserMessageBehaviour.cs" />
+    <Compile Include="Enums\Common\UserMessageDirection.cs" />
+    <Compile Include="Enums\Common\UserMessageKey.cs" />
+    <Compile Include="Enums\Common\UserMessageType.cs" />
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\Project\Constants.cs" />
+    <Compile Include="Other\Project\BranchAgreementObject.cs" />
+    <Compile Include="Other\Project\BranchObject.cs" />
+    <Compile Include="Other\Project\ContactusObject.cs" />
+    <Compile Include="Other\Project\LocationObject.cs" />
+    <Compile Include="Other\Project\JsonActionResult.cs" />
+    <Compile Include="Other\Project\OrderDetailObject.cs" />
+    <Compile Include="Other\Project\OrderObject.cs" />
+    <Compile Include="Other\Project\UserObject.cs" />
+    <Compile Include="Other\Project\HomeObject.cs" />
+    <Compile Include="Other\Project\NewsObject.cs" />
+    <Compile Include="Other\Project\ProductObject.cs" />
+    <Compile Include="Patterns\Common\BasePattern.cs" />
+    <Compile Include="Patterns\Project\AgentBranchContactPattern.cs" />
+    <Compile Include="Patterns\Project\AgentCircularPattern.cs" />
+    <Compile Include="Patterns\Project\BranchContactPattern.cs" />
+    <Compile Include="Patterns\Project\ProductSoldChartPattern.cs" />
+    <Compile Include="Patterns\Project\BranchSummaryChartPattern.cs" />
+    <Compile Include="Patterns\Project\CircularPattern.cs" />
+    <Compile Include="Patterns\Project\CityPattern.cs" />
+    <Compile Include="Patterns\Project\AccessLevelPattern.cs" />
+    <Compile Include="Patterns\Common\DateRangePattern.cs" />
+    <Compile Include="Patterns\Common\NumericRangePattern.cs" />
+    <Compile Include="Patterns\Project\ArticlePattern.cs" />
+    <Compile Include="Patterns\Project\BranchRequestPattern.cs" />
+    <Compile Include="Patterns\Project\BranchPattern.cs" />
+    <Compile Include="Patterns\Project\BranchPicPattern.cs" />
+    <Compile Include="Patterns\Project\AgentBranchPicPattern.cs" />
+    <Compile Include="Patterns\Project\AgentUserCommentPattern.cs" />
+    <Compile Include="Patterns\Project\AdvPattern.cs" />
+    <Compile Include="Patterns\Project\CommentPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BankAccountPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchesOrderReportPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderTitlePattern.cs" />
+    <Compile Include="Patterns\Project\EmailSendAttemptPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchPaymentPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchCreditPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchReturnOrderPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchTransactionPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchFinanceLogPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderedTitlePattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchSoldPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderingManagementPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderTitleGroupPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchOrderShipmentStatePattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchLackOrderPattern.cs" />
+    <Compile Include="Patterns\Project\Finance\BranchManualChargePattern.cs" />
+    <Compile Include="Patterns\Project\FooterItemPattern.cs" />
+    <Compile Include="Patterns\Project\HeadingPattern.cs" />
+    <Compile Include="Patterns\Project\OccuredSystemEventPattern.cs" />
+    <Compile Include="Patterns\Project\OnlinePaymentListPattern.cs" />
+    <Compile Include="Patterns\Project\OnlinePaymentPattern.cs" />
+    <Compile Include="Patterns\Project\MaterialPattern.cs" />
+    <Compile Include="Patterns\Project\RandomImagePattern.cs" />
+    <Compile Include="Patterns\Project\SentEmailBlockPattern.cs" />
+    <Compile Include="Patterns\Project\SentSMSPattern.cs" />
+    <Compile Include="Patterns\Project\MessagePattern.cs" />
+    <Compile Include="Patterns\Project\PrivateNoPattern.cs" />
+    <Compile Include="Patterns\Project\LotteryWinerPattern.cs" />
+    <Compile Include="Patterns\Project\LotteryDetailPattern.cs" />
+    <Compile Include="Patterns\Project\LotteryPattern.cs" />
+    <Compile Include="Patterns\Project\OrdersAgentPattern.cs" />
+    <Compile Include="Patterns\Project\OrdersPattern.cs" />
+    <Compile Include="Patterns\Project\PollResultPattern.cs" />
+    <Compile Include="Patterns\Project\PollChoisePattern.cs" />
+    <Compile Include="Patterns\Project\PollPattern.cs" />
+    <Compile Include="Patterns\Project\GalleryPicPattern.cs" />
+    <Compile Include="Patterns\Project\GalleryPattern.cs" />
+    <Compile Include="Patterns\Project\SideMenuCatPattern.cs" />
+    <Compile Include="Patterns\Project\SideMenuItemPattern.cs" />
+    <Compile Include="Patterns\Project\SiteMapCatPattern.cs" />
+    <Compile Include="Patterns\Project\SiteMapItemPattern.cs" />
+    <Compile Include="Patterns\Project\IndexSlidePattern.cs" />
+    <Compile Include="Patterns\Project\HeadingNewsPattern.cs" />
+    <Compile Include="Patterns\Project\ReportPattern.cs" />
+    <Compile Include="Patterns\Project\DynPagePattern.cs" />
+    <Compile Include="Patterns\Project\productPattern.cs" />
+    <Compile Include="Patterns\Project\NewsPattern.cs" />
+    <Compile Include="Patterns\Project\SMSSendAttemptPattern.cs" />
+    <Compile Include="Patterns\Project\SocialIconPattern.cs" />
+    <Compile Include="Patterns\Project\SystemEventPattern.cs" />
+    <Compile Include="Patterns\Project\MainMenuPattern.cs" />
+    <Compile Include="Patterns\Project\UserCommentPattern.cs" />
+    <Compile Include="Patterns\Project\HelpPattern.cs" />
+    <Compile Include="Patterns\Project\FaqPattern.cs" />
+    <Compile Include="Patterns\Project\UserPattern.cs" />
+    <Compile Include="Patterns\Project\ProvincePattern.cs" />
+    <Compile Include="Patterns\Project\SamplePattern.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model.ssdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\mrd.Model.dll" />
+    <Content Include="bin\Debug\mrd.Model.pdb" />
+    <Content Include="obj\Debug\mrd.Model.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\mrd.Model.dll" />
+    <Content Include="obj\Debug\mrd.Model.pdb" />
+    <Content Include="obj\Debug\TempPE\Model.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Model.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Model.Designer.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

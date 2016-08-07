@@ -1,0 +1,114 @@
+﻿#form fieldset table tr td span,
+#form fieldset table tr td label {
+    color: Black;
+}
+
+#form fieldset table.dtl tr > td:nth-child(2) {
+    width: 320px;
+}
+
+#form fieldset table.dtl tr > td:nth-child(3) {
+    width: 50px;
+}
+
+#form fieldset table.dtl tr td > select[size] {
+    height: 73px;
+    width: 215px;
+    margin-bottom: 15px;
+}
+
+#form fieldset table.dtl tr td > textarea {
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+
+
+#form fieldset table.dtl {
+    width: 95%;
+    margin-right: 20px;
+}
+
+    #form fieldset table.dtl tr td:first-child {
+        width: 25%;
+    }
+
+#form fieldset table tr.border {
+    height: 0px;
+}
+
+    #form fieldset table tr.border td {
+        /*border-top: 1px solid #f1f3f3;    */
+        /*border-top: 1px solid #d1d1d1;    */
+        border-top: 1px solid #aaaaaa;
+        height: 5px;
+    }
+
+#form fieldset table.action tr td textarea {
+    width: 400px;
+}
+
+#form fieldset table.dtl tr.wrng td p {
+    width: 615px;
+    line-height: 20px;
+    text-align: justify;
+    padding: 5px;
+    margin-right: 8%;
+    font-size: 11px;
+    color: white;
+    background-color: #D88B8B;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border: solid 1px rgb(224, 54, 54);
+}
+
+
+.tabs {
+    display: inline-block;
+    margin: -3px -2px;
+    z-index: 1;
+}
+
+    .tabs li.selected {
+        background-color: transparent;
+        border-top: solid 1px #C31413;
+        border-right: solid 1px #C31413;
+        border-left: solid 1px #C31413;
+        border-bottom: none;
+        font-weight: bold;
+        color: #3e4d5c;
+    }
+
+    .tabs li {
+        list-style: none;
+        width: 80px;
+        float: right;
+        padding: 0 10px;
+        line-height: 30px;
+        background-color: #D88B8B;
+        /* border-top-left-radius: 3px; */
+        border-top: solid 1px #C31413;
+        border-right: solid 1px #C31413;
+        border-left: solid 1px #C31413;
+        border-bottom: solid 1px #C31413;
+        margin: 4px 1px 0px 1px;
+        cursor: pointer;
+        color: #3e4d5c;
+    }
+
+#tab-contents {
+    width: 98%;
+    min-height: 150px;
+    border: solid 1px #A8A8A9;
+    background-color: transparent;
+    padding: 5px;
+}
+
+    #tab-contents > div {
+        display: none;
+    }
+.visibility-hidden{
+    visibility:hidden;
+}

@@ -1,0 +1,442 @@
+﻿/* detail --------------------------------------------------- */
+body {
+	background-image: url(../mrDiziPix/mrDIZIbg.jpg);
+}
+#mohtavaHead 
+{
+    top:10px;
+    left:40px;
+    display:inline-block;
+	position:relative;
+	width:822px;
+	height:36px;
+	z-index:6;
+	background-image: url(../mrDiziPix/mohtavahead.png);
+	margin: auto;
+}
+#PageTitle {
+	position:absolute;
+	width:672px;
+	height:75px;
+	z-index:1;
+	background-image: url(../mrDiziPix/mohtavTitle.png);
+	left: 226px;
+	color: #c33232;
+}
+#title {
+	position:absolute;
+	width:575px;
+	height:22px;
+	z-index:1;
+	left: 34px;
+	top: 10px;
+	font-size: 19px;
+	text-align: right;
+	
+}
+#mohtavaBody {
+	position:relative;
+	width:762px;
+	left:40px;
+	z-index:5;
+	height:auto;
+	margin: auto;
+	background-image: url(../mrDiziPix/mohtavacontext.png);
+	padding-bottom: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display:inline-block;
+	top:10px;
+	
+}
+.LotteryTitle
+{
+    background-image:url(../mrDiziPix/galleryTitle.png);
+    width:221px;
+    height:42px;
+    margin-bottom: 60px;
+    margin-left: 550px;
+    color: #B62121;
+    text-align:right;
+    padding-right:30px;
+    line-height:37px;
+    font-size: 14px;
+    font-weight:bold;
+}
+.detail-content
+{
+    padding:10px 5px 5px 5px;
+    margin-top: 30px;
+    line-height: 25px;
+    text-align: justify;
+}
+.detail-content p
+{
+    direction:rtl;
+}
+.detail-content img.left
+{
+    float:left;
+    margin:5px 10px 5px 5px;
+}
+.detail-content img.right
+{
+    float:right;
+    margin:5px 5px 5px 10px;
+}
+/* detail.form place --------------------------------------------------- */
+#formElement {
+	position:relative;
+	width:412px;
+	z-index:2;
+	top: 30px;
+	margin: auto;
+}
+
+/* detail.help --------------------------------------------------- */
+#help-mrdizi {
+	position:relative;
+	width:755px;
+	height:193px;
+	top: 53px;
+	background-image: url(../mrDiziPix/explainozviat.png);
+	margin: auto;
+	margin-bottom: 30px;
+	
+}
+#help{
+	position:relative;
+	width:755px;
+	height:193px;
+	top: 53px;
+	background-image: url(../mrDiziPix/specialbox.png);
+	margin: auto;
+	margin-bottom: 50px;
+}
+#helpText 
+{
+	position:absolute;
+	width:582px;
+	height:121px;
+	z-index:1;
+	left: 109px;
+	top: 26px;
+	color: #7c141d;
+	font-size: 11px;
+	line-height: 13px;
+}
+
+#help_title {
+	position:absolute;
+	width:88px;
+	height:16px;
+	left: 642px;
+	top: 158px;
+	color: #B41A1B;
+	font-size: 11px;
+	text-align: center;
+}
+.help-hint {
+	position:relative;
+	width:591px;
+	height:160px;
+	z-index:1;
+	left: -3px;
+	top: 0px;
+	background-image: url(../mrDiziPix/voteBG.png);
+	margin: auto;
+	
+}
+.help-hint .text {
+	position:absolute;
+	width:460px;
+	height:66px;
+	z-index:1;
+	left: 47px;
+	top: 31px;
+	color: #df001e;
+	font-size: 11px;
+	line-height: 13px;
+}
+.help-hint .title{
+	position:absolute;
+	width:77px;
+	height:16px;
+	left: 488px;
+	top: 119px;
+	color: #B41A1B;
+	font-size: 10px;
+	text-align: center;
+}
+
+/* detail.nav --------------------------------------------------- */
+#mohtavaFoot 
+{
+    top:10px;
+    left:-2px;
+	position:relative;
+	width:838px;
+	height:62px;
+	z-index:7;
+	background-image: url(../mrDiziPix/mohtavafoot.png);
+	margin: auto;
+}
+#Branch_mohtavaFoot 
+{
+    top:10px;
+    left:-2px;
+	position:relative;
+	width:838px;
+	height:62px;
+	z-index:7;
+	margin: auto;
+}
+
+#Footnavigation {
+	position:absolute;
+	width:777px;
+	height:48px;
+	z-index:1;
+	left: 35px;
+	top: 3px;
+}
+
+
+#firstPage, .navPage  {
+	position:relative;
+	width:158px;
+	height:45px;
+	z-index:10;
+	background-image: url(../mrDiziPix/navigate.png);
+	float:left;
+}
+
+.navPage {
+	background-image: url(../mrDiziPix/nav.png);
+	float:left;
+	background-repeat: no-repeat;
+} 
+
+#apDiv2  {
+	position:absolute;
+	width:110px;
+	height:33px;
+	z-index:2;
+	left: 9px;
+	top: 3px;
+}
+#navTitle  {
+	position:absolute;
+	width:113px;
+	height:15px;
+	z-index:1;
+	left: 23px;
+	top: 13px;
+	font-size: 10px;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+#navPoint{
+	position:absolute;
+	width:18px;
+	height:20px;
+	z-index:2;
+	background-image: url(../mrDiziPix/navpointer.png);
+	left: -8px;
+	top: 12px;
+}
+#mohtavaFoot a, #navTitle a{
+	color: #8a8a8a;
+	text-decoration:none;
+} 
+
+#mohtavaFoot a:hover, #navTitle a:hover{
+	color: #5e040c;
+	border-bottom: 1px dashed #fec10e;
+	padding-bottom:2px;
+} 
+/* list --------------------------------------------------- */
+.list-item
+{
+    margin: 10px auto;
+    width:800px
+}
+    .list-item ul
+    {
+        text-align:right;
+    }
+    .list-item ul li
+    {
+        background: url('../../../styles/Usercontrols/project/images/sm-ul-bg.png') no-repeat right top;
+        float:right;
+        display:inline-block;
+        list-style:none;
+        text-align: center;
+        line-height:27px;
+        margin: 0 20px;
+        width: 210px;
+        vertical-align: middle;
+        direction:rtl;
+    }
+        .list-item a
+        {
+            text-decoration:none;
+            
+            color:#7F0F0D;
+            font-family: BMitra , Tahoma;
+            font-size:20px;
+        }
+        .list-item a:hover
+        {
+            color: #d31919;
+        }
+.list-container
+{
+    display:inline-block;
+    
+    position:relative;
+    top:70px;
+    width:850px;
+}
+.listItemHolder {
+	position:relative;
+	width:778px;
+	height:178px;
+	z-index:4;
+	top: 0px;
+	background-image: url(../mrDiziPix/listItemBg.png);
+	margin: auto;
+	margin-bottom: 40px;
+}
+.listItemHolder-singledata {
+	position:relative;
+	width:778px;
+	height:178px;
+	z-index:4;
+	top: 0px;
+	background: url(../mrDiziPix/listItemBg-data.png) center top no-repeat;
+	margin: auto;
+	margin-bottom: 40px;
+}
+.listItemHolder-singlerow {
+	position:relative;
+	width:778px;
+	height:50px;
+	z-index:4;
+	top: 0px;
+	margin: auto;
+}
+.listItemHolder_text {
+	position:absolute;
+	width:488px;
+	height:86px;
+	z-index:1;
+	left: 23px;
+	top: 30px;
+}
+.listItemHolder-singledata .listItemHolder_text {
+	position:absolute;
+	width:488px;
+	height:86px;
+	z-index:1;
+	left: 120px;
+	top: 30px;
+}
+.postImage {
+	position:absolute;
+	width:161px;
+	height:102px;
+	z-index:2;
+	left: 577px;
+	top: 21px;
+}
+.gotoPost {
+	position:absolute;
+	width:10px;
+	height:10px;
+	z-index:3;
+	left: 8px;
+	top: 117px;
+}
+.listItemHolder-singledata .gotoPost {
+	position:absolute;
+	width:10px;
+	height:10px;
+	z-index:3;
+	left: 108px;
+	top: 117px;
+}
+.listItemHolderTitleHolder {
+	position:absolute;
+	width:672px;
+	height:75px;
+	z-index:4;
+	left: 44px;
+	top: -53px;
+	background-image: url(../mrDiziPix/mohtavTitle.png);
+}
+.listItemHolderTitle a {
+	position:absolute;
+	width:567px;
+	height:22px;
+	z-index:1;
+	left: 41px;
+	top: 10px;
+	color: #d31919;
+	font-size: 19px;
+	text-align: right;
+	direction: rtl;
+	text-decoration:none;
+}
+.listItemHolderTitle a:hover
+{
+    color:#7f0f0d;
+}
+.listItemHolder img
+{
+    border:none;
+}
+/* list.paging --------------------------------------------------- */
+.pagination {
+	
+	width:281px;
+	height:31px;
+	z-index:5;
+	position:relative;
+	background-image: url(../mrDiziPix/paignation.png);
+	padding-left: 20px;
+	padding-right: 40px;
+	text-align: center;
+	padding-top: 10px;
+	color: #7d0515;
+}
+
+.pagination a{ text-decoration:none; color: #7d0515; }
+.pagination a:hover{ text-decoration:none; color: #007949; }
+/*************************Lottery********************************************/
+.winers
+{
+    width:200px;
+    line-height:40px;
+    font-family:Tahoma;
+    color:Red;
+    font-size:12px;
+    float:right;
+}
+.rank
+{
+    width:50px;
+    float:right;
+    font-size:12px;
+    float:right;
+    color:#0E8D37;
+    line-height:40px;
+    font-family:Tahoma;
+    margin-right:70px;
+}
+
+div.smntxt
+{
+    background:Url('../../../Styles/images/samanLogo2.png') no-repeat right;
+    min-height:70px;
+    padding-right:80px;
+}

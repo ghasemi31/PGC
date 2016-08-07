@@ -1,0 +1,42 @@
+﻿div.loading {
+    width: 270px;
+    height: 90px;
+    background-Color: #000;
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -khtml-border-radius: 3px;
+    color: #fff;
+    display: table-cell;
+    font-size: 12px;
+    text-align: center;
+}
+
+img.loading {
+    position: absolute;
+    margin-left: -10px;
+    margin-top: 20px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    img.loading {
+        position: absolute;
+        margin-left: 125px;
+        margin-top: 20px;
+    }
+}
+
+img.loading_symbol {
+    position: absolute;
+    left: 245px;
+    margin-top: 15px;
+}
+
+div.loadingtext {
+    margin-top: 55px;
+    direction: rtl;
+}

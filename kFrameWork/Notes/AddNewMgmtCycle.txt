@@ -1,0 +1,12 @@
+﻿[1.Create table]
+2.Add Data
+	[- Built in Records]
+	- Feature
+	- Permssion
+	- PanelPage
+	[- MenuCatyegory + MenuItem ]
+[3.Add to Model  ]
+5.Add Business Class in Project.Business.[Your-Business-Name] & Build Business
+6.Add Your MasterdPage in ~/Pages/Admin/[Your-Named-Folder]/Default.aspx + Drive From BasePage
+7.impkment the page , c# , ...
+8.Testings

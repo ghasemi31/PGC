@@ -1,0 +1,43 @@
+﻿.tooltip
+{
+    cursor:default;
+}
+#easyTooltip
+{
+    direction:rtl;    
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    /*background: #E5E5E5;    */
+    background:#fff;
+    border:1px solid #eee;
+    color:#555;
+    padding: 4px 7px;
+    line-height: 15px;  
+    font-size:11px;  
+}
+#easyTooltip div
+{
+    margin: 3px 0;
+}
+#form .lkpbank
+{
+    min-width: 508px;
+}
+#form td.control
+{
+    color:#000;
+}
+.lwrapper
+{
+}
+.wrapper
+{
+    padding:10px;
+}
+.btnfinance
+{
+    float:right;
+    margin-right:3px;
+}

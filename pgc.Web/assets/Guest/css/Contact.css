@@ -1,0 +1,22 @@
+﻿#contact-header {
+    background-image: url(../Image/GamePoster/8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+#address-info {
+    padding-right: 10px;
+}
+
+    #address-info i {
+        margin-top: 1em;
+        padding-left: 15px;
+        font-size: 1.3em;
+    }
+
+#map_canvas {
+height:415px;
+}

@@ -1,0 +1,3 @@
+﻿1.insert a new record in Database.UserManagement.UserMessages
+2.Create a new key in pgc.Model.Enums.UserMessageKey
+3.in Web Project call UserSession.AddMessage(UserMessageKey.[Your-Key])

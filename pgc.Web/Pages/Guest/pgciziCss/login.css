@@ -1,0 +1,30 @@
+﻿body {
+	background-image: url(../mrDiziPix/masterpanel.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body , input 
+{
+    font-family:Tahoma;
+}
+.loginform {
+	position:relative;
+	width:335px;
+	height:316px;
+	z-index:1;
+	/* [disabled]left: 514px; */
+	top: 100px;
+	background-image: url(../mrDiziPix/login.png);
+	margin: auto;
+	direction:rtl;
+	
+}
+.loginarea
+{
+    display:block;
+    position:relative;
+    left:-80px;
+    
+}

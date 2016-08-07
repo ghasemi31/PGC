@@ -1,0 +1,63 @@
+﻿.Header {
+    font-weight: bold;
+}
+
+    .Header td:first-child {
+        min-width: 140px !important;
+        max-width:170px !important;
+        vertical-align:middle;
+    }
+
+#empty-list {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#table-wrapper {
+    width: 785px !important;
+    height: 500px !important;
+    overflow: auto !important;
+}
+
+#form .Table{
+    width:98% !important;
+    margin: 5px !important;
+}
+
+
+.Row td:first-child, .AltRow td:first-child {
+    text-align: right;
+}
+
+
+.Table td, .Table tr {
+    border: none;
+}
+
+
+    .Table tr:last-child {
+        font-weight: bold;
+    }
+
+/**/
+/*.rotate {
+    height: 170px;
+    white-space: nowrap;
+}
+
+    .rotate > div {
+        transform:rotate(270deg);
+        width: 15px;
+    }
+
+        .rotate > div > span {
+            padding: 10px 5px;
+        }*/
+
+/*.table-print td{
+    border:1px solid black;
+}
+
+.table-print #order-row{
+     text-align: center;
+}*/

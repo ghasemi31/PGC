@@ -1,0 +1,64 @@
+﻿.detailtbl
+{
+    width: 740px;
+    text-align:center;
+    background:rgba(240,240,240,.5);
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -khtml-border-radius:7px;
+    padding:10px;
+    margin: 20px auto;
+}
+.detailtbl table
+{
+    width:100%;
+}
+.detailtbl th
+{
+    height:30px;
+}
+.detailtbl td
+{
+    height:20px;
+}
+.detailtbl td:first-child
+{
+    text-align:right;
+}
+.detailtbl td:nth-child(2)
+{
+    width:130px;
+}
+.totalspan
+{
+    width:110px;
+}
+.detailistttl
+{
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+.desc
+{
+    font-weight: bold;
+    font-size: 10px;
+    display: table-cell;
+}
+.footerrow
+{
+    background: rgba(240,240,240,.3);
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 30px;
+}
+.scommands
+{
+    max-width:109px;
+}
+fieldset#detail .ocommands
+{
+    margin-left:3px;
+    float:right;
+}

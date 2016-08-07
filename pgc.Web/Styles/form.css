@@ -1,0 +1,444 @@
+﻿/* --- radius ---------------------------------------------------------------------------*/
+#form input[type="button"],#form input[type="submit"] , #form .letter ,#form a.btn
+{
+    -moz-border-radius: 4px; 
+    -khtml-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
+}
+#form fieldset , #form fieldset legend
+{
+    -moz-border-radius: 7px; 
+    -khtml-border-radius: 7px; 
+    -webkit-border-radius: 7px; 
+    border-radius: 7px;
+}
+/* --- Base Elements ---------------------------------------------------------------------------*/
+#form  , #form input , #form span , #form select , #form textarea , #form .caption #form .control , #form .commands 
+{
+    font-family:Tahoma;
+    font-size:11px;
+}
+#form select
+{
+    min-width:50px;
+}
+
+#form input[type="text"]
+{
+    
+}
+#form input[type="button"],#form input[type="submit"],#form a.btn
+{
+    background-color:#a81c1b;
+    border:none;
+    color:White;
+    text-align:center;
+    line-height:21px;
+    height:21px;
+    padding:0 10px 0 10px;
+    cursor:pointer;
+}
+#form input[type="button"]:hover,#form input[type="submit"]:hover , #form a.btn:hover
+{
+    background-color:#d50e0c;
+}
+#form textarea
+{
+    width:210px;
+    height:70px;
+}
+/* --- Base Css Classes ---------------------------------------------------------------------------*/
+#form .checkbox , #form .radio
+{
+    color:black;
+    display:block;
+}
+
+#form input[type="text"].small
+{
+    width:60px;
+}
+#form input[type="text"].large
+{
+    width:200px;
+}
+#form input[type="button"].large , #form input[type="submit"].large
+{
+    width:110px;
+}
+#form input[type="button"].xlarge , #form input[type="submit"].xlarge
+{
+    width:150px;
+}
+#form a.btn
+{
+    display:block;float:right;
+}
+#form .nodata {
+	width: 570px;
+	text-align: center;
+	font-size: 12px;
+	color: #333;
+	margin: 25px 0;
+}
+
+#form .public-input 
+{
+    
+}
+#form .validator
+{
+    color:Red;
+}
+#form .letter
+{
+    position:absolute;
+    z-index:10;
+    display:block;
+    
+    padding:5px 10px 5px 10px;
+	background:#1c1a16;
+	color:White;
+	display:none;
+}
+
+/* Form & containers -------------------------------------------------------------------------*/
+#form 
+{
+    width: 775px;
+    float: left;
+    padding: 10px 0 0 0;
+    margin-right: 10px;
+}
+#form table
+{
+    
+}
+#form td.caption
+{
+    width:250px;
+    height:20px;
+    line-height:20px;
+    padding:0 15px 0 5px;
+    background:url('images/bullet.png') right -2px no-repeat;
+    vertical-align:top;
+}
+#form td.caption-empty
+{
+    width:110px;
+    height:20px;
+    line-height:20px;
+    padding:0 15px 0 5px;
+    vertical-align:top;
+}
+#form td.control
+{
+    vertical-align:top;
+    color:#666;
+    line-height:20px;
+    height:25px;
+    width:255px;
+}
+#form .branchform td.control
+{
+    vertical-align:top;
+    color:#666;
+    line-height:20px;
+    height:25px;
+    width:630px;
+}
+#form .branchform ul li
+{
+    float: right;
+    margin-right:25px;
+}
+#form .commands
+{
+    text-align:left;
+    padding:10px 15px 10px 15px ;
+    
+}
+#form fieldset
+{
+    /*background:White url(images/fabric-dsbg-light.jpg) repeat;*/
+    background-color:#F9F9F9;
+    margin:0 0 15px 0;
+    
+}
+#form fieldset legend
+{
+    /*background:White url(images/fabric-dsbg-light.jpg) repeat;*/
+    background-color:#F9F9F9;
+    padding:0 20px 0 20px;
+    height:25px;
+    line-height:25px;
+    font-weight:bold;
+    color:#8d0518;
+    
+}
+#form .itemRight
+{
+    float:right;
+    margin-right:15px;
+}
+/* --- Base Controls ---------------------------------------------------------------------------*/
+
+#form .numericrange select
+{
+    
+}
+#form .numericrange input
+{
+    
+}
+#form .range-combo
+{
+    margin-top:5px;
+}
+
+/* --- Grid ---------------------------------------------------------------------*/
+
+
+#form .Table
+{
+    width:770px;
+    margin:10px 10px 10px 5px;
+}
+
+#form .Table tr.Header
+{
+    height:40px;
+    left:40px;
+}
+#form .Table tr.Header th
+{
+    padding:10px 0 0 0;
+    text-align:right;
+}
+#form .Table tr.Row
+{
+    line-height:25px;
+    background:url(images/row-bg.png) repeat;
+}
+#form .Table tr.AltRow
+{
+    line-height:25px;
+    background:url(images/row-alt-bg.png) repeat;
+}
+#form .Table tr.Row:hover, #form .Table tr.AltRow:hover
+{
+    background:url(images/row-hover-bg.png) repeat;
+}
+#form .Table tr.Empty
+{
+    text-align:center;
+    line-height:50px;
+    height:50px;
+}
+#form .Table td.Cell img
+{
+    vertical-align:middle;
+    padding:2px;
+}
+
+/* --- Grid.Pager ---------------------------------------------------------------------*/
+#form tr.BottomPagerRow {
+}
+#form tr.BottomPagerRow td
+{
+    
+}
+#form tr.BottomPagerRow td table
+{
+    margin-top:10px;
+}
+#form span.InfoPager
+{
+    color:#484139;
+    margin-left:25px;
+    float:left;
+    top:-15px;
+    position:relative;
+    
+}
+
+#form tr.Pager
+{
+	text-align: right;
+	padding: 20px 10px 0px 10px;
+	margin: 0px 10px 0px 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#8e806f;
+	height:15px;
+	
+}
+
+#form a.PagerLink {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border: 1px solid #DDD;
+	margin: 5px 5px 5px 5px;
+	padding: 3px 6px;
+	color: #aa1c1b;
+	text-decoration:none;
+	font-weight:bold;
+	
+	background:url(images/row-bg.png) repeat;
+}
+#form a.PagerLink:hover
+{
+    background:url(images/row-hover-bg.png) repeat;
+    color: #d00f0e;
+    border: 1px solid white;
+}
+#form span.PagerLabel
+{
+    padding:0 10px 0 10px;
+    font-weight:bold;
+}
+
+
+/* ---- Margin Table ----------------------------------------------------------------*/
+#tblmargin
+{
+    
+    margin-top:20px;
+}
+#tblmargin td
+{
+    text-align:center;
+}
+
+#tblmargin td.advtd
+{
+    border:2px solid #a81c1b; 
+    height:50px; 
+    line-height:45px;
+}
+/***********SendMessage**************************************************/
+#form #SendMessage textarea
+{
+    width:350px;
+}
+/***********Email File Uploader**************************************************/
+#form ul.fup
+{
+    list-style:none;
+    margin-right:15px;
+}
+#form ul.fup li
+{
+}
+
+#form fieldset#list table tr td a.hbtn
+{
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+	background-color:#A81C1B;
+    cursor: pointer; 
+    color:white;
+    padding: 0px 7px;
+    display: inline-block;
+    height: 22px;
+    line-height: 19px;
+    margin:0px 2px;
+}
+#form fieldset#list table tr td a.hbtn:hover
+{
+    background-color:#D50E0C;
+}
+
+/***********Buttom For Print**************************************************/
+#form a.printbtn:hover
+{
+    background: #D50E0C url('images/Payment/printerbw.PNG') no-repeat 78px;
+}
+#form a.printbtn 
+{
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #A81C1B url('images/Payment/printerbw.PNG') no-repeat 78px;
+    cursor: pointer;
+    color: white;
+    width: 90px;    
+    display: inline-block;
+    text-align: center;
+    padding: 4px 12px 4px 1px;
+}
+#form a.excelbtn:hover
+{
+    background: #D50E0C url('images/Payment/excel.PNG') no-repeat 133px;
+}
+#form a.excelbtn 
+{
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #A81C1B url('images/Payment/excel.PNG') no-repeat 133px;
+    cursor: pointer;
+    color: white;
+    width: 143px;
+    display: inline-block;
+    text-align: center;
+    padding: 4px 12px 4px 1px;
+}
+
+
+/*Tabular For Products*/
+ul.dltabs
+{
+    display:inline-block;    
+    list-style: none;
+    width: 100%;
+    margin-right:4px;
+}
+ul.dltabs li
+{
+    padding: 8px 5px;
+    margin-right: 2px;  
+    float:right;
+    background-color:rgba(240,240,240,.3);
+    border:1px solid #B9C3C9;
+    
+    border-radius:5px 5px 0px 0px;
+    -moz-border-radius:5px 5px 0px 0px;
+    -webkit-border-radius:5px 5px 0px 0px;
+    -khtml-border-radius:5px 5px 0px 0px;
+    border-bottom: none;
+    cursor: pointer;
+}
+ul.dltabs li.selectli
+{
+    background: rgba(240,240,240,.6);
+    border-color:#91abc4;
+}
+.tabs > table
+{
+    padding:10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border: 1px solid #91abc4;
+    background-color: #F3F6F8;
+    margin:0 auto;
+}
+.tabs > table.selectTab
+{
+    display:block;
+}
+.tabs > table
+{
+    display:none; 
+    min-height:310px;
+}

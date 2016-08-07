@@ -1,0 +1,10 @@
+﻿[1.Insert a new record in Database.Configuration.OptionCategory]
+
+[2.Insert a new record in Database.Configuration.Option]
+
+3.Create a new key in pgc.Model.Enums.OptionKey + Build Model
+
+4.in Web Project call/use <%=kFrameWork.Business.OptionBusiness.GetNText(pgc.Model.Enums.OptionKey.AdminGreetingMessage) %>
+		also u can use kFrameWork.Util.UIUtil.ToHTMLMultiLinedText()
+
+[5.Data Entry]

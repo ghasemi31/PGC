@@ -1,0 +1,99 @@
+﻿.login input.username, .login input.pass, .login input.btn{
+	position:absolute;
+	width:107px;
+	height:18px;
+	background: url('images/regfilled.gif') no-repeat left top;
+	border:none;
+	font-size:7pt;
+	padding-bottom:5px;
+	text-align: center;
+	color: #fec10e;
+	line-height:18px;
+	outline:none;
+}
+.login input.username
+{
+    left: 193px;
+	top: 151px;
+}
+.login input.pass{
+	left: 193px;
+	top: 179px;
+}
+.login span.passlabel 
+{
+    z-index:2;
+	width:107px;
+	height:18px;
+	display:block;
+	font-size:7pt;
+
+	line-height:18px;
+	text-align: center;
+	color: #fec10e;
+	
+	position:absolute;
+	left: 193px;
+	top: 179px;
+}
+
+.login input.btn{
+	width:60px;
+	height:20px;
+	background: url('images/diziEnter.gif') no-repeat left top;
+    cursor: pointer;
+}
+.login input.signin
+{
+    left: 238px;
+	top: 206px;
+}
+ .login input.pass
+{
+	font-family:Tahoma;
+	line-height:20px;
+	z-index:1;
+}
+.login .links {
+	position:absolute;
+	width:113px;
+	height:34px;
+	z-index:1;
+	left: 185px;
+	top: 233px;
+	font-size: 7pt;
+}
+.login .links a
+{
+    text-decoration:none;
+    line-height:15px;
+    color: #5e040c;
+}
+.login .links a:hover
+{
+    text-decoration:underline;
+}
+.login input.cpanel
+{
+    left: 70px;
+	top: 40px;
+}
+.login input.orderlist
+{
+    left: 36px;
+	top: 70px;
+}
+.login input.exit
+{
+    left: 0px;
+	top: 40px;
+}
+.login .loginedview {
+	position:absolute;
+	width:113px;
+	height:34px;
+	z-index:1;
+	left: 170px;
+	top: 160px;
+	font-size: 7pt;
+}

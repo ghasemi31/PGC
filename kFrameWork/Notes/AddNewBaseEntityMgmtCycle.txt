@@ -1,0 +1,17 @@
+﻿1.Create table
+2.Add Data
+	- Built in Records
+	- Feature
+	- Permssion
+	- PanelPage
+	- MenuCatyegory + MenuItem 
+3.Add to Model 
+4.Add Pattern & Build Model
+5.Add Business Class in Business.EntityManagementBusiness & Build Business
+5.Copy a Sample Cycle from Pages/Samples into e.g : Pages/Admin/.. & Rename it to [EntityName]
+6.Open all content 4 aspcx & 4 cs & Replace 'Sample' into [EntityName] in 'All Open Documents'
+7.Revise Default.aspx + Code
+8.Revise Detail.ascx + Code + Required + Validation...
+9.Revise List.ascx + Code
+10.Revise Search.asce + Code
+11.Test

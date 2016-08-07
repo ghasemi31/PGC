@@ -1,0 +1,124 @@
+﻿table.plantbl
+{
+    width:690px;
+}
+table.plantbl tr
+{
+    
+}
+#form table.plantbl td:nth-child(2) 
+{
+    width: 155px;
+}
+
+#form table.plantbl td:nth-child(3) 
+{
+    
+}
+table.plantbl td
+{
+}
+table.plantbl td p
+{ 
+    display:inline-block;
+}
+/*-------------------------Action UC--------------------*/
+#form fieldset#rcpnttbl .Table,#form fieldset#searchtbl .Table
+{
+    margin-top:0px;
+}
+#form fieldset#rcpnttbl .Table tr,#form fieldset#searchtbl .Table tr
+{
+    height: 28px;
+    line-height: 28px;
+}
+#form fieldset#rcpnttbl .command
+{
+    padding-top:0;
+    padding-bottom:0;
+}
+fieldset#searchtbl .radiobtn
+{
+}
+fieldset#searchtbl .radiobtn tr
+{
+    float:right;
+    color:Gray;
+    margin-left:20px;
+}
+#form fieldset#searchtbl .Table tr.BottomPagerRow,#form fieldset#rcpnttbl .Table tr.BottomPagerRow
+{
+    line-height:0px;
+}
+#form fieldset#searchtbl div.sendcommand
+{
+    margin: 16px;
+    height: 35px;
+}
+#form fieldset#searchtbl div.sendcommand > p
+{
+    float:right;
+}
+#form fieldset#searchtbl div.sendcommand input,#form  fieldset#searchtbl div.sendcommand select
+{
+    float:left;
+    margin:0 0 0 15px;
+}
+#form fieldset#searchtbl div.manualinsert
+{
+}
+#form fieldset#searchtbl div.manualinsert p
+{
+    margin:5px 12px 0 0;
+    width:100%;
+}
+#form fieldset#searchtbl div.manualinsert textarea
+{
+    height: 150px;
+    width: 300px;
+    margin:15px;
+}
+#form fieldset#searchtbl .Table.searchtbl tr
+{
+    height: 23px;
+    display: block;    
+}
+/*----------------Insertin Template----------------*/
+#form fieldset input.xxxlarge
+{
+    width: 540px;
+}
+#form fieldset#template textarea ,
+#form fieldset#searchtbl div.manualinsert textarea
+{
+    width: 540px;
+    height: 190px;
+}
+#form fieldset#template table.Table tr td.control div
+{
+    width: 335px;  
+    display:inline;  
+}
+#form fieldset#template > div.fup > div
+{
+    width: 360px;
+    float: right;
+    margin-bottom:15px;
+}
+
+#form fieldset table tr.wrng td p
+{
+    width: 595px;
+    line-height: 20px;
+    text-align: justify;
+    padding: 5px;
+    margin-right:8%;
+    font-size:10px;
+    font-weight:bold;
+    
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -khtml-border-radius:7px;
+    border:solid 1px red;
+}

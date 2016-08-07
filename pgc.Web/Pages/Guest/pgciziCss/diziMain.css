@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* مستر دیزی */
+
+body {
+	background-image: url(mrDiziPix/mrbgOther.jpg);
+	background-color: #D5D6D8;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-repeat: no-repeat;
+}
+
+a > img
+{
+    border:0;
+}
+
+.fontClass{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	text-align: justify;
+	direction: rtl;
+}
+
+@font-face {
+  font-family: 'BMitra';
+  src: url('webfont/BMitra.eot?#') format('eot'),  /* IE6–8 */
+       url('webfont/BMitra.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('webfont/BMitra.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+ 
+}
+
+.BMitra {
+	font-family: BMitra, Arial, Helvetica, sans-serif;
+	 font-size: 20px;
+}
+
+.gift_detail {
+    display:block; 
+    position:absolute;
+    top:165px; left:320px;
+    width:202px; 
+    text-align:justify; 
+    font-family:Tahoma; 
+    font-size:12px; 
+    line-height:15px; 
+    color:#561123;
+    direction:rtl;
+}
+
+.gift_detail a
+{
+    text-decoration:none;
+    color:#561123;
+}
+
+.gift_detail a:hover
+{
+    color:#e5450d;
+}
+
+#mrdizi {
+	position:relative;
+	width:905px;
+	height:1370px;
+	z-index:2;
+	margin: auto;
+}
+#menu {
+	position:absolute;
+	width:905px;
+	height:383px;
+	z-index:2;
+	background-image: url(../mrDiziPix/fantasticMenu.png);
+	background-repeat: no-repeat;
+}
+#menu img
+{
+    border:none;
+}
+#head {
+	position:absolute;
+	width:100%;
+	height:26px;
+	z-index:1;
+	left: 0px;
+	top: 1px;
+	background-image: url(../mrDiziPix/bgtop.png);
+}
+#slogan {
+	position:absolute;
+	width:886px;
+	height:101px;
+	z-index:3;
+	top: 386px;
+	background-image: url(../mrDiziPix/slogan.png);
+	left: 46px;
+}
+#imageSlidingMrDizi {
+	position:absolute;
+	width:939px;
+	height:262px;
+	z-index:6;
+	left: -28px;
+	top: 456px;
+	background-image: url(../mrDiziPix/sliderBg.png);
+}
+#items {
+	position:absolute;
+	width:887px;
+	height:216px;
+	z-index:1;
+	left: 41px;
+	top: 35px;
+}
+#register {
+	position:absolute;
+	width:876px;
+	height:389px;
+	z-index:5;
+	left: 9px;
+	top: 747px;
+	background-image: url(../mrDiziPix/goshtkob2.jpg);
+}
+#PiazOSabzi {
+	position:absolute;
+	width:100px;
+	height:88px;
+	z-index:2;
+	background-image: url(../mrDiziPix/piazosabzy.png);
+	background-repeat: no-repeat;
+	left: 859px;
+	top: 193px;
+}
+#headline_news {
+	position:absolute;
+	width:742px;
+	height:62px;
+	z-index:6;
+	left: 80px;
+	top: 1181px;
+	background-image: url(../mrDiziPix/newsBar.gif);
+}
+#headlines {
+	position:absolute;
+	width:583px;
+	height:14px;
+	z-index:1;
+	left: 128px;
+	top: 11px;
+	text-align: right;
+	color: #fff;
+	font-size: 8pt;
+	padding: 0px;
+}
+#footer {
+	position:absolute;
+	width:627px;
+	height:56px;
+	z-index:7;
+	left: 54px;
+	top: 1254px;
+	background-image: url(../mrDiziPix/footer.gif);
+	padding-right: 50px;
+	color: #8a8a8a;
+	font-size: 8pt;
+	text-align: center;
+	padding-left: 60px;
+	line-height: 11pt;
+	padding-top: 5px;
+	padding-bottom: 12px;
+}
+
+#footer a, #regDetail a:link{
+	color: #8a8a8a;
+	text-decoration:underline;
+
+} 
+#regDetail a:link{ color: #551119; !IMPORTANT }
+
+#footer a:hover,  #regDetail a:hover{
+	color: #5e040c;
+	border-bottom: 1px dashed #fec10e;
+	padding-bottom:2px;
+	text-decoration:none;
+}
+
+
+#regDetail a:visited{
+	color: #8a8a8a;
+	text-decoration:underline;
+	
+}
+
+#regDetail a:visited{ color: #551119; !IMPORTANT }
+ 
+#footer a:active, #regDetail a:active{
+	color: #5e040c;
+	border-bottom: 1px dashed #3d6453;
+	padding-bottom:2px;
+}
+
+#online_services {
+	position:absolute;
+	width:84px;
+	height:22px;
+	z-index:1;
+	left: 155px;
+	top: 162px;
+}
+#product {
+	position:absolute;
+	width:60px;
+	height:17px;
+	z-index:2;
+	left: 221px;
+	top: 235px;
+}
+#contact {
+	position:absolute;
+	width:49px;
+	height:29px;
+	z-index:3;
+	left: 317px;
+	top: 256px;
+}
+#agance {
+	position:absolute;
+	width:79px;
+	height:37px;
+	z-index:4;
+	left: 541px;
+	top: 106px;
+}
+#dashboard {
+	position:absolute;
+	width:89px;
+	height:16px;
+	z-index:5;
+	left: 621px;
+	top: 186px;
+}
+#quality {
+	position:absolute;
+	width:72px;
+	height:27px;
+	z-index:6;
+	left: 620px;
+	top: 250px;
+}

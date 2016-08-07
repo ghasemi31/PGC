@@ -1,0 +1,68 @@
+﻿.params
+{
+    padding-bottom:20px;
+}
+.params .main-tbl
+{
+    
+}
+.params .main-tbl td.rightcol
+{
+    vertical-align:top;
+    text-align:center;
+    width:380px;
+}
+.tv_container
+{
+    overflow:scroll;
+    width:360px;
+    height:600px;
+    margin:0 10px 0 10px
+}
+.framed
+{
+    width:380px;
+}
+.params .main-tbl td.leftcol
+{
+    width:380px;
+    vertical-align:top;
+    text-align:center;
+}
+.ns
+{
+    color:#0587eb;
+    position:relative;
+    top:-3px;
+    padding-right:2px;
+}
+.lns
+{
+    
+}
+.sns
+{
+    font-weight:bold;
+    color:#034a82;
+    
+}
+.ns:hover 
+{
+    color:#034a82;
+}
+.caption
+{
+    text-align:right;
+}
+.control
+{
+    text-align:right;
+}
+.params .main-tbl td.leftcol input
+{
+    
+} 
+.params .main-tbl td.leftcol textarea
+{
+  
+} 

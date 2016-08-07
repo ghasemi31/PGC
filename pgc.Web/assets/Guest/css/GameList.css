@@ -1,0 +1,26 @@
+﻿#gamelist-header {
+    background-image: url(../Image/GamePoster/8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+.game {
+    margin-top: 1em;
+}
+
+    .game h1 {
+        text-align: center;
+        margin-top: .5em;
+        font-size: 1.5em;
+    }
+
+    .game:hover img {
+        opacity: .7;
+    }
+
+    .game:hover h1 {
+        color: #1704c5;
+    }

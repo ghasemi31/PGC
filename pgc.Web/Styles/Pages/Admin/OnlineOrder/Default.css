@@ -1,0 +1,65 @@
+﻿#form fieldset table.tblmain
+{
+    width:100%;
+    padding:5px;
+}
+#form fieldset table.tblmain textarea
+{
+    width:300px;
+    height:50px;
+}
+#form fieldset table.tblmain tr.border
+{
+    height:0px;
+}
+#form fieldset table.tblmain tr.border td
+{
+    border-top: 1px solid #aaaaaa;
+    height:5px;
+}
+#form fieldset table.tblmain tr td .chblst tr
+{
+    float:right;
+    width:25%;
+}
+#form fieldset td.brnchlst > div
+{
+    display:block;
+    width:96%;
+    float:right;
+    margin:0px 12px 3px 0px;
+    padding-right:5px;
+    /*border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -khtml-border-radius:7px;
+    background-color:rgba(250,250,250,0.2);*/
+    border-bottom:solid 1px rgba(255,255,255,0.2);
+}
+#form fieldset td.brnchlst > div > input
+{
+    margin-top: 25px;
+    padding: 0;
+}
+#form fieldset td.brnchlst > div > label
+{
+    width:200px;
+    padding: 0;
+    margin: 21px 3px 0 0;
+}
+#form fieldset td.brnchlst > div > *
+{
+    float:right;
+}
+#form fieldset td.brnchlst > div > span
+{
+    margin: 21px 0px 0 3px;
+    padding: 0;        
+}
+#form fieldset td.brnchlst .help
+{color:rgba(128,128,128,0.8);
+}
+#form fieldset td.brnchlst > div > table
+{
+    margin-left:50px;
+}

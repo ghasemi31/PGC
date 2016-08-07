@@ -1,0 +1,13 @@
+﻿.infowrapper
+{
+    width:295px;
+}
+#chart1 .jqplot-title 
+{
+    margin-left: 215px;
+}
+.jqplot-highlighter-tooltip
+{
+    font-size:11px;
+    background: rgba(238,238,238,0.9);
+}

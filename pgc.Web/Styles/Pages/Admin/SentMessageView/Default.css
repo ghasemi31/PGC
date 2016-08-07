@@ -1,0 +1,39 @@
+﻿#form fieldset#list div.list-help div.itemRight
+{
+    display:inline-block;
+    float:right;
+    padding-right:25px
+
+}
+#form fieldset#list div.list-help
+{
+    margin: 30px 0 0px 0;
+    display: inline-block;
+    alignment-baseline: central;
+    background: url('/styles/images/row-hover-bg.png') repeat;
+    width: 100%;
+    height: 24px;
+}
+#form fieldset#list div.list-help *
+{
+    vertical-align:middle;    
+}
+#form fieldset#detail td:nth-child(odd)
+{
+    width:170px;
+}
+#form fieldset#detail table tr td a:visited,
+#form fieldset#detail table tr td a
+{
+    color: #666;
+    text-decoration: underline;    
+    cursor: pointer;
+}
+#form fieldset#detail table tr td a:hover
+{
+    color: #666;
+    font-style: normal;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+

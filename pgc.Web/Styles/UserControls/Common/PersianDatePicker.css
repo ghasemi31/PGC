@@ -1,0 +1,219 @@
+﻿div.dp
+{
+    width:90px;
+    cursor:pointer;
+    
+}
+div.dp .ico
+{
+    width:18px;
+    height:17px;
+    float:left;
+    cursor:pointer;
+    background-image:url('images/dpcalendarico_thr.jpg');
+    position:relative;
+    top:3px;
+    left:8px;
+}
+div.dp .textbox
+{
+    float:right;
+    cursor:pointer;
+    width:60px;
+	border:1px solid #CCC;
+	direction:ltr;
+	text-align:center;
+    height:15px;
+    line-height:15px;
+	position:relative;
+	top:3px;
+}
+div.dp:hover .textbox
+{
+    color:#374c5b;
+}
+div.dp:hover .ico
+{
+    background-image:url('images/dpcalendaricohover_thr.jpg');
+}
+.dpValidator
+{
+    
+    margin-right:92px;
+    margin-top:5px;
+    z-index:10;
+    position:absolute;
+    display:block;
+    color:Red;   
+     
+}
+.dpDiv
+{
+    background-image:url('images/dpbg_thr.png');
+    width:202px;
+    height:227px;
+    margin:0 0 0 -2px;
+    
+ 
+}
+
+.dpTitleBarTR
+{
+    
+}
+.dptbCloseButton
+{
+    float:left;
+    background-image:url('images/dpclose_thr.png');
+    width:9px;
+    height:9px;
+    cursor:pointer;
+    margin:5px 4px 0px 4px;
+}
+.dptbCloseButton:hover
+{
+    background-image:url('images/dpclosehover_thr.png');
+}
+.dptbTodayButton
+{
+    float:left;
+    background-image:url('images/dpcommandbg_thr.png');
+    width:46px;
+    height:19px;
+    cursor:pointer;
+    margin:0px 4px 0px 5px;
+    padding-top:1px;
+    text-align:center;
+    color:White;
+    font-family: Tahoma;
+    font-size:small;
+}
+.dptbTodayButton:hover
+{
+    background-image:url('images/dpcommandbghover_thr.png');
+}
+.dptbResetButton
+{
+    float:left;
+    background-image:url('images/dpreset_thr.png');
+    width:12px;
+    height:13px;
+    cursor:pointer;
+    margin:3px 4px 0px 4px;
+}
+.dptbResetButton:hover
+{
+    background-image:url('images/dpresethover_thr.png');
+
+}
+.dpTable
+{    
+   border:1px;
+   position:relative;
+   width:198px;
+   left:2px;
+}
+.dpTR 
+{   
+    
+}
+.dpTitleBarTR
+{
+    
+}
+.dpTitleTR 
+{
+    
+}
+.dpTitleTR table
+{
+    font-size: small;
+    font-family: Tahoma;
+    text-align:center;
+    direction:ltr;
+}
+.dpDayTR
+{
+    font-size: small;
+    font-family: Tahoma;
+    text-align:center;
+}
+.dpTodayButtonTR 
+{
+    
+}
+.dpTD
+{  
+    background-image: url('images/dpday_thr.png');
+    background-repeat:no-repeat;
+    background-position: center top;
+    font-family: Tahoma;
+    font-size: small;
+    text-align:center;
+    width:20px;
+    color: #FFFFFF;
+    height:22px;
+    line-height:22px;
+  }
+.dpDayHighlightTD ,.dpTDHover
+{
+    background-position: center top;
+    background-color:transparent;
+    background-image: url('images/dpdayselected_thr.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    text-align: center;
+    color: white;
+    height: 18px;
+    cursor:pointer;
+    font-size: small;
+    font-family: Tahoma;
+}
+.dpDayTD
+{
+    color:black;
+    padding-bottom:10px;
+}
+div.YearPrev ,div.Prev ,div.Next ,div.YearNext
+{
+    float:left;
+    cursor:pointer;
+}
+.dpTitleText
+{
+    float:left;
+    text-align:center;
+    width:85px;
+    padding-top:2px;
+    color:black;
+    font-family: Tahoma;
+    font-size: small;
+}
+
+.dpBtnNext
+{
+    background-image:url('images/dpnext_thr.png');
+    width:8px;
+    height:7px;
+    margin:6px 10px 0px 9px;
+}
+.dpBtnPrev
+{
+    background-image:url('images/dpprev_thr.png');
+    width:8px;
+    height:7px;
+    margin:6px 10px 0px 5px;}
+.dpBtnYearNext
+{
+    background-image:url('images/dpyearnext_thr.png');
+    width:14px;
+    height:7px;
+    margin:6px 0px 0px 8px;
+}
+.dpBtnYearPrev
+{
+    background-image:url('images/dpyearprev_thr.png');
+    width:14px;
+    height:7px;
+    margin:6px 10px 0px 5px;
+}

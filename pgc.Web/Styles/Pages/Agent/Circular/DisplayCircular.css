@@ -1,0 +1,16 @@
+﻿#circular {
+    padding: 10px 20px 20px 20px;
+}
+
+#title {
+    font-weight: bold;
+    line-height: 25px;
+}
+
+#date {
+}
+
+#body{
+    line-height: 22px;
+    text-align: justify;
+}

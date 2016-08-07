@@ -1,0 +1,16 @@
+﻿#about-header {
+    background-image: url(../Image/GamePoster/8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+
+
+#about-content {
+    font-size: 1.3em;
+    line-height: 2;
+    text-align: justify;
+}

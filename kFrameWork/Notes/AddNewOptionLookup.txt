@@ -1,0 +1,9 @@
+﻿[1.Insert a new record in Database.Configuration.OptionCategory]
+[2.Insert a new record in Database.Configuration.OptionLookup]
+[3.Insert a new record in Database.Configuration.OptionLookupDetail]
+[4.Insert a new record in Database.Configuration.Option]
+5.Create a new key in pgc.Model.Enums.OptionKey
+5.Create a new key in pgc.Model.Enums.OptionLookupKey
+4.in Web Project call/use 
+	<%=kFrameWork.Business.OptionBusiness.GetNText(pgc.Model.Enums.OptionKey.AdminGreetingMessage) %>
+	<%OptionLookupKey enumSample = kFrameWork.Business.OptionBusiness.GetLookup(OptionKey.OptionSampleKey4);%>

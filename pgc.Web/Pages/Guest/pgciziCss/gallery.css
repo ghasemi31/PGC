@@ -1,0 +1,44 @@
+/* Gallery ------------------------------------------------*/
+.gallery-container
+{
+    display:inline-block;
+    width:750px;
+    padding:20px 5px 20px 5px;
+}
+.galleryIndexHolder {
+	position:relative;
+	width:218px;
+	height:148px;
+	z-index:1;
+	background-image: url(../mrDiziPix/galleryindex.png);
+	float: left;
+	margin:15px;
+}
+.galleryTitle {
+	position:absolute;
+	width:211px;
+	height:34px;
+	left: -14px;
+	top: 119px;
+	background-image: url(../mrDiziPix/galleryTitle.png);
+	font-size: 18px;
+	color: #7C141D;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 8px;
+	text-align: center;
+	z-index: 2;
+}
+
+.galleryTitle a{ text-decoration:none; color: #7C141D;}
+.galleryIndex {
+	position:absolute;
+	width:194px;
+	height:122px;
+	z-index:1;
+	left: 11px;
+	top: 9px;
+}
+
+.Gallryimg{ display: none;}
+.galleryIndex img {border:none;}

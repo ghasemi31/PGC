@@ -1,0 +1,25 @@
+﻿.adv-image , .adv-flash , .adv-html
+{
+    float:right;
+    margin:5px;
+    border:0;
+    text-align:center;
+}
+
+.adv-html ul
+{
+    margin :0;
+}
+.adv-html a
+{
+    text-decoration:none;
+}
+.adv-html a:link , .adv-html a:visited
+{
+    color:#561123;
+}
+
+.adv-html a:hover
+{
+    color:#B80C0C;
+}

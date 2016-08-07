@@ -1,0 +1,133 @@
+﻿#usermessage
+{
+    
+    top: 10px;
+    left: 0;
+    right: 10px;
+    border: none; 
+    padding: 5px; 
+    background-Color: #000; 
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px;
+	border-radius: 10px;
+	-khtml-border-radius: 10px;    
+    color: #fff;
+    width:350px;
+    cursor:default;
+    font-family:Tahoma;
+    
+     filter: alpha(opacity=85);  
+    -moz-opacity: 0.85;  
+    -khtml-opacity: 0.85;  
+    opacity: 0.85;  
+    
+    font-size:12px;
+    /*
+    width: 270px;
+    */
+    
+}
+#usermessage .iconcell
+{
+    width:50px;
+    padding:0px;
+    vertical-align:top;
+}
+#usermessage .textcell
+{
+    text-align:right;
+    width:300px;
+    padding-bottom:15px;
+}
+
+#usermessage .succeed
+{
+    background: url('images/um_succeed.png');
+    background-repeat:no-repeat;
+    width:41px;
+    height:35px;
+    margin:10px;
+}
+#usermessage .error
+{
+    background: url('images/um_error.png');
+    background-repeat:no-repeat;
+    width:34px;
+    height:34px;
+    margin:10px;
+}
+#usermessage .info
+{
+    background: url('images/um_info.png');
+    background-repeat:no-repeat;
+    width:37px;
+    height:40px;
+    margin:10px;
+}
+#usermessage .warning
+{
+    background: url('images/um_warning.png');
+    background-repeat:no-repeat;
+    width:37px;
+    height:36px;
+    margin:10px;
+}
+#usermessage .text
+{
+    margin:10px;
+    line-height:20px;
+}
+
+#usermessage .spacer
+{
+    width:320px;
+    height:15px;
+}
+
+#usermessage .cross
+{
+    background: url('images/um_cross.gif');
+    background-repeat:no-repeat ;
+    width:10px;
+    height:10px;
+    margin:10px;
+    float:left;
+    cursor:pointer;
+}
+#usermessage .cross:hover
+{
+    background: url('images/um_crosshover.gif');
+    background-repeat:no-repeat ;
+}
+#usermessage table
+{ 
+    border:auto;
+    width:auto;
+    border:none;
+}
+#usermessage td
+{ 
+    padding:0px;
+    text-align:right;
+    border:none;
+}
+#usermessage .bullet-data
+{
+    background: url('images/um_databullet.png') no-repeat center center;
+    width:16px;
+    height:16px;
+    position:relative;
+    top:4px;
+    padding:0 5px 0 5px;
+    
+}
+
+#usermessage .datakey
+{
+
+}
+
+#usermessage .datavalue
+{
+    padding:0 10px 0 5px;
+}

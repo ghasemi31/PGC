@@ -1,0 +1,17 @@
+﻿1.Add your control class
+	- it can be a new class drived from a control
+	- or it can be added by add new item > server control & then can be derived or not ...
+2.IF Css is Required:
+	- generate a .css file in 'Styles' folder with the name of "YOUR-CONTROL-NAME"
+	- RC on the file > Properties >  BuildAction = Embeded Resource
+	- in the Assemblyinfo.c : add > 
+			[assembly: System.Web.UI.WebResource("kFrameWork.Styles.YOUR-CONTROL-NAME.css", "text/css")]
+	- in the code behind of your control > onPreRenderEvent
+			(this.Page as BasePage).AddCssReservation(UIUtil.GetAttachmentUrl(this, UIUtil.AttachmentType.css));
+3.IF Js is required:
+	- generate a .js file in 'Scripts' folder with the name of "YOUR-CONTROL-NAME"
+	- RC on the file > Properties >  BuildAction = Embeded Resource
+	- in the Assemblyinfo.c : add > 
+			[assembly: System.Web.UI.WebResource("kFrameWork.Styles.YOUR-CONTROL-NAME.js", "text/javascript")]
+	- in the code behind of your control > onPreRenderEvent
+			(this.Page as BasePage).AddJsReservation(UIUtil.GetAttachmentUrl(this, UIUtil.AttachmentType.js));

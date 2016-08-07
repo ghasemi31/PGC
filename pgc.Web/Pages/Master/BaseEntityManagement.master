@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Pages/Master/ControlPanel.master" AutoEventWireup="true" CodeFile="BaseEntityManagement.master.cs" Inherits="Pages_Master_BaseEntityManagement" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder runat="server" ID="head"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_content" Runat="Server">
+   
+    <asp:ScriptManager ScriptMode="Release" ID="scmMain" runat="server" AsyncPostBackTimeout="0"></asp:ScriptManager>
+    <asp:UpdatePanel ID="uplMain" runat="server">
+        <ContentTemplate>
+            <fieldset id="navigation">
+                <asp:ContentPlaceHolder runat="server" ID="cph_navigation"></asp:ContentPlaceHolder>
+            </fieldset>
+            <fieldset id="search">
+                <asp:ContentPlaceHolder runat="server" ID="cph_search"></asp:ContentPlaceHolder>
+            </fieldset>
+            <fieldset id="list">
+                <asp:ContentPlaceHolder runat="server" ID="cph_list"></asp:ContentPlaceHolder>
+            </fieldset>
+            <fieldset id="detail">
+                <asp:ContentPlaceHolder runat="server" ID="cph_detail"></asp:ContentPlaceHolder>        
+            </fieldset>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>
+

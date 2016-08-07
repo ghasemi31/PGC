@@ -1,0 +1,8 @@
+﻿#form fieldset table
+{
+    width:700px;
+}
+#form fieldset table tr td:nth-child(1)
+{
+    width:50px;
+}

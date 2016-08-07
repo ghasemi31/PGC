@@ -1,0 +1,214 @@
+
+#formElement input[type=checkbox]{
+	width: 58px;
+	height: 36px;
+	/*padding: 0 5px 0 0;*/
+	background: url(../mrDiziPix/formElement/checkbox.png) no-repeat;
+	display: block;
+	cursor:pointer;
+}
+#formElement .select {
+	position: absolute;
+	width: 150px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 35px;
+	color: #bd0019;
+	font: 12px/21px tahoma,sans-serif;
+	background: url(../mrDiziPix/formElement/select.png) no-repeat;
+	overflow: hidden;
+	cursor:pointer;
+	padding: 5px 20px 0px 20px;
+	text-align:center;
+
+}
+#formElement .styled{ font: 12px/21px tahoma,sans-serif; }
+
+#formElement input[type=text] ,input[type=password]{
+	background:url(../mrDiziPix/formTexrfbg.png) no-repeat;
+	border:none;
+	width:158px;
+	left: 247px;
+	cursor:text;
+	height: 26px;
+	color:#bd0019;
+	padding-left: 20px;
+	padding-right: 20px;
+	top: 46px;
+	padding-bottom: 15px;
+	font-size: 11px;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-top:1px;
+	clear:both;
+	float:right;
+	text-align:right;
+	outline:none;
+}
+#formElement select
+{
+    width:160px;
+    height:25px;
+    margin-right:15px;
+    margin-bottom:10px;
+    font-size: 11px;
+	font-family: Tahoma, Geneva, sans-serif;
+
+}
+#formElement input[type=button] , input[type=submit] , input[type=reset]{
+	background:url(../mrDiziPix/formElement/btn.png) no-repeat;
+	border:none;
+	width:88px;
+	height:36px;
+	cursor:pointer;
+	color:#bd0019;
+	font-size: 11px;
+	font-family: Tahoma, Geneva, sans-serif;
+	padding-bottom:3px;
+}
+
+
+#formElement .caption
+{
+    color:#2a2525;
+    text-align:left;
+    width:100px;
+    vertical-align:top;
+    line-height: 26px;
+}
+#formElement fieldset
+{
+    margin-bottom:15px;
+}
+#formElement textarea{
+	background: url(../mrDiziPix/formElement/multiText.png) no-repeat;
+	width:180px;
+	height:169px;
+	border:none;
+	cursor:text;
+	color:#bd0019;
+	padding-left: 20px;
+	padding-right: 30px;
+	/*top: 46px;*/
+	padding-top: 15px;
+	padding-bottom:15px;
+	font-size: 11px;
+	font-family: Tahoma, Geneva, sans-serif;
+	resize:none;
+	overflow:hidden;
+	text-align:right;
+	direction:rtl;
+    outline:none;
+}
+
+#formElement label{ float:right; text-align: left; clear:both; margin-left:10px; margin-top:10px; color:#bc1c1e; font-weight:bold; }
+
+#formElement fieldset{
+	border: 1px solid #bfbfbf; 
+	text-align: right;
+	float:right;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	padding-top:15px;
+}
+#formElement .user_legend
+{
+    color: #bd0019;   
+}
+
+#formElement .required
+{
+    color:#C00;
+    line-height:38px;
+}
+
+/* radio group --------------------------------------------------------*/
+#formElement .radio-container
+{
+    direction:rtl;
+    
+    margin:3px;
+    padding:7px;
+    min-width:180px;
+}
+#formElement .radio-container legend
+{
+    
+}
+#formElement .radio-container input[type="radio"] {
+    display:none;
+}
+
+#formElement .radio-container label {
+    display:inline-block;
+    background: url(../mrDiziPix/formElement/radio.png) right 0 no-repeat;
+    padding:0px 27px;
+    font: 12px/21px tahoma,sans-serif; 
+	height: 24px;
+	line-height:24px;
+	text-align:right;
+	margin:2px;
+	cursor:pointer;
+}
+#formElement .radio-container label:hover
+{
+    background: url(../mrDiziPix/formElement/radio.png) right -24px no-repeat;
+}
+#formElement .radio-container input[type="radio"]:checked + label {
+    background: url(../mrDiziPix/formElement/radio.png) right -48px no-repeat;
+}
+#formElement .radio-container input[type="radio"]:checked + label:hover
+{
+    background: url(../mrDiziPix/formElement/radio.png) right -72px no-repeat;
+}
+/* checkbox group --------------------------------------------------------*/
+#formElement .checkbox-container
+{
+    direction:rtl;
+    
+    margin:3px;
+    padding:7px;
+    min-width:180px;
+}
+#formElement .checkbox-container legend
+{
+    
+}
+#formElement .checkbox-container input[type="checkbox"] {
+    display:none;
+}
+
+#formElement .checkbox-container label {
+    display:inline-block;
+    background: url(../mrDiziPix/formElement/checkbox.png) right 0 no-repeat;
+    padding:0px 27px;
+    font: 12px/21px tahoma,sans-serif; 
+	height: 22px;
+	line-height:22px;
+	text-align:right;
+	margin:2px;
+	cursor:pointer;
+}
+#formElement .checkbox-container label:hover
+{
+    background: url(../mrDiziPix/formElement/checkbox.png) right -22px no-repeat;
+}
+#formElement .checkbox-container input[type="checkbox"]:checked + label {
+    background: url(../mrDiziPix/formElement/checkbox.png) right -44px no-repeat;
+}
+#formElement .checkbox-container input[type="checkbox"]:checked + label:hover
+{
+    background: url(../mrDiziPix/formElement/checkbox.png) right -66px no-repeat;
+}
+
+#formElement .rqurecontct
+{
+    margin-top: 7px;
+    float: right;
+    font-family:Tahoma;
+    color:#CC0000;
+    font-size:11px;    
+}
+.brnchinf
+{
+    position: absolute;
+top: 5px;
+}

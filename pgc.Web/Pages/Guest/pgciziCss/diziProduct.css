@@ -1,0 +1,416 @@
+
+#RawMaterials{
+	
+	width:925px;
+	height:203px;
+	z-index:23;
+	position:absolute;
+	left:-13px;
+	top: 282px;
+	padding:0;
+	margin:0;
+}
+
+#oRawMaterials 
+{
+    position:absolute;
+	top: 7px;
+	left:-18px;
+	width:925px;
+	height:203px;
+	z-index:23;
+	padding:0;
+	margin:0;
+}
+#whitedoc
+{
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-image: url(../mrDiziPix/overlayBg.png);
+    display: none;
+    z-index:3;
+}
+#overlay {
+	position:absolute;
+	width:100%;
+	z-index:22;
+	display: none;
+	background-color:Yellow;
+	
+}
+#menuItemHolder {
+	width:864px;
+	z-index:1;
+	margin:240px 0 0 18px;
+	background-repeat: repeat;
+	background-image: url(../mrDiziPix/typography.gif);
+	display:inline-block;
+	/* [disabled]margin-bottom: 600px; */
+	
+}
+#firstLine {
+	position:absolute;
+	width:865px;
+	height:75px;
+	z-index:1;
+	left: 0px;
+	top: -73px;
+	background: url(../mrDiziPix/firsLine.png) no-repeat;
+}
+
+/************************************************************/
+
+#tomato, #otomato {
+	position:absolute;
+	width:73px;
+	height:73px;
+	z-index:50;
+	left: 29px;
+	top: 8px;
+	background-image: url(../mrDiziPix/tomato.png);
+	cursor: pointer;
+}
+#spices, #ospices {
+	position:absolute;
+	width:149px;
+	height:126px;
+	z-index:50;
+	left: 617px;
+	top: 51px;
+	background-image: url(../mrDiziPix/spices.png);
+	cursor: pointer;
+}
+#meat,#omeat {
+	position:absolute;
+	width:199px;
+	height:118px;
+	z-index:50;
+	left: 253px;
+	top: 72px;
+	background-image: url(../mrDiziPix/meat.png);
+	cursor: pointer;
+}
+#potato, #opotato {
+	position:absolute;
+	width:80px;
+	height:125px;
+	z-index:50;
+	left: 485px;
+	top: 64px;
+	background-image: url(../mrDiziPix/potato.png);
+	cursor: pointer;
+}
+#bean, #obean {
+	position:absolute;
+	width:142px;
+	height:102px;
+	z-index:50;
+	left: 786px;
+	top: 6px;
+	background-image: url(../mrDiziPix/bean.png);
+	cursor: pointer;
+}
+#onion, #oonion{
+	position:absolute;
+	width:70px;
+	height:111px;
+	z-index:50;
+	background-image: url(../mrDiziPix/onion.png);
+	left: 139px;
+	top: 35px;
+	cursor: pointer;
+}
+.itemHolder {
+	position:relative;
+	width:830px;
+	height:247px;
+	z-index:1;
+	left: 35px;
+	background-image: url(../mrDiziPix/menuItem.png);
+	float: left;
+	margin-top: 15px;
+	background-repeat: repeat;
+	clear: both;
+}
+.itemName {
+	position:absolute;
+	width:235px;
+	height:23px;
+	z-index:1;
+	left: 228px;
+	top: 38px;
+	text-align: center;
+	color: #c33232;
+	/* [disabled]font-size:18px; */
+}
+
+
+.imgItem {
+	position:absolute;
+	width:176px;
+	height:156px;
+	z-index:2;
+	left: 25px;
+	top: 19px;
+	background-image: url(../mrDiziPix/dizi.png);
+}
+.explain {
+	position:absolute;
+	width:518px;
+	height:69px;
+	z-index:3;
+	left: 249px;
+	top: 77px;
+	padding-top: 10px;
+	padding-left: 12px;
+	text-align: justify;
+	direction: rtl;
+	color: #6B0E0C;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+
+/************************************************************/
+#beanNameLine, #obeanNameLine {
+	position:absolute;
+	width:167px;
+	height:167px;
+	z-index:7;
+	left: 780px;
+	background-image: url(../mrDiziPix/beanNameLine.png);
+	top: 1px;
+}
+#beanTitle, #obeanTitle  {
+	position:absolute;
+	width:143px;
+	height:18px;
+	z-index:6;
+	left: 23px;
+	top: 149px;
+}
+.rawFont, .orawFont{
+	
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	color: #7C141D;
+	text-align: center;
+	direction:rtl;	
+}
+#spicesNameLine, #ospicesNameLine {
+	position:absolute;
+	width:183px;
+	height:188px;
+	z-index:8;
+	left: 602px;
+	top: 43px;
+	background-image: url(../mrDiziPix/spicesNameLine.png);
+}
+#spicesTitle, #ospicesTitle {
+	position:absolute;
+	width:127px;
+	height:15px;
+	z-index:6;
+	left: 18px;
+	top: 169px;
+}
+#potatoNameLine, #opotatoNameLine {
+	position:absolute;
+	width:172px;
+	height:186px;
+	z-index:9;
+	left: 449px;
+	top: 54px;
+	background-image: url(../mrDiziPix/potatoNameLine.png);
+}
+#potatoTilte, #opotatoTilte {
+	position:absolute;
+	width:147px;
+	height:15px;
+	z-index:6;
+	left: 4px;
+	top: 167px;
+}
+#meatNameLine, #omeatNameLine {
+	position:absolute;
+	width:190px;
+	height:182px;
+	z-index:10;
+	left: 259px;
+	top: 65px;
+	background-image: url(../mrDiziPix/meatNameLine.png);
+}
+#meatTitle, #omeatTitle {
+	position:absolute;
+	width:151px;
+	height:17px;
+	z-index:6;
+	left: 26px;
+	top: 163px;
+}
+#onionNameLine, #oonionNameLine {
+	position:absolute;
+	width:172px;
+	height:182px;
+	z-index:11;
+	left: 89px;
+	top: 28px;
+	background-image: url(../mrDiziPix/onionNameLine.png);
+}
+#onionTitle, #oonionTitle {
+	position:absolute;
+	width:124px;
+	height:17px;
+	z-index:6;
+	left: 7px;
+	top: 162px;
+}
+#tomatoNameLine, #otomatoNameLine {
+	position:absolute;
+	width:123px;
+	height:135px;
+	z-index:12;
+	background-image: url(../mrDiziPix/tomatoNameLine.png);
+	left: -4px;
+	top: -1px;
+}
+#tomatoTitle, #otomatoTitle {
+	position:absolute;
+	width:138px;
+	height:16px;
+	z-index:6;
+	left: -2px;
+	top: 116px;
+}
+.rawmaterialhide{
+	display:none;
+}
+
+#beanOutline{
+	position:absolute;
+	width:162px;
+	height:469px;
+	z-index:50;
+	background-image: url(../mrDiziPix/beanOutline.png);
+	left: 781px;
+	top: 0px;
+	display: none;
+}
+#spicesOutline {
+	position:absolute;
+	width:195px;
+	height:472px;
+	z-index:50;
+	background-image: url(../mrDiziPix/spicesOutline.png);
+	left: 603px;
+	top: 42px;
+	display: none;
+}
+#beanExp {
+	position:absolute;
+	width:126px;
+	height:291px;
+	z-index:50;
+	left: 27px;
+	top: 158px;
+	color: #551119;
+	text-align:right;      
+}
+#spiceExp {
+	position:absolute;
+	width:166px;
+	height:326px;
+	z-index:50;
+	left: 21px;
+	top: 165px;
+	color: #551119;
+	text-align:right;
+}
+#potatoOutline {
+	position:absolute;
+	width:127px;
+	height:471px;
+	z-index:50;
+	left: 483px;
+	top: 55px;
+	background-image: url(../mrDiziPix/potatoOutline.png);
+	display: none;
+	cursor: pointer;
+}
+#potatoExp {
+	position:absolute;
+	width:94px;
+	height:296px;
+	z-index:50;
+	left: 25px;
+	top: 163px;
+	color: #551119;
+	text-align:right;
+}
+#meatOutline {
+	position:absolute;
+	width:186px;
+	height:470px;
+	z-index:50;
+	left: 260px;
+	top: 65px;
+	background-image: url(../mrDiziPix/meatOutline.png);
+	display: none;
+}
+#meatExp {
+	position:absolute;
+	width:160px;
+	height:302px;
+	z-index:50;
+	left: 16px;
+	top: 161px;
+	color: #551119;
+	text-align:right;
+}
+#onionOutline {
+	position:absolute;
+	width:123px;
+	height:478px;
+	z-index:50;
+	left: 128px;
+	top: 28px;
+	background-image: url(../mrDiziPix/onionOutline.png);
+	display: none;
+}
+#onionExp {
+	position:absolute;
+	width:110px;
+	height:290px;
+	z-index:50;
+	left: 5px;
+	top: 172px;
+	color: #551119;
+	direction: rtl;
+	text-align:right;
+}
+#tomatoOutline {
+	position:absolute;
+	width:114px;
+	height:462px;
+	z-index:50;
+	background-image: url(../mrDiziPix/tomatoOutline.png);
+	left: 16px;
+	top: -2px;
+	display: none;
+}
+#tomatoExp {
+	position:absolute;
+	width:100px;
+	height:296px;
+	z-index:50;
+	left: 6px;
+	top: 153px;
+	color: #551119;
+	text-align:right;
+	
+}
+
+
+
+

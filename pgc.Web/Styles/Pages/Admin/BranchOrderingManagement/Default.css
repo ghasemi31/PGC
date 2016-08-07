@@ -1,0 +1,87 @@
+﻿#form .tabBody td.caption
+{
+    background-image:none;
+    padding:0;
+}
+
+.detailtbl
+{
+    width:90%;
+    text-align:center;
+    background: rgba(240,240,240,.4);
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -khtml-border-radius:7px;
+    padding:10px;
+    margin: 20px auto;
+}
+.detailtbl table
+{
+    width: 97%;
+    background: rgba(240,240,240,.6);
+}
+.detailtbl .theader
+{
+    background-color: rgba(240,240,240,.5);
+    text-align:center;
+    height:15px;
+}
+.detailtbl td
+{
+    height:20px;
+    padding:0 8px;    
+}
+.detailtbl td:first-child
+{
+    text-align:right;
+}
+.detailtbl .theader td:first-child
+{
+    text-align:center;
+}
+.detailtbl td:nth-child(2)
+{
+    width:130px;
+}
+.totalspan
+{
+    width:110px;
+}
+.detailistttl
+{
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+.desc
+{
+    font-weight: bold;
+    font-size: 10px;
+    display: table-cell;
+}
+.footerRow
+{
+    background: rgba(240,240,240,.3);
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 30px;
+}
+#form #detail .scommands
+{
+    float:right;
+    margin-left:10px;
+    min-width:70px;
+}
+#form input[type="button"], #form input[type="submit"], #form a.btn 
+{
+    background-color: #a81c1b;
+    border: none;
+    color: White;
+    text-align: center;
+    line-height: 21px;
+    height: 21px;
+    padding: 0 7px 0 7px;
+    cursor: pointer;
+    margin: 0;
+}

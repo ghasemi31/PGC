@@ -1,0 +1,566 @@
+@charset "utf-8";
+/* مستر دیزی */
+
+body {
+	background-image: url(../mrDiziPix/mrbg.jpg);
+	background-color: #D5D6D8;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-repeat: no-repeat;
+}
+.fontClass{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	text-align: justify;
+	direction: rtl;
+}
+
+@font-face {
+  font-family: 'BMitra';
+  src: url('webfont/BMitra.eot?#') format('eot'),  /* IE6–8 */
+       url('webfont/BMitra.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('webfont/BMitra.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+ 
+}
+
+.BMitra {
+	font-family: BMitra, Arial, Helvetica, sans-serif;
+	 font-size: 20px;
+}
+
+.detail{ display:none; }
+
+#mrdizi {
+	position:relative;
+	width:905px;
+	height:1370px;
+	z-index:2;
+	margin: auto;
+}
+#menu {
+	position:absolute;
+	width:905px;
+	height:383px;
+	z-index:2;
+	background-image: url(../mrDiziPix/fantasticMenu.png);
+	background-repeat: no-repeat;
+}
+#head {
+	position:absolute;
+	width:100%;
+	height:26px;
+	z-index:1;
+	left: 0px;
+	top: 1px;
+	background-image: url(../mrDiziPix/bgtop.png);
+}
+#slogan {
+	position:absolute;
+	width:886px;
+	height:101px;
+	z-index:3;
+	top: 386px;
+	background-image: url(../mrDiziPix/slogan.png);
+	left: 46px;
+}
+#imageSlidingMrDizi {
+	position:absolute;
+	width:939px;
+	height:262px;
+	z-index:6;
+	left: -28px;
+	top: 456px;
+	background-image: url(../mrDiziPix/sliderBg.png);
+}
+#items {
+	position:absolute;
+	width:887px;
+	height:216px;
+	z-index:1;
+	left: 41px;
+	top: 35px;
+}
+#register {
+	position:absolute;
+	width:876px;
+	height:389px;
+	z-index:5;
+	left: 136px;
+	top: 271px;
+	background-image: url(../mrDiziPix/goshtkob.jpg);
+}
+#PiazOSabzi {
+	position:absolute;
+	width:100px;
+	height:88px;
+	z-index:2;
+	background-image: url(../mrDiziPix/piazosabzy.png);
+	background-repeat: no-repeat;
+	left: 859px;
+	top: 193px;
+}
+
+input[id="uname"], input[id="upass"], input[id="diziEnter"]{
+	position:absolute;
+	width:107px;
+	height:18px;
+	background: url('../mrDiziPix/regfilled.gif') no-repeat left top;
+	border:none;
+	font-size:7pt;
+	padding-bottom:5px;
+	text-align: center;
+	color: #fec10e;
+	left: 247px;
+	top: 289px;
+}
+
+input[id="upass"]{
+	left: 247px;
+	top: 317px;
+}
+
+input[id="diziEnter"]{
+	width:60px;
+	height:20px;
+	background: url('../mrDiziPix/diziEnter.gif') no-repeat left top;
+	left: 292px;
+	top: 344px;
+	cursor: pointer;
+}
+
+#regDetail {
+	position:absolute;
+	width:113px;
+	height:34px;
+	z-index:1;
+	left: 239px;
+	top: 371px;
+	font-size: 7pt;
+}
+#headline_news {
+	position:absolute;
+	width:742px;
+	height:62px;
+	z-index:6;
+	left: 80px;
+	top: 1181px;
+	background-image: url(../mrDiziPix/newsBar.gif);
+}
+#headlines {
+	position:absolute;
+	width:562px;
+	height:14px;
+	z-index:1;
+	left: 125px;
+	top: 9px;
+	text-align: right;
+	color: #fff;
+	font-size: 8pt;
+}
+#footer {
+	position:absolute;
+	width:627px;
+	height:56px;
+	z-index:7;
+	left: 54px;
+	top: 1254px;
+	background-image: url(../mrDiziPix/footer.gif);
+	padding-right: 50px;
+	color: #8a8a8a;
+	font-size: 8pt;
+	text-align: center;
+	padding-left: 60px;
+	line-height: 11pt;
+	padding-top: 5px;
+	padding-bottom: 12px;
+}
+
+#footer a:link{
+	color: #8a8a8a;
+	text-decoration:none;
+
+} 
+
+#footer a:hover{
+	color: #5e040c;
+	border-bottom: 1px dashed #fec10e;
+	padding-bottom:2px;
+	
+} 
+
+#footer a:visited{
+	color: #8a8a8a;
+	text-decoration:none;
+	
+}
+
+#footer a:active{
+	color: #5e040c;
+	border-bottom: 1px dashed #3d6453;
+	padding-bottom:2px;
+}
+
+#online_services {
+	position:absolute;
+	width:84px;
+	height:22px;
+	z-index:1;
+	left: 155px;
+	top: 162px;
+}
+#product {
+	position:absolute;
+	width:60px;
+	height:17px;
+	z-index:2;
+	left: 221px;
+	top: 235px;
+}
+#contact {
+	position:absolute;
+	width:49px;
+	height:29px;
+	z-index:3;
+	left: 317px;
+	top: 256px;
+}
+#agance {
+	position:absolute;
+	width:79px;
+	height:37px;
+	z-index:4;
+	left: 541px;
+	top: 106px;
+}
+#dashboard {
+	position:absolute;
+	width:89px;
+	height:16px;
+	z-index:5;
+	left: 621px;
+	top: 186px;
+}
+#quality {
+	position:absolute;
+	width:72px;
+	height:27px;
+	z-index:6;
+	left: 620px;
+	top: 250px;
+}
+
+body {
+	background-image: url(../mrDiziPix/mrbgOther.jpg);
+}
+#mrdizi {
+	z-index:1;
+	
+}
+#head { z-index:2; }
+
+#menuOtherpage {
+	position:relative;
+	width:927px;
+	height:290px;
+	z-index:1;
+	background-image: url(../mrDiziPix/fantasticMenuOther.png);
+	top: 1px;
+	left: -11px;
+	/* [disabled]float: right; */
+	margin: auto;
+}
+#foodSmoke {
+	position:absolute;
+	width:765px;
+	height:113px;
+	z-index:3;
+	background-image: url(../mrDiziPix/foodsmoke.png);
+	left: 405px;
+	top: -2px;
+}
+#RawMaterials, #oRawMaterials {
+	position:relative;
+	width:925px;
+	height:203px;
+	z-index:2;
+	left: -13px;
+	margin: auto;
+}
+#tomato, #otomato {
+	position:absolute;
+	width:73px;
+	height:73px;
+	z-index:1;
+	left: 29px;
+	top: 8px;
+	background-image: url(../mrDiziPix/tomato.png);
+}
+#spices, #ospices {
+	position:absolute;
+	width:149px;
+	height:126px;
+	z-index:2;
+	left: 617px;
+	top: 51px;
+	background-image: url(../mrDiziPix/spices.png);
+}
+#meat,#omeat {
+	position:absolute;
+	width:199px;
+	height:118px;
+	z-index:3;
+	left: 253px;
+	top: 72px;
+	background-image: url(../mrDiziPix/meat.png);
+}
+#potato, #opotato {
+	position:absolute;
+	width:80px;
+	height:125px;
+	z-index:4;
+	left: 485px;
+	top: 64px;
+	background-image: url(../mrDiziPix/potato.png);
+}
+#bean, #obean {
+	position:absolute;
+	width:142px;
+	height:102px;
+	z-index:5;
+	left: 786px;
+	top: 6px;
+	background-image: url(../mrDiziPix/bean.png);
+}
+#onion, #oonion{
+	position:absolute;
+	width:70px;
+	height:111px;
+	z-index:6;
+	background-image: url(../mrDiziPix/onion.png);
+	left: 139px;
+	top: 35px;
+}
+#apDiv1 {
+	position:absolute;
+	width:968px;
+	height:202px;
+	z-index:1;
+	left: -23px;
+	top: 276px;
+	background-image: url(../mrDiziPix/focus.png);
+}
+#menuItemHolder {
+	position:relative;
+	width:864px;
+	z-index:3;
+	left: 18px;
+	top: 0px;
+	height: 2500px;
+	background-repeat: repeat;
+	background-image: url(../mrDiziPix/typography.gif);
+}
+.itemHolder {
+	position:relative;
+	width:830px;
+	height:247px;
+	z-index:1;
+	left: 35px;
+	background-image: url(../mrDiziPix/menuItem.png);
+	float: left;
+	margin-top: 15px;
+}
+.itemName {
+	position:absolute;
+	width:235px;
+	height:23px;
+	z-index:1;
+	left: 228px;
+	top: 38px;
+	text-align: center;
+	color: #c33232;
+	/* [disabled]font-size:18px; */
+}
+
+
+.imgItem {
+	position:absolute;
+	width:176px;
+	height:156px;
+	z-index:2;
+	left: 25px;
+	top: 19px;
+	background-image: url(../mrDiziPix/diziTond.png);
+}
+.explain {
+	position:absolute;
+	width:518px;
+	height:69px;
+	z-index:3;
+	left: 249px;
+	top: 89px;
+	padding-top: 10px;
+	padding-left: 12px;
+	text-align: justify;
+	direction: rtl;
+}
+#footerEnd {
+	position:relative;
+	width:1130px;
+	height:490px;
+	z-index:4;
+	left: -120px;
+	background-image: url(../mrDiziPix/footerend.png);
+	float: left;
+	margin-bottom: 100px;
+}
+#firstLine {
+	position:absolute;
+	width:865px;
+	height:75px;
+	z-index:2;
+	left: 0px;
+	top: 0px;
+	background: url(../mrDiziPix/firsLine.png) no-repeat;
+}
+
+
+/************************************************************/
+#beanNameLine, #obeanNameLine {
+	position:absolute;
+	width:167px;
+	height:167px;
+	z-index:7;
+	left: 780px;
+	background-image: url(../mrDiziPix/beanNameLine.png);
+	top: 1px;
+}
+#beanTitle, #obeanTitle  {
+	position:absolute;
+	width:143px;
+	height:18px;
+	z-index:1;
+	left: 23px;
+	top: 149px;
+}
+.rawFont, .orawFont{
+	
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	color: #7C141D;
+	text-align: center;
+	direction:rtl;	
+}
+
+
+
+#spicesNameLine, #ospicesNameLine {
+	position:absolute;
+	width:183px;
+	height:188px;
+	z-index:8;
+	left: 602px;
+	top: 43px;
+	background-image: url(../mrDiziPix/spicesNameLine.png);
+}
+#spicesTitle, #ospicesTitle {
+	position:absolute;
+	width:127px;
+	height:15px;
+	z-index:1;
+	left: 18px;
+	top: 169px;
+}
+#potatoNameLine, #opotatoNameLine {
+	position:absolute;
+	width:172px;
+	height:186px;
+	z-index:9;
+	left: 449px;
+	top: 54px;
+	background-image: url(../mrDiziPix/potatoNameLine.png);
+}
+#potatoTilte, #opotatoTilte {
+	position:absolute;
+	width:147px;
+	height:15px;
+	z-index:1;
+	left: 4px;
+	top: 167px;
+}
+#meatNameLine {
+	position:absolute;
+	width:190px;
+	height:182px;
+	z-index:10;
+	left: 259px;
+	top: 65px;
+	background-image: url(../mrDiziPix/meatNameLine.png);
+}
+#meatTitle {
+	position:absolute;
+	width:151px;
+	height:17px;
+	z-index:1;
+	left: 26px;
+	top: 163px;
+}
+#onionNameLine {
+	position:absolute;
+	width:172px;
+	height:182px;
+	z-index:11;
+	left: 89px;
+	top: 28px;
+	background-image: url(../mrDiziPix/onionNameLine.png);
+}
+#onionTitle {
+	position:absolute;
+	width:124px;
+	height:17px;
+	z-index:1;
+	left: 7px;
+	top: 162px;
+}
+#tomatoNameLine {
+	position:absolute;
+	width:123px;
+	height:135px;
+	z-index:12;
+	background-image: url(../mrDiziPix/tomatoNameLine.png);
+	left: -4px;
+	top: -1px;
+}
+#tomatoTitle {
+	position:absolute;
+	width:138px;
+	height:16px;
+	z-index:1;
+	left: -2px;
+	top: 116px;
+}
+.rawmaterialhide{
+	display:none;
+}
+
+#beanOutline {
+	position:absolute;
+	width:162px;
+	height:469px;
+	z-index:4;
+	background-image: url(../mrDiziPix/beanOutline.png);
+	left: 781px;
+	top: 0px;
+}
+
+#overlay {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:50;
+	background-color: #FFF;
+	opacity: 0.8;
+	display: none;
+
+}

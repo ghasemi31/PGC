@@ -1,0 +1,24 @@
+﻿.desc
+{
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -khtml-border-radius:7px;
+    border:1px solid #fff;
+    padding:5px;
+    margin: 0 10px 10px 10px;
+}
+#form fieldset legend
+{
+    margin-bottom:10px;
+}
+fieldset > div
+{
+    margin:0 10px 10px 0;
+}
+.banklkp
+{
+    width:600px;
+}
+
+

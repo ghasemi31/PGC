@@ -1,0 +1,266 @@
+﻿
+#game-slider {
+    direction: ltr;
+}
+
+
+.game-logo-item {
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+    .game-logo-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+#game-slider .owl-nav div {
+    position: absolute;
+}
+
+#game-slider .owl-prev {
+    left: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+}
+
+#game-slider .owl-next {
+    right: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+}
+
+#game-slider .owl-nav div:hover {
+    color: #1704c5;
+}
+/*****************************************/
+.pgc-title h1 {
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+.pgc-title hr {
+    margin: 5px !important;
+    width: 200px;
+    border-top: solid 1px #31708f;
+}
+
+#news-slider {
+    border: solid 1px rgba(0,0,0,.05);
+    padding: 5px;
+    direction: ltr;
+}
+
+.news-item {
+    position: relative;
+    cursor: url('/assets/Guest/Image/hand-pan-icon.png'),auto;
+}
+
+    .news-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+.news-detail {
+    width: 100%;
+    background-color: rgba(0,0,0,.4);
+    position: absolute;
+    direction: rtl;
+    font-size: 13px;
+    color: #fff;
+    padding: 15px 20px 15px;
+    letter-spacing: .5px;
+    bottom: -150px;
+    transition: bottom .35s ease-in .35s,background-color .35s ease,color .35s ease;
+    -webkit-transition: bottom .35s ease-in .35s,background-color .35s ease,color .35s ease;
+}
+
+#news-slider .owl-item.active > .news-item > a > article.news-detail {
+    bottom: 0px;
+}
+
+.news-detail:hover {
+    background-color: rgba(49,112,143,.5);
+}
+
+.news-detail h4 {
+    color: #fff !important;
+}
+
+#news-slider .owl-pagination {
+    position: relative;
+    margin-top: -30px;
+    float: left;
+}
+
+#news-slider .owl-page span {
+    border-radius: 0 !important;
+    width: 9px;
+    height: 9px;
+}
+
+#news-slider .owl-controls {
+    margin-top: 0 !important;
+}
+
+/*********************************/
+#supporter-slider {
+    direction: ltr;
+}
+
+
+.supporter-slider-item {
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.supporter-slider img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#supporter-slider .owl-nav div {
+    position: absolute;
+}
+
+#supporter-slider .owl-prev {
+    left: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+    display: none;
+}
+
+#supporter-slider .owl-next {
+    right: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+    display: none;
+}
+
+#supporter-slider .owl-nav div i:hover {
+    color: #1704c5;
+}
+
+#supporter-slider:hover .owl-next, #supporter-slider:hover .owl-prev {
+    display: block;
+}
+/**********sponsor slider********************/
+#sponsor-slider {
+    direction: ltr;
+}
+
+
+.sponsor-slider-item {
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.sponsor-slider img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#sponsor-slider .owl-nav div {
+    position: absolute;
+}
+
+#sponsor-slider .owl-prev {
+    left: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+    display: none;
+}
+
+#sponsor-slider .owl-next {
+    right: 0;
+    top: 40%;
+    color: #e6e4e4;
+    background: none;
+    font-size: 2em;
+    display: none;
+}
+
+#sponsor-slider .owl-nav div i:hover {
+    color: #1704c5;
+}
+
+#sponsor-slider:hover .owl-next, #sponsor-slider:hover .owl-prev {
+    display: block;
+}
+
+/**************/
+#pic-fixed {
+    background-image: url(../Image/GamePoster/7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/***********************************BEGIN MAIN SLIDER**************************************/
+#main-slider {
+    position: relative;
+    height: 100%;
+    direction:ltr;
+}
+
+    #main-slider  div:not(.owl-controls) {
+        height: 100%;
+    }
+
+    #main-slider .mainSlider-item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: block;
+    }
+
+   #main-slider .owl-controls {
+        position: absolute;
+        top: 93%;
+        left: 0;
+        right: 0;
+    }
+
+        #main-slider .owl-controls .owl-buttons div {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: inline-block;
+            zoom: 1;
+            margin: 0;
+            width: 50px;
+            height: 30px;
+            line-height: 25px;
+            text-align: center;
+            font-size: .9em;
+            border-radius: 3px;
+            color: #FFF;
+            background: #000;
+            opacity: .6;
+            text-transform: capitalize;
+        }
+/***********************************END MAIN SLIDER**************************************/

@@ -1,0 +1,92 @@
+﻿#sm-icon
+{
+    width:98px;
+    height:172px;
+    background:url('images/sm-icon.png') no-repeat;
+    position:absolute;
+    z-index:100;
+    display:block;
+    cursor:pointer;
+    left:-23px;
+    top:4px;
+}
+#sm
+{
+    background:url('images/sm-bg.png') no-repeat;
+    width:851px;
+    height:300px;
+    position:absolute;
+    z-index:100;
+    display:block;
+    left:-25px;
+    font-family:Tahoma;
+    font-size:11px;
+    line-height:20px;
+    text-align:right;
+    padding:23px 63px 63px 40px;
+    color:#531118;
+    display:none;
+}
+#sm ul
+{
+    width:160px;
+    float:right;
+    padding:0;
+    margin:10px 2px 0px 2px;
+    
+}
+#sm ul li.heading
+{
+    background:url('images/sm-ul-bg.png') no-repeat right top;
+    padding-right:30px;
+    height:25px;
+    line-height:25px;
+    display:block;
+    margin-bottom:10px;
+    font-size:larger;
+    font-weight:bold;
+}
+#sm li
+{
+    padding-right:5px;
+    display:block;
+}
+#sm li a
+{
+    color:#551119;
+    text-decoration:none;
+}
+#sm li a:hover
+{
+    color:#e5450d;
+}
+/* ----- socials ------------------- */
+#sm-social
+{
+    width:150px;
+    position:absolute;
+    top:330px;
+    display:inline-block;
+    left:50px;   
+}
+#sm-social img
+{
+    position:relative;
+    float:left;
+    margin:2px;
+    border:none;
+}
+#sm-social img:hover
+{
+    opacity:0.6;
+    filter:Alpha(opacity=60);
+}
+
+li.see-all
+{
+    margin-top:20px;
+}
+#sm li.see-all > a
+{
+    text-decoration:underline;
+}

@@ -1,0 +1,30 @@
+﻿#form fieldset#detail table tr td:first-child
+{
+    width:155px;
+}
+#form fieldset#detail table tr td.control .html
+{
+    width:550px;    
+    display:inline-block;
+    /*background-color: #F8F8F8;*/
+    border: none;
+    color:#666;
+}
+#form fieldset#detail table tr td.control.html
+{
+}
+
+#form fieldset#detail table tr td a:visited,
+#form fieldset#detail table tr td a
+{
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#form fieldset#detail table tr td a:hover
+{
+    color: #666;
+    font-style: normal;
+    font-style: italic;
+}
+

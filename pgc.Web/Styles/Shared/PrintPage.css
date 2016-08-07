@@ -1,0 +1,79 @@
+﻿@font-face {
+  font-family: 'BMitra';
+  src: url('../../../../Pages/Guest/pgciziCss/webfont/BMitra.eot?#') format('eot'),  /* IE6–8 */
+       url('../../../../Pages/Guest/pgciziCss/webfont/BMitra.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../../../../Pages/Guest/pgciziCss/webfont/BMitra.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+        
+}
+table
+{
+    width:795px;
+    direction:rtl;
+    font-family: tahoma;
+    font-size: 12px;
+    border: solid 1px gray;
+    margin:auto;
+}
+        
+.thead
+{
+    -webkit-print-color-adjust:exact;
+    background-color: #ededed;
+    height: 25px;
+    height:30px;
+    text-align:right;
+}
+        
+td 
+{ 
+    height:30px; 
+    border-top:1px solid gray;
+}
+        
+.row  { }
+        
+.altrow 
+    {
+        -webkit-print-color-adjust:exact; 
+        background-color:#ededed; 
+    }
+        
+.ftr
+{
+    -webkit-print-color-adjust:exact;
+    font-weight:bold;
+    background-color: #dedede;
+    
+}
+
+.ftrtxt { }    
+            
+.trcode  
+{
+    padding-left:8px; 
+}
+
+.ordsts  
+{
+    font-weight:bold; 
+}
+        
+table  
+{
+    page-break-after: always; margin-top:30px; 
+}
+
+body form div table.lsttbl  
+{
+    page-break-after: avoid; 
+}
+        
+td:first-child
+{
+    padding-right:5px;
+}
+
+.bold
+{
+    font-weight:bold; font-size:11px;
+}

@@ -1,0 +1,8 @@
+﻿#form table tr td:nth-child(even)
+{
+    width:250px;
+}
+#form table tr td:nth-child(odd)
+{
+width:180px;
+}
