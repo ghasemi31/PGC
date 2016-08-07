@@ -21,8 +21,8 @@ public partial class Pages_Admin_News_Detail : BaseDetailControl<News>
         Data.PageTitle = txtPageTitle.Text;
         Data.PageDescription = txtPageDescription.Text;
         Data.PageKeywords = txtPageKeywords.Text.Replace("\n", ", ");
-        Data.Gallery_ID = lkpGallery.GetSelectedValue<long>();
-        Data.IsDisplayGallery = Convert.ToBoolean(chkIsDisplayGallery.Checked);
+        //Data.Gallery_ID = lkpGallery.GetSelectedValue<long>();
+        //Data.IsDisplayGallery = Convert.ToBoolean(chkIsDisplayGallery.Checked);
         //Data.Status = chkStatus.Checked ? (int)NewsStatus.Show : (int)NewsStatus.Hide;
         Data.Status = (int)lkpStatus.GetSelectedValue<NewsStatus>();
         Data.NewsPersianDate = pdpDate.PersianDate;
@@ -40,8 +40,8 @@ public partial class Pages_Admin_News_Detail : BaseDetailControl<News>
         txtPageTitle.Text = Data.PageTitle;
         txtPageDescription.Text = Data.PageDescription;
         txtPageKeywords.Text = Data.PageKeywords.Replace(", ", "\n");
-        lkpGallery.SetSelectedValue(Data.Gallery_ID);
-        chkIsDisplayGallery.Checked = Data.IsDisplayGallery;
+        //lkpGallery.SetSelectedValue(Data.Gallery_ID);
+        //chkIsDisplayGallery.Checked = Data.IsDisplayGallery;
         //chkStatus.Checked = (Data.Status == (int)NewsStatus.Show) ? true : false;
         lkpStatus.SetSelectedValue(Data.Status);
         pdpDate.PersianDate = Data.NewsPersianDate;
