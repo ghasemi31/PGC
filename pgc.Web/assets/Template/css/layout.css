@@ -33,13 +33,15 @@ Description: layout styles
 }
 
 .width100 {
-    width: 100%;
+    width: 100% !important;
 }
 
 .margin-left-right-0 {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
+
+
 
 /* #Custom Reset (on top of normalize in bootstrap)
 ================================================== */
