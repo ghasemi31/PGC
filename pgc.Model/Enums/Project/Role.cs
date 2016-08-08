@@ -12,7 +12,7 @@ namespace pgc.Model.Enums
         User = 1,
         [PersianTitle("مدیر سیستم")]
         Admin = 2,
-        [PersianTitle("نماینده")]
+        [PersianTitle("مدیر بازی")]
         Agent = 3
     }
 }

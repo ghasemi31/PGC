@@ -4,386 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="pgcModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="pgcModelStoreContainer">
-          <EntitySet Name="Advertisement" EntityType="pgcModel.Store.Advertisement" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="AdvPage" EntityType="pgcModel.Store.AdvPage" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Article" EntityType="pgcModel.Store.Article" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Branch" EntityType="pgcModel.Store.Branch" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="BranchContact" EntityType="pgcModel.Store.BranchContact" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="BranchPic" EntityType="pgcModel.Store.BranchPic" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="BranchRequest" EntityType="pgcModel.Store.BranchRequest" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Circular" EntityType="pgcModel.Store.Circular" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Circular_Branch" EntityType="pgcModel.Store.Circular_Branch" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Comment" EntityType="pgcModel.Store.Comment" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="DynPage" EntityType="pgcModel.Store.DynPage" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Faq" EntityType="pgcModel.Store.Faq" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Gallery" EntityType="pgcModel.Store.Gallery" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="GalleryPic" EntityType="pgcModel.Store.GalleryPic" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Heading" EntityType="pgcModel.Store.Heading" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Help" EntityType="pgcModel.Store.Help" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="IndexSlide" EntityType="pgcModel.Store.IndexSlide" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Lottery" EntityType="pgcModel.Store.Lottery" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="LotteryDetail" EntityType="pgcModel.Store.LotteryDetail" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="LotteryWiner" EntityType="pgcModel.Store.LotteryWiner" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="MainMenu" EntityType="pgcModel.Store.MainMenu" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="MainSlider" EntityType="pgcModel.Store.MainSlider" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="News" EntityType="pgcModel.Store.News" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Poll" EntityType="pgcModel.Store.Poll" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="PollChoise" EntityType="pgcModel.Store.PollChoise" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="PollResult" EntityType="pgcModel.Store.PollResult" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="Report" EntityType="pgcModel.Store.Report" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="SideMenuCat" EntityType="pgcModel.Store.SideMenuCat" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="SideMenuItem" EntityType="pgcModel.Store.SideMenuItem" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="SiteMapCat" EntityType="pgcModel.Store.SiteMapCat" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="SiteMapItem" EntityType="pgcModel.Store.SiteMapItem" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="SocialIcon" EntityType="pgcModel.Store.SocialIcon" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="UserComment" EntityType="pgcModel.Store.UserComment" store:Type="Tables" Schema="CMS" />
-          <EntitySet Name="AppSetting" EntityType="pgcModel.Store.AppSetting" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="ExceptionLog" EntityType="pgcModel.Store.ExceptionLog" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="OccuredSystemEvent" EntityType="pgcModel.Store.OccuredSystemEvent" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="Option" EntityType="pgcModel.Store.Option" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="OptionCategory" EntityType="pgcModel.Store.OptionCategory" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="OptionLookup" EntityType="pgcModel.Store.OptionLookup" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="OptionLookupDetail" EntityType="pgcModel.Store.OptionLookupDetail" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="PrivateNo" EntityType="pgcModel.Store.PrivateNo" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="SystemEvent" EntityType="pgcModel.Store.SystemEvent" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="SystemEventAction" EntityType="pgcModel.Store.SystemEventAction" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="SystemEventVariable" EntityType="pgcModel.Store.SystemEventVariable" store:Type="Tables" Schema="Configuration" />
-          <EntitySet Name="BankAccount" EntityType="pgcModel.Store.BankAccount" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="Branch_BranchOrderTitle" EntityType="pgcModel.Store.Branch_BranchOrderTitle" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchFinanceLog" EntityType="pgcModel.Store.BranchFinanceLog" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchLackOrder" EntityType="pgcModel.Store.BranchLackOrder" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchLackOrderDetail" EntityType="pgcModel.Store.BranchLackOrderDetail" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchOrder" EntityType="pgcModel.Store.BranchOrder" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchOrderDetail" EntityType="pgcModel.Store.BranchOrderDetail" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchOrderShipmentState" EntityType="pgcModel.Store.BranchOrderShipmentState" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchOrderTitle" EntityType="pgcModel.Store.BranchOrderTitle" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchOrderTitleGroup" EntityType="pgcModel.Store.BranchOrderTitleGroup" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchPayment" EntityType="pgcModel.Store.BranchPayment" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchReturnOrder" EntityType="pgcModel.Store.BranchReturnOrder" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchReturnOrderDetail" EntityType="pgcModel.Store.BranchReturnOrderDetail" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BranchTransaction" EntityType="pgcModel.Store.BranchTransaction" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="BuyBasket" EntityType="pgcModel.Store.BuyBasket" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="Material" EntityType="pgcModel.Store.Material" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="OnlinePayment" EntityType="pgcModel.Store.OnlinePayment" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="Order" EntityType="pgcModel.Store.Order" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="OrderDetail" EntityType="pgcModel.Store.OrderDetail" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="Product" EntityType="pgcModel.Store.Product" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="Product_Material" EntityType="pgcModel.Store.Product_Material" store:Type="Tables" Schema="Finance" />
-          <EntitySet Name="EmailSendAttempt" EntityType="pgcModel.Store.EmailSendAttempt" store:Type="Tables" Schema="Messaging" />
-          <EntitySet Name="ReceivedMessage" EntityType="pgcModel.Store.ReceivedMessage" store:Type="Tables" Schema="Messaging" />
-          <EntitySet Name="SentEmailBlock" EntityType="pgcModel.Store.SentEmailBlock" store:Type="Tables" Schema="Messaging" />
-          <EntitySet Name="SentSMS" EntityType="pgcModel.Store.SentSMS" store:Type="Tables" Schema="Messaging" />
-          <EntitySet Name="SMSSendAttempt" EntityType="pgcModel.Store.SMSSendAttempt" store:Type="Tables" Schema="Messaging" />
-          <EntitySet Name="AccessLevel" EntityType="pgcModel.Store.AccessLevel" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="Feature" EntityType="pgcModel.Store.Feature" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="MenuCategory" EntityType="pgcModel.Store.MenuCategory" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="MenuItem" EntityType="pgcModel.Store.MenuItem" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="PanelPage" EntityType="pgcModel.Store.PanelPage" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="Permission" EntityType="pgcModel.Store.Permission" store:Type="Tables" Schema="Security" />
-          <EntitySet Name="City" EntityType="pgcModel.Store.City" store:Type="Tables" Schema="UserManagement" />
-          <EntitySet Name="Province" EntityType="pgcModel.Store.Province" store:Type="Tables" Schema="UserManagement" />
-          <EntitySet Name="Sample" EntityType="pgcModel.Store.Sample" store:Type="Tables" Schema="UserManagement" />
-          <EntitySet Name="User" EntityType="pgcModel.Store.User" store:Type="Tables" Schema="UserManagement" />
-          <EntitySet Name="UserMessage" EntityType="pgcModel.Store.UserMessage" store:Type="Tables" Schema="UserManagement" />
-          <EntitySet Name="OnlinePaymentList" EntityType="pgcModel.Store.OnlinePaymentList" store:Type="Views" store:Schema="Finance" store:Name="OnlinePaymentList">
-            <DefiningQuery>SELECT 
-      [OnlinePaymentList].[ID] AS [ID], 
-      [OnlinePaymentList].[TransactionState] AS [TransactionState], 
-      [OnlinePaymentList].[RefNum] AS [RefNum], 
-      [OnlinePaymentList].[Order_ID] AS [Order_ID], 
-      [OnlinePaymentList].[ResNum] AS [ResNum], 
-      [OnlinePaymentList].[Amount] AS [Amount], 
-      [OnlinePaymentList].[ResultTransaction] AS [ResultTransaction], 
-      [OnlinePaymentList].[Date] AS [Date], 
-      [OnlinePaymentList].[PersianDate] AS [PersianDate]
-      FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_AdvPage_Advertisement" Association="pgcModel.Store.FK_AdvPage_Advertisement">
-            <End Role="Advertisement" EntitySet="Advertisement" />
-            <End Role="AdvPage" EntitySet="AdvPage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AdvPage_PanelPage" Association="pgcModel.Store.FK_AdvPage_PanelPage">
-            <End Role="PanelPage" EntitySet="PanelPage" />
-            <End Role="AdvPage" EntitySet="AdvPage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Branch_BranchOrderTitle_Branch" Association="pgcModel.Store.FK_Branch_BranchOrderTitle_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Branch_BranchOrderTitle_BranchOrderTitle" Association="pgcModel.Store.FK_Branch_BranchOrderTitle_BranchOrderTitle">
-            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
-            <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchComment_Branch" Association="pgcModel.Store.FK_BranchComment_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchContact" EntitySet="BranchContact" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchLackOrder_BranchOrder" Association="pgcModel.Store.FK_BranchLackOrder_BranchOrder">
-            <End Role="BranchOrder" EntitySet="BranchOrder" />
-            <End Role="BranchLackOrder" EntitySet="BranchLackOrder" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchLackOrderDetail_BranchLackOrder" Association="pgcModel.Store.FK_BranchLackOrderDetail_BranchLackOrder">
-            <End Role="BranchLackOrder" EntitySet="BranchLackOrder" />
-            <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrder_Branch" Association="pgcModel.Store.FK_BranchOrder_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchOrder" EntitySet="BranchOrder" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrder_BranchOrderShipmentStatus" Association="pgcModel.Store.FK_BranchOrder_BranchOrderShipmentStatus">
-            <End Role="BranchOrderShipmentState" EntitySet="BranchOrderShipmentState" />
-            <End Role="BranchOrder" EntitySet="BranchOrder" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrderLog_Branch" Association="pgcModel.Store.FK_BranchOrderLog_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLog" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrderLog_User" Association="pgcModel.Store.FK_BranchOrderLog_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLog" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrderTitle_BranchOrderTitleGroup" Association="pgcModel.Store.FK_BranchOrderTitle_BranchOrderTitleGroup">
-            <End Role="BranchOrderTitleGroup" EntitySet="BranchOrderTitleGroup" />
-            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchPayment_BankAccount" Association="pgcModel.Store.FK_BranchPayment_BankAccount">
-            <End Role="BankAccount" EntitySet="BankAccount" />
-            <End Role="BranchPayment" EntitySet="BranchPayment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchPic_Branch" Association="pgcModel.Store.FK_BranchPic_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchPic" EntitySet="BranchPic" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchReturnOrder_Branch" Association="pgcModel.Store.FK_BranchReturnOrder_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchReturnOrder" EntitySet="BranchReturnOrder" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchReturnOrderDetail_BranchReturnOrder" Association="pgcModel.Store.FK_BranchReturnOrderDetail_BranchReturnOrder">
-            <End Role="BranchReturnOrder" EntitySet="BranchReturnOrder" />
-            <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BuyBasket_Product" Association="pgcModel.Store.FK_BuyBasket_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="BuyBasket" EntitySet="BuyBasket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BuyBasket_User" Association="pgcModel.Store.FK_BuyBasket_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="BuyBasket" EntitySet="BuyBasket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Circular_Branch_Branch" Association="pgcModel.Store.FK_Circular_Branch_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="Circular_Branch" EntitySet="Circular_Branch" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Circular_Branch_Circular" Association="pgcModel.Store.FK_Circular_Branch_Circular">
-            <End Role="Circular" EntitySet="Circular" />
-            <End Role="Circular_Branch" EntitySet="Circular_Branch" />
-          </AssociationSet>
-          <AssociationSet Name="FK_City_Province" Association="pgcModel.Store.FK_City_Province">
-            <End Role="Province" EntitySet="Province" />
-            <End Role="City" EntitySet="City" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comment_Branch" Association="pgcModel.Store.FK_Comment_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="Comment" EntitySet="Comment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comment_Product" Association="pgcModel.Store.FK_Comment_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Comment" EntitySet="Comment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.Store.FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle">
-            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
-            <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrder" Association="pgcModel.Store.FK_Finance_BranchOrderDetail_Finance_BranchOrder">
-            <End Role="BranchOrder" EntitySet="BranchOrder" />
-            <End Role="BranchOrderDetail" EntitySet="BranchOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.Store.FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle">
-            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
-            <End Role="BranchOrderDetail" EntitySet="BranchOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.Store.FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle">
-            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
-            <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_Payment_Branch" Association="pgcModel.Store.FK_Finance_Payment_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchPayment" EntitySet="BranchPayment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Finance_Transaction_Branch" Association="pgcModel.Store.FK_Finance_Transaction_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="BranchTransaction" EntitySet="BranchTransaction" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GalleryPic_Gallery" Association="pgcModel.Store.FK_GalleryPic_Gallery">
-            <End Role="Gallery" EntitySet="Gallery" />
-            <End Role="GalleryPic" EntitySet="GalleryPic" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LotteryDetail_Lottery" Association="pgcModel.Store.FK_LotteryDetail_Lottery">
-            <End Role="Lottery" EntitySet="Lottery" />
-            <End Role="LotteryDetail" EntitySet="LotteryDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LotteryWiner_Lottery" Association="pgcModel.Store.FK_LotteryWiner_Lottery">
-            <End Role="Lottery" EntitySet="Lottery" />
-            <End Role="LotteryWiner" EntitySet="LotteryWiner" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MenuItem_Feature" Association="pgcModel.Store.FK_MenuItem_Feature">
-            <End Role="Feature" EntitySet="Feature" />
-            <End Role="MenuItem" EntitySet="MenuItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MenuItem_MenuCategory" Association="pgcModel.Store.FK_MenuItem_MenuCategory">
-            <End Role="MenuCategory" EntitySet="MenuCategory" />
-            <End Role="MenuItem" EntitySet="MenuItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="pgcModel.Store.FK_OccuredSystemEvent_SystemEvent">
-            <End Role="SystemEvent" EntitySet="SystemEvent" />
-            <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvent" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OnlinePayment_Order" Association="pgcModel.Store.FK_OnlinePayment_Order">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OnlinePayment" EntitySet="OnlinePayment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Option_OptionCategory" Association="pgcModel.Store.FK_Option_OptionCategory">
-            <End Role="OptionCategory" EntitySet="OptionCategory" />
-            <End Role="Option" EntitySet="Option" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Option_OptionLookup" Association="pgcModel.Store.FK_Option_OptionLookup">
-            <End Role="OptionLookup" EntitySet="OptionLookup" />
-            <End Role="Option" EntitySet="Option" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OptionCategory_OptionCategory" Association="pgcModel.Store.FK_OptionCategory_OptionCategory">
-            <End Role="OptionCategory" EntitySet="OptionCategory" />
-            <End Role="OptionCategory1" EntitySet="OptionCategory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OptionLookupDetail_OptionLookup" Association="pgcModel.Store.FK_OptionLookupDetail_OptionLookup">
-            <End Role="OptionLookup" EntitySet="OptionLookup" />
-            <End Role="OptionLookupDetail" EntitySet="OptionLookupDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Branch" Association="pgcModel.Store.FK_Order_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_User" Association="pgcModel.Store.FK_Order_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Order" Association="pgcModel.Store.FK_OrderDetail_Order">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Product" Association="pgcModel.Store.FK_OrderDetail_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PanelPage_Feature" Association="pgcModel.Store.FK_PanelPage_Feature">
-            <End Role="Feature" EntitySet="Feature" />
-            <End Role="PanelPage" EntitySet="PanelPage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PanelPage_PanelPage" Association="pgcModel.Store.FK_PanelPage_PanelPage">
-            <End Role="PanelPage" EntitySet="PanelPage" />
-            <End Role="PanelPage1" EntitySet="PanelPage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Permission_AccessLevel" Association="pgcModel.Store.FK_Permission_AccessLevel">
-            <End Role="AccessLevel" EntitySet="AccessLevel" />
-            <End Role="Permission" EntitySet="Permission" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Permission_Feature" Association="pgcModel.Store.FK_Permission_Feature">
-            <End Role="Feature" EntitySet="Feature" />
-            <End Role="Permission" EntitySet="Permission" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PollChoise_Poll" Association="pgcModel.Store.FK_PollChoise_Poll">
-            <End Role="Poll" EntitySet="Poll" />
-            <End Role="PollChoise" EntitySet="PollChoise" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PollResult_Poll" Association="pgcModel.Store.FK_PollResult_Poll">
-            <End Role="Poll" EntitySet="Poll" />
-            <End Role="PollResult" EntitySet="PollResult" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PollResult_PollChoise" Association="pgcModel.Store.FK_PollResult_PollChoise">
-            <End Role="PollChoise" EntitySet="PollChoise" />
-            <End Role="PollResult" EntitySet="PollResult" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_Material_Material1" Association="pgcModel.Store.FK_Product_Material_Material1">
-            <End Role="Material" EntitySet="Material" />
-            <End Role="Product_Material" EntitySet="Product_Material" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ReceivedMessage_PrivateNo" Association="pgcModel.Store.FK_ReceivedMessage_PrivateNo">
-            <End Role="PrivateNo" EntitySet="PrivateNo" />
-            <End Role="ReceivedMessage" EntitySet="ReceivedMessage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SentEmailBlock_EmailSentAttempt" Association="pgcModel.Store.FK_SentEmailBlock_EmailSentAttempt">
-            <End Role="EmailSendAttempt" EntitySet="EmailSendAttempt" />
-            <End Role="SentEmailBlock" EntitySet="SentEmailBlock" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SentSMS_PrivateNo" Association="pgcModel.Store.FK_SentSMS_PrivateNo">
-            <End Role="PrivateNo" EntitySet="PrivateNo" />
-            <End Role="SentSMS" EntitySet="SentSMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SentSMS_SMSSendAttempt" Association="pgcModel.Store.FK_SentSMS_SMSSendAttempt">
-            <End Role="SMSSendAttempt" EntitySet="SMSSendAttempt" />
-            <End Role="SentSMS" EntitySet="SentSMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SideMenuItem_SideMenuCat" Association="pgcModel.Store.FK_SideMenuItem_SideMenuCat">
-            <End Role="SideMenuCat" EntitySet="SideMenuCat" />
-            <End Role="SideMenuItem" EntitySet="SideMenuItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SiteMapItem_SiteMapCat" Association="pgcModel.Store.FK_SiteMapItem_SiteMapCat">
-            <End Role="SiteMapCat" EntitySet="SiteMapCat" />
-            <End Role="SiteMapItem" EntitySet="SiteMapItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemEventAction_AccessLevel" Association="pgcModel.Store.FK_SystemEventAction_AccessLevel">
-            <End Role="AccessLevel" EntitySet="AccessLevel" />
-            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemEventAction_PrivateNo" Association="pgcModel.Store.FK_SystemEventAction_PrivateNo">
-            <End Role="PrivateNo" EntitySet="PrivateNo" />
-            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemEventAction_SystemEvent" Association="pgcModel.Store.FK_SystemEventAction_SystemEvent">
-            <End Role="SystemEvent" EntitySet="SystemEvent" />
-            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemEventAction_User" Association="pgcModel.Store.FK_SystemEventAction_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SystemEventVariable_SystemEvent" Association="pgcModel.Store.FK_SystemEventVariable_SystemEvent">
-            <End Role="SystemEvent" EntitySet="SystemEvent" />
-            <End Role="SystemEventVariable" EntitySet="SystemEventVariable" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_AccessLevel" Association="pgcModel.Store.FK_User_AccessLevel">
-            <End Role="AccessLevel" EntitySet="AccessLevel" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Branch" Association="pgcModel.Store.FK_User_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_City" Association="pgcModel.Store.FK_User_City">
-            <End Role="City" EntitySet="City" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserComment_Branch" Association="pgcModel.Store.FK_UserComment_Branch">
-            <End Role="Branch" EntitySet="Branch" />
-            <End Role="UserComment" EntitySet="UserComment" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="pgcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="Advertisement">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="AdvType" Type="int" Nullable="false" />
-          <Property Name="FileAddress" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="FileAddress" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Width" Type="int" Nullable="false" />
           <Property Name="Height" Type="int" Nullable="false" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="AltText" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AltText" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Html" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="ExpirePersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ExpirePersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="MarginTop" Type="int" Nullable="false" />
           <Property Name="MarginRight" Type="int" Nullable="false" />
@@ -402,27 +38,27 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="MetaDescription" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="MetaKeyWords" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MetaKeyWords" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Branch">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="2000" />
-          <Property Name="BranchInfo" Type="nvarchar" Nullable="false" MaxLength="2000" />
-          <Property Name="LargeThumbImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="UrlKey" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="LargeImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="ThumbListPath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="BranchInfo" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="LargeThumbImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="LargeImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ThumbListPath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="AllowOnlineOrder" Type="bit" Nullable="false" />
@@ -430,73 +66,73 @@
           <Property Name="AllowOnlineOrderTimeTo" Type="varchar" MaxLength="5" />
           <Property Name="MinimumCredit" Type="bigint" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="HoursServingFood" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="HoursOrdering" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="HoursServingFood" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="HoursOrdering" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="NumberOfChair" Type="int" Nullable="false" />
-          <Property Name="TransportCost" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="TransportCost" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="BranchType" Type="int" Nullable="false" />
           <Property Name="Longitude" Type="float" Nullable="false" />
           <Property Name="latitude" Type="float" Nullable="false" />
           <Property Name="CityCode" Type="varchar" MaxLength="10" />
           <Property Name="PhoneNumbers" Type="nvarchar" MaxLength="2000" />
-          <Property Name="PageTitle" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="PageDescription" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="PageKeywords" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PageTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="PageDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PageKeywords" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchContact">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
-          <Property Name="BranchTitle" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="BranchTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsRead" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchPic">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
-          <Property Name="ImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="ThumbPath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ThumbPath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchRequest">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Fname" Type="nvarchar" MaxLength="300" />
           <Property Name="Lname" Type="nvarchar" MaxLength="300" />
-          <Property Name="ApplicatorName" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Tel" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="BranchLocation" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ApplicatorName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="BranchLocation" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="LocationType" Type="int" Nullable="false" />
           <Property Name="HaveBackgroung" Type="bit" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="BRDate" Type="datetime" Nullable="false" />
-          <Property Name="BRPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="3000" />
-          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="BRPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="3000" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="Circular">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersiabDate" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersiabDate" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
           <Property Name="IsActiveForUser" Type="bit" Nullable="false" />
         </EntityType>
@@ -512,12 +148,12 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SenderName" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="SenderEmail" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SenderName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="SenderEmail" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="IsDisplay" Type="bit" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" />
           <Property Name="Product_ID" Type="bigint" />
@@ -527,89 +163,89 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="UrlKey" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="MetaKeyWords" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="MetaDescription" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Heading" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MetaKeyWords" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Heading" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Faq">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Summery" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Summery" Type="nvarchar" MaxLength="2000" Nullable="false" />
         </EntityType>
         <EntityType Name="Gallery">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
-          <Property Name="GalleryThumbImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="GalleryThumbImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="GalleryPic">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Gallery_ID" Type="bigint" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
-          <Property Name="ImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Heading">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Help">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="IndexSlide">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="2000" />
-          <Property Name="ImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Lottery">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="RegDate" Type="datetime" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="LotteryDetail">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotteryID" Type="bigint" Nullable="false" />
-          <Property Name="FName" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="LName" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Code" Type="int" Nullable="false" />
         </EntityType>
@@ -617,10 +253,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotteryID" Type="bigint" Nullable="false" />
-          <Property Name="FName" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="LName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="FName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Rank" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
@@ -628,10 +264,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
-          <Property Name="NavigationUrl" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="NavigationUrl" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IsHtml" Type="bit" Nullable="false" />
           <Property Name="DispInHome" Type="bit" Nullable="false" />
           <Property Name="DispInOtherPage" Type="bit" Nullable="false" />
@@ -641,9 +277,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="ImgPath" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ImgPath" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
@@ -651,71 +287,71 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="NewsPicPath" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="NewsPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="NewsPicPath" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="NewsPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NewsDate" Type="datetime" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Gallery_ID" Type="bigint" Nullable="false" />
           <Property Name="IsDisplayGallery" Type="bit" Nullable="false" />
-          <Property Name="PageTitle" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="PageDescription" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="PageKeywords" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PageTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="PageDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PageKeywords" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Poll">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="PollPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PollPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="PollChoise">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Poll_ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" Nullable="false" />
         </EntityType>
         <EntityType Name="PollResult">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PollChoise_ID" Type="bigint" Nullable="false" />
           <Property Name="Poll_ID" Type="bigint" Nullable="false" />
-          <Property Name="IPAddress" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="ResultPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ResultPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ResultDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="MetaKeyWords" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="MetaDescription" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="MetaKeyWords" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ThumbImageUrl" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ThumbImageUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="SideMenuCat">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
-          <Property Name="NavigationUrl" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="NavigationUrl" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
           <Property Name="IsBlank" Type="bit" Nullable="false" />
         </EntityType>
@@ -723,10 +359,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsBlank" Type="bit" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
           <Property Name="SideMenuCat_ID" Type="bigint" Nullable="false" />
@@ -735,10 +371,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsBlank" Type="bit" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
@@ -746,11 +382,11 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SiteMapCat_ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
-          <Property Name="NavigateUrl" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsBlank" Type="bit" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
@@ -758,10 +394,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
@@ -769,14 +405,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Name" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="300" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Topic" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Email" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="UCPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="UCPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="UCDate" Type="datetime" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" />
@@ -787,23 +423,23 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="NavHeaderImage" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="NavHeaderImage" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="NewsCount" Type="int" Nullable="false" />
           <Property Name="QualityCharter" Type="ntext" Nullable="false" />
-          <Property Name="BranchAgreement_Image" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="BranchAgreement_Image" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="BranchAgreement_Content" Type="ntext" Nullable="false" />
-          <Property Name="pgcizi_LatLng" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="MrDizi_LatLng" Type="nvarchar" MaxLength="2000" Nullable="false" />
         </EntityType>
         <EntityType Name="ExceptionLog">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="ExceptionMessage" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="ExceptionType" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="InnerException" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ExceptionMessage" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="ExceptionType" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="InnerException" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="StackTrace" Type="nvarchar(max)" Nullable="false" />
           <Property Name="User_ID" Type="bigint" />
         </EntityType>
@@ -811,13 +447,13 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SystemEvent_ID" Type="bigint" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DeviceType_Enum" Type="int" Nullable="false" />
-          <Property Name="Actor" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Actor" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="Option">
           <Key>
@@ -826,8 +462,8 @@
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="OptionCategory_ID" Type="bigint" Nullable="false" />
           <Property Name="OptionLookup_ID" Type="bigint" />
-          <Property Name="Key" Type="varchar" Nullable="false" MaxLength="300" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Key" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="Value" Type="ntext" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
@@ -837,7 +473,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Parent_OptionCategory_ID" Type="bigint" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
           <Property Name="GrantAdmin" Type="bit" Nullable="false" />
@@ -847,7 +483,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="OptionLookupDetail">
           <Key>
@@ -855,26 +491,26 @@
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="OptionLookup_ID" Type="bigint" Nullable="false" />
-          <Property Name="Key" Type="varchar" Nullable="false" MaxLength="300" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Key" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="PrivateNo">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Number" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="SystemEvent">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="800" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="800" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="EventKey" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="EventKey" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Support_Manual_Email" Type="bit" Nullable="false" />
           <Property Name="Support_Manual_SMS" Type="bit" Nullable="false" />
           <Property Name="Support_Custom_User_SMS" Type="bit" Nullable="false" />
@@ -900,7 +536,7 @@
           <Key>
             <PropertyRef Name="SystemEvent_ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SystemEvent_ID" Type="bigint" Nullable="false" />
           <Property Name="ManualEmail" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ManualSMS" Type="nvarchar(max)" Nullable="false" />
@@ -930,19 +566,19 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SystemEvent_ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="900" />
-          <Property Name="Alias" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="900" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="BankAccount">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Branch_BranchOrderTitle">
@@ -958,15 +594,15 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ActionType" Type="int" Nullable="false" />
           <Property Name="User_ID" Type="bigint" />
-          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
-          <Property Name="BranchTitle" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="BranchTitle" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="LogType" Type="int" Nullable="false" />
           <Property Name="LogType_ID" Type="bigint" Nullable="false" />
         </EntityType>
@@ -974,25 +610,25 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BranchDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RegDate" Type="datetime" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
           <Property Name="AdminDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="BranchOrder_ID" Type="bigint" Nullable="false" />
-          <Property Name="OrderedPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderedPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchLackOrderDetail">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SinglePrice" Type="bigint" Nullable="false" />
           <Property Name="Quantity" Type="bigint" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
-          <Property Name="BranchOrderTitle_Title" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="BranchOrderTitle_Title" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="BranchOrderTitle_ID" Type="bigint" />
           <Property Name="BranchLackOrder_ID" Type="bigint" Nullable="false" />
         </EntityType>
@@ -1000,14 +636,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BranchDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RegDate" Type="datetime" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
-          <Property Name="OrderedPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderedPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="AdminDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ShipmentStatus_ID" Type="bigint" />
         </EntityType>
@@ -1015,11 +651,11 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SinglePrice" Type="bigint" Nullable="false" />
           <Property Name="Quantity" Type="bigint" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
-          <Property Name="BranchOrderTitle_Title" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="BranchOrderTitle_Title" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="BranchOrderTitle_ID" Type="bigint" />
           <Property Name="BranchOrder_ID" Type="bigint" Nullable="false" />
         </EntityType>
@@ -1027,27 +663,27 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchOrderTitle">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Price" Type="bigint" Nullable="false" />
           <Property Name="BranchOrderTitleGroup_ID" Type="bigint" Nullable="false" />
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
-          <Property Name="ImagePath" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsOrderForAllBranch" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchOrderTitleGroup">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="500" />
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
         </EntityType>
@@ -1055,23 +691,23 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OnlineResNum" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OnlineResNum" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Amount" Type="bigint" Nullable="false" />
-          <Property Name="OnlineTransactionState" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="OnlineRefNum" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="OnlineTransactionState" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="OnlineRefNum" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="OnlineResultTransaction" Type="bigint" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="OfflineBankAccount_ID" Type="bigint" />
-          <Property Name="OfflineReceiptLiquidator" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="OfflineReceiptNumber" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="OfflineReceiptPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="OfflineReceiptLiquidator" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="OfflineReceiptNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="OfflineReceiptPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="OfflineReceiptType" Type="int" Nullable="false" />
           <Property Name="OfflinePaymentStatus" Type="int" Nullable="false" />
           <Property Name="OfflineDescription" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="OfflineBankAccountTitle" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="OfflineBankAccountDescription" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="OfflineBankAccountTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="OfflineBankAccountDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
         </EntityType>
@@ -1079,25 +715,25 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BranchDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RegDate" Type="datetime" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
           <Property Name="AdminDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
-          <Property Name="OrderedPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderedPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="BranchReturnOrderDetail">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SinglePrice" Type="bigint" Nullable="false" />
           <Property Name="Quantity" Type="bigint" Nullable="false" />
           <Property Name="TotalPrice" Type="bigint" Nullable="false" />
-          <Property Name="BranchOrderTitle_Title" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="BranchOrderTitle_Title" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="BranchOrderTitle_ID" Type="bigint" />
           <Property Name="BranchReturnOrder_ID" Type="bigint" Nullable="false" />
         </EntityType>
@@ -1105,7 +741,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" Nullable="false" />
           <Property Name="BranchCredit" Type="bigint" Nullable="false" />
@@ -1113,13 +749,13 @@
           <Property Name="TransactionType" Type="int" Nullable="false" />
           <Property Name="TransactionType_ID" Type="bigint" Nullable="false" />
           <Property Name="RegDate" Type="datetime" Nullable="false" />
-          <Property Name="RegPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RegPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="BuyBasket">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_ID" Type="bigint" Nullable="false" />
           <Property Name="Product_ID" Type="bigint" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -1128,51 +764,51 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="MaterialPicPath" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialPicPath" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="OnlinePayment">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Order_ID" Type="bigint" Nullable="false" />
-          <Property Name="ResNum" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ResNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Amount" Type="bigint" Nullable="false" />
-          <Property Name="TransactionState" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="RefNum" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TransactionState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RefNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ResultTransaction" Type="bigint" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_ID" Type="bigint" Nullable="false" />
           <Property Name="Branch_ID" Type="bigint" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
-          <Property Name="OrderPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TotalAmount" Type="bigint" Nullable="false" />
           <Property Name="PayableAmount" Type="bigint" Nullable="false" />
           <Property Name="OrderStatus" Type="int" Nullable="false" />
           <Property Name="PaymentType" Type="int" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="1000" />
-          <Property Name="Tel" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IsPaid" Type="bit" Nullable="false" />
           <Property Name="BranchTitle" Type="nvarchar" MaxLength="300" />
-          <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="DeviceType_Enum" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Order_ID" Type="bigint" Nullable="false" />
           <Property Name="Product_ID" Type="bigint" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -1184,21 +820,21 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ProductPicPath" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ProductPicPath" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Price" Type="bigint" Nullable="false" />
           <Property Name="Accessories" Type="bit" Nullable="false" />
           <Property Name="AllowOnlineOrder" Type="bit" Nullable="false" />
-          <Property Name="SliderProductPicPath" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="SliderHoverProductPicPath" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="SliderProductPicPath" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SliderHoverProductPicPath" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="DisplayInSlider" Type="bit" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="PageTitle" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="PageDescription" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="PageKeywords" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PageTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PageDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PageKeywords" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Product_Material">
           <Key>
@@ -1208,28 +844,46 @@
           <Property Name="Product_ID" Type="bigint" Nullable="false" />
           <Property Name="Material_ID" Type="bigint" Nullable="false" />
         </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Type_Enum" Type="int" Nullable="false" />
+          <Property Name="GamerCount" Type="int" Nullable="false" />
+          <Property Name="Manager_ID" Type="bigint" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="FirstPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="SecondPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="ThirdPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="Laws" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DispOrder" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="bigint" Nullable="false" />
+          <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+        </EntityType>
         <EntityType Name="EmailSendAttempt">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Recipients" Type="nvarchar(max)" Nullable="false" />
           <Property Name="EventType" Type="int" Nullable="false" />
           <Property Name="OccuredEvent_ID" Type="bigint" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="nchar" Nullable="false" MaxLength="10" />
-          <Property Name="FilePath1" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath2" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath3" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath4" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath5" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath6" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath7" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath8" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath9" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="FilePath10" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="PersianDate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FilePath1" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath2" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath3" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath4" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath5" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath6" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath7" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath8" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath9" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FilePath10" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="SentEmail_Count" Type="int" Nullable="false" />
           <Property Name="FailedEmail_Count" Type="int" Nullable="false" />
           <Property Name="TotalEmail_Count" Type="int" Nullable="false" />
@@ -1243,22 +897,22 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PrivateNo_ID" Type="bigint" Nullable="false" />
-          <Property Name="SenderNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="SenderNumber" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="SentEmailBlock">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmailSentAttempt_ID" Type="bigint" Nullable="false" />
           <Property Name="Size" Type="int" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="IsSent" Type="bit" Nullable="false" />
           <Property Name="RecipientMailAddress" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
@@ -1266,12 +920,12 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GatewayMessageID" Type="bigint" />
           <Property Name="PrivateNo_ID" Type="bigint" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="RecipientNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RecipientNumber" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="SendStatus" Type="int" Nullable="false" />
           <Property Name="PhoneDeliveryCount" Type="int" Nullable="false" />
           <Property Name="PhoneFailCount" Type="int" Nullable="false" />
@@ -1287,11 +941,11 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventType" Type="int" Nullable="false" />
           <Property Name="OccuredEvent_ID" Type="bigint" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Total_SucceedCount" Type="int" Nullable="false" />
           <Property Name="Total_FailedCount" Type="int" Nullable="false" />
           <Property Name="Total_SumCount" Type="int" Nullable="false" />
@@ -1307,16 +961,16 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Role" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Feature">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CanGrantToAdmin" Type="bit" Nullable="false" />
           <Property Name="CanGrantToUser" Type="bit" Nullable="false" />
           <Property Name="CanGrantToAgent" Type="bit" Nullable="false" />
@@ -1328,8 +982,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="UIClass" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UIClass" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="MenuItem">
@@ -1339,12 +993,12 @@
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="MenuCategory_ID" Type="bigint" />
           <Property Name="Feature_ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="UIClass" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="NavigateURL" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="Target" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="UIClass" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="NavigateURL" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Target" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
-          <Property Name="RouteName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="RouteName" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="IsNew" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PanelPage">
@@ -1354,13 +1008,13 @@
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="Feature_ID" Type="bigint" />
           <Property Name="Parent_Page_ID" Type="bigint" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="UITitle" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="URL" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="UITitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="PageSize" Type="int" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
-          <Property Name="RouteName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="RouteUrl" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="RouteName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RouteUrl" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="IsLookup" Type="bit" Nullable="false" />
           <Property Name="AdvSupport" Type="bit" Nullable="false" />
         </EntityType>
@@ -1376,40 +1030,40 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Province_ID" Type="bigint" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="Province">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Sample">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="StartPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="EndPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="StartPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EndPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="4000" Nullable="false" />
           <Property Name="IsDone" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="City_ID" Type="bigint" />
           <Property Name="AccessLevel_ID" Type="bigint" />
           <Property Name="Username" Type="nvarchar" MaxLength="300" />
-          <Property Name="pwd" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="ActivityStatus" Type="int" Nullable="false" />
           <Property Name="NationalCode" Type="nvarchar" MaxLength="100" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="400" />
+          <Property Name="Email" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="1000" />
           <Property Name="PostalCode" Type="nvarchar" MaxLength="100" />
           <Property Name="Tel" Type="nvarchar" MaxLength="100" />
@@ -1417,26 +1071,25 @@
           <Property Name="Fax" Type="nvarchar" MaxLength="100" />
           <Property Name="Fname" Type="nvarchar" MaxLength="300" />
           <Property Name="Lname" Type="nvarchar" MaxLength="300" />
-          <Property Name="SignUpPersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SignUpPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Gender" Type="int" />
           <Property Name="Branch_ID" Type="bigint" />
-          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DisableUserName" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="UserMessage">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Key" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="Direction" Type="int" Nullable="false" />
           <Property Name="Behaviour" Type="int" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OnlinePaymentList">
           <Key>
             <PropertyRef Name="ID" />
@@ -1450,20 +1103,20 @@
             <PropertyRef Name="PersianDate" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" />
-          <Property Name="TransactionState" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="RefNum" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="TransactionState" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="RefNum" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Order_ID" Type="bigint" Nullable="false" />
-          <Property Name="ResNum" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ResNum" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Amount" Type="bigint" Nullable="false" />
           <Property Name="ResultTransaction" Type="bigint" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="PersianDate" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK_AdvPage_Advertisement">
-          <End Role="Advertisement" Type="pgcModel.Store.Advertisement" Multiplicity="1">
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="AdvPage" Type="pgcModel.Store.AdvPage" Multiplicity="*" />
+          <End Role="AdvPage" Type="Self.AdvPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Advertisement">
               <PropertyRef Name="ID" />
@@ -1474,10 +1127,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AdvPage_PanelPage">
-          <End Role="PanelPage" Type="pgcModel.Store.PanelPage" Multiplicity="1">
+          <End Role="PanelPage" Type="Self.PanelPage" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="AdvPage" Type="pgcModel.Store.AdvPage" Multiplicity="*" />
+          <End Role="AdvPage" Type="Self.AdvPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PanelPage">
               <PropertyRef Name="ID" />
@@ -1488,8 +1141,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Branch_BranchOrderTitle_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="Branch_BranchOrderTitle" Type="pgcModel.Store.Branch_BranchOrderTitle" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="Branch_BranchOrderTitle" Type="Self.Branch_BranchOrderTitle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1500,10 +1153,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Branch_BranchOrderTitle_BranchOrderTitle">
-          <End Role="BranchOrderTitle" Type="pgcModel.Store.BranchOrderTitle" Multiplicity="1">
+          <End Role="BranchOrderTitle" Type="Self.BranchOrderTitle" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Branch_BranchOrderTitle" Type="pgcModel.Store.Branch_BranchOrderTitle" Multiplicity="*" />
+          <End Role="Branch_BranchOrderTitle" Type="Self.Branch_BranchOrderTitle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderTitle">
               <PropertyRef Name="ID" />
@@ -1514,10 +1167,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchComment_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BranchContact" Type="pgcModel.Store.BranchContact" Multiplicity="*" />
+          <End Role="BranchContact" Type="Self.BranchContact" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1528,10 +1181,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchLackOrder_BranchOrder">
-          <End Role="BranchOrder" Type="pgcModel.Store.BranchOrder" Multiplicity="1">
+          <End Role="BranchOrder" Type="Self.BranchOrder" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BranchLackOrder" Type="pgcModel.Store.BranchLackOrder" Multiplicity="*" />
+          <End Role="BranchLackOrder" Type="Self.BranchLackOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrder">
               <PropertyRef Name="ID" />
@@ -1542,10 +1195,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchLackOrderDetail_BranchLackOrder">
-          <End Role="BranchLackOrder" Type="pgcModel.Store.BranchLackOrder" Multiplicity="1">
+          <End Role="BranchLackOrder" Type="Self.BranchLackOrder" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BranchLackOrderDetail" Type="pgcModel.Store.BranchLackOrderDetail" Multiplicity="*" />
+          <End Role="BranchLackOrderDetail" Type="Self.BranchLackOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchLackOrder">
               <PropertyRef Name="ID" />
@@ -1556,8 +1209,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchOrder_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchOrder" Type="pgcModel.Store.BranchOrder" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchOrder" Type="Self.BranchOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1568,8 +1221,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchOrder_BranchOrderShipmentStatus">
-          <End Role="BranchOrderShipmentState" Type="pgcModel.Store.BranchOrderShipmentState" Multiplicity="0..1" />
-          <End Role="BranchOrder" Type="pgcModel.Store.BranchOrder" Multiplicity="*" />
+          <End Role="BranchOrderShipmentState" Type="Self.BranchOrderShipmentState" Multiplicity="0..1" />
+          <End Role="BranchOrder" Type="Self.BranchOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderShipmentState">
               <PropertyRef Name="ID" />
@@ -1580,8 +1233,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchOrderLog_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchFinanceLog" Type="pgcModel.Store.BranchFinanceLog" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchFinanceLog" Type="Self.BranchFinanceLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1592,8 +1245,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchOrderLog_User">
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="0..1" />
-          <End Role="BranchFinanceLog" Type="pgcModel.Store.BranchFinanceLog" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="BranchFinanceLog" Type="Self.BranchFinanceLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -1604,8 +1257,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchOrderTitle_BranchOrderTitleGroup">
-          <End Role="BranchOrderTitleGroup" Type="pgcModel.Store.BranchOrderTitleGroup" Multiplicity="1" />
-          <End Role="BranchOrderTitle" Type="pgcModel.Store.BranchOrderTitle" Multiplicity="*" />
+          <End Role="BranchOrderTitleGroup" Type="Self.BranchOrderTitleGroup" Multiplicity="1" />
+          <End Role="BranchOrderTitle" Type="Self.BranchOrderTitle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderTitleGroup">
               <PropertyRef Name="ID" />
@@ -1616,8 +1269,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchPayment_BankAccount">
-          <End Role="BankAccount" Type="pgcModel.Store.BankAccount" Multiplicity="0..1" />
-          <End Role="BranchPayment" Type="pgcModel.Store.BranchPayment" Multiplicity="*" />
+          <End Role="BankAccount" Type="Self.BankAccount" Multiplicity="0..1" />
+          <End Role="BranchPayment" Type="Self.BranchPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BankAccount">
               <PropertyRef Name="ID" />
@@ -1628,8 +1281,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchPic_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchPic" Type="pgcModel.Store.BranchPic" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchPic" Type="Self.BranchPic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1640,8 +1293,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchReturnOrder_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchReturnOrder" Type="pgcModel.Store.BranchReturnOrder" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchReturnOrder" Type="Self.BranchReturnOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1652,10 +1305,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BranchReturnOrderDetail_BranchReturnOrder">
-          <End Role="BranchReturnOrder" Type="pgcModel.Store.BranchReturnOrder" Multiplicity="1">
+          <End Role="BranchReturnOrder" Type="Self.BranchReturnOrder" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BranchReturnOrderDetail" Type="pgcModel.Store.BranchReturnOrderDetail" Multiplicity="*" />
+          <End Role="BranchReturnOrderDetail" Type="Self.BranchReturnOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchReturnOrder">
               <PropertyRef Name="ID" />
@@ -1666,10 +1319,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BuyBasket_Product">
-          <End Role="Product" Type="pgcModel.Store.Product" Multiplicity="1">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BuyBasket" Type="pgcModel.Store.BuyBasket" Multiplicity="*" />
+          <End Role="BuyBasket" Type="Self.BuyBasket" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ID" />
@@ -1680,10 +1333,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BuyBasket_User">
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="1">
+          <End Role="User" Type="Self.User" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BuyBasket" Type="pgcModel.Store.BuyBasket" Multiplicity="*" />
+          <End Role="BuyBasket" Type="Self.BuyBasket" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -1694,10 +1347,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Circular_Branch_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Circular_Branch" Type="pgcModel.Store.Circular_Branch" Multiplicity="*" />
+          <End Role="Circular_Branch" Type="Self.Circular_Branch" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1708,10 +1361,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Circular_Branch_Circular">
-          <End Role="Circular" Type="pgcModel.Store.Circular" Multiplicity="1">
+          <End Role="Circular" Type="Self.Circular" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Circular_Branch" Type="pgcModel.Store.Circular_Branch" Multiplicity="*" />
+          <End Role="Circular_Branch" Type="Self.Circular_Branch" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Circular">
               <PropertyRef Name="ID" />
@@ -1722,8 +1375,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_City_Province">
-          <End Role="Province" Type="pgcModel.Store.Province" Multiplicity="1" />
-          <End Role="City" Type="pgcModel.Store.City" Multiplicity="*" />
+          <End Role="Province" Type="Self.Province" Multiplicity="1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Province">
               <PropertyRef Name="ID" />
@@ -1734,10 +1387,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="0..1">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Comment" Type="pgcModel.Store.Comment" Multiplicity="*" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1748,10 +1401,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_Product">
-          <End Role="Product" Type="pgcModel.Store.Product" Multiplicity="0..1">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Comment" Type="pgcModel.Store.Comment" Multiplicity="*" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ID" />
@@ -1762,8 +1415,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle">
-          <End Role="BranchOrderTitle" Type="pgcModel.Store.BranchOrderTitle" Multiplicity="0..1" />
-          <End Role="BranchLackOrderDetail" Type="pgcModel.Store.BranchLackOrderDetail" Multiplicity="*" />
+          <End Role="BranchOrderTitle" Type="Self.BranchOrderTitle" Multiplicity="0..1" />
+          <End Role="BranchLackOrderDetail" Type="Self.BranchLackOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderTitle">
               <PropertyRef Name="ID" />
@@ -1774,10 +1427,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_BranchOrderDetail_Finance_BranchOrder">
-          <End Role="BranchOrder" Type="pgcModel.Store.BranchOrder" Multiplicity="1">
+          <End Role="BranchOrder" Type="Self.BranchOrder" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BranchOrderDetail" Type="pgcModel.Store.BranchOrderDetail" Multiplicity="*" />
+          <End Role="BranchOrderDetail" Type="Self.BranchOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrder">
               <PropertyRef Name="ID" />
@@ -1788,8 +1441,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle">
-          <End Role="BranchOrderTitle" Type="pgcModel.Store.BranchOrderTitle" Multiplicity="0..1" />
-          <End Role="BranchOrderDetail" Type="pgcModel.Store.BranchOrderDetail" Multiplicity="*" />
+          <End Role="BranchOrderTitle" Type="Self.BranchOrderTitle" Multiplicity="0..1" />
+          <End Role="BranchOrderDetail" Type="Self.BranchOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderTitle">
               <PropertyRef Name="ID" />
@@ -1800,8 +1453,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle">
-          <End Role="BranchOrderTitle" Type="pgcModel.Store.BranchOrderTitle" Multiplicity="0..1" />
-          <End Role="BranchReturnOrderDetail" Type="pgcModel.Store.BranchReturnOrderDetail" Multiplicity="*" />
+          <End Role="BranchOrderTitle" Type="Self.BranchOrderTitle" Multiplicity="0..1" />
+          <End Role="BranchReturnOrderDetail" Type="Self.BranchReturnOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BranchOrderTitle">
               <PropertyRef Name="ID" />
@@ -1812,8 +1465,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_Payment_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchPayment" Type="pgcModel.Store.BranchPayment" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchPayment" Type="Self.BranchPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1824,8 +1477,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Finance_Transaction_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="1" />
-          <End Role="BranchTransaction" Type="pgcModel.Store.BranchTransaction" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+          <End Role="BranchTransaction" Type="Self.BranchTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1836,8 +1489,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GalleryPic_Gallery">
-          <End Role="Gallery" Type="pgcModel.Store.Gallery" Multiplicity="1" />
-          <End Role="GalleryPic" Type="pgcModel.Store.GalleryPic" Multiplicity="*" />
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="1" />
+          <End Role="GalleryPic" Type="Self.GalleryPic" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Gallery">
               <PropertyRef Name="ID" />
@@ -1847,9 +1500,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Game_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="Manager_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LotteryDetail_Lottery">
-          <End Role="Lottery" Type="pgcModel.Store.Lottery" Multiplicity="1" />
-          <End Role="LotteryDetail" Type="pgcModel.Store.LotteryDetail" Multiplicity="*" />
+          <End Role="Lottery" Type="Self.Lottery" Multiplicity="1" />
+          <End Role="LotteryDetail" Type="Self.LotteryDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lottery">
               <PropertyRef Name="ID" />
@@ -1860,8 +1525,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LotteryWiner_Lottery">
-          <End Role="Lottery" Type="pgcModel.Store.Lottery" Multiplicity="1" />
-          <End Role="LotteryWiner" Type="pgcModel.Store.LotteryWiner" Multiplicity="*" />
+          <End Role="Lottery" Type="Self.Lottery" Multiplicity="1" />
+          <End Role="LotteryWiner" Type="Self.LotteryWiner" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lottery">
               <PropertyRef Name="ID" />
@@ -1872,8 +1537,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MenuItem_Feature">
-          <End Role="Feature" Type="pgcModel.Store.Feature" Multiplicity="1" />
-          <End Role="MenuItem" Type="pgcModel.Store.MenuItem" Multiplicity="*" />
+          <End Role="Feature" Type="Self.Feature" Multiplicity="1" />
+          <End Role="MenuItem" Type="Self.MenuItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Feature">
               <PropertyRef Name="ID" />
@@ -1884,8 +1549,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MenuItem_MenuCategory">
-          <End Role="MenuCategory" Type="pgcModel.Store.MenuCategory" Multiplicity="0..1" />
-          <End Role="MenuItem" Type="pgcModel.Store.MenuItem" Multiplicity="*" />
+          <End Role="MenuCategory" Type="Self.MenuCategory" Multiplicity="0..1" />
+          <End Role="MenuItem" Type="Self.MenuItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MenuCategory">
               <PropertyRef Name="ID" />
@@ -1896,8 +1561,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OccuredSystemEvent_SystemEvent">
-          <End Role="SystemEvent" Type="pgcModel.Store.SystemEvent" Multiplicity="1" />
-          <End Role="OccuredSystemEvent" Type="pgcModel.Store.OccuredSystemEvent" Multiplicity="*" />
+          <End Role="SystemEvent" Type="Self.SystemEvent" Multiplicity="1" />
+          <End Role="OccuredSystemEvent" Type="Self.OccuredSystemEvent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SystemEvent">
               <PropertyRef Name="ID" />
@@ -1908,8 +1573,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OnlinePayment_Order">
-          <End Role="Order" Type="pgcModel.Store.Order" Multiplicity="1" />
-          <End Role="OnlinePayment" Type="pgcModel.Store.OnlinePayment" Multiplicity="*" />
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OnlinePayment" Type="Self.OnlinePayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="ID" />
@@ -1920,8 +1585,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Option_OptionCategory">
-          <End Role="OptionCategory" Type="pgcModel.Store.OptionCategory" Multiplicity="1" />
-          <End Role="Option" Type="pgcModel.Store.Option" Multiplicity="*" />
+          <End Role="OptionCategory" Type="Self.OptionCategory" Multiplicity="1" />
+          <End Role="Option" Type="Self.Option" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OptionCategory">
               <PropertyRef Name="ID" />
@@ -1932,8 +1597,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Option_OptionLookup">
-          <End Role="OptionLookup" Type="pgcModel.Store.OptionLookup" Multiplicity="0..1" />
-          <End Role="Option" Type="pgcModel.Store.Option" Multiplicity="*" />
+          <End Role="OptionLookup" Type="Self.OptionLookup" Multiplicity="0..1" />
+          <End Role="Option" Type="Self.Option" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OptionLookup">
               <PropertyRef Name="ID" />
@@ -1944,8 +1609,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OptionCategory_OptionCategory">
-          <End Role="OptionCategory" Type="pgcModel.Store.OptionCategory" Multiplicity="0..1" />
-          <End Role="OptionCategory1" Type="pgcModel.Store.OptionCategory" Multiplicity="*" />
+          <End Role="OptionCategory" Type="Self.OptionCategory" Multiplicity="0..1" />
+          <End Role="OptionCategory1" Type="Self.OptionCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OptionCategory">
               <PropertyRef Name="ID" />
@@ -1956,8 +1621,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OptionLookupDetail_OptionLookup">
-          <End Role="OptionLookup" Type="pgcModel.Store.OptionLookup" Multiplicity="1" />
-          <End Role="OptionLookupDetail" Type="pgcModel.Store.OptionLookupDetail" Multiplicity="*" />
+          <End Role="OptionLookup" Type="Self.OptionLookup" Multiplicity="1" />
+          <End Role="OptionLookupDetail" Type="Self.OptionLookupDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OptionLookup">
               <PropertyRef Name="ID" />
@@ -1968,8 +1633,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="0..1" />
-          <End Role="Order" Type="pgcModel.Store.Order" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -1980,10 +1645,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_User">
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="1">
+          <End Role="User" Type="Self.User" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Order" Type="pgcModel.Store.Order" Multiplicity="*" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -1994,10 +1659,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetail_Order">
-          <End Role="Order" Type="pgcModel.Store.Order" Multiplicity="1">
+          <End Role="Order" Type="Self.Order" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="OrderDetail" Type="pgcModel.Store.OrderDetail" Multiplicity="*" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="ID" />
@@ -2008,8 +1673,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetail_Product">
-          <End Role="Product" Type="pgcModel.Store.Product" Multiplicity="0..1" />
-          <End Role="OrderDetail" Type="pgcModel.Store.OrderDetail" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ID" />
@@ -2020,8 +1685,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PanelPage_Feature">
-          <End Role="Feature" Type="pgcModel.Store.Feature" Multiplicity="0..1" />
-          <End Role="PanelPage" Type="pgcModel.Store.PanelPage" Multiplicity="*" />
+          <End Role="Feature" Type="Self.Feature" Multiplicity="0..1" />
+          <End Role="PanelPage" Type="Self.PanelPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Feature">
               <PropertyRef Name="ID" />
@@ -2032,8 +1697,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PanelPage_PanelPage">
-          <End Role="PanelPage" Type="pgcModel.Store.PanelPage" Multiplicity="0..1" />
-          <End Role="PanelPage1" Type="pgcModel.Store.PanelPage" Multiplicity="*" />
+          <End Role="PanelPage" Type="Self.PanelPage" Multiplicity="0..1" />
+          <End Role="PanelPage1" Type="Self.PanelPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PanelPage">
               <PropertyRef Name="ID" />
@@ -2044,10 +1709,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Permission_AccessLevel">
-          <End Role="AccessLevel" Type="pgcModel.Store.AccessLevel" Multiplicity="1">
+          <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Permission" Type="pgcModel.Store.Permission" Multiplicity="*" />
+          <End Role="Permission" Type="Self.Permission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AccessLevel">
               <PropertyRef Name="ID" />
@@ -2058,10 +1723,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Permission_Feature">
-          <End Role="Feature" Type="pgcModel.Store.Feature" Multiplicity="1">
+          <End Role="Feature" Type="Self.Feature" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Permission" Type="pgcModel.Store.Permission" Multiplicity="*" />
+          <End Role="Permission" Type="Self.Permission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Feature">
               <PropertyRef Name="ID" />
@@ -2072,8 +1737,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PollChoise_Poll">
-          <End Role="Poll" Type="pgcModel.Store.Poll" Multiplicity="1" />
-          <End Role="PollChoise" Type="pgcModel.Store.PollChoise" Multiplicity="*" />
+          <End Role="Poll" Type="Self.Poll" Multiplicity="1" />
+          <End Role="PollChoise" Type="Self.PollChoise" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Poll">
               <PropertyRef Name="ID" />
@@ -2084,8 +1749,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PollResult_Poll">
-          <End Role="Poll" Type="pgcModel.Store.Poll" Multiplicity="1" />
-          <End Role="PollResult" Type="pgcModel.Store.PollResult" Multiplicity="*" />
+          <End Role="Poll" Type="Self.Poll" Multiplicity="1" />
+          <End Role="PollResult" Type="Self.PollResult" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Poll">
               <PropertyRef Name="ID" />
@@ -2096,10 +1761,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PollResult_PollChoise">
-          <End Role="PollChoise" Type="pgcModel.Store.PollChoise" Multiplicity="1">
+          <End Role="PollChoise" Type="Self.PollChoise" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="PollResult" Type="pgcModel.Store.PollResult" Multiplicity="*" />
+          <End Role="PollResult" Type="Self.PollResult" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PollChoise">
               <PropertyRef Name="ID" />
@@ -2110,10 +1775,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Material_Material1">
-          <End Role="Material" Type="pgcModel.Store.Material" Multiplicity="1">
+          <End Role="Material" Type="Self.Material" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Product_Material" Type="pgcModel.Store.Product_Material" Multiplicity="*" />
+          <End Role="Product_Material" Type="Self.Product_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Material">
               <PropertyRef Name="ID" />
@@ -2124,8 +1789,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ReceivedMessage_PrivateNo">
-          <End Role="PrivateNo" Type="pgcModel.Store.PrivateNo" Multiplicity="1" />
-          <End Role="ReceivedMessage" Type="pgcModel.Store.ReceivedMessage" Multiplicity="*" />
+          <End Role="PrivateNo" Type="Self.PrivateNo" Multiplicity="1" />
+          <End Role="ReceivedMessage" Type="Self.ReceivedMessage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PrivateNo">
               <PropertyRef Name="ID" />
@@ -2136,8 +1801,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SentEmailBlock_EmailSentAttempt">
-          <End Role="EmailSendAttempt" Type="pgcModel.Store.EmailSendAttempt" Multiplicity="1" />
-          <End Role="SentEmailBlock" Type="pgcModel.Store.SentEmailBlock" Multiplicity="*" />
+          <End Role="EmailSendAttempt" Type="Self.EmailSendAttempt" Multiplicity="1" />
+          <End Role="SentEmailBlock" Type="Self.SentEmailBlock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmailSendAttempt">
               <PropertyRef Name="ID" />
@@ -2148,8 +1813,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SentSMS_PrivateNo">
-          <End Role="PrivateNo" Type="pgcModel.Store.PrivateNo" Multiplicity="1" />
-          <End Role="SentSMS" Type="pgcModel.Store.SentSMS" Multiplicity="*" />
+          <End Role="PrivateNo" Type="Self.PrivateNo" Multiplicity="1" />
+          <End Role="SentSMS" Type="Self.SentSMS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PrivateNo">
               <PropertyRef Name="ID" />
@@ -2160,8 +1825,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SentSMS_SMSSendAttempt">
-          <End Role="SMSSendAttempt" Type="pgcModel.Store.SMSSendAttempt" Multiplicity="1" />
-          <End Role="SentSMS" Type="pgcModel.Store.SentSMS" Multiplicity="*" />
+          <End Role="SMSSendAttempt" Type="Self.SMSSendAttempt" Multiplicity="1" />
+          <End Role="SentSMS" Type="Self.SentSMS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SMSSendAttempt">
               <PropertyRef Name="ID" />
@@ -2172,8 +1837,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SideMenuItem_SideMenuCat">
-          <End Role="SideMenuCat" Type="pgcModel.Store.SideMenuCat" Multiplicity="1" />
-          <End Role="SideMenuItem" Type="pgcModel.Store.SideMenuItem" Multiplicity="*" />
+          <End Role="SideMenuCat" Type="Self.SideMenuCat" Multiplicity="1" />
+          <End Role="SideMenuItem" Type="Self.SideMenuItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SideMenuCat">
               <PropertyRef Name="ID" />
@@ -2184,8 +1849,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SiteMapItem_SiteMapCat">
-          <End Role="SiteMapCat" Type="pgcModel.Store.SiteMapCat" Multiplicity="1" />
-          <End Role="SiteMapItem" Type="pgcModel.Store.SiteMapItem" Multiplicity="*" />
+          <End Role="SiteMapCat" Type="Self.SiteMapCat" Multiplicity="1" />
+          <End Role="SiteMapItem" Type="Self.SiteMapItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SiteMapCat">
               <PropertyRef Name="ID" />
@@ -2196,8 +1861,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SystemEventAction_AccessLevel">
-          <End Role="AccessLevel" Type="pgcModel.Store.AccessLevel" Multiplicity="0..1" />
-          <End Role="SystemEventAction" Type="pgcModel.Store.SystemEventAction" Multiplicity="*" />
+          <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="0..1" />
+          <End Role="SystemEventAction" Type="Self.SystemEventAction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AccessLevel">
               <PropertyRef Name="ID" />
@@ -2208,8 +1873,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SystemEventAction_PrivateNo">
-          <End Role="PrivateNo" Type="pgcModel.Store.PrivateNo" Multiplicity="0..1" />
-          <End Role="SystemEventAction" Type="pgcModel.Store.SystemEventAction" Multiplicity="*" />
+          <End Role="PrivateNo" Type="Self.PrivateNo" Multiplicity="0..1" />
+          <End Role="SystemEventAction" Type="Self.SystemEventAction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PrivateNo">
               <PropertyRef Name="ID" />
@@ -2220,8 +1885,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SystemEventAction_SystemEvent">
-          <End Role="SystemEvent" Type="pgcModel.Store.SystemEvent" Multiplicity="1" />
-          <End Role="SystemEventAction" Type="pgcModel.Store.SystemEventAction" Multiplicity="0..1" />
+          <End Role="SystemEvent" Type="Self.SystemEvent" Multiplicity="1" />
+          <End Role="SystemEventAction" Type="Self.SystemEventAction" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="SystemEvent">
               <PropertyRef Name="ID" />
@@ -2232,8 +1897,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SystemEventAction_User">
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="0..1" />
-          <End Role="SystemEventAction" Type="pgcModel.Store.SystemEventAction" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="SystemEventAction" Type="Self.SystemEventAction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -2244,10 +1909,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SystemEventVariable_SystemEvent">
-          <End Role="SystemEvent" Type="pgcModel.Store.SystemEvent" Multiplicity="1">
+          <End Role="SystemEvent" Type="Self.SystemEvent" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="SystemEventVariable" Type="pgcModel.Store.SystemEventVariable" Multiplicity="*" />
+          <End Role="SystemEventVariable" Type="Self.SystemEventVariable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SystemEvent">
               <PropertyRef Name="ID" />
@@ -2258,8 +1923,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_AccessLevel">
-          <End Role="AccessLevel" Type="pgcModel.Store.AccessLevel" Multiplicity="0..1" />
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="*" />
+          <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AccessLevel">
               <PropertyRef Name="ID" />
@@ -2270,8 +1935,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="0..1" />
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -2282,8 +1947,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_City">
-          <End Role="City" Type="pgcModel.Store.City" Multiplicity="0..1" />
-          <End Role="User" Type="pgcModel.Store.User" Multiplicity="*" />
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="ID" />
@@ -2294,8 +1959,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserComment_Branch">
-          <End Role="Branch" Type="pgcModel.Store.Branch" Multiplicity="0..1" />
-          <End Role="UserComment" Type="pgcModel.Store.UserComment" Multiplicity="*" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="UserComment" Type="Self.UserComment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Branch">
               <PropertyRef Name="ID" />
@@ -2305,6 +1970,375 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="pgcModelStoreContainer">
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="AdvPage" EntityType="Self.AdvPage" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Branch" EntityType="Self.Branch" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="BranchContact" EntityType="Self.BranchContact" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="BranchPic" EntityType="Self.BranchPic" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="BranchRequest" EntityType="Self.BranchRequest" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Circular" EntityType="Self.Circular" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Circular_Branch" EntityType="Self.Circular_Branch" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="DynPage" EntityType="Self.DynPage" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Faq" EntityType="Self.Faq" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Gallery" EntityType="Self.Gallery" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="GalleryPic" EntityType="Self.GalleryPic" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Heading" EntityType="Self.Heading" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Help" EntityType="Self.Help" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="IndexSlide" EntityType="Self.IndexSlide" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Lottery" EntityType="Self.Lottery" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="LotteryDetail" EntityType="Self.LotteryDetail" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="LotteryWiner" EntityType="Self.LotteryWiner" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="MainMenu" EntityType="Self.MainMenu" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="MainSlider" EntityType="Self.MainSlider" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Poll" EntityType="Self.Poll" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="PollChoise" EntityType="Self.PollChoise" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="PollResult" EntityType="Self.PollResult" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="Self.Report" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="SideMenuCat" EntityType="Self.SideMenuCat" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="SideMenuItem" EntityType="Self.SideMenuItem" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="SiteMapCat" EntityType="Self.SiteMapCat" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="SiteMapItem" EntityType="Self.SiteMapItem" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="SocialIcon" EntityType="Self.SocialIcon" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="UserComment" EntityType="Self.UserComment" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="AppSetting" EntityType="Self.AppSetting" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="ExceptionLog" EntityType="Self.ExceptionLog" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="OccuredSystemEvent" EntityType="Self.OccuredSystemEvent" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="Option" EntityType="Self.Option" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="OptionCategory" EntityType="Self.OptionCategory" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="OptionLookup" EntityType="Self.OptionLookup" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="OptionLookupDetail" EntityType="Self.OptionLookupDetail" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="PrivateNo" EntityType="Self.PrivateNo" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="SystemEvent" EntityType="Self.SystemEvent" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="SystemEventAction" EntityType="Self.SystemEventAction" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="SystemEventVariable" EntityType="Self.SystemEventVariable" Schema="Configuration" store:Type="Tables" />
+          <EntitySet Name="BankAccount" EntityType="Self.BankAccount" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Branch_BranchOrderTitle" EntityType="Self.Branch_BranchOrderTitle" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchFinanceLog" EntityType="Self.BranchFinanceLog" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchLackOrder" EntityType="Self.BranchLackOrder" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchLackOrderDetail" EntityType="Self.BranchLackOrderDetail" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchOrder" EntityType="Self.BranchOrder" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchOrderDetail" EntityType="Self.BranchOrderDetail" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchOrderShipmentState" EntityType="Self.BranchOrderShipmentState" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchOrderTitle" EntityType="Self.BranchOrderTitle" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchOrderTitleGroup" EntityType="Self.BranchOrderTitleGroup" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchPayment" EntityType="Self.BranchPayment" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchReturnOrder" EntityType="Self.BranchReturnOrder" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchReturnOrderDetail" EntityType="Self.BranchReturnOrderDetail" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BranchTransaction" EntityType="Self.BranchTransaction" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="BuyBasket" EntityType="Self.BuyBasket" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="OnlinePayment" EntityType="Self.OnlinePayment" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Product_Material" EntityType="Self.Product_Material" Schema="Finance" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="Game" store:Type="Tables" />
+          <EntitySet Name="EmailSendAttempt" EntityType="Self.EmailSendAttempt" Schema="Messaging" store:Type="Tables" />
+          <EntitySet Name="ReceivedMessage" EntityType="Self.ReceivedMessage" Schema="Messaging" store:Type="Tables" />
+          <EntitySet Name="SentEmailBlock" EntityType="Self.SentEmailBlock" Schema="Messaging" store:Type="Tables" />
+          <EntitySet Name="SentSMS" EntityType="Self.SentSMS" Schema="Messaging" store:Type="Tables" />
+          <EntitySet Name="SMSSendAttempt" EntityType="Self.SMSSendAttempt" Schema="Messaging" store:Type="Tables" />
+          <EntitySet Name="AccessLevel" EntityType="Self.AccessLevel" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="Feature" EntityType="Self.Feature" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="MenuCategory" EntityType="Self.MenuCategory" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="MenuItem" EntityType="Self.MenuItem" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="PanelPage" EntityType="Self.PanelPage" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="Permission" EntityType="Self.Permission" Schema="Security" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="UserManagement" store:Type="Tables" />
+          <EntitySet Name="Province" EntityType="Self.Province" Schema="UserManagement" store:Type="Tables" />
+          <EntitySet Name="Sample" EntityType="Self.Sample" Schema="UserManagement" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="UserManagement" store:Type="Tables" />
+          <EntitySet Name="UserMessage" EntityType="Self.UserMessage" Schema="UserManagement" store:Type="Tables" />
+          <EntitySet Name="OnlinePaymentList" EntityType="Self.OnlinePaymentList" store:Type="Views" store:Schema="Finance">
+            <DefiningQuery>SELECT 
+[OnlinePaymentList].[ID] AS [ID], 
+[OnlinePaymentList].[TransactionState] AS [TransactionState], 
+[OnlinePaymentList].[RefNum] AS [RefNum], 
+[OnlinePaymentList].[Order_ID] AS [Order_ID], 
+[OnlinePaymentList].[ResNum] AS [ResNum], 
+[OnlinePaymentList].[Amount] AS [Amount], 
+[OnlinePaymentList].[ResultTransaction] AS [ResultTransaction], 
+[OnlinePaymentList].[Date] AS [Date], 
+[OnlinePaymentList].[PersianDate] AS [PersianDate]
+FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AdvPage_Advertisement" Association="Self.FK_AdvPage_Advertisement">
+            <End Role="Advertisement" EntitySet="Advertisement" />
+            <End Role="AdvPage" EntitySet="AdvPage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvPage_PanelPage" Association="Self.FK_AdvPage_PanelPage">
+            <End Role="PanelPage" EntitySet="PanelPage" />
+            <End Role="AdvPage" EntitySet="AdvPage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_BranchOrderTitle_Branch" Association="Self.FK_Branch_BranchOrderTitle_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_BranchOrderTitle_BranchOrderTitle" Association="Self.FK_Branch_BranchOrderTitle_BranchOrderTitle">
+            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
+            <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchComment_Branch" Association="Self.FK_BranchComment_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchContact" EntitySet="BranchContact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchLackOrder_BranchOrder" Association="Self.FK_BranchLackOrder_BranchOrder">
+            <End Role="BranchOrder" EntitySet="BranchOrder" />
+            <End Role="BranchLackOrder" EntitySet="BranchLackOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchLackOrderDetail_BranchLackOrder" Association="Self.FK_BranchLackOrderDetail_BranchLackOrder">
+            <End Role="BranchLackOrder" EntitySet="BranchLackOrder" />
+            <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrder_Branch" Association="Self.FK_BranchOrder_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchOrder" EntitySet="BranchOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrder_BranchOrderShipmentStatus" Association="Self.FK_BranchOrder_BranchOrderShipmentStatus">
+            <End Role="BranchOrderShipmentState" EntitySet="BranchOrderShipmentState" />
+            <End Role="BranchOrder" EntitySet="BranchOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrderLog_Branch" Association="Self.FK_BranchOrderLog_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrderLog_User" Association="Self.FK_BranchOrderLog_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrderTitle_BranchOrderTitleGroup" Association="Self.FK_BranchOrderTitle_BranchOrderTitleGroup">
+            <End Role="BranchOrderTitleGroup" EntitySet="BranchOrderTitleGroup" />
+            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchPayment_BankAccount" Association="Self.FK_BranchPayment_BankAccount">
+            <End Role="BankAccount" EntitySet="BankAccount" />
+            <End Role="BranchPayment" EntitySet="BranchPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchPic_Branch" Association="Self.FK_BranchPic_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchPic" EntitySet="BranchPic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchReturnOrder_Branch" Association="Self.FK_BranchReturnOrder_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchReturnOrder" EntitySet="BranchReturnOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchReturnOrderDetail_BranchReturnOrder" Association="Self.FK_BranchReturnOrderDetail_BranchReturnOrder">
+            <End Role="BranchReturnOrder" EntitySet="BranchReturnOrder" />
+            <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuyBasket_Product" Association="Self.FK_BuyBasket_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="BuyBasket" EntitySet="BuyBasket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuyBasket_User" Association="Self.FK_BuyBasket_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="BuyBasket" EntitySet="BuyBasket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Circular_Branch_Branch" Association="Self.FK_Circular_Branch_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Circular_Branch" EntitySet="Circular_Branch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Circular_Branch_Circular" Association="Self.FK_Circular_Branch_Circular">
+            <End Role="Circular" EntitySet="Circular" />
+            <End Role="Circular_Branch" EntitySet="Circular_Branch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Province" Association="Self.FK_City_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Branch" Association="Self.FK_Comment_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Product" Association="Self.FK_Comment_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle" Association="Self.FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle">
+            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
+            <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrder" Association="Self.FK_Finance_BranchOrderDetail_Finance_BranchOrder">
+            <End Role="BranchOrder" EntitySet="BranchOrder" />
+            <End Role="BranchOrderDetail" EntitySet="BranchOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle" Association="Self.FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle">
+            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
+            <End Role="BranchOrderDetail" EntitySet="BranchOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle" Association="Self.FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle">
+            <End Role="BranchOrderTitle" EntitySet="BranchOrderTitle" />
+            <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_Payment_Branch" Association="Self.FK_Finance_Payment_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchPayment" EntitySet="BranchPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Finance_Transaction_Branch" Association="Self.FK_Finance_Transaction_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="BranchTransaction" EntitySet="BranchTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GalleryPic_Gallery" Association="Self.FK_GalleryPic_Gallery">
+            <End Role="Gallery" EntitySet="Gallery" />
+            <End Role="GalleryPic" EntitySet="GalleryPic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Game_User" Association="Self.FK_Game_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Game" EntitySet="Game" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryDetail_Lottery" Association="Self.FK_LotteryDetail_Lottery">
+            <End Role="Lottery" EntitySet="Lottery" />
+            <End Role="LotteryDetail" EntitySet="LotteryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryWiner_Lottery" Association="Self.FK_LotteryWiner_Lottery">
+            <End Role="Lottery" EntitySet="Lottery" />
+            <End Role="LotteryWiner" EntitySet="LotteryWiner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItem_Feature" Association="Self.FK_MenuItem_Feature">
+            <End Role="Feature" EntitySet="Feature" />
+            <End Role="MenuItem" EntitySet="MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItem_MenuCategory" Association="Self.FK_MenuItem_MenuCategory">
+            <End Role="MenuCategory" EntitySet="MenuCategory" />
+            <End Role="MenuItem" EntitySet="MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="Self.FK_OccuredSystemEvent_SystemEvent">
+            <End Role="SystemEvent" EntitySet="SystemEvent" />
+            <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OnlinePayment_Order" Association="Self.FK_OnlinePayment_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OnlinePayment" EntitySet="OnlinePayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Option_OptionCategory" Association="Self.FK_Option_OptionCategory">
+            <End Role="OptionCategory" EntitySet="OptionCategory" />
+            <End Role="Option" EntitySet="Option" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Option_OptionLookup" Association="Self.FK_Option_OptionLookup">
+            <End Role="OptionLookup" EntitySet="OptionLookup" />
+            <End Role="Option" EntitySet="Option" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionCategory_OptionCategory" Association="Self.FK_OptionCategory_OptionCategory">
+            <End Role="OptionCategory" EntitySet="OptionCategory" />
+            <End Role="OptionCategory1" EntitySet="OptionCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionLookupDetail_OptionLookup" Association="Self.FK_OptionLookupDetail_OptionLookup">
+            <End Role="OptionLookup" EntitySet="OptionLookup" />
+            <End Role="OptionLookupDetail" EntitySet="OptionLookupDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Branch" Association="Self.FK_Order_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="Self.FK_Order_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Order" Association="Self.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Product" Association="Self.FK_OrderDetail_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PanelPage_Feature" Association="Self.FK_PanelPage_Feature">
+            <End Role="Feature" EntitySet="Feature" />
+            <End Role="PanelPage" EntitySet="PanelPage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PanelPage_PanelPage" Association="Self.FK_PanelPage_PanelPage">
+            <End Role="PanelPage" EntitySet="PanelPage" />
+            <End Role="PanelPage1" EntitySet="PanelPage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Permission_AccessLevel" Association="Self.FK_Permission_AccessLevel">
+            <End Role="AccessLevel" EntitySet="AccessLevel" />
+            <End Role="Permission" EntitySet="Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Permission_Feature" Association="Self.FK_Permission_Feature">
+            <End Role="Feature" EntitySet="Feature" />
+            <End Role="Permission" EntitySet="Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollChoise_Poll" Association="Self.FK_PollChoise_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollChoise" EntitySet="PollChoise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_Poll" Association="Self.FK_PollResult_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollResult" EntitySet="PollResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollResult_PollChoise" Association="Self.FK_PollResult_PollChoise">
+            <End Role="PollChoise" EntitySet="PollChoise" />
+            <End Role="PollResult" EntitySet="PollResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Material_Material1" Association="Self.FK_Product_Material_Material1">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Product_Material" EntitySet="Product_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceivedMessage_PrivateNo" Association="Self.FK_ReceivedMessage_PrivateNo">
+            <End Role="PrivateNo" EntitySet="PrivateNo" />
+            <End Role="ReceivedMessage" EntitySet="ReceivedMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentEmailBlock_EmailSentAttempt" Association="Self.FK_SentEmailBlock_EmailSentAttempt">
+            <End Role="EmailSendAttempt" EntitySet="EmailSendAttempt" />
+            <End Role="SentEmailBlock" EntitySet="SentEmailBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentSMS_PrivateNo" Association="Self.FK_SentSMS_PrivateNo">
+            <End Role="PrivateNo" EntitySet="PrivateNo" />
+            <End Role="SentSMS" EntitySet="SentSMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentSMS_SMSSendAttempt" Association="Self.FK_SentSMS_SMSSendAttempt">
+            <End Role="SMSSendAttempt" EntitySet="SMSSendAttempt" />
+            <End Role="SentSMS" EntitySet="SentSMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SideMenuItem_SideMenuCat" Association="Self.FK_SideMenuItem_SideMenuCat">
+            <End Role="SideMenuCat" EntitySet="SideMenuCat" />
+            <End Role="SideMenuItem" EntitySet="SideMenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteMapItem_SiteMapCat" Association="Self.FK_SiteMapItem_SiteMapCat">
+            <End Role="SiteMapCat" EntitySet="SiteMapCat" />
+            <End Role="SiteMapItem" EntitySet="SiteMapItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventAction_AccessLevel" Association="Self.FK_SystemEventAction_AccessLevel">
+            <End Role="AccessLevel" EntitySet="AccessLevel" />
+            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventAction_PrivateNo" Association="Self.FK_SystemEventAction_PrivateNo">
+            <End Role="PrivateNo" EntitySet="PrivateNo" />
+            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventAction_SystemEvent" Association="Self.FK_SystemEventAction_SystemEvent">
+            <End Role="SystemEvent" EntitySet="SystemEvent" />
+            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventAction_User" Association="Self.FK_SystemEventAction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SystemEventAction" EntitySet="SystemEventAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventVariable_SystemEvent" Association="Self.FK_SystemEventVariable_SystemEvent">
+            <End Role="SystemEvent" EntitySet="SystemEvent" />
+            <End Role="SystemEventVariable" EntitySet="SystemEventVariable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_AccessLevel" Association="Self.FK_User_AccessLevel">
+            <End Role="AccessLevel" EntitySet="AccessLevel" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Branch" Association="Self.FK_User_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_City" Association="Self.FK_User_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserComment_Branch" Association="Self.FK_UserComment_Branch">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="UserComment" EntitySet="UserComment" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -2644,6 +2678,11 @@
           <EntitySet Name="AppSettings" EntityType="pgcModel.AppSetting" />
           <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
           <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
+          <EntitySet Name="Games" EntityType="pgcModel.Game" />
+          <AssociationSet Name="FK_Game_User" Association="pgcModel.FK_Game_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Option">
           <Key>
@@ -3923,6 +3962,7 @@
           <NavigationProperty Name="Branch" Relationship="pgcModel.FK_User_Branch" FromRole="User" ToRole="Branch" />
           <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_User" FromRole="User" ToRole="Order" />
           <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Games" Relationship="pgcModel.FK_Game_User" FromRole="User" ToRole="Game" />
         </EntityType>
         <Association Name="FK_SystemEventAction_User">
           <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
@@ -4556,7 +4596,7 @@
           <Property Name="QualityCharter" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BranchAgreement_Image" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="BranchAgreement_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="pgcizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="MrDizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DynPage">
           <Key>
@@ -4580,6 +4620,37 @@
           <Property Type="Int32" Name="DispOrder" Nullable="false" />
           <Property Type="Boolean" Name="IsVisible" Nullable="false" />
         </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Enum" Type="Int32" Nullable="false" />
+          <Property Name="GamerCount" Type="Int32" Nullable="false" />
+          <Property Name="Manager_ID" Type="Int64" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="FirstPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="SecondPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="Laws" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DispOrder" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_Game_User" FromRole="Game" ToRole="User" />
+          <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Game_User">
+          <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="pgcModel.Game" Role="Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="Manager_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5664,7 +5735,7 @@
           <EntitySetMapping Name="AppSettings">
             <EntityTypeMapping TypeName="pgcModel.AppSetting">
               <MappingFragment StoreEntitySet="AppSetting">
-                <ScalarProperty Name="pgcizi_LatLng" ColumnName="pgcizi_LatLng" />
+                <ScalarProperty Name="MrDizi_LatLng" ColumnName="MrDizi_LatLng" />
                 <ScalarProperty Name="BranchAgreement_Content" ColumnName="BranchAgreement_Content" />
                 <ScalarProperty Name="BranchAgreement_Image" ColumnName="BranchAgreement_Image" />
                 <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
@@ -5693,6 +5764,25 @@
                 <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
                 <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
                 <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="pgcModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+                <ScalarProperty Name="Laws" ColumnName="Laws" />
+                <ScalarProperty Name="ThirdPresent" ColumnName="ThirdPresent" />
+                <ScalarProperty Name="SecondPresent" ColumnName="SecondPresent" />
+                <ScalarProperty Name="FirstPresent" ColumnName="FirstPresent" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+                <ScalarProperty Name="GamerCount" ColumnName="GamerCount" />
+                <ScalarProperty Name="Type_Enum" ColumnName="Type_Enum" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -6065,6 +6155,8 @@
         <EntityTypeShape EntityType="pgcModel.AppSetting" Width="1.5" PointX="23.375" PointY="12.75" />
         <EntityTypeShape EntityType="pgcModel.DynPage" Width="1.5" PointX="13.375" PointY="23.75" />
         <EntityTypeShape EntityType="pgcModel.MainSlider" Width="1.5" PointX="8.8553060539324342" PointY="5.1720111543182332" />
+        <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="5.25" PointY="25.5" />
+        <AssociationConnector Association="pgcModel.FK_Game_User" />
         </Diagram>
     </Diagrams>
   </Designer>

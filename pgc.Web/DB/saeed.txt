@@ -1,5 +1,1 @@
-﻿agha man yadam raft script befrestam
-
-update [Security].PanelPage
-set URL='~/Pages/Guest/Register.aspx'
-where id=30
+﻿

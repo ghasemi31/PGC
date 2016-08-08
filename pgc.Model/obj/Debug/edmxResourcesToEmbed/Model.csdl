@@ -335,6 +335,11 @@
     <EntitySet Name="AppSettings" EntityType="pgcModel.AppSetting" />
     <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
     <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
+    <EntitySet Name="Games" EntityType="pgcModel.Game" />
+    <AssociationSet Name="FK_Game_User" Association="pgcModel.FK_Game_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Game" EntitySet="Games" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Option">
     <Key>
@@ -1614,6 +1619,7 @@
     <NavigationProperty Name="Branch" Relationship="pgcModel.FK_User_Branch" FromRole="User" ToRole="Branch" />
     <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_User" FromRole="User" ToRole="Order" />
     <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Games" Relationship="pgcModel.FK_Game_User" FromRole="User" ToRole="Game" />
   </EntityType>
   <Association Name="FK_SystemEventAction_User">
     <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
@@ -2247,7 +2253,7 @@
     <Property Name="QualityCharter" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="BranchAgreement_Image" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="BranchAgreement_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="pgcizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="MrDizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DynPage">
     <Key>
@@ -2271,4 +2277,35 @@
     <Property Type="Int32" Name="DispOrder" Nullable="false" />
     <Property Type="Boolean" Name="IsVisible" Nullable="false" />
   </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Type_Enum" Type="Int32" Nullable="false" />
+    <Property Name="GamerCount" Type="Int32" Nullable="false" />
+    <Property Name="Manager_ID" Type="Int64" />
+    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SecondPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ThirdPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Laws" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DispOrder" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="pgcModel.FK_Game_User" FromRole="Game" ToRole="User" />
+    <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Game_User">
+    <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="pgcModel.Game" Role="Game" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Game">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

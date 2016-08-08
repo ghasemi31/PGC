@@ -85,6 +85,7 @@
     <Compile Include="Enums\Project\IconPickerIconset.cs" />
     <Compile Include="Enums\Project\IconPickerMode.cs" />
     <Compile Include="Enums\Project\OrderPaymentStatus.cs" />
+    <Compile Include="Enums\Project\GameType.cs" />
     <Compile Include="Enums\Project\PrivateNoStatus.cs" />
     <Compile Include="Enums\Project\NewsStatus.cs" />
     <Compile Include="Enums\Project\TransactionStatus.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Patterns\Project\AgentBranchContactPattern.cs" />
     <Compile Include="Patterns\Project\AgentCircularPattern.cs" />
     <Compile Include="Patterns\Project\BranchContactPattern.cs" />
+    <Compile Include="Patterns\Project\GamePattern.cs" />
     <Compile Include="Patterns\Project\ProductSoldChartPattern.cs" />
     <Compile Include="Patterns\Project\BranchSummaryChartPattern.cs" />
     <Compile Include="Patterns\Project\CircularPattern.cs" />

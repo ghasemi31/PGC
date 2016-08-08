@@ -1123,7 +1123,7 @@
     <EntitySetMapping Name="AppSettings">
       <EntityTypeMapping TypeName="pgcModel.AppSetting">
         <MappingFragment StoreEntitySet="AppSetting">
-          <ScalarProperty Name="pgcizi_LatLng" ColumnName="pgcizi_LatLng" />
+          <ScalarProperty Name="MrDizi_LatLng" ColumnName="MrDizi_LatLng" />
           <ScalarProperty Name="BranchAgreement_Content" ColumnName="BranchAgreement_Content" />
           <ScalarProperty Name="BranchAgreement_Image" ColumnName="BranchAgreement_Image" />
           <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
@@ -1152,6 +1152,25 @@
           <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
           <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
           <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="pgcModel.Game">
+        <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+          <ScalarProperty Name="Laws" ColumnName="Laws" />
+          <ScalarProperty Name="ThirdPresent" ColumnName="ThirdPresent" />
+          <ScalarProperty Name="SecondPresent" ColumnName="SecondPresent" />
+          <ScalarProperty Name="FirstPresent" ColumnName="FirstPresent" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="GamerCount" ColumnName="GamerCount" />
+          <ScalarProperty Name="Type_Enum" ColumnName="Type_Enum" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>

@@ -60,6 +60,7 @@
     <Compile Include="Core\SMSBusiness.cs" />
     <Compile Include="EntityManagementBusiness\AgentBranchContactBusiness.cs" />
     <Compile Include="EntityManagementBusiness\AgentCircularBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\GameBusiness.cs" />
     <Compile Include="EntityManagementBusiness\BranchContactBusiness.cs" />
     <Compile Include="EntityManagementBusiness\BranchesOrderReportBusiness.cs" />
     <Compile Include="EntityManagementBusiness\CircularBusiness.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Lookup\BranchOrderTitleGroupLookupBusiness.cs" />
     <Compile Include="Lookup\BranchOrderShipmentStateLookupBusiness.cs" />
     <Compile Include="Lookup\ProductOnlineOrderLookupBusiness.cs" />
+    <Compile Include="Lookup\GameManagerLookupBusiness.cs" />
     <Compile Include="Lookup\SideMenuCatLookupBusiness.cs" />
     <Compile Include="Lookup\SideMenuItemLookupBusiness.cs" />
     <Compile Include="Lookup\UserLookupBusiness.cs" />
