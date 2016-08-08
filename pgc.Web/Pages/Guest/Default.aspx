@@ -11,11 +11,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
+    <section class="main-body">
     <!-- slider -->
     <input type="hidden" id="slider-time" value="<%=OptionBusiness.GetDouble(OptionKey.FullPageSliderTimer)%>" />
     <input type="hidden" id="speed-slider-time" value="<%=OptionBusiness.GetDouble(OptionKey.FullPageSpeedSlider)%>" />
     <input type="hidden" id="slider-transaction" value="<%=OptionBusiness.GetText(OptionKey.Slider_transitionStyle) %>" />
-    <section style="direction:ltr">
+    <section class="top-slider" style="direction:ltr">
         <%--<div id="main-slider" class="owl-carousel container-fluid">
             <%foreach (var item in DBusiness.GetMainSlider())
               {
@@ -158,6 +159,8 @@
 
     </section>
     <!-- content -->
+      <div class="clear"></div>
+    </section>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" runat="Server">

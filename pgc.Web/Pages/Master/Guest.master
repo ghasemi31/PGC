@@ -57,7 +57,7 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <%--<div class="navbar-header">--%>
-                        <a href="index.html" class="navbar-brand">
+                        <a href="index.html" class="navbar-brand  ">
                             <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
                         </a>
                         <%-- </div>--%>
@@ -94,7 +94,7 @@
         </header>
         <!-- header -->
         <!-- BEGIN BODY -->
-        <asp:ContentPlaceHolder ID="cphbdy" runat="server"></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder  ID="cphbdy" runat="server"></asp:ContentPlaceHolder>
         <!-- END BODY -->
         <!-- footer -->
         <footer>
