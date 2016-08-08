@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/Guest.master" AutoEventWireup="true" CodeFile="UserProfile.aspx.cs" Inherits="Pages_User_UserProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/Guest.master" AutoEventWireup="true" CodeFile="OldUserProfile.aspx.cs" Inherits="Pages_User_UserProfile" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<%@ Import Namespace="kFrameWork.UI" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphStylePege" runat="Server">
     <%this.Title = (!string.IsNullOrEmpty(user.FullName)) ? "پروفایل من-" + user.FullName : ""; %>
-    <link href="/assets/User/UserProfile.css" rel="stylesheet" />
+    <link href="/assets/css/UserProfile/UserProfile.min.css?v=2.2" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
-    <section id="page">
-        <section id="main-content">
+<asp:Content ID="Content2" ContentPlaceHolderID="cphContentPage" runat="Server">
+    <section class="main-body content">
+        <section>
             <div class="container">
                 <div class="row">
 
@@ -27,34 +28,42 @@
                                 <hr />
                             </header>
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div>
                                         <div>
                                             <div class="profile-userpic">
-                                                <img src="/assets/Guest/Image/default-user-avatar.png" />
+                                                <img src="/assets/global/images/default-user-avatar.png" class="img-responsive" alt="">
                                             </div>
                                             <div class="profile-usertitle">
                                                 <div class="profile-usertitle-name"><%=(!string.IsNullOrEmpty(user.FullName))?user.FullName:"" %></div>
                                             </div>
+                                            <div class="display-center">
+                                                <a class="btn-profile" href="<%=GetRouteUrl("user-editprofile",null) %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ویرایش اطلاعات</a>
+                                                <a class="btn-profile" href="<%=GetRouteUrl("user-changepassword",null) %>"><i class="fa fa-key" aria-hidden="true"></i>تغییر کلمه عبور</a>
+                                            </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" style="margin-top: 2em;">
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
+                                        <span class="profile-title">کد اشتراک:  </span>
+                                        <span><%=user.ID %></span>
+                                    </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">نام و نام خانوادگی:  </span>
                                         <span><%=(!string.IsNullOrEmpty(user.FullName))?user.FullName:"" %></span>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
-                                        <span class="profile-title">کد ملی:  </span>
-                                        <span><%=(!string.IsNullOrEmpty(user.NationalCode))?user.NationalCode:"" %></span>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
-                                        <span class="profile-title">نام پدر:  </span>
-                                        <span>دیتابیس</span>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">پست الکترونیک:  </span>
                                         <span><%=(!string.IsNullOrEmpty(user.Email))?user.Email:"" %></span>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
+                                        <span class="profile-title">کد ملی:  </span>
+                                        <span><%=(!string.IsNullOrEmpty(user.NationalCode))?user.NationalCode:"" %></span>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">تلفن:  </span>
@@ -71,21 +80,47 @@
 
                                 </div>
                             </div>
-                            <div class="row" id="profile-button">
-                                <a class="btn-profile" href="#"><i class="fa fa-gamepad" aria-hidden="true"></i>بازی های من</a>
-                                <a class="btn-profile" href="<%=GetRouteUrl("user-editprofile",null) %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ویرایش اطلاعات</a>
-                                <a class="btn-profile" href="<%=GetRouteUrl("user-changepassword",null) %>"><i class="fa fa-key" aria-hidden="true"></i>تغییر کلمه عبور</a>
-                            </div>
-                            <div class="clearfix"></div>
+
                         </div>
+
+
+
+                        <%if (business.RetriveLastCircular().Count() > 0)
+                          {%>
+                        <div class="user-info">
+                            <header>
+                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                <span>آخرین بخشنامه های مستردیزی</span>
+                                <hr />
+                            </header>
+                            <div class="row margin0" style="padding: 0 20px;">
+                                <table class="table">
+                                    <tr>
+                                        <td>عنوان</td>
+                                        <td>تاریخ</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <%foreach (var item in business.RetriveLastCircular())
+                                      {%>
+                                    <tr>
+                                        <td><%=item.Title %></td>
+                                        <td><%=kFrameWork.Util.DateUtil.GetPersianDateWithTime(item.Date) %></td>
+                                        <td><a class="btn-table" href="<%=GetRouteUrl("user-circulardetail", new {id=item.ID })%>">نمایش</a></td>
+                                    </tr>
+                                    <%} %>
+                                </table>
+                            </div>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
 
             </div>
-
         </section>
     </section>
+    <kfk:UserMessageViewer runat="server" ID="UserMessageViewer" />
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="cphScriptPage" runat="Server">
 </asp:Content>
 

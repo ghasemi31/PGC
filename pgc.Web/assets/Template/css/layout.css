@@ -41,6 +41,11 @@ Description: layout styles
     margin-right: 0 !important;
 }
 
+.display-center {
+    display: flex;
+    justify-content: center;
+}
+
 
 
 /* #Custom Reset (on top of normalize in bootstrap)
@@ -57,7 +62,7 @@ nav ol, nav ul, ul.iconsList {
 /* #Typography
 ================================================== */
 body {
-    direction:rtl;
+    direction: rtl;
     line-height: 1.571;
     font-family: yekan, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -315,7 +320,7 @@ body.headerStyleCenteredLogo {
     }
 
     body.headerStyleCenteredLogo #mainMenu {
-        float: none!important;
+        float: none !important;
         border-top: 1px solid #eee;
         height: 66px;
     }
@@ -414,7 +419,7 @@ span#logged {
 }
 
 .home, .project {
-    padding-bottom: 0!important;
+    padding-bottom: 0 !important;
 }
 
 .page-header {
@@ -1112,8 +1117,8 @@ a.pull-left:hover {
 }
 
 .boxWrapper .imgWrapper {
-    margin-bottom: 0!important;
-    margin-top: 0!important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
     border: none;
 }
 
@@ -1430,7 +1435,7 @@ article.team {
 
 .team2 p {
     font-size: 0.9em;
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
 }
 
 .team2 a {
@@ -1732,7 +1737,7 @@ nav#filter {
 }
 /* Portfolio  vertical */
 .postview {
-    padding-bottom: 0!important;
+    padding-bottom: 0 !important;
 }
 
 .PortfolioStickyMenu ul {
@@ -1864,7 +1869,7 @@ nav#filter {
         }
 /* USEFULL CLASSES */
 .noBorder {
-    border: none!important;
+    border: none !important;
 }
 
 .transparent_80 {
@@ -2212,7 +2217,7 @@ article.iconBoxV3 {
 }
 
 .accordion-toggle i {
-    color: #ddd!important;
+    color: #ddd !important;
 }
 
 a.accordion-toggle:link {
@@ -2334,7 +2339,7 @@ font-size:20px;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    opacity: 1!important;
+    opacity: 1 !important;
 }
 
 a.socialIcon:hover {
