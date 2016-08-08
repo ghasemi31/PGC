@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="row" id="profile-button">
-                                <a class="btn-profile" href="#"><i class="fa fa-gamepad" aria-hidden="true"></i>انتخاب بازی</a>
+                                <a class="btn-profile" href="#"><i class="fa fa-gamepad" aria-hidden="true"></i>بازی های من</a>
                                 <a class="btn-profile" href="<%=GetRouteUrl("user-editprofile",null) %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ویرایش اطلاعات</a>
                                 <a class="btn-profile" href="<%=GetRouteUrl("user-changepassword",null) %>"><i class="fa fa-key" aria-hidden="true"></i>تغییر کلمه عبور</a>
                             </div>

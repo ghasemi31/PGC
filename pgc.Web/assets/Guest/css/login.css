@@ -1,0 +1,122 @@
+﻿#login-section {
+    background-image: url('/assets/global/images/mrd.pattern.custom.02.svg');
+    background-repeat: repeat;
+}
+
+#login {
+    background-color: rgba(245,245,244,.6);
+    margin-top: 4em;
+    margin-bottom: 4em;
+    color: #7a7a7a;
+    border-radius: 3px;
+    /*opacity: .6;*/
+}
+
+    #login header {
+        text-align: center;
+    }
+
+    #login h1 {
+        font-size: 1.6em;
+        margin: 1.5em 0;
+    }
+
+    #login hr {
+        border-top: 1px solid #ccc;
+        margin-top: 0;
+    }
+
+    #login .fa {
+        font-size: 1em;
+        padding-left: .5em;
+    }
+
+/*login form*/
+/*.input-text {
+    width: 80%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #7a7a7a;
+}*/
+
+#login-form {
+    font-size: 1.2em;
+}
+
+    #login-form hr {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        border-top: 1px solid #423F3F;
+    }
+
+.login-form-content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+    /*#login-form-content .fa{
+    color:#7a7a7a;
+}*/
+
+    .login-form-content .login-content {
+        margin: 2em 0;
+    }
+
+.btnLoginForm, .btnRegisterForm {
+
+    font-size: 1em;
+    padding: 7px;
+    color: #F3F2F0;
+    border-radius: 4px;
+    border: none;
+    background-color: #7a7a7a;
+}
+
+    .btnLoginForm:hover, .btnRegisterForm:hover {
+        background-color: #e99205;
+        color: #fff;
+        transition: all .5s ease;
+    }
+
+.btnRegisterForm {
+    width: 60%;
+}
+
+
+#btnLogin {
+    width: 60%;
+}
+
+.btnEndLoginForm {
+   margin: 1em 1em 2em 1em;
+    width: 35%;
+}
+
+#login-form a {
+    color: #e99205;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+    #login-form a:hover {
+        color: #DA251D;
+    }
+
+#login-form-link {
+    text-align: left;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+
+#captcha {
+    /*margin-top: -2.8em;*/
+    margin-right: 1em;
+}
+
+    #captcha a {
+        color: grey;
+        margin-top: 2.7em;
+        margin-right: 1.4em;
+    }
+

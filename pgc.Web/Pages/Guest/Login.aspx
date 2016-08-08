@@ -6,19 +6,17 @@
 <%@ Import Namespace="pgc.Business" %>
 <%@ Import Namespace="pgc.Model.Enums" %>
 <%@ Import Namespace="kFrameWork.Business" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <%this.Title = OptionBusiness.GetText(OptionKey.Login_Title); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Description) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Keywords) %>" />
-    <!-- BEGIN LOGIN PAGE STYLE -->
-    <link href="/assets/css/Login/login.min.css?v=2.2" rel="stylesheet" />
-    <!-- END LOGIN PAGE STYLE -->
+    <link href="/assets/Guest/css/login.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
-    <!-- BEGIN CONTENT -->
     <section class="main-body">
-        <div class="container-fluid">
+        <div class="container">
+
             <div id="login-section" class="row">
                 <div id="login" class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-0 col-xs-12">
                     <header>
@@ -34,14 +32,10 @@
                     </form>
                 </div>
             </div>
+
         </div>
-        <div class="clear"></div>
     </section>
-    <!-- END CONTENT -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" runat="Server">
-    <!-- BEGIN LOGIN PAGE SCRIPT -->
-    <script src="/assets/js/Login/login.min.js?v=2.2"></script>
-    <!-- BEGIN LOGIN PAGE SCRIPT -->
 </asp:Content>
 

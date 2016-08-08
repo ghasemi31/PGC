@@ -142,17 +142,7 @@
 }
 
 .update-form-item {
-    margin-bottom: 2em;
-}
-
-    .update-form-item label > i {
-        margin-left: 8px;
-        color: #e99205;
-    }
-
-.update-form-group {
-    margin-top: 1em;
-    padding: 0 2em;
+   padding:0 40px;
 }
 
 #profile-update {
@@ -310,43 +300,9 @@
 }
 
 
-select {
+ .update-form-select select {
     width: 100% !important;
-    margin-top: 20px;
-    margin-bottom: -15px !important;
+    margin-bottom: 0 !important;
     height: 34px;
     border-radius: 4px;
-}
-/*placeholder color*/
-*::-webkit-input-placeholder {
-    color: #7a7a7a;
-}
-
-*:-moz-placeholder {
-    color: #7a7a7a;
-}
-
-*::-moz-placeholder {
-    color: #7a7a7a;
-}
-
-*:-ms-input-placeholder {
-    color: #7a7a7a;
-}
-
-
-.red-placeholder::-webkit-input-placeholder {
-    color: #da251d;
-}
-
-.red-placeholder:-moz-placeholder {
-    color: #da251d;
-}
-
-.red-placeholder::-moz-placeholder {
-    color: #da251d;
-}
-
-.red-placeholder:-ms-input-placeholder {
-    color: #da251d;
 }
