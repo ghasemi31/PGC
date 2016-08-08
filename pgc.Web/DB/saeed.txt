@@ -1,12 +1,1 @@
-﻿agha man yadam raft script befrestam
-
-update [Security].PanelPage
-set URL='~/Pages/Guest/Register.aspx'
-where id=30
-
-
-950518
-
-INSERT [Security].[PanelPage] 
-([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport])
- VALUES (195, NULL, NULL, N'لیست بازیهای من', N'لیست بازیهای من', N'~/Pages/User/GameList.aspx', 30, 0, N'user-gamelist', N'user/gamelist', 0, 0)
+﻿
