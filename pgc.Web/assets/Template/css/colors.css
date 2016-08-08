@@ -140,22 +140,22 @@ blockquote:before, blockquote:after {
 
 /*********************** BUTTONS ***********************/
 a {
-	color:#44BCDD;
+	color:#e99205;
 }
 a:hover, .scrollspyNav .active a {
-	color:#44BCDD;
+	color:#e99205;
 }
 ul.iconsList li a {
 	color:#555
 }
 ul.iconsList li a:hover, ul.iconsList i {
-	color:#44BCDD
+	color:#e99205
 }
 /**** buttons ****/
 
 
 .btn {
-	background:#44BCDD;
+	background:#e99205;
 	color:#fff!important;
 	/*border:2px solid #eee;*/
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -166,7 +166,7 @@ ul.iconsList li a:hover, ul.iconsList i {
 	background:#3c3c3c
 }
 .btn-inverse:hover {
-	background:#44BCDD;
+	background:#e99205;
 	color:#fff;
 	/*border:2px solid #eee;*/
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -178,7 +178,7 @@ ul.iconsList li a:hover, ul.iconsList i {
 	background: #555;
 }
 .btn-info {
-	background: #49AFCD;
+	background: #e99205;
 }
 .btn-success {
 	background: #5BB75B;
@@ -195,7 +195,7 @@ ul.iconsList li a:hover, ul.iconsList i {
 	-moz-box-shadow: none;
 	-webkit-box-shadow:none;
 	box-shadow: none;
-	color:#49AFCD;
+	color:#e99205;
 }
 .btnWrapper {
 	border:1px solid #ccc;
@@ -214,7 +214,7 @@ ul.iconsList li a:hover, ul.iconsList i {
 	border-bottom:1px solid #111;
 }
 .headerStyleSearch #mainHeader .navbar-inner.preHeader {
-	background:#44BCDD;
+	background:#e99205;
 	border:none;
 }
 .headerStyleSearch ul.quickMenu li a:hover {
