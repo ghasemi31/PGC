@@ -179,6 +179,7 @@ namespace pgc.Business
         public OperationResult ResetPassword(long User_ID, string NewPwd)
         {
             User user ;//= new User();
+            
             OperationResult res = new OperationResult();
 
             try

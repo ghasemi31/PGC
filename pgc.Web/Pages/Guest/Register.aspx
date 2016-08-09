@@ -8,6 +8,7 @@
     <section id="page">
         <div class="container">
             <div class="row">
+
                 <div id="main-content" class="col-lg-offset-2 col-md-offset-2 col-sm-offset-0 col-sm-offset-0 col-lg-8 col-md-8 col-sm-12 col-sm-12">
                     <header>
                         <h1>ثبت نام</h1>

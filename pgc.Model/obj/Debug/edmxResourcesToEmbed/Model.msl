@@ -823,32 +823,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="pgcModel.User">
-        <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="SignUpPersianDate" ColumnName="SignUpPersianDate" />
-          <ScalarProperty Name="Lname" ColumnName="Lname" />
-          <ScalarProperty Name="Fname" ColumnName="Fname" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-          <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
-          <ScalarProperty Name="pwd" ColumnName="pwd" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="AccessLevel_ID" ColumnName="AccessLevel_ID" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="BranchRequests">
       <EntityTypeMapping TypeName="pgcModel.BranchRequest">
         <MappingFragment StoreEntitySet="BranchRequest">
@@ -1172,6 +1146,33 @@
           <ScalarProperty Name="GamerCount" ColumnName="GamerCount" />
           <ScalarProperty Name="Type_Enum" ColumnName="Type_Enum" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="pgcModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SignUpPersianDate" ColumnName="SignUpPersianDate" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="AccessLevel_ID" ColumnName="AccessLevel_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

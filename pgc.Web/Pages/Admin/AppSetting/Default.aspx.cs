@@ -34,7 +34,7 @@ public partial class Pages_Admin_Option_Default : BasePage
             fupNavImage.FilePath = sett.NavHeaderImage;
             fupBranchImg.FilePath = sett.BranchAgreement_Image;
             txtBranchContent.Text = sett.BranchAgreement_Content;
-            txtpgciziLatLng.Text = sett.pgcizi_LatLng;
+            //txtpgciziLatLng.Text = sett.pgcizi_LatLng;
             txtQualityCharter.Text = sett.QualityCharter;
             txtNewsCnt.SetNumber(sett.NewsCount);
         }
@@ -46,7 +46,7 @@ public partial class Pages_Admin_Option_Default : BasePage
         sett.NavHeaderImage = fupNavImage.FilePath;
         sett.QualityCharter = txtQualityCharter.Text;
         sett.NewsCount = txtNewsCnt.GetNumber<int>();
-        sett.pgcizi_LatLng = txtpgciziLatLng.Text;
+        //sett.pgcizi_LatLng = txtpgciziLatLng.Text;
         sett.BranchAgreement_Content = txtBranchContent.Text;
         sett.BranchAgreement_Image = fupBranchImg.FilePath;
         OperationResult Res = Business.Save();

@@ -53,11 +53,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_BranchOrderDetail_Finance_BranchOrder", "BranchOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.BranchOrder), "BranchOrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchOrderDetail), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_SiteMapItem_SiteMapCat", "SiteMapCat", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SiteMapCat), "SiteMapItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SiteMapItem), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_SideMenuItem_SideMenuCat", "SideMenuCat", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SideMenuCat), "SideMenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SideMenuItem), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_SystemEventAction_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "SystemEventAction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SystemEventAction), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_BranchOrderLog_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "BranchFinanceLog", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchFinanceLog), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_AccessLevel", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.AccessLevel), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.City), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Comment_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Product), "Comment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Comment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Product), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OrderDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Product), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OrderDetail), true)]
@@ -71,11 +66,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Comment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "Comment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Comment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_Payment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Branch), "BranchPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchPayment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_Transaction_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Branch), "BranchTransaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchTransaction), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_UserComment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "UserComment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.UserComment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OnlinePayment_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Order), "OnlinePayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OnlinePayment), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OrderDetail_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OrderDetail), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "Circular_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Branch), "Circular", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Circular))]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OccuredSystemEvent_SystemEvent", "SystemEvent", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SystemEvent), "OccuredSystemEvent", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OccuredSystemEvent), true)]
@@ -83,7 +76,14 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "Permission", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.AccessLevel), "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Feature))]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_MenuItem_Feature", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Feature), "MenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.MenuItem), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_MenuItem_MenuCategory", "MenuCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.MenuCategory), "MenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.MenuItem), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_SystemEventAction_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "SystemEventAction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SystemEventAction), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_BranchOrderLog_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "BranchFinanceLog", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchFinanceLog), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Game_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "Game", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Game), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_AccessLevel", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.AccessLevel), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.City), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 
 #endregion
 
@@ -1098,22 +1098,6 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<User> Users
-        {
-            get
-            {
-                if ((_Users == null))
-                {
-                    _Users = base.CreateObjectSet<User>("Users");
-                }
-                return _Users;
-            }
-        }
-        private ObjectSet<User> _Users;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<BranchRequest> BranchRequests
         {
             get
@@ -1398,6 +1382,22 @@ namespace pgc.Model
             }
         }
         private ObjectSet<Game> _Games;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<User> Users
+        {
+            get
+            {
+                if ((_Users == null))
+                {
+                    _Users = base.CreateObjectSet<User>("Users");
+                }
+                return _Users;
+            }
+        }
+        private ObjectSet<User> _Users;
 
         #endregion
 
@@ -1884,14 +1884,6 @@ namespace pgc.Model
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToUsers(User user)
-        {
-            base.AddObject("Users", user);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the BranchRequests EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToBranchRequests(BranchRequest branchRequest)
@@ -2033,6 +2025,14 @@ namespace pgc.Model
         public void AddToGames(Game game)
         {
             base.AddObject("Games", game);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUsers(User user)
+        {
+            base.AddObject("Users", user);
         }
 
         #endregion
@@ -2180,28 +2180,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_AccessLevel", "User")]
-        public EntityCollection<User> Users
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_AccessLevel", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_AccessLevel", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "Permission", "Feature")]
         public EntityCollection<Feature> Features
         {
@@ -2214,6 +2192,28 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("pgcModel.Permission", "Feature", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_AccessLevel", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_AccessLevel", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_AccessLevel", "User", value);
                 }
             }
         }
@@ -4263,28 +4263,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "User")]
-        public EntityCollection<User> Users
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_Branch", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_Branch", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_UserComment_Branch", "UserComment")]
         public EntityCollection<UserComment> UserComments
         {
@@ -4341,6 +4319,28 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Circular>("pgcModel.Circular_Branch", "Circular", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_Branch", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_Branch", "User", value);
                 }
             }
         }
@@ -5169,44 +5169,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_User", "User")]
-        public User User
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<User> UserReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_Branch", "Branch")]
         public Branch Branch
         {
@@ -5235,6 +5197,44 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_User", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User", value);
                 }
             }
         }
@@ -9469,44 +9469,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_User", "User")]
-        public User User
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<User> UserReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_Product", "Product")]
         public Product Product
         {
@@ -9535,6 +9497,44 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_User", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User", value);
                 }
             }
         }
@@ -17534,6 +17534,28 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_OrderDetail_Order", "OrderDetail")]
+        public EntityCollection<OrderDetail> OrderDetails
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "User")]
         public User User
         {
@@ -17562,28 +17584,6 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_Order_User", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_OrderDetail_Order", "OrderDetail")]
-        public EntityCollection<OrderDetail> OrderDetails
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail", value);
                 }
             }
         }
@@ -24600,22 +24600,24 @@ namespace pgc.Model
         /// Create a new User object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
-        /// <param name="fullName">Initial value of the FullName property.</param>
         /// <param name="pwd">Initial value of the pwd property.</param>
         /// <param name="activityStatus">Initial value of the ActivityStatus property.</param>
         /// <param name="email">Initial value of the Email property.</param>
         /// <param name="signUpPersianDate">Initial value of the SignUpPersianDate property.</param>
+        /// <param name="fullName">Initial value of the FullName property.</param>
         /// <param name="disableUserName">Initial value of the DisableUserName property.</param>
-        public static User CreateUser(global::System.Int64 id, global::System.String fullName, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.Boolean disableUserName)
+        /// <param name="fatherName">Initial value of the FatherName property.</param>
+        public static User CreateUser(global::System.Int64 id, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.String fullName, global::System.Boolean disableUserName, global::System.String fatherName)
         {
             User user = new User();
             user.ID = id;
-            user.FullName = fullName;
             user.pwd = pwd;
             user.ActivityStatus = activityStatus;
             user.Email = email;
             user.SignUpPersianDate = signUpPersianDate;
+            user.FullName = fullName;
             user.DisableUserName = disableUserName;
+            user.FatherName = fatherName;
             return user;
         }
 
@@ -24673,30 +24675,6 @@ namespace pgc.Model
         private Nullable<global::System.Int64> _City_ID;
         partial void OnCity_IDChanging(Nullable<global::System.Int64> value);
         partial void OnCity_IDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String FullName
-        {
-            get
-            {
-                return _FullName;
-            }
-            set
-            {
-                OnFullNameChanging(value);
-                ReportPropertyChanging("FullName");
-                _FullName = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("FullName");
-                OnFullNameChanged();
-            }
-        }
-        private global::System.String _FullName;
-        partial void OnFullNameChanging(global::System.String value);
-        partial void OnFullNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -25087,6 +25065,30 @@ namespace pgc.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.String FullName
+        {
+            get
+            {
+                return _FullName;
+            }
+            set
+            {
+                OnFullNameChanging(value);
+                ReportPropertyChanging("FullName");
+                _FullName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FullName");
+                OnFullNameChanged();
+            }
+        }
+        private global::System.String _FullName;
+        partial void OnFullNameChanging(global::System.String value);
+        partial void OnFullNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Boolean DisableUserName
         {
             get
@@ -25105,11 +25107,73 @@ namespace pgc.Model
         private global::System.Boolean _DisableUserName;
         partial void OnDisableUserNameChanging(global::System.Boolean value);
         partial void OnDisableUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FatherName
+        {
+            get
+            {
+                return _FatherName;
+            }
+            set
+            {
+                OnFatherNameChanging(value);
+                ReportPropertyChanging("FatherName");
+                _FatherName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FatherName");
+                OnFatherNameChanged();
+            }
+        }
+        private global::System.String _FatherName;
+        partial void OnFatherNameChanging(global::System.String value);
+        partial void OnFatherNameChanged();
 
         #endregion
 
     
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "Branch")]
+        public Branch Branch
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Branch> BranchReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -25173,6 +25237,50 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BuyBasket>("pgcModel.FK_BuyBasket_User", "BuyBasket", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "Order")]
+        public EntityCollection<Order> Orders
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("pgcModel.FK_Order_User", "Order");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("pgcModel.FK_Order_User", "Order", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Game_User", "Game")]
+        public EntityCollection<Game> Games
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Game>("pgcModel.FK_Game_User", "Game");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Game>("pgcModel.FK_Game_User", "Game", value);
                 }
             }
         }
@@ -25249,88 +25357,6 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("pgcModel.FK_User_City", "City", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "Branch")]
-        public Branch Branch
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Branch> BranchReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "Order")]
-        public EntityCollection<Order> Orders
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("pgcModel.FK_Order_User", "Order");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("pgcModel.FK_Order_User", "Order", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Game_User", "Game")]
-        public EntityCollection<Game> Games
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Game>("pgcModel.FK_Game_User", "Game");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Game>("pgcModel.FK_Game_User", "Game", value);
                 }
             }
         }

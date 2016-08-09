@@ -1071,6 +1071,7 @@
     <Property Name="Branch_ID" Type="bigint" />
     <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="DisableUserName" Type="bit" Nullable="false" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="300" Nullable="false" />
   </EntityType>
   <EntityType Name="UserMessage">
     <Key>

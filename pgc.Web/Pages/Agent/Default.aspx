@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_content" runat="Server">
     <br />
     <br />
-    <b>به پنل نمایندگان مستر دیزی خوش آمدید ، </b>
+    <b>به پنل نمایندگان Iran PGC خوش آمدید ، </b>
     <br />
     <br />
     <b style="color: #A81C1B;">نام و نام خانوادگی: <%=kFrameWork.UI.UserSession.User.FullName%></b>
