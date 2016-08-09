@@ -67,7 +67,7 @@ namespace pgc.Business.General
                 return res;
             }
 
-            catch
+            catch(Exception e)
             {
                 res.Result = ActionResult.Failed;
                 res.AddMessage(UserMessageKey.Failed);

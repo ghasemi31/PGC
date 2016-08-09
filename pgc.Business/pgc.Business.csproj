@@ -77,6 +77,8 @@
     <Compile Include="EntityManagementBusiness\HeadingBusiness.cs" />
     <Compile Include="EntityManagementBusiness\MainMenuBusiness.cs" />
     <Compile Include="EntityManagementBusiness\MaterialBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\SponsorBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\SupportBusiness.cs" />
     <Compile Include="EntityManagementBusiness\OnlinePaymentListBusiness.cs" />
     <Compile Include="EntityManagementBusiness\RandomImageBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SideMenuCatBusiness.cs" />

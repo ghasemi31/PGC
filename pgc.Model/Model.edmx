@@ -401,6 +401,24 @@
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserComment">
           <Key>
             <PropertyRef Name="ID" />
@@ -1076,6 +1094,7 @@
           <Property Name="Branch_ID" Type="bigint" />
           <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DisableUserName" Type="bit" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="UserMessage">
           <Key>
@@ -2003,6 +2022,8 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
           <EntitySet Name="SiteMapCat" EntityType="Self.SiteMapCat" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="SiteMapItem" EntityType="Self.SiteMapItem" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="SocialIcon" EntityType="Self.SocialIcon" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Support" EntityType="Self.Support" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="UserComment" EntityType="Self.UserComment" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="AppSetting" EntityType="Self.AppSetting" Schema="Configuration" store:Type="Tables" />
           <EntitySet Name="ExceptionLog" EntityType="Self.ExceptionLog" Schema="Configuration" store:Type="Tables" />
@@ -2540,27 +2561,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="SideMenuItem" EntitySet="SideMenuItems" />
           </AssociationSet>
           <EntitySet Name="Materials" EntityType="pgcModel.Material" />
-          <EntitySet Name="Users" EntityType="pgcModel.User" />
-          <AssociationSet Name="FK_SystemEventAction_User" Association="pgcModel.FK_SystemEventAction_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="SystemEventAction" EntitySet="SystemEventActions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BranchOrderLog_User" Association="pgcModel.FK_BranchOrderLog_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BuyBasket_User" Association="pgcModel.FK_BuyBasket_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="BuyBasket" EntitySet="BuyBaskets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_AccessLevel" Association="pgcModel.FK_User_AccessLevel">
-            <End Role="AccessLevel" EntitySet="AccessLevels" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_City" Association="pgcModel.FK_User_City">
-            <End Role="City" EntitySet="Cities" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
           <EntitySet Name="BranchRequests" EntityType="pgcModel.BranchRequest" />
           <EntitySet Name="SocialIcons" EntityType="pgcModel.SocialIcon" />
           <EntitySet Name="Comments" EntityType="pgcModel.Comment" />
@@ -2619,10 +2619,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="Branch" EntitySet="Branches" />
             <End Role="BranchTransaction" EntitySet="BranchTransactions" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Branch" Association="pgcModel.FK_User_Branch">
-            <End Role="Branch" EntitySet="Branches" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserComment_Branch" Association="pgcModel.FK_UserComment_Branch">
             <End Role="Branch" EntitySet="Branches" />
             <End Role="UserComment" EntitySet="UserComments" />
@@ -2636,10 +2632,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <AssociationSet Name="FK_OnlinePayment_Order" Association="pgcModel.FK_OnlinePayment_Order">
             <End Role="Order" EntitySet="Orders" />
             <End Role="OnlinePayment" EntitySet="OnlinePayments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_User" Association="pgcModel.FK_Order_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Order" Association="pgcModel.FK_OrderDetail_Order">
             <End Role="Order" EntitySet="Orders" />
@@ -2679,10 +2671,41 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
           <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
           <EntitySet Name="Games" EntityType="pgcModel.Game" />
+          <EntitySet Name="Users" EntityType="pgcModel.User" />
+          <AssociationSet Name="FK_User_Branch" Association="pgcModel.FK_User_Branch">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemEventAction_User" Association="pgcModel.FK_SystemEventAction_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SystemEventAction" EntitySet="SystemEventActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BranchOrderLog_User" Association="pgcModel.FK_BranchOrderLog_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BranchFinanceLog" EntitySet="BranchFinanceLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuyBasket_User" Association="pgcModel.FK_BuyBasket_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BuyBasket" EntitySet="BuyBaskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="pgcModel.FK_Order_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_Game_User" Association="pgcModel.FK_Game_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Game" EntitySet="Games" />
           </AssociationSet>
+          <AssociationSet Name="FK_User_AccessLevel" Association="pgcModel.FK_User_AccessLevel">
+            <End Role="AccessLevel" EntitySet="AccessLevels" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_City" Association="pgcModel.FK_User_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
+          <EntitySet Name="Supports" EntityType="pgcModel.Support" />
           </EntityContainer>
         <EntityType Name="Option">
           <Key>
@@ -2740,8 +2763,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="Role" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="AccessLevel" ToRole="SystemEventAction" />
-          <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_AccessLevel" FromRole="AccessLevel" ToRole="User" />
           <NavigationProperty Name="Features" Relationship="pgcModel.Permission" FromRole="AccessLevel" ToRole="Feature" />
+          <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_AccessLevel" FromRole="AccessLevel" ToRole="User" />
         </EntityType>
         <EntityType Name="MenuCategory">
           <Key>
@@ -3349,10 +3372,10 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_SystemEventAction_SystemEvent" FromRole="SystemEventAction" ToRole="SystemEvent" />
           <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="SystemEventAction" ToRole="AccessLevel" />
           <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_SystemEventAction_PrivateNo" FromRole="SystemEventAction" ToRole="PrivateNo" />
-          <NavigationProperty Name="User" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="SystemEventAction" ToRole="User" />
           <Property Name="Custom_User_ID_SMS" Type="Int64" />
           <Property Name="Custom_Role_ID_SMS" Type="Int32" />
           <Property Name="Custom_AccessLevel_ID_SMS" Type="Int64" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="SystemEventAction" ToRole="User" />
         </EntityType>
         <Association Name="FK_SystemEventAction_SystemEvent">
           <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
@@ -3501,8 +3524,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Type="Int64" Name="User_ID" Nullable="false" />
           <Property Type="Int64" Name="Product_ID" Nullable="false" />
           <Property Type="Int32" Name="Quantity" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="pgcModel.FK_BuyBasket_User" FromRole="BuyBasket" ToRole="User" />
           <NavigationProperty Name="Product" Relationship="pgcModel.FK_BuyBasket_Product" FromRole="BuyBasket" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_BuyBasket_User" FromRole="BuyBasket" ToRole="User" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -3845,8 +3868,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Type="String" Name="BranchTitle" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="LogType" Nullable="false" />
           <Property Type="Int64" Name="LogType_ID" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="BranchFinanceLog" ToRole="User" />
           <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchOrderLog_Branch" FromRole="BranchFinanceLog" ToRole="Branch" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="BranchFinanceLog" ToRole="User" />
         </EntityType>
         <EntityType Name="SiteMapCat">
           <Key>
@@ -3931,101 +3954,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="MaterialPicPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="pgcModel.Product_Material" FromRole="Material" ToRole="Product" />
         </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="City_ID" Type="Int64" />
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AccessLevel_ID" Type="Int64" />
-          <Property Name="Username" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="pwd" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="ActivityStatus" Type="Int32" Nullable="false" />
-          <Property Name="NationalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Fname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Lname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="SignUpPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Gender" Type="Int32" />
-          <Property Name="Branch_ID" Type="Int64" />
-          <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="User" ToRole="SystemEventAction" />
-          <NavigationProperty Name="BranchFinanceLogs" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="User" ToRole="BranchFinanceLog" />
-          <NavigationProperty Name="BuyBaskets" Relationship="pgcModel.FK_BuyBasket_User" FromRole="User" ToRole="BuyBasket" />
-          <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
-          <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
-          <NavigationProperty Name="Branch" Relationship="pgcModel.FK_User_Branch" FromRole="User" ToRole="Branch" />
-          <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_User" FromRole="User" ToRole="Order" />
-          <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Games" Relationship="pgcModel.FK_Game_User" FromRole="User" ToRole="Game" />
-        </EntityType>
-        <Association Name="FK_SystemEventAction_User">
-          <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="SystemEventAction">
-              <PropertyRef Name="Custom_User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BranchOrderLog_User">
-          <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="pgcModel.BranchFinanceLog" Role="BranchFinanceLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="BranchFinanceLog">
-              <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BuyBasket_User">
-          <End Type="pgcModel.User" Role="User" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pgcModel.BuyBasket" Role="BuyBasket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="BuyBasket">
-              <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_AccessLevel">
-          <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
-          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccessLevel">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="AccessLevel_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_City">
-          <End Type="pgcModel.City" Role="City" Multiplicity="0..1" />
-          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="City">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="City_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="BranchRequest">
           <Key>
             <PropertyRef Name="ID" />
@@ -4195,7 +4123,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="Comments" Relationship="pgcModel.FK_Comment_Branch" FromRole="Branch" ToRole="Comment" />
           <NavigationProperty Name="BranchPayments" Relationship="pgcModel.FK_Finance_Payment_Branch" FromRole="Branch" ToRole="BranchPayment" />
           <NavigationProperty Name="BranchTransactions" Relationship="pgcModel.FK_Finance_Transaction_Branch" FromRole="Branch" ToRole="BranchTransaction" />
-          <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_Branch" FromRole="Branch" ToRole="User" />
           <NavigationProperty Name="UserComments" Relationship="pgcModel.FK_UserComment_Branch" FromRole="Branch" ToRole="UserComment" />
           <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_Branch" FromRole="Branch" ToRole="Order" />
           <NavigationProperty Name="Circulars" Relationship="pgcModel.Circular_Branch" FromRole="Branch" ToRole="Circular" />
@@ -4204,6 +4131,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="PageDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="PageKeywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_Branch" FromRole="Branch" ToRole="User" />
         </EntityType>
         <Association Name="FK_Branch_BranchOrderTitle_Branch">
           <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
@@ -4317,18 +4245,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Branch">
-          <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
-          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Branch">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="Branch_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserComment_Branch">
           <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
           <End Type="pgcModel.UserComment" Role="UserComment" Multiplicity="*" />
@@ -4381,9 +4297,9 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Order_Branch" FromRole="Order" ToRole="Branch" />
           <NavigationProperty Name="OnlinePayments" Relationship="pgcModel.FK_OnlinePayment_Order" FromRole="Order" ToRole="OnlinePayment" />
-          <NavigationProperty Name="User" Relationship="pgcModel.FK_Order_User" FromRole="Order" ToRole="User" />
           <NavigationProperty Name="OrderDetails" Relationship="pgcModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
           <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_Order_User" FromRole="Order" ToRole="User" />
         </EntityType>
         <Association Name="FK_Order_Branch">
           <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
@@ -4406,20 +4322,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             </Principal>
             <Dependent Role="OnlinePayment">
               <PropertyRef Name="Order_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_User">
-          <End Type="pgcModel.User" Role="User" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pgcModel.Order" Role="Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4636,9 +4538,107 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="Laws" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DispOrder" Type="Int32" Nullable="false" />
           <Property Name="Cost" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="pgcModel.FK_Game_User" FromRole="Game" ToRole="User" />
           <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="pgcModel.FK_Game_User" FromRole="Game" ToRole="User" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City_ID" Type="Int64" />
+          <Property Name="AccessLevel_ID" Type="Int64" />
+          <Property Name="Username" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityStatus" Type="Int32" Nullable="false" />
+          <Property Name="NationalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Lname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SignUpPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Branch_ID" Type="Int64" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
+          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Branch" Relationship="pgcModel.FK_User_Branch" FromRole="User" ToRole="Branch" />
+          <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="User" ToRole="SystemEventAction" />
+          <NavigationProperty Name="BranchFinanceLogs" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="User" ToRole="BranchFinanceLog" />
+          <NavigationProperty Name="BuyBaskets" Relationship="pgcModel.FK_BuyBasket_User" FromRole="User" ToRole="BuyBasket" />
+          <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_User" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="Games" Relationship="pgcModel.FK_Game_User" FromRole="User" ToRole="Game" />
+          <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
+          <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
+        </EntityType>
+        <Association Name="FK_User_Branch">
+          <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
+          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Branch_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemEventAction_User">
+          <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemEventAction">
+              <PropertyRef Name="Custom_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BranchOrderLog_User">
+          <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="pgcModel.BranchFinanceLog" Role="BranchFinanceLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BranchFinanceLog">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BuyBasket_User">
+          <End Type="pgcModel.User" Role="User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pgcModel.BuyBasket" Role="BuyBasket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BuyBasket">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_User">
+          <End Type="pgcModel.User" Role="User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pgcModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Game_User">
           <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
           <End Type="pgcModel.Game" Role="Game" Multiplicity="*" />
@@ -4651,6 +4651,48 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_User_AccessLevel">
+          <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
+          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccessLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AccessLevel_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_City">
+          <End Type="pgcModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="City_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5435,32 +5477,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="pgcModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />
-                <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="SignUpPersianDate" ColumnName="SignUpPersianDate" />
-                <ScalarProperty Name="Lname" ColumnName="Lname" />
-                <ScalarProperty Name="Fname" ColumnName="Fname" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
-                <ScalarProperty Name="pwd" ColumnName="pwd" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="AccessLevel_ID" ColumnName="AccessLevel_ID" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="City_ID" ColumnName="City_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BranchRequests">
             <EntityTypeMapping TypeName="pgcModel.BranchRequest">
               <MappingFragment StoreEntitySet="BranchRequest">
@@ -5788,6 +5804,53 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="pgcModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="SignUpPersianDate" ColumnName="SignUpPersianDate" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="AccessLevel_ID" ColumnName="AccessLevel_ID" />
+                <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsors">
+            <EntityTypeMapping TypeName="pgcModel.Sponsor">
+              <MappingFragment StoreEntitySet="Sponsor">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supports">
+            <EntityTypeMapping TypeName="pgcModel.Support">
+              <MappingFragment StoreEntitySet="Support">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5809,7 +5872,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model" ZoomLevel="61">
+      <Diagram Name="Model" ZoomLevel="84">
         <EntityTypeShape EntityType="pgcModel.Option" Width="1.5" PointX="8" PointY="1.25" Height="2.8485624186197906" IsExpanded="true" />
         <EntityTypeShape EntityType="pgcModel.OptionCategory" Width="1.5" PointX="5.625" PointY="1.375" Height="2.5571907552083331" IsExpanded="true" />
         <EntityTypeShape EntityType="pgcModel.OptionLookup" Width="1.5" PointX="5.75" PointY="14.75" Height="1.7377836100260424" IsExpanded="true" />
@@ -6107,12 +6170,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <EntityTypeShape EntityType="pgcModel.SideMenuItem" Width="1.5" PointX="15.625" PointY="19.625" />
         <AssociationConnector Association="pgcModel.FK_SideMenuItem_SideMenuCat" />
         <EntityTypeShape EntityType="pgcModel.Material" Width="1.5" PointX="21.375" PointY="22.875" />
-        <EntityTypeShape EntityType="pgcModel.User" Width="1.5" PointX="3" PointY="23" />
-        <AssociationConnector Association="pgcModel.FK_SystemEventAction_User" />
-        <AssociationConnector Association="pgcModel.FK_BranchOrderLog_User" />
-        <AssociationConnector Association="pgcModel.FK_BuyBasket_User" />
-        <AssociationConnector Association="pgcModel.FK_User_AccessLevel" />
-        <AssociationConnector Association="pgcModel.FK_User_City" />
         <EntityTypeShape EntityType="pgcModel.BranchRequest" Width="1.5" PointX="14.375" PointY="4.75" />
         <EntityTypeShape EntityType="pgcModel.SocialIcon" Width="1.5" PointX="11.375" PointY="23.75" />
         <EntityTypeShape EntityType="pgcModel.Comment" Width="1.5" PointX="23.625" PointY="22.25" />
@@ -6132,13 +6189,11 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <AssociationConnector Association="pgcModel.FK_Comment_Branch" />
         <AssociationConnector Association="pgcModel.FK_Finance_Payment_Branch" />
         <AssociationConnector Association="pgcModel.FK_Finance_Transaction_Branch" />
-        <AssociationConnector Association="pgcModel.FK_User_Branch" />
         <AssociationConnector Association="pgcModel.FK_UserComment_Branch" />
         <EntityTypeShape EntityType="pgcModel.News" Width="1.5" PointX="0.75" PointY="17.75" />
         <EntityTypeShape EntityType="pgcModel.Order" Width="1.5" PointX="8.625" PointY="27.75" />
         <AssociationConnector Association="pgcModel.FK_Order_Branch" />
         <AssociationConnector Association="pgcModel.FK_OnlinePayment_Order" />
-        <AssociationConnector Association="pgcModel.FK_Order_User" />
         <AssociationConnector Association="pgcModel.FK_OrderDetail_Order" />
         <EntityTypeShape EntityType="pgcModel.Circular" Width="1.5" PointX="3" PointY="37.5" />
         <AssociationConnector Association="pgcModel.Circular_Branch" />
@@ -6156,7 +6211,17 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <EntityTypeShape EntityType="pgcModel.DynPage" Width="1.5" PointX="13.375" PointY="23.75" />
         <EntityTypeShape EntityType="pgcModel.MainSlider" Width="1.5" PointX="8.8553060539324342" PointY="5.1720111543182332" />
         <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="5.25" PointY="25.5" />
+        <EntityTypeShape EntityType="pgcModel.User" Width="1.5" PointX="3" PointY="23" />
+        <AssociationConnector Association="pgcModel.FK_User_Branch" />
+        <AssociationConnector Association="pgcModel.FK_SystemEventAction_User" />
+        <AssociationConnector Association="pgcModel.FK_BranchOrderLog_User" />
+        <AssociationConnector Association="pgcModel.FK_BuyBasket_User" />
+        <AssociationConnector Association="pgcModel.FK_Order_User" />
         <AssociationConnector Association="pgcModel.FK_Game_User" />
+        <AssociationConnector Association="pgcModel.FK_User_AccessLevel" />
+        <AssociationConnector Association="pgcModel.FK_User_City" />
+        <EntityTypeShape EntityType="pgcModel.Sponsor" Width="1.5" PointX="23.375" PointY="5.75" />
+        <EntityTypeShape EntityType="pgcModel.Support" Width="1.5" PointX="15.375" PointY="23.75" />
         </Diagram>
     </Diagrams>
   </Designer>

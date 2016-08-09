@@ -47,9 +47,9 @@
                         </span>
                         <span dir="ltr">© pgcizi.com | <a href="http://www.rondsoft.com" target="_blank">Powered By</a> : [ RondSoft ]</span>
                     </div>--%>
-                    <div class="copy">
+                    <%--<div class="copy">
                         <%=kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.CopyRight)%>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>

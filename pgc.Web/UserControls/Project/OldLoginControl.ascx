@@ -15,7 +15,7 @@
     </asp:View>
     <asp:View runat="server">
         <div class="loginedview fontClass">
-            <%=((pgc.Model.Enums.Gender)kFrameWork.UI.UserSession.User.Gender == pgc.Model.Enums.Gender.Female) ? "خانم" : "آقای" %> <%=kFrameWork.UI.UserSession.User.Fname + " " + kFrameWork.UI.UserSession.User.Lname%> به مستر دیزی خوش آمدید
+            <%=((pgc.Model.Enums.Gender)kFrameWork.UI.UserSession.User.Gender == pgc.Model.Enums.Gender.Female) ? "خانم" : "آقای" %> <%=kFrameWork.UI.UserSession.User.Fname + " " + kFrameWork.UI.UserSession.User.Lname%> به Iran PGC خوش آمدید
             <asp:Button runat="server" ID="btnConsole" Text="کنترل پنل" CssClass="cpanel btn fontClass" OnClick="CPanelClick" autocomplete="off"/>
             <asp:Button runat="server" ID="btnLogOut" Text="خروج" CssClass="exit btn fontClass" OnClick="LogOut" autocomplete="off"/>
             <%if (kFrameWork.UI.UserSession.User.AccessLevel_ID == 2 && kFrameWork.UI.UserSession.User.Orders.Count != 0)

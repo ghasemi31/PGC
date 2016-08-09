@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_content" Runat="Server">
 <br />
 <br />
-<b>به پنل کاربری مستر دیزی خوش آمدید ، </b>
+<b>به پنل کاربری Iran PGC خوش آمدید ، </b>
 <br />
 <br />
 <br />

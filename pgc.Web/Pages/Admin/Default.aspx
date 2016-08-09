@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_content" Runat="Server">
 <br />
 <br />
-<b>به پنل مدیریتی مستر دیزی خوش آمدید ، </b>
+<b>به پنل مدیریتی Iran PGC خوش آمدید ، </b>
 <br />
 <br />
 <%=kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.Admin_GreetingMessage) %>

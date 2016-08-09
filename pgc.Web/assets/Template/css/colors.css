@@ -866,7 +866,7 @@ ul.quickMenu li a {
 	color:#CCC;
 }
 ul.quickMenu li a:hover {
-	color:#1704c5;
+	color:#ed8d43;
 	text-decoration:none;
 }
 /*SOCIAL ICONS*/
@@ -879,7 +879,7 @@ a.socialIcon {
 	color:#ccc;
 }
 a.socialIcon:hover, .socialHoverClass {
-	color:#1704c5;
+	color:#ed8d43;
 }
 .socialNetwork li, .quickMenu li {
 	border-left:1px dotted #ccc;

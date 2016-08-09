@@ -27,7 +27,7 @@ public partial class Pages_Admin_Option_Default : BasePage
 
     private void BindValues()
     {
-
+        
 
         //if (sett != null)
         //{
@@ -38,7 +38,7 @@ public partial class Pages_Admin_Option_Default : BasePage
         //    txtQualityCharter.Text = sett.QualityCharter;
         //    txtNewsCnt.SetNumber(sett.NewsCount);
         //}
-    }
+        }
 
 
     protected void OnSave(object sender, EventArgs e)
@@ -51,9 +51,9 @@ public partial class Pages_Admin_Option_Default : BasePage
         //sett.BranchAgreement_Image = fupBranchImg.FilePath;
         //OperationResult Res = Business.Save();
         //UserSession.AddMessage(Res.Messages);
-
+      
     }
 
-
+  
 
 }

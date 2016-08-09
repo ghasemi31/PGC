@@ -4,7 +4,7 @@
     <div class="wrapper">
         <div class="tab">
             <a href="<%=GetRouteUrl("guest-default",null) %>">
-                <img src="/assets/global/images/logo/pgcizi.title.red.svg" alt="صفحه نخست" style="width: 100%" />
+                <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" style="margin:0 auto;display: block;"  />
             </a>
         </div>
         <%--<asp:Button runat="server" Text="خروج" CssClass="exitbtn" OnClick="LogOut" UseSubmitBehavior="false"/>--%>
@@ -15,7 +15,7 @@
         <div class="welcome">
             <span style="font-size: 20px;"><i class="fa fa-user" aria-hidden="true"></i></span>
             <%=(!string.IsNullOrEmpty(kFrameWork.UI.UserSession.User.FullName)?kFrameWork.UI.UserSession.User.FullName:"کاربر") + "  عزیز،" %><br />
-            به مستر دیزی خوش آمدید.
+            به Iran PGC خوش آمدید.
           <%if ((pgc.Model.Enums.Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == pgc.Model.Enums.Role.User)
             {%>
             <br />
