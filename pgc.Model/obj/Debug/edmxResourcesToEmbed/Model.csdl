@@ -340,6 +340,8 @@
       <End Role="City" EntitySet="Cities" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
+    <EntitySet Name="Supports" EntityType="pgcModel.Support" />
   </EntityContainer>
   <EntityType Name="Option">
     <Key>
@@ -2309,4 +2311,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

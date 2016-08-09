@@ -1398,6 +1398,38 @@ namespace pgc.Model
             }
         }
         private ObjectSet<User> _Users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Sponsor> Sponsors
+        {
+            get
+            {
+                if ((_Sponsors == null))
+                {
+                    _Sponsors = base.CreateObjectSet<Sponsor>("Sponsors");
+                }
+                return _Sponsors;
+            }
+        }
+        private ObjectSet<Sponsor> _Sponsors;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Support> Supports
+        {
+            get
+            {
+                if ((_Supports == null))
+                {
+                    _Supports = base.CreateObjectSet<Support>("Supports");
+                }
+                return _Supports;
+            }
+        }
+        private ObjectSet<Support> _Supports;
 
         #endregion
 
@@ -2033,6 +2065,22 @@ namespace pgc.Model
         public void AddToUsers(User user)
         {
             base.AddObject("Users", user);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Sponsors EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSponsors(Sponsor sponsor)
+        {
+            base.AddObject("Sponsors", sponsor);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Supports EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSupports(Support support)
+        {
+            base.AddObject("Supports", support);
         }
 
         #endregion
@@ -22813,6 +22861,276 @@ namespace pgc.Model
         private global::System.Boolean _IsVisible;
         partial void OnIsVisibleChanging(global::System.Boolean value);
         partial void OnIsVisibleChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Sponsor")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Sponsor : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Sponsor object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        /// <param name="link">Initial value of the Link property.</param>
+        /// <param name="imagePath">Initial value of the ImagePath property.</param>
+        public static Sponsor CreateSponsor(global::System.Int64 id, global::System.String title, global::System.String link, global::System.String imagePath)
+        {
+            Sponsor sponsor = new Sponsor();
+            sponsor.ID = id;
+            sponsor.Title = title;
+            sponsor.Link = link;
+            sponsor.ImagePath = imagePath;
+            return sponsor;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Link
+        {
+            get
+            {
+                return _Link;
+            }
+            set
+            {
+                OnLinkChanging(value);
+                ReportPropertyChanging("Link");
+                _Link = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Link");
+                OnLinkChanged();
+            }
+        }
+        private global::System.String _Link;
+        partial void OnLinkChanging(global::System.String value);
+        partial void OnLinkChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ImagePath
+        {
+            get
+            {
+                return _ImagePath;
+            }
+            set
+            {
+                OnImagePathChanging(value);
+                ReportPropertyChanging("ImagePath");
+                _ImagePath = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ImagePath");
+                OnImagePathChanged();
+            }
+        }
+        private global::System.String _ImagePath;
+        partial void OnImagePathChanging(global::System.String value);
+        partial void OnImagePathChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Support")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Support : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Support object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        /// <param name="link">Initial value of the Link property.</param>
+        /// <param name="imagePath">Initial value of the ImagePath property.</param>
+        public static Support CreateSupport(global::System.Int64 id, global::System.String title, global::System.String link, global::System.String imagePath)
+        {
+            Support support = new Support();
+            support.ID = id;
+            support.Title = title;
+            support.Link = link;
+            support.ImagePath = imagePath;
+            return support;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Link
+        {
+            get
+            {
+                return _Link;
+            }
+            set
+            {
+                OnLinkChanging(value);
+                ReportPropertyChanging("Link");
+                _Link = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Link");
+                OnLinkChanged();
+            }
+        }
+        private global::System.String _Link;
+        partial void OnLinkChanging(global::System.String value);
+        partial void OnLinkChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ImagePath
+        {
+            get
+            {
+                return _ImagePath;
+            }
+            set
+            {
+                OnImagePathChanging(value);
+                ReportPropertyChanging("ImagePath");
+                _ImagePath = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ImagePath");
+                OnImagePathChanged();
+            }
+        }
+        private global::System.String _ImagePath;
+        partial void OnImagePathChanging(global::System.String value);
+        partial void OnImagePathChanged();
 
         #endregion
 

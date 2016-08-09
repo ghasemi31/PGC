@@ -90,45 +90,28 @@
                             <h1>حامیان معنوی</h1>
                             <hr />
                             <div id="supporter-slider" class="owl-carousel">
+                                <%foreach (var item in new pgc.Business.SupportBusiness().getAllSupport()){ %>
                                 <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
+                                    <a href="<%=item.Link %>">
+                                    <img src="<%=item.ImagePath.Replace("~","") %>" />
+                                        </a>
                                 </div>
-                                <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
-                                </div>
-                                <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
-                                </div>
-                                <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
-                                </div>
-                                <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
-                                </div>
-                                <div class="supporter-item">
-                                    <img src="/assets/Guest/Image/bonyad.png" />
-                                </div>
+                                <%} %>
+                               
                             </div>
                         </div>
                         <div class="row margin-left-right-0" style="margin-top: 2em;">
                             <h1>اسپانسرها</h1>
                             <hr />
                             <div id="sponsor-slider" class="owl-carousel">
-                                <div class="sponsor=item">
-                                    <img src="/assets/Guest/Image/samsung-logo.png" />
+                                <%foreach (var item in new pgc.Business.SponsorBusiness().getAllSponsors()){ %>
+                                <div class="sponsor-item">
+                                    <a href="<%=item.Link %>">
+                                    <img src="<%=item.ImagePath.Replace("~","") %>" />
+                                        </a>
                                 </div>
-                                <div class="sponsor=item">
-                                    <img src="/assets/Guest/Image/samsung-logo.png" />
-                                </div>
-                                <div class="sponsor=item">
-                                    <img src="/assets/Guest/Image/samsung-logo.png" />
-                                </div>
-                                <div class="sponsor=item">
-                                    <img src="/assets/Guest/Image/samsung-logo.png" />
-                                </div>
-                                <div class="sponsor=item">
-                                    <img src="/assets/Guest/Image/samsung-logo.png" />
-                                </div>
+                                <%} %>
+                            
                             </div>
                         </div>
 

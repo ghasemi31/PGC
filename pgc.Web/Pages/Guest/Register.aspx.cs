@@ -14,7 +14,21 @@ public partial class Pages_Guest_Register :BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.User)
+        {
+            //Response.Redirect("~/Pages/User/Default.aspx");
+            Response.Redirect(this.Page.GetRouteUrl("user-userprofile", null));
+        }
 
+        if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.Admin)
+        {
+            //Response.Redirect("~/Pages/Admin/Default.aspx");
+            Response.Redirect(this.Page.GetRouteUrl("admin-default", null));
+        }
+        if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.Agent)
+        {
+            Response.Redirect(this.Page.GetRouteUrl("agent-default", null));
+        }
        
     }
 

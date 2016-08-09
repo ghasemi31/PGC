@@ -134,6 +134,8 @@
     <Compile Include="Patterns\Project\AgentCircularPattern.cs" />
     <Compile Include="Patterns\Project\BranchContactPattern.cs" />
     <Compile Include="Patterns\Project\GamePattern.cs" />
+    <Compile Include="Patterns\Project\SponsorPattern.cs" />
+    <Compile Include="Patterns\Project\SupportPattern.cs" />
     <Compile Include="Patterns\Project\ProductSoldChartPattern.cs" />
     <Compile Include="Patterns\Project\BranchSummaryChartPattern.cs" />
     <Compile Include="Patterns\Project\CircularPattern.cs" />

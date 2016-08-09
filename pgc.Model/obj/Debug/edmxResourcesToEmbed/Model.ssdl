@@ -396,6 +396,24 @@
     <Property Name="DispOrder" Type="int" Nullable="false" />
     <Property Name="IsVisible" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
   <EntityType Name="UserComment">
     <Key>
       <PropertyRef Name="ID" />
@@ -1999,6 +2017,8 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
     <EntitySet Name="SiteMapCat" EntityType="Self.SiteMapCat" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="SiteMapItem" EntityType="Self.SiteMapItem" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="SocialIcon" EntityType="Self.SocialIcon" Schema="CMS" store:Type="Tables" />
+    <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="CMS" store:Type="Tables" />
+    <EntitySet Name="Support" EntityType="Self.Support" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="UserComment" EntityType="Self.UserComment" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="AppSetting" EntityType="Self.AppSetting" Schema="Configuration" store:Type="Tables" />
     <EntitySet Name="ExceptionLog" EntityType="Self.ExceptionLog" Schema="Configuration" store:Type="Tables" />

@@ -401,6 +401,24 @@
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserComment">
           <Key>
             <PropertyRef Name="ID" />
@@ -2004,6 +2022,8 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
           <EntitySet Name="SiteMapCat" EntityType="Self.SiteMapCat" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="SiteMapItem" EntityType="Self.SiteMapItem" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="SocialIcon" EntityType="Self.SocialIcon" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="CMS" store:Type="Tables" />
+          <EntitySet Name="Support" EntityType="Self.Support" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="UserComment" EntityType="Self.UserComment" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="AppSetting" EntityType="Self.AppSetting" Schema="Configuration" store:Type="Tables" />
           <EntitySet Name="ExceptionLog" EntityType="Self.ExceptionLog" Schema="Configuration" store:Type="Tables" />
@@ -2684,6 +2704,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="City" EntitySet="Cities" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
+          <EntitySet Name="Supports" EntityType="pgcModel.Support" />
           </EntityContainer>
         <EntityType Name="Option">
           <Key>
@@ -4653,6 +4675,24 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5791,6 +5831,26 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Sponsors">
+            <EntityTypeMapping TypeName="pgcModel.Sponsor">
+              <MappingFragment StoreEntitySet="Sponsor">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supports">
+            <EntityTypeMapping TypeName="pgcModel.Support">
+              <MappingFragment StoreEntitySet="Support">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -6160,6 +6220,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <AssociationConnector Association="pgcModel.FK_Game_User" />
         <AssociationConnector Association="pgcModel.FK_User_AccessLevel" />
         <AssociationConnector Association="pgcModel.FK_User_City" />
+        <EntityTypeShape EntityType="pgcModel.Sponsor" Width="1.5" PointX="23.375" PointY="5.75" />
+        <EntityTypeShape EntityType="pgcModel.Support" Width="1.5" PointX="15.375" PointY="23.75" />
         </Diagram>
     </Diagrams>
   </Designer>

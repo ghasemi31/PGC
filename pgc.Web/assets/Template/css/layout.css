@@ -3228,7 +3228,7 @@ padding:0 38px;
         display:none;
     }
     #mainHeader #mainMenu {
-    margin-top:50px;
+    margin-top:90px;
 }
        .main-body{
         margin-top:120px;
@@ -3375,7 +3375,7 @@ padding:0 38px;
 
     #mainMenu {
         width: 100%;
-        margin-top:90px!important;
+       
     }
 
     #mainHeader .brand {
@@ -3721,7 +3721,7 @@ padding:0 38px;
     }
 
     .quickMenu {
-        display: none;
+        /*display: none;*/
     }
 
     .socialNetwork {
@@ -4529,4 +4529,13 @@ padding:0 38px;
     .btnFlat.btnYellow {
         background-color: #FFCC00;
         border-color: #E2B500;
+    }
+
+
+
+    .supporter-item,.sponsor-item{
+        margin:20px;
+    }
+    .sponsor-item{
+
     }

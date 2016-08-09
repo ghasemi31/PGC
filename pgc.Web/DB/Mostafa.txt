@@ -2,3 +2,75 @@
 ALTER TABLE UserManagement.[User] ADD
 	FatherName nvarchar(300) NOT NULL default N''
 GO
+
+
+
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [CMS].[Sponsor](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](300) NOT NULL,
+	[Link] [nvarchar](500) NOT NULL,
+	[ImagePath] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_Sponsor] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [CMS].[Support](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](300) NOT NULL,
+	[Link] [nvarchar](500) NOT NULL,
+	[ImagePath] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_Support] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+
+
+
+INSERT [Security].[Feature] ([ID], [Title], [CanGrantToAdmin], [CanGrantToUser], [CanGrantToAgent], [DisplayOrder], [IsNew]) VALUES (127, N'مدیریت بخش حامیان معنوی', 1, 0, 1, 60, 0)
+GO
+INSERT [Security].[Feature] ([ID], [Title], [CanGrantToAdmin], [CanGrantToUser], [CanGrantToAgent], [DisplayOrder], [IsNew]) VALUES (128, N'مدیریت بخش اسپانسرها', 1, 0, 1, 60, 0)
+GO
+
+INSERT [Security].[PanelPage] ([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport]) VALUES (198, 127, NULL, N'حامیان معنوی', N'حامیان معنوی', N'~/Pages/Admin/Support/Default.aspx', 10, 1, N'admin-support', N'admin/support', 0, 0)
+GO
+INSERT [Security].[PanelPage] ([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport]) VALUES (199, 128, NULL, N'اسپانسر', N'اسپانسر', N'~/Pages/Admin/Sponsor/Default.aspx', 10, 1, N'admin-sponsor', N'admin/sponsor', 0, 0)
+GO
+
+INSERT [Security].[MenuItem] ([ID], [MenuCategory_ID], [Feature_ID], [Title], [UIClass], [NavigateURL], [Target], [DisplayOrder], [RouteName], [IsNew]) VALUES (126, 4, 127, N'حامیان معنوی', N'branch', N'~/Pages/Admin/Support/Default.aspx', N'', 12, N'admin-support', 0)
+GO
+INSERT [Security].[MenuItem] ([ID], [MenuCategory_ID], [Feature_ID], [Title], [UIClass], [NavigateURL], [Target], [DisplayOrder], [RouteName], [IsNew]) VALUES (127, 4, 128, N'اسپانسرها', N'branch', N'~/Pages/Admin/Sponsor/Default.aspx', N'', 13, N'admin-sponsor', 0)
+GO
+
+INSERT [Security].[Permission] ([AccessLevel_ID], [Feature_ID]) VALUES (10, 127)
+GO
+INSERT [Security].[Permission] ([AccessLevel_ID], [Feature_ID]) VALUES (10, 128)
+GO

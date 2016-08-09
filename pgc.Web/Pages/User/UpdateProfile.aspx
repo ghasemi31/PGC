@@ -17,7 +17,7 @@
                                 <li>ویرایش اطلاعات من</li>
                             </ul>
                         </div>
-                        <form runat="server">
+                
                             <div class="user-info">
                                 <header>
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -102,18 +102,13 @@
                                         </asp:RequiredFieldValidator>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 update-form-item">
-                                        <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" placeholder="پست الکترونیک" runat="server" autocomplete="off" ToolTip="پست الکترونیک"></asp:TextBox>
+                                        <asp:TextBox ID="txtPostalCode" ClientIDMode="Static" CssClass="form-control" placeholder="کد پستی" runat="server" autocomplete="off" ToolTip="کد پستی"></asp:TextBox>
                                         <asp:RequiredFieldValidator
                                             ID="RequiredEmail" runat="server"
-                                            ErrorMessage="لطفا پست الکترونیک خود را وارد نمایید" ControlToValidate="txtEmail"
+                                            ErrorMessage="لطفا کد پستی خود را وارد نمایید" ControlToValidate="txtPostalCode"
                                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
                                         </asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                                            ErrorMessage="پست الکترونیک معتبر نمی باشد"
-                                            Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" ControlToValidate="txtEmail"
-                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                            Display="Dynamic">
-                                        </asp:RegularExpressionValidator>
+                                        
                                     </div>
                                 </div>
                                 <div id="profile-button">
@@ -122,10 +117,10 @@
                                 </div>
                                 <div class="clear"></div>
                             </div>
-                        </form>
+                    
                     </div>
                 </div>
-                <kfk:UserMessageViewer runat="server" ID="UserMessageViewer" />
+               
             </div>
         </section>
     </section>
