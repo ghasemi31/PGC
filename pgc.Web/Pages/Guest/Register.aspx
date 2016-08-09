@@ -2,6 +2,7 @@
 
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="kfk" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <%this.Title = "ثبت نام در Iran PGC"; %>
     <link href="/assets/Guest/css/Register.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
