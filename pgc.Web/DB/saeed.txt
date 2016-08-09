@@ -1,5 +1,2 @@
 ﻿
 
-update [Security].PanelPage
-set RouteUrl='gamelist/{id}/{*title}'
-where id=193
