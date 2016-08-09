@@ -10,11 +10,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Guest_Register : System.Web.UI.Page
+public partial class Pages_Guest_Register :BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
        
     }
 

@@ -6,6 +6,12 @@ namespace pgc.Model.Enums
     [PersianTitle("")]
     public enum OptionKey
     {
+        AboutUs_Title,
+        AboutUs_KeyWords,
+        AboutUs_Description,
+        AboutUs_Content,
+
+
         Admin_GreetingMessage,
         User_GreetingMessage,
         Agent_GreetingMessage,

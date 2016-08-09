@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Guest.master.cs" Inherits="Pages_Master_Guest" %>
-
+<%@ Register Src="~/UserControls/Common/UserMessageViewer.ascx" TagName="UserMessageViewer" TagPrefix="uc2" %>
+<%@ Import Namespace="pgc.Model.Enums" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +16,10 @@
     <link href="/assets/Template/css/layout.css" rel="stylesheet" />
     <link href="/assets/Template/css/colors.css" rel="stylesheet" />
 
-
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -27,115 +31,122 @@
 
 </head>
 <body>
-    <div id="globalWrapper">
-        <!-- header -->
-        <header id="mainHeader" class="clearfix">
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner preHeader">
+    <form runat="server">
+        <div id="globalWrapper">
+            <!-- header -->
+            <header id="mainHeader" class="clearfix">
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner preHeader">
+                        <div class="container">
+                            <div class="row">
+                                <div class="clearfix col-sm-6 col-md-6">
+                                    <ul class="quickMenu">
+                                        <li><a href="<%=GetRouteUrl("guest-login",null) %>">ورود به سایت</a></li>
+                                        <li><a href="<%=GetRouteUrl("guest-signup",null) %>">ثبت نام</a></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix col-sm-6 col-md-6">
+                                    <ul class="socialNetwork">
+                                        <li><a href="#" class="icon-linkedin socialIcon tips" title="follow us on Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" class="icon-facebook socialIcon tips" title="follow us on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" class="icon-twitter-bird socialIcon tips" title="follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" class="icon-gplus socialIcon tips" title="follow us on Google +"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" class="icon-instagram socialIcon tips" title="follow us on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar navbar-fixed-top mainNav">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <%--<div class="navbar-header">--%>
+                            <a href="index.html" class="navbar-brand  ">
+                                <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
+                            </a>
+                            <%-- </div>--%>
+                            <nav id="mainMenu">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="<%=GetRouteUrl("guest-default",null) %>" class="firstLevel">صفحه اصلی</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="firstLevel">بازیها</a>
+                                        <ul>
+                                            <li><a href="<%=GetRouteUrl("guest-gamelist", new { id=(int)GameType.Iranian})%>">بازیهای ایرانی</a></li>
+                                            <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Foreign}) %>">بازیهای خارجی</a></li>
+                                            <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Mobile}) %>">بازیهای موبایلی</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="firstLevel">قوانین و مقررات</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="firstLevel">جدول جوایز</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%=GetRouteUrl("guest-contacts",null) %>" class="firstLevel">ارتباط با ما</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%=GetRouteUrl("guest-aboutus",null) %>" class="firstLevel">درباره ما</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- header -->
+            <!-- BEGIN BODY -->
+            <asp:ContentPlaceHolder ID="cphbdy" runat="server"></asp:ContentPlaceHolder>
+            <!-- END BODY -->
+            <!-- footer -->
+            <footer>
+                <section id="mainFooter">
+                    <div id="backToTop">
+                        <div class="container"><a href="#" class="iconWrapper"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class="container" id="footer">
+                    </div>
+                </section>
+                <section id="footerRights">
                     <div class="container">
                         <div class="row">
-                            <div class="clearfix col-sm-6 col-md-6">
-                                <ul class="quickMenu">
-                                    <li><a href="<%=GetRouteUrl("guest-login",null) %>">ورود به سایت</a></li>
-                                    <li><a href="<%=GetRouteUrl("guest-signup",null) %>">ثبت نام</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix col-sm-6 col-md-6">
-                                <ul class="socialNetwork">
-                                    <li><a href="#" class="icon-linkedin socialIcon tips" title="follow us on Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#" class="icon-facebook socialIcon tips" title="follow us on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#" class="icon-twitter-bird socialIcon tips" title="follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#" class="icon-gplus socialIcon tips" title="follow us on Google +"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#" class="icon-instagram socialIcon tips" title="follow us on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                </ul>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="innerBg">
+                                    <p>Copyright © 2012 Little NEKO / All rights reserved.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="navbar navbar-fixed-top mainNav">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <%--<div class="navbar-header">--%>
-                        <a href="index.html" class="navbar-brand  ">
-                            <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
-                        </a>
-                        <%-- </div>--%>
-                        <nav id="mainMenu">
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="<%=GetRouteUrl("guest-default",null) %>" class="firstLevel">صفحه اصلی</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="firstLevel">بازیها</a>
-                                    <ul>
-                                        <li><a href="<%=GetRouteUrl("guest-gamelist",null) %>">بازیهای ایرانی</a></li>
-                                        <li><a href="<%=GetRouteUrl("guest-gamelist",null) %>">بازیهای خارجی</a></li>
-                                        <li><a href="<%=GetRouteUrl("guest-gamelist",null) %>">بازیهای موبایلی</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="firstLevel">قوانین و مقررات</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="firstLevel">جدول جوایز</a>
-                                </li>
-                                <li>
-                                    <a href="<%=GetRouteUrl("guest-contacts",null) %>" class="firstLevel">ارتباط با ما</a>
-                                </li>
-                                <li>
-                                    <a href="<%=GetRouteUrl("guest-aboutus",null) %>" class="firstLevel">درباره ما</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header -->
-        <!-- BEGIN BODY -->
-        <asp:ContentPlaceHolder  ID="cphbdy" runat="server"></asp:ContentPlaceHolder>
-        <!-- END BODY -->
-        <!-- footer -->
-        <footer>
-            <section id="mainFooter">
-                <div id="backToTop">
-                    <div class="container"><a href="#" class="iconWrapper"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
-                </div>
-                <div class="container" id="footer">
-                </div>
-            </section>
-            <section id="footerRights">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12">
-                            <div class="innerBg">
-                                <p>Copyright © 2012 Little NEKO / All rights reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </footer>
+                </section>
+            </footer>
 
-        <!-- End footer -->
-    </div>
+            <!-- End footer -->
+        </div>
 
 
-    <!-- scripts -->
-    <%--<script src="/assets/Template/respond/respond.min.js"></script>--%>
-    <script src="/assets/Plugin/jquery/js/jquery.min.v2.1.4.js"></script>
+        <!-- scripts -->
+        <%--<script src="/assets/Template/respond/respond.min.js"></script>--%>
+       <%-- <script src="/assets/Plugin/jquery/js/jquery.min.v2.1.4.js"></script>--%>
 
-    <script src="/assets/Template/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-    <script src="/assets/Plugin/bootstrap/js/bootstrap.v3.3.2.min.js"></script>
-    <script src="/assets/Template/easing/jquery.easing.1.3.js"></script>
-    <script src="/assets/Template/jquery-cookie/jquery.cookie.js"></script>
-    <%--<script src="/assets/Template/camera/camera.min.js"></script>--%>
+        <script src="/assets/Template/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
 
-    <!-- Custom  -->
-    <script src="/assets/Template/js/custom.js"></script>
 
-    <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
+        <script src="/assets/Plugin/bootstrap/js/bootstrap.v3.3.2.min.js"></script>
+        <script src="/assets/Template/easing/jquery.easing.1.3.js"></script>
+        <script src="/assets/Template/jquery-cookie/jquery.cookie.js"></script>
 
+        <%--<script src="/assets/Template/camera/camera.min.js"></script>--%>
+
+        <!-- Custom  -->
+        <script src="/assets/Template/js/custom.js"></script>
+
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
+        <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
+         <uc2:UserMessageViewer runat="server" ID="umv" />
+    </form>
 </body>
 </html>

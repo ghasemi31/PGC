@@ -14,7 +14,7 @@
                         <h1>ثبت نام</h1>
                         <hr />
                     </header>
-                    <form runat="server">
+                   
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <kfk:LookupCombo ID="lkpSexStatus" runat="server" CssClass="form-control" EnumParameterType="pgc.Model.Enums.Gender" />
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                   
                 </div>
             </div>
         </div>

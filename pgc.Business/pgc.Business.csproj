@@ -133,6 +133,7 @@
     <Compile Include="Finance\BranchOrderTitleGroupBusiness.cs" />
     <Compile Include="Finance\BranchOrderShipmentStateBusiness.cs" />
     <Compile Include="Finance\BranchManualChargeBusiness.cs" />
+    <Compile Include="General\GameBusiness.cs" />
     <Compile Include="General\BaseGuestBusiness.cs" />
     <Compile Include="General\BranchContactBusiness.cs" />
     <Compile Include="General\BranchesOrderReportBusiness.cs" />

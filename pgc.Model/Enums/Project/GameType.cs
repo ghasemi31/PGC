@@ -5,14 +5,14 @@ using System.Text;
 
 namespace pgc.Model.Enums
 {
-    [PersianTitle("وضعیت درخواست از شعبه")]
+    [PersianTitle("وضعیت بازیها")]
     public enum GameType
     {
-       [PersianTitle("ایرانی")]
+       [PersianTitle("بازیهای ایرانی")]
         Iranian = 1,
-       [PersianTitle("خارجی")]
+       [PersianTitle("بازیهای خارجی")]
         Foreign = 2,
-       [PersianTitle("موبایلی")]
+       [PersianTitle("بازیهای موبایلی")]
         Mobile = 3
     }
 }
