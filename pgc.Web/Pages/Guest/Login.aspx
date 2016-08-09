@@ -8,7 +8,7 @@
 <%@ Import Namespace="kFrameWork.Business" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <%this.Title = OptionBusiness.GetText(OptionKey.Login_Title); %>
+    <%this.Title = "ورود به Iran PGC"; %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Description) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Keywords) %>" />
     <link href="/assets/Guest/css/login.css" rel="stylesheet" />

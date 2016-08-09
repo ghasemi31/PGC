@@ -86,3 +86,13 @@ select{
     margin-top: 2.7em;
     margin-right: 1.4em;
 }
+
+#captcha input {
+    width: 21px;
+    float: left;
+    margin: 0px!important;
+}
+
+#captcha> div {
+        float: right;
+}
