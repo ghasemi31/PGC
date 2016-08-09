@@ -56,7 +56,7 @@
                                                     <input type="hidden" order="<%# Eval("ID") %>" ispaid="<%# Eval("IsPaid") %>" />
                                                     <asp:Button ID="BtnPay" runat="server" Text="پرداخت آنلاین" OnClick="Btn_Pay_Click" OnClientClick="javascript:setID(this)" CssClass="btn-table" />
                                                 </td>
-                                                <td class="tbl-row"><a href="<%#GetRouteUrl("user-gamedetail",new { id = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
+                                                <td class="tbl-row"><a href="<%#GetRouteUrl("user-gamedetail",new { urlkey = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:ListView>

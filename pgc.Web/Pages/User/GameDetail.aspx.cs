@@ -12,4 +12,8 @@ public partial class Pages_User_GameDetail : BasePage
     {
 
     }
+    protected void Unnamed_Click(object sender, EventArgs e)
+    {
+
+    }
 }

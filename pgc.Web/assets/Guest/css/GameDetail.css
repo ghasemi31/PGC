@@ -31,3 +31,33 @@
         color: #F3F2F0;
         text-decoration: none;
     }
+
+.btn-add-player {
+    margin-top: 0 !important;
+    float: left;
+}
+
+hr {
+    margin: 1em 0 !important;
+}
+
+.game-detail-title {
+    color: #888888 !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.game-detail-info {
+    color: #e99205;
+    padding-right: 5px;
+}
+
+#game-info > div {
+    margin-bottom: 1.5em;
+}
+
+#game-title {
+    color: #888888 !important;
+    font-weight: bold;
+    font-size: 20px;
+}
