@@ -3,16 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kFrameWork", "kFrameWork\kFrameWork.csproj", "{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pgc.Business", "pgc.Business\pgc.Business.csproj", "{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pgc.Model", "pgc.Model\pgc.Model.csproj", "{831C6A75-5B84-4555-9B0E-586FC4C58F3E}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost:8065", "http://localhost:8065", "{BC378A97-CD79-412B-A072-5FFF4355A47D}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{831c6a75-5b84-4555-9b0e-586fc4c58f3e}|pgc.Model.dll;{21f0aa1f-aef6-42f3-9f77-8362de8c6c08}|pgc.Business.dll;{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}|kFrameWork.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_8065"
 		Debug.AspNetCompiler.PhysicalPath = "pgc.Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8065\"
@@ -30,20 +27,16 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost:8065", "ht
 		SlnRelativePath = "pgc.Web\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pgc.Business", "pgc.Business\pgc.Business.csproj", "{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kFrameWork", "kFrameWork\kFrameWork.csproj", "{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{831C6A75-5B84-4555-9B0E-586FC4C58F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{831C6A75-5B84-4555-9B0E-586FC4C58F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{831C6A75-5B84-4555-9B0E-586FC4C58F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,6 +45,14 @@ Global
 		{BC378A97-CD79-412B-A072-5FFF4355A47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC378A97-CD79-412B-A072-5FFF4355A47D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC378A97-CD79-412B-A072-5FFF4355A47D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F0AA1F-AEF6-42F3-9F77-8362DE8C6C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,7 +17,7 @@
                             <li>تغییر کلمه عبور </li>
                         </ul>
                     </div>
-                    <form runat="server">
+                    
                         <div class="user-info">
                             <header>
                                 <i class="fa fa-unlock-alt" aria-hidden="true"></i>
@@ -60,8 +60,7 @@
                                 <div class="clear"></div>
                             </div>
                         </div>
-                    </form>
-                    <kfk:UserMessageViewer runat="server" ID="UserMessageViewer" />
+           
                 </div>
                 </div>
             </div>

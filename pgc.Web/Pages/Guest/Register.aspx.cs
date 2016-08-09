@@ -1,11 +1,12 @@
-﻿using System;
+﻿using kFrameWork.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Guest_Register : System.Web.UI.Page
+public partial class Pages_Guest_Register :BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -44,7 +45,7 @@ public partial class Pages_Guest_Register : System.Web.UI.Page
 
     protected void ValidateCaptcha(object sender, ServerValidateEventArgs e)
     {
-        Captcha6.ValidateCaptcha(txtCaptcha.Text.Trim());
-        e.IsValid = Captcha6.UserValidated;
+        //Captcha6.ValidateCaptcha(txtCaptcha.Text.Trim());
+        //e.IsValid = Captcha6.UserValidated;
     }
 }

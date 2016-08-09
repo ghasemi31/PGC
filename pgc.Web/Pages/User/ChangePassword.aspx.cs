@@ -10,7 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_User_ChangePassword : System.Web.UI.Page
+public partial class Pages_User_ChangePassword : BasePage
 {
     UserBusiness business = new UserBusiness();
     User user;
