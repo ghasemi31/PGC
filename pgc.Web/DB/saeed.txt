@@ -7,3 +7,12 @@ where id=193
 
 INSERT [Security].[PanelPage] ([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport]) VALUES (195, 116, NULL, N'لیست بازیهای من', N'لیست بازیهای من', N'~/Pages/User/GameList.aspx', 30, 0, N'user-gamelist', N'user/gamelist', 0, 0)
 
+///////////// بالایی رو با ایمیل فرستادم
+
+
+
+
+INSERT [Security].[PanelPage] ([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport]) VALUES (197, NULL, NULL, N'جزئیات بازی', N'جزئیات بازی', N'~/Pages/Guest/GameDetail.aspx', 30, 1, N'guest-gamedetail', N'gamedetail/{urlkey}', 0, 0)
+GO
+INSERT [Security].[PanelPage] ([ID], [Feature_ID], [Parent_Page_ID], [Title], [UITitle], [URL], [PageSize], [DisplayOrder], [RouteName], [RouteUrl], [IsLookup], [AdvSupport]) VALUES (200, 116, NULL, N'جزئیات بازی من', N'جزئیات بازی من', N'~/Pages/User/GameDetail.aspx', 30, 1, N'user-gamedetail', N'user/gamedetail/{urlkey}', 0, 0)
+GO

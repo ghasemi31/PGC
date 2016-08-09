@@ -19,7 +19,8 @@
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
-
+
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -143,7 +144,8 @@
         <!-- Custom  -->
         <script src="/assets/Template/js/custom.js"></script>
 
-         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
 
         <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
          <uc2:UserMessageViewer runat="server" ID="umv" />

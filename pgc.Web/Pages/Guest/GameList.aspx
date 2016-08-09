@@ -12,18 +12,12 @@
                     <%foreach (var item in games)
                       {%>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 game">
-                        <a href="javascript:;">
+                        <a href="<%=GetRouteUrl("guest-gamedetail", new { urlkey=item.UrlKey})%>">
                             <img class="img-thumbnail" src="<%=ResolveClientUrl(item.ImagePath) %>" />
                             <h1><%=item.Title %></h1>
                         </a>
                     </div>
-                    <%} %>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 game">
-                        <a href="javascript:;">
-                            <img class="img-thumbnail" src="/assets/Guest/Image/GamePoster/images.jpg" />
-                            <h1>Fifa 2016</h1>
-                        </a>
-                    </div>
+                    <%} %>                    
                 </div>
             </div>
         </section>

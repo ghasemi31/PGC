@@ -14,27 +14,14 @@ namespace pgc.Business.General
     {
         pgcEntities db = new pgcEntities();
 
-        //public IQueryable Game_List(object PageID)
-        //{
+        public IQueryable<Game> RetriveGameList(int id)
+        {
+            return db.Games.Where(f=>f.Type_Enum==id).OrderByDescending(f => f.DispOrder);
+        }
 
-        //    var Result = Game_Where(db.Gameertisements, ConvertorUtil.ToInt64(PageID))
-        //        .OrderByDescending(a => a.DispOrder);
-
-        //    return Result;
-
-
-        //}
-
-        //public int Game_Count(object PageID)
-        //{
-        //    return Game_Where(db.Gameertisements, ConvertorUtil.ToInt64(PageID)).Count();
-        //}
-
-        //public IQueryable<Gameertisement> Game_Where(IQueryable<Gameertisement> list,long PageID)
-        //{
-        //    string TimeNow = DateUtil.GetPersianDateShortString(DateTime.Now);
-        //    return list.Where(a => a.ExpirePersianDate.CompareTo(TimeNow) > 0 && a.PanelPages.Any(p =>p.ID == PageID));
-        //}
-
+        public Game RetriveGame(string urlKey)
+        {
+            return db.Games.FirstOrDefault(f=>f.UrlKey==urlKey);
+        }
     }
 }

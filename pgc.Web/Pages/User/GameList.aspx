@@ -26,11 +26,12 @@
                             <div class="row margin0" style="padding: 0 20px;">
                                 <table class="table">
                                     <tr class="order-title table-header">
-                                        <td>کد سفارش</td>
+                                        <td>کد</td>
+                                        <td>نام بازی</td>
                                         <td class="text-align-center">تاریخ</td>
-                                        <td>وضعیت</td>
-                                        <td class="text-align-center">مبلغ قابل پرداخت(تومان)</td>
-                                        <td>نحوه پرداخت</td>
+                                        
+                                        <td class="text-align-center">هزینه ثبت نام(تومان)</td>
+                                       
                                         <td class="text-align-center">وضعیت پرداخت</td>
                                         <td></td>
                                         <td></td>
@@ -46,16 +47,16 @@
                                         <ItemTemplate>
                                             <tr class="order-tb-row">
                                                 <td><%#Eval("ID") %></td>
+                                                <td>db</td>
                                                 <td><%#kFrameWork.Util.DateUtil.GetPersianDateWithTime(Convert.ToDateTime(Eval("OrderDate")))%></td>
-                                                <td><%# kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.OrderStatus)Eval("OrderStatus"))%></td>
                                                 <td class="text-align-center"><%#kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(Eval("PayableAmount"))/10).ToString())%></td>
-                                                <td><%# kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.PaymentType)Eval("PaymentType"))%></td>
+                                               
                                                 <td class="text-align-center" data-tooltip="<%# ((bool)Eval("IsPaid")&&((pgc.Model.Enums.PaymentType)Eval("PaymentType")==pgc.Model.Enums.PaymentType.Online))?"پرداخت شده":"پرداخت نشده" %>" data-tooltip-position="top" style="display: block"><i class="fa <%# ((bool)Eval("IsPaid")&&((pgc.Model.Enums.PaymentType)Eval("PaymentType")==pgc.Model.Enums.PaymentType.Online))?"fa-check paid":"fa-times unpaid" %>" aria-hidden="true"></i></td>
                                                 <td>
                                                     <input type="hidden" order="<%# Eval("ID") %>" ispaid="<%# Eval("IsPaid") %>" />
                                                     <asp:Button ID="BtnPay" runat="server" Text="پرداخت آنلاین" OnClick="Btn_Pay_Click" OnClientClick="javascript:setID(this)" CssClass="btn-table" />
                                                 </td>
-                                                <td class="tbl-row"><a href="<%#GetRouteUrl("guest-orderdetail",new { id = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
+                                                <td class="tbl-row"><a href="<%#GetRouteUrl("user-gamedetail",new { id = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:ListView>
