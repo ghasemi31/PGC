@@ -342,6 +342,29 @@
     </AssociationSet>
     <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
     <EntitySet Name="Supports" EntityType="pgcModel.Support" />
+    <EntitySet Name="GameOrders" EntityType="pgcModel.GameOrder" />
+    <EntitySet Name="Groups" EntityType="pgcModel.Group" />
+    <EntitySet Name="Payments" EntityType="pgcModel.Payment" />
+    <AssociationSet Name="FK_GameOrder_Game" Association="pgcModel.FK_GameOrder_Game">
+      <End Role="Game" EntitySet="Games" />
+      <End Role="GameOrder" EntitySet="GameOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_Group" Association="pgcModel.FK_GameOrder_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="GameOrder" EntitySet="GameOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_User" Association="pgcModel.FK_GameOrder_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="GameOrder" EntitySet="GameOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_GameOrder" Association="pgcModel.FK_Payment_GameOrder">
+      <End Role="GameOrder" EntitySet="GameOrders" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="GamerGroup" Association="pgcModel.GamerGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Option">
     <Key>
@@ -2176,6 +2199,7 @@
     <Property Name="Cost" Type="Int64" Nullable="false" />
     <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="User" Relationship="pgcModel.FK_Game_User" FromRole="Game" ToRole="User" />
+    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -2210,6 +2234,8 @@
     <NavigationProperty Name="Games" Relationship="pgcModel.FK_Game_User" FromRole="User" ToRole="Game" />
     <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
     <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
+    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_User" FromRole="User" ToRole="GameOrder" />
+    <NavigationProperty Name="Groups" Relationship="pgcModel.GamerGroup" FromRole="User" ToRole="Group" />
   </EntityType>
   <Association Name="FK_User_Branch">
     <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
@@ -2329,4 +2355,103 @@
     <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="GameOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int64" />
+    <Property Name="Group_ID" Type="Int64" />
+    <Property Name="Game_ID" Type="Int64" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PayableAmount" Type="Int64" Nullable="false" />
+    <Property Name="GameTitle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Game" Relationship="pgcModel.FK_GameOrder_Game" FromRole="GameOrder" ToRole="Game" />
+    <NavigationProperty Name="Group" Relationship="pgcModel.FK_GameOrder_Group" FromRole="GameOrder" ToRole="Group" />
+    <NavigationProperty Name="User" Relationship="pgcModel.FK_GameOrder_User" FromRole="GameOrder" ToRole="User" />
+    <NavigationProperty Name="Payments" Relationship="pgcModel.FK_Payment_GameOrder" FromRole="GameOrder" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Group" FromRole="Group" ToRole="GameOrder" />
+    <NavigationProperty Name="Users" Relationship="pgcModel.GamerGroup" FromRole="Group" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_ID" Type="Int64" Nullable="false" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <Property Name="RefNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BankGeway_Enum" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GameOrder" Relationship="pgcModel.FK_Payment_GameOrder" FromRole="Payment" ToRole="GameOrder" />
+  </EntityType>
+  <Association Name="FK_GameOrder_Game">
+    <End Type="pgcModel.Game" Role="Game" Multiplicity="0..1" />
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="Game_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_Group">
+    <End Type="pgcModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_User">
+    <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_GameOrder">
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="1" />
+    <End Type="pgcModel.Payment" Role="Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GamerGroup">
+    <End Type="pgcModel.Group" Role="Group" Multiplicity="*" />
+    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+  </Association>
 </Schema>

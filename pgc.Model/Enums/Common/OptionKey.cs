@@ -198,6 +198,10 @@ namespace pgc.Model.Enums
         Login_Title,
         Login_Description,
         Login_Keywords,
+        Mellat_TerminalId,
+        Mellat_UserName,
+        Mellat_Password,
+        Mellat_BankURL
     }
 
 }
