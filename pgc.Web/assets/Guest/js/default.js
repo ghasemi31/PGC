@@ -7,6 +7,7 @@
     })
 
 
+
     var time = parseFloat($('#slider-time').val(), 10) * 1000;
     var speedTime = parseFloat($('#speed-slider-time').val(), 10) * 1000;
     var transaction = $('#slider-transaction').val();

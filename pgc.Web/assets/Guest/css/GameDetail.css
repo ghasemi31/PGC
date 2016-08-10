@@ -14,7 +14,7 @@
 .btn-game {
     font-size: 13px;
     padding: 11px;
-    margin-top: 3em;
+    margin-top: 0;
     width: 140px;
     color: #F3F2F0;
     border-radius: 4px;
@@ -33,10 +33,14 @@
     }
 
 .btn-add-player {
-    margin-top: 0 !important;
     float: left;
 }
 
+.btn-login-game{
+    width:100px !important;
+    margin-top: 10px;
+    margin-left:10px;
+}
 hr {
     margin: 1em 0 !important;
 }

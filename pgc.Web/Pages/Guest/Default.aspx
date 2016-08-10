@@ -65,7 +65,7 @@
         <!-- tabs -->
         <section id="pic-fixed" class="slice color3">
             <div class="container">
-                <div class="row">
+                <div class="row x" >
                     <div class="col-sm-5 col-md-5">
                         <img src="/assets/Guest/Image/IranPGC/Poster%20(1).jpg" />
                     </div>
@@ -73,7 +73,7 @@
                         <div class="row">
                             <img src="/assets/Guest/Image/IranPGC/05.png" />
                         </div>
-                        <div id="" class="row">
+                        <div id="" class="row x">
                             <p>متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه </p>
                         </div>
                     </div>
@@ -139,7 +139,6 @@
             </div>
         </section>
         <!--bubbles--->
-
     </section>
     <!-- content -->
       <div class="clear"></div>

@@ -12,8 +12,31 @@
                 <div class="row game-detail">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <img class="width100" src="<%=ResolveClientUrl(game.ImagePath) %>" alt="<%=game.Title %>" />
-                        <div class="display-center">
-                            <a href="#" class="btn-game">ثبت نام در بازی</a>
+                        <div class="game-detail">
+                            <asp:MultiView ID="mlvGame" runat="server">
+                                <asp:View runat="server">
+                                    <span>لطفا برای ثبت نام در بازی وارد سایت شوید و یا ثبت نام کنید</span>
+                                    <br />
+                                    <div class="display-center">
+                                        <a href="<%=GetRouteUrl("guest-signup",null) %>" class="btn-game btn-login-game">ثبت نام</a>
+                                        <a href="<%=GetRouteUrl("guest-login",null) %>" class="btn-game btn-login-game">ورود به سایت</a>
+                                    </div>
+                                </asp:View>
+                                <asp:View runat="server">
+                                    <%if (game.GamerCount > 1)
+                                      {%>
+                                    <asp:TextBox ID="txtTeamName" CssClass="form-control" placeholder="نام تیم" ClientIDMode="Static" runat="server" autocomplete="off" ToolTip="نام تیم"></asp:TextBox>
+                                    <asp:RequiredFieldValidator
+                                        ID="RequiredFieldValidator1" runat="server"
+                                        ErrorMessage="لطفا نام تیم خود را وارد نمایید" ControlToValidate="txtTeamName"
+                                        Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
+                                    </asp:RequiredFieldValidator>
+                                    <%} %>
+                                    <div class="<%=(game.GamerCount > 1)?"":"display-center" %>">
+                                        <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام بازی" OnClick="Unnamed_Click" />
+                                    </div>
+                                </asp:View>
+                            </asp:MultiView>
                         </div>
                     </div>
                     <div class="col-lg-9 col=md-9 col-sm-6 col-xs-12">
@@ -55,7 +78,7 @@
                                 <div>
                                     <%=game.Laws %>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>

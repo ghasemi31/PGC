@@ -22,5 +22,17 @@ public partial class Pages_Guest_GameDetail : BasePage
         {
             Server.Transfer("~/Pages/Guest/404.aspx");
         }
+        if (UserSession.IsUserLogined)
+        {
+            mlvGame.ActiveViewIndex = 1;
+        }
+        else
+        {
+            mlvGame.ActiveViewIndex = 0;
+        }
+    }
+    protected void Unnamed_Click(object sender, EventArgs e)
+    {
+
     }
 }
