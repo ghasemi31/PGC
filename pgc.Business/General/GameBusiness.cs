@@ -89,5 +89,51 @@ namespace pgc.Business.General
                 return res;
             }
         }
+
+
+
+
+        public IQueryable gamer_List(int startRowIndex, int maximumRows, long ID)
+        {
+            if (startRowIndex == 0 && maximumRows == 0)
+                return null;
+
+            var order = db.GameOrders.SingleOrDefault(g => g.ID == ID);
+
+            if (order == null || order.Group_ID == null)
+                return null;
+
+            var Result = order.Group.Users.AsQueryable()
+                .OrderBy(f=>f.ID)
+                .Select(f => new
+                {
+                    f.ID,
+                    f.FullName,
+                    f.Email,
+                    f.NationalCode,
+
+                });
+
+            return Result.Skip(startRowIndex).Take(maximumRows);
+        }
+
+        public int gamer_count(long ID)
+        {
+
+            var order = db.GameOrders.SingleOrDefault(g => g.ID == ID);
+
+            if (order == null || order.Group_ID == null)
+                return 0;
+
+            return order.Group.Users.Count();
+
+        }
+
+
+
+        public User RetriveGamer(string nationalCode)
+        {
+            return db.Users.SingleOrDefault(u => u.NationalCode == nationalCode);
+        }
     }
 }

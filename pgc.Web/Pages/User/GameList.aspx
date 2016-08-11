@@ -13,7 +13,9 @@
                     <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <div class="order-code">
                             <ul class="list-inline">
-                                <li>حساب کاربری من  <i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                <li><a href="/userprofile">
+                                    
+                                    حساب کاربری من  <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                 <li>بازیهای من</li>
                             </ul>
                         </div>
@@ -39,24 +41,24 @@
                                     <asp:ObjectDataSource ID="odsOrder"
                                         runat="server"
                                         EnablePaging="True"
-                                        SelectCountMethod="Order_Count"
-                                        SelectMethod="Order_List"
-                                        TypeName="pgc.Business.General.OrderBusiness"
+                                        SelectCountMethod="GameOrder_Count"
+                                        SelectMethod="GameOrder_List"
+                                        TypeName="pgc.Business.General.GameOrderBusiness"
                                         EnableViewState="false"></asp:ObjectDataSource>
                                     <asp:ListView ID="lsvOrder" runat="server" DataSourceID="odsOrder" EnableViewState="false">
                                         <ItemTemplate>
                                             <tr class="order-tb-row">
                                                 <td><%#Eval("ID") %></td>
-                                                <td>db</td>
+                                                <td><%#Eval("GameTitle") %></td>
                                                 <td><%#kFrameWork.Util.DateUtil.GetPersianDateWithTime(Convert.ToDateTime(Eval("OrderDate")))%></td>
                                                 <td class="text-align-center"><%#kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(Eval("PayableAmount"))/10).ToString())%></td>
                                                
-                                                <td class="text-align-center" data-tooltip="<%# ((bool)Eval("IsPaid")&&((pgc.Model.Enums.PaymentType)Eval("PaymentType")==pgc.Model.Enums.PaymentType.Online))?"پرداخت شده":"پرداخت نشده" %>" data-tooltip-position="top" style="display: block"><i class="fa <%# ((bool)Eval("IsPaid")&&((pgc.Model.Enums.PaymentType)Eval("PaymentType")==pgc.Model.Enums.PaymentType.Online))?"fa-check paid":"fa-times unpaid" %>" aria-hidden="true"></i></td>
-                                                <td>
+                                                <td class="text-align-center" data-tooltip="<%# (bool)Eval("IsPaid")?"پرداخت شده":"پرداخت نشده" %>" data-tooltip-position="top" style="display: block"><i class="fa <%# (bool)Eval("IsPaid")?"fa-check paid":"fa-times unpaid" %>" aria-hidden="true"></i></td>
+                                                <td style="<%# (bool)Eval("IsPaid")?"display:none":"" %>">
                                                     <input type="hidden" order="<%# Eval("ID") %>" ispaid="<%# Eval("IsPaid") %>" />
-                                                    <asp:Button ID="BtnPay" runat="server" Text="پرداخت آنلاین" OnClick="Btn_Pay_Click" OnClientClick="javascript:setID(this)" CssClass="btn-table" />
+                                                    <asp:Button ID="BtnPay"  runat="server" Text="پرداخت آنلاین" OnClick="Btn_Pay_Click" OnClientClick="javascript:setID(this)" CssClass="btn-table" />
                                                 </td>
-                                                <td class="tbl-row"><a href="<%#GetRouteUrl("user-gamedetail",new { urlkey = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
+                                                <td class="tbl-row"><a href="<%#GetRouteUrl("user-gamedetail",new { id = Eval("ID") })%>" class="btn-table">جزئیات</a></td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:ListView>
