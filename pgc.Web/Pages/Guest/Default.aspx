@@ -124,7 +124,7 @@
                               {%>
                                   <div class="news-item">
                                 <img alt="<%=item.Title %>" src="<%=(!string.IsNullOrEmpty(item.NewsPicPath))?ResolveClientUrl(item.NewsPicPath):"/assets/global/images/branch-default.jpg" %>?height=410&width=436&mode=cropandscale" />
-                                <a href="javascript:;">
+                                <a href="<%=GetRouteUrl("guest-newsdetail",new { id = item.ID,title=item.Title.Replace(" ","-") })%>">
                                     <article class="news-detail">
                                         <h4><%=item.Title %></h4>
                                         <p><%=kFrameWork.Util.DateUtil.GetPersianDateWithTime(item.NewsDate) %></p>

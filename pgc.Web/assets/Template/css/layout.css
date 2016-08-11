@@ -701,6 +701,9 @@ p.credits {
     #mainMenu ul ul ul:before {
         background: none;
     }
+
+
+
 /*  Page  */
 #page {
     margin-bottom: 6em;
@@ -840,11 +843,33 @@ footer {
     }
 
     footer #mainFooter {
-        margin: 3em 0;
-        font-size: 75%;
-        padding-top: 3em;
+        /*font-size: 75%;*/
+        padding: 2em 0 1em 0;
     }
 
+    footer .footer-title {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    footer .footer-item{
+        padding-right: 25px;
+    }
+     
+    footer a{
+        color:#999;
+    }
+#footer-contactus {
+    margin-bottom: 1em;
+}
+
+    #footer-contactus a {
+        color: #fff;
+        background: #e99205;
+        padding: 8px 40px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
 
 #backToTop {
     width: 100%;
@@ -879,7 +904,7 @@ footer .divider {
 }
 
 #footerRights .innerBg {
-    padding: 1em 0 1em 0;
+    padding: .5em 0 .5em 0;
     font-size: 1em;
     margin: auto;
     moz-border-radius: 5px 5px 0 0;
@@ -2266,26 +2291,55 @@ ul.quickMenu {
     font-size: 1.2em;
 }
 
-    ul.quickMenu li {
+    ul.quickMenu > li {
         display: inline-block;
         height: 1em;
         margin: 0.7em 0 0 0;
     }
 
-    ul.quickMenu.login li {
+    ul.quickMenu.login > li {
         margin-top: 1em;
     }
 
-    ul.quickMenu li a {
+    ul.quickMenu > li > a {
         font-size: 0.85em;
         margin: 0 0.75em;
         padding: 0;
         display: block;
         line-height: 1em;
     }
+        /*ul.quickMenu li span {
+        font-size: 0.85em;
+        margin: 0 0.75em;
+        padding: 0;
+        display: block;
+        line-height: 1em;
+    }*/
 
-        ul.quickMenu li a.linkLeft {
+        ul.quickMenu > li > a.linkLeft {
             margin-left: 0;
+        }
+
+    ul.quickMenu > li > ul {
+        display: none;
+        padding: 10px 0 0 0;
+        position: absolute;
+        top: 33px;
+        width: 120px;
+        z-index: 1024;
+        margin: 0;
+        border: none;
+        background-color: #333333;
+        line-height: 32px;
+        font-size: 14px;
+        text-align: center;
+        list-style: none;
+    }
+
+        ul.quickMenu > li > ul > li {
+            border-bottom: 1px solid #333;
+            border-top: 1px solid #555;
+            border-left: none;
         }
 /* SOCIAL MENU */
 
@@ -3143,9 +3197,11 @@ margin-left:0;
         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     }
-    .main-body{
-            margin-bottom: 30px;
-    }
+
+.main-body {
+    margin-top: 4em;
+    margin-bottom: 30px;
+}
 
 @media (max-width: 1200px) {
     .page-header.bigHeader {
@@ -3223,25 +3279,29 @@ padding:0 38px;
 
 }
 
-@media  (max-width: 979px) {
-    .navbar-brand{
-        display:none;
+@media (max-width: 979px) {
+    .navbar-brand {
+        display: none;
     }
-    #mainHeader #mainMenu {
-    margin-top:90px;
-}
-       .main-body{
-        margin-top:120px;
-    }
-        .pgc-title h1 {
 
-    margin-top: 20px;
-    margin-bottom: 15px;
+    #mainHeader #mainMenu {
+        margin-top: 90px;
+    }
+
+    .main-body {
+        margin-top: 120px;
+    }
+
+    .pgc-title h1 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    #news {
+        margin-bottom: 30px;
+    }
 }
-        #news{
-                margin-bottom: 30px;
-        }
-}
+
 @media (min-width: 768px) and (max-width: 979px) {
     body {
         padding-top: 0;
@@ -3356,7 +3416,7 @@ padding:0 38px;
         height: auto;
     }
 
-    
+
     .quickMenu {
         /*display: none;*/
     }
@@ -3369,13 +3429,12 @@ padding:0 38px;
         margin-top: 0;
     }
 
-   .main-body{
-        margin-top:140px!important;
+    .main-body {
+        margin-top: 140px !important;
     }
 
     #mainMenu {
         width: 100%;
-       
     }
 
     #mainHeader .brand {
@@ -3684,8 +3743,9 @@ padding:0 38px;
     .mb40, .mb30, .mb15 {
         margin: 0;
     }
-       .main-body{
-        margin-top:100px!important;
+
+    .main-body {
+        margin-top: 100px !important;
     }
 
     img {
@@ -4533,9 +4593,9 @@ padding:0 38px;
 
 
 
-    .supporter-item,.sponsor-item{
-        margin:20px;
-    }
-    .sponsor-item{
+.supporter-item, .sponsor-item {
+    margin: 20px;
+}
 
-    }
+.sponsor-item {
+}

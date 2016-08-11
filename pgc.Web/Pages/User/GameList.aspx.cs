@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_User_GameList : System.Web.UI.Page
+public partial class Pages_User_GameList :BasePage
 {
     private OrderBusiness business = new OrderBusiness();
     protected void Page_Load(object sender, EventArgs e)

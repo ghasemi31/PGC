@@ -1,14 +1,13 @@
-﻿using System;
+﻿using kFrameWork.UI;
+using pgc.Business.General;
+using pgc.Model;
+using pgc.Model.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using kFrameWork.UI;
-using pgc.Business.General;
-using pgc.Model;
-using kFrameWork.Util;
-using pgc.Model.Enums;
 
 public partial class Pages_Guest_NewsDetail : BasePage
 {
@@ -25,6 +24,5 @@ public partial class Pages_Guest_NewsDetail : BasePage
 
         if (news == null)
             Server.Transfer("~/Pages/Guest/404.aspx");
-        gallery.GalleryID = news.Gallery_ID;
     }
 }

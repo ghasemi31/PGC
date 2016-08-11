@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 
 public partial class UserControls_Project_LoginControl : BaseUserControl
 {
+    public bool IsPageRefresh = false;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (UserSession.IsUserLogined)
@@ -26,6 +27,28 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
         }
         txtPass.Attributes.Add("onkeypress", "return controlEnter('" + btnLogin.UniqueID + "', event)");
         txtCaptcha.Attributes.Add("onkeypress", "return controlEnter('" + btnLogin.UniqueID + "', event)");
+
+
+        //if (!IsPostBack)
+        //{
+        //    ViewState["ViewStateId"] = System.Guid.NewGuid().ToString();
+        //    Session["SessionId"] = ViewState["ViewStateId"].ToString();
+        //}
+        //else
+        //{
+        //    if (ViewState["ViewStateId"].ToString() != Session["SessionId"].ToString())
+        //    {
+        //        IsPageRefresh = true;
+        //    }
+        //    Session["SessionId"] = System.Guid.NewGuid().ToString();
+        //    ViewState["ViewStateId"] = Session["SessionId"].ToString();
+        //}
+
+        //if (IsPageRefresh)
+        //{
+        //    Session["login"] = null;
+        //    captchavalidation.Style["display"] = "none";
+        //}
     }
 
     protected void LogOut(object sender, EventArgs e)
@@ -111,9 +134,7 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
         
        
         OperationResult Res;
-        bool isEmail = Regex.IsMatch(txtEmail.Value, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
-        if (isEmail)
-        {
+
             OperationResult ResEmailPass = business.ValidEmailAndPass(txtEmail.Value, txtPass.Value);
             //is email format check for email and pass validation
             if (ResEmailPass.Result == ActionResult.Done)
@@ -127,25 +148,7 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
                 //email & pass is not valid show message               
                 UserSession.AddMessage(ResEmailPass.Messages);
             }
-        }
-        else
-        {
-            OperationResult ResUserNamePass = business.ValidUserNameAndPass(txtEmail.Value, txtPass.Value);
-            //is not email format maby its valid usename
-            if (ResUserNamePass.Result == ActionResult.Done)
-            {
-                //username & pass is valid and not lock redirect to email page
-
-                Response.Redirect(GetRouteUrl("guest-email", null)+"?id="+business.RetriveUserID(txtEmail.Value, txtPass.Value)+"&r=1");
-            }
-            else
-            {
-                //username $ pass is not valid or username is lock show message
-                
-                UserSession.AddMessage(ResUserNamePass.Messages);
-                //Session["login"] = null;
-            }
-        }
+        
 
         //OperationResult Res = UserSession.LogIn(txtEmail.Value, txtPass.Value);
         //UserSession.AddMessage(Res.Messages);

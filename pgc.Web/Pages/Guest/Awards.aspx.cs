@@ -1,5 +1,5 @@
 ﻿using kFrameWork.UI;
-using pgc.Model;
+using pgc.Business.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Guest_ContactUs : BasePage
+public partial class Pages_Guest_Awards : BasePage
 {
+    public GameBusiness business = new GameBusiness();
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-
-    protected void btnSave_Click(object sender, EventArgs e)
-    {
-       
-    }
- 
 }
