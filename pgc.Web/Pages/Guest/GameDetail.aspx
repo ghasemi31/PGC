@@ -33,7 +33,7 @@
                                     </asp:RequiredFieldValidator>
                                     <%} %>
                                     <div class="<%=(game.GamerCount > 1)?"":"display-center" %>">
-                                        <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام بازی" OnClick="Unnamed_Click" />
+                                        <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام در بازی" OnClick="Unnamed_Click" />
                                     </div>
                                 </asp:View>
                             </asp:MultiView>
