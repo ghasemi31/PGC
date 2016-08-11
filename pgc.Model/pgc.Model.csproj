@@ -86,6 +86,8 @@
     <Compile Include="Enums\Project\IconPickerMode.cs" />
     <Compile Include="Enums\Project\OrderPaymentStatus.cs" />
     <Compile Include="Enums\Project\GameType.cs" />
+    <Compile Include="Enums\Project\Order\MellatOnlinePaymentState.cs" />
+    <Compile Include="Enums\Project\Order\OnlineGetway.cs" />
     <Compile Include="Enums\Project\PrivateNoStatus.cs" />
     <Compile Include="Enums\Project\NewsStatus.cs" />
     <Compile Include="Enums\Project\TransactionStatus.cs" />

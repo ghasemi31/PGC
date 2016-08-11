@@ -282,6 +282,10 @@
 
 
         EmailAndPassConfirmation,
-        LoginOnlyByEmail
+        LoginOnlyByEmail,
+        NoRefNum,
+        OnlinePaymentIsSuccessful,
+        PaymentStatusChangedToNotPaid,
+        BankWebServiceNoResponse
     }
 }

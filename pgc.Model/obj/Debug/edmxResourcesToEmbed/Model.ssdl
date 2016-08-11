@@ -875,6 +875,54 @@
     <Property Name="Cost" Type="bigint" Nullable="false" />
     <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
   </EntityType>
+  <EntityType Name="GameOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="bigint" />
+    <Property Name="Group_ID" Type="bigint" />
+    <Property Name="Game_ID" Type="bigint" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderPersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PayableAmount" Type="bigint" Nullable="false" />
+    <Property Name="GameTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GamerGroup">
+    <Key>
+      <PropertyRef Name="Group_ID" />
+      <PropertyRef Name="Gamer_ID" />
+    </Key>
+    <Property Name="Group_ID" Type="bigint" Nullable="false" />
+    <Property Name="Gamer_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_ID" Type="bigint" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="RefNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="bigint" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="PersianDate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="BankGeway_Enum" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="EmailSendAttempt">
     <Key>
       <PropertyRef Name="ID" />
@@ -1526,6 +1574,70 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_GameOrder_Game">
+    <End Role="Game" Type="Self.Game" Multiplicity="0..1" />
+    <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="Game_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GamerGroup_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GamerGroup" Type="Self.GamerGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GamerGroup">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GamerGroup_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GamerGroup" Type="Self.GamerGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GamerGroup">
+        <PropertyRef Name="Gamer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_LotteryDetail_Lottery">
     <End Role="Lottery" Type="Self.Lottery" Multiplicity="1" />
     <End Role="LotteryDetail" Type="Self.LotteryDetail" Multiplicity="*" />
@@ -1719,6 +1831,18 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
       </Principal>
       <Dependent Role="PanelPage1">
         <PropertyRef Name="Parent_Page_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_GameOrder">
+    <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Order_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2053,6 +2177,10 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
     <EntitySet Name="Product" EntityType="Self.Product" Schema="Finance" store:Type="Tables" />
     <EntitySet Name="Product_Material" EntityType="Self.Product_Material" Schema="Finance" store:Type="Tables" />
     <EntitySet Name="Game" EntityType="Self.Game" Schema="Game" store:Type="Tables" />
+    <EntitySet Name="GameOrder" EntityType="Self.GameOrder" Schema="Game" store:Type="Tables" />
+    <EntitySet Name="GamerGroup" EntityType="Self.GamerGroup" Schema="Game" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="Game" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="Game" store:Type="Tables" />
     <EntitySet Name="EmailSendAttempt" EntityType="Self.EmailSendAttempt" Schema="Messaging" store:Type="Tables" />
     <EntitySet Name="ReceivedMessage" EntityType="Self.ReceivedMessage" Schema="Messaging" store:Type="Tables" />
     <EntitySet Name="SentEmailBlock" EntityType="Self.SentEmailBlock" Schema="Messaging" store:Type="Tables" />
@@ -2206,6 +2334,26 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
       <End Role="User" EntitySet="User" />
       <End Role="Game" EntitySet="Game" />
     </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_Game" Association="Self.FK_GameOrder_Game">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GameOrder" EntitySet="GameOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_Group" Association="Self.FK_GameOrder_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="GameOrder" EntitySet="GameOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_User" Association="Self.FK_GameOrder_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="GameOrder" EntitySet="GameOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GamerGroup_Group" Association="Self.FK_GamerGroup_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="GamerGroup" EntitySet="GamerGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GamerGroup_User" Association="Self.FK_GamerGroup_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="GamerGroup" EntitySet="GamerGroup" />
+    </AssociationSet>
     <AssociationSet Name="FK_LotteryDetail_Lottery" Association="Self.FK_LotteryDetail_Lottery">
       <End Role="Lottery" EntitySet="Lottery" />
       <End Role="LotteryDetail" EntitySet="LotteryDetail" />
@@ -2269,6 +2417,10 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
     <AssociationSet Name="FK_PanelPage_PanelPage" Association="Self.FK_PanelPage_PanelPage">
       <End Role="PanelPage" EntitySet="PanelPage" />
       <End Role="PanelPage1" EntitySet="PanelPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_GameOrder" Association="Self.FK_Payment_GameOrder">
+      <End Role="GameOrder" EntitySet="GameOrder" />
+      <End Role="Payment" EntitySet="Payment" />
     </AssociationSet>
     <AssociationSet Name="FK_Permission_AccessLevel" Association="Self.FK_Permission_AccessLevel">
       <End Role="AccessLevel" EntitySet="AccessLevel" />

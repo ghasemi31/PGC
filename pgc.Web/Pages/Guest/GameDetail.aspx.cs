@@ -1,5 +1,7 @@
-﻿using kFrameWork.UI;
+﻿using kFrameWork.Model;
+using kFrameWork.UI;
 using pgc.Business.General;
+using pgc.Business.Payment.OnlinePay;
 using pgc.Model;
 using pgc.Model.Enums;
 using System;
@@ -13,14 +15,15 @@ public partial class Pages_Guest_GameDetail : BasePage
 {
     GameBusiness business = new GameBusiness();
     public Game game;
+    public string redirectUrl;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!HasValidQueryString_Routed<string>(QueryStringKeys.urlkey))
             Server.Transfer("~/Pages/Guest/404.aspx");
-        string urlKey=GetQueryStringValue_Routed<string>(QueryStringKeys.urlkey);
+        string urlKey = GetQueryStringValue_Routed<string>(QueryStringKeys.urlkey);
         game = business.RetriveGame(urlKey);
 
-      redirectUrl="?redirecturl="+  GetRouteUrl("guest-gamedetail", new { urlkey = urlKey });
+        redirectUrl = "?redirecturl=" + GetRouteUrl("guest-gamedetail", new { urlkey = urlKey });
 
         if (game == null)
         {
@@ -37,7 +40,7 @@ public partial class Pages_Guest_GameDetail : BasePage
     }
     protected void Unnamed_Click(object sender, EventArgs e)
     {
-
+        SubmitOrder();
     }
 
 
@@ -64,16 +67,8 @@ public partial class Pages_Guest_GameDetail : BasePage
             if (result.Result == ActionResult.Done)
             {
                 long orderID = (long)result.Data["Order_ID"];
+                Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + orderID);
 
-                OperationResult res = new OperationResult();
-                res = new pgc.Business.Payment.OnlinePay.PaymentBusiness().CreatePayment(orderID, OnlineGetway.MellatBankGateWay);
-
-                if (res.Result == ActionResult.Done)
-                {
-                    long ResNum = (long)result.Data["ResNum"];
-                    Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + ResNum);
-
-                }
             }
         }
     }

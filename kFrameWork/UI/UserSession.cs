@@ -100,6 +100,22 @@ namespace kFrameWork.UI
 
         #region Messaging
 
+        public static List<UserMessage> CurrentCompeleteMessages
+        {
+            get
+            {
+                if (HttpContext.Current.Session["CurrentCompeleteMessages"] == null)
+                {
+                    return new List<UserMessage>();
+                }
+                return HttpContext.Current.Session["CurrentCompeleteMessages"] as List<UserMessage>;
+            }
+            private set
+            {
+                HttpContext.Current.Session["CurrentCompeleteMessages"] = value;
+            }
+        }
+
         public static List<UserMessageKey> CurrentMessages
         {
             get
@@ -116,7 +132,7 @@ namespace kFrameWork.UI
             }
         }
 
-        public static Dictionary<object,object> CurrentData
+        public static Dictionary<object, object> CurrentData
         {
             get
             {
@@ -132,7 +148,7 @@ namespace kFrameWork.UI
             }
         }
 
-        public static void AddData(object Key , object Value)
+        public static void AddData(object Key, object Value)
         {
             Dictionary<object, object> temp = CurrentData;
             temp.Add(Key, Value);
@@ -154,11 +170,26 @@ namespace kFrameWork.UI
             CurrentMessages = TempMessages;
         }
 
+        public static void AddCompeleteMessage(List<UserMessage> messages)
+        {
+            foreach (UserMessage message in messages)
+            {
+                AddCompeleteMessage(message);
+            }
+        }
 
+        public static void AddCompeleteMessage(UserMessage message)
+        {
+            List<UserMessage> TempMessages = CurrentCompeleteMessages;
+            TempMessages.Add(message);
+            CurrentCompeleteMessages = TempMessages;
+        }
 
         public static void ClearMessages()
         {
             CurrentMessages = null;
+            CurrentCompeleteMessages = null;
+            CurrentData = null;
         }
 
         #endregion
