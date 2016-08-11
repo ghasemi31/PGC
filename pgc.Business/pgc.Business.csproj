@@ -156,7 +156,6 @@
     <Compile Include="General\LotteryBusiness.cs" />
     <Compile Include="General\AndroidBusiness.cs" />
     <Compile Include="General\OnlinePaymentListBusiness.cs" />
-    <Compile Include="General\GameOrderBusiness.cs" />
     <Compile Include="General\OrderBusiness.cs" />
     <Compile Include="General\PollBusiness.cs" />
     <Compile Include="General\GalleryBusiness.cs" />
@@ -198,8 +197,6 @@
     <Compile Include="Lookup\ProvinceLookupBusiness.cs" />
     <Compile Include="Lookup\SampleLookupBusiness.cs" />
     <Compile Include="Lookup\SystemEventVariableLookupBusiness.cs" />
-    <Compile Include="OnlinePayment\MellatOnlinePaymentBusiness.cs" />
-    <Compile Include="OnlinePayment\OnlinePaymentBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityManagementBusiness\ProvinceBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SampleBusiness.cs" />
@@ -209,11 +206,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Web References\com.ppanel.api\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\ir.shaparak.bpm\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -246,12 +238,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\com.ppanel.api\Send.wsdl" />
-    <None Include="Web References\ir.shaparak.bpm\IPaymentGateway.wsdl" />
-    <None Include="Web References\ir.shaparak.bpm\PaymentGatewayImplService.wsdl" />
-    <None Include="Web References\ir.shaparak.bpm\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Web References\ir.shaparak.sep\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -288,17 +274,6 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>mrd_Business_Magfa_SoapSmsQueuableImplementationService</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="https://bpm.shaparak.ir/pgwchannel/services/pgw%3fwsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ir.shaparak.bpm\</RelPath>
-      <UpdateFromURL>https://bpm.shaparak.ir/pgwchannel/services/pgw%3fwsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>pgc_Business_ir_shaparak_bpm_PaymentGatewayImplService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://sep.shaparak.ir/payments/referencepayment.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>

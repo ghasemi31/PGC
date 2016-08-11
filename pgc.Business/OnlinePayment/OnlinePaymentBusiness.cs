@@ -71,11 +71,8 @@ namespace pgc.Business.Payment.OnlinePay
             return Context.Payments.SingleOrDefault(p => p.ID == pId);
         }
 
+    
 
-        public GameOrder RetrieveOrder(long Id)
-        {
-            return Context.GameOrders.SingleOrDefault(p => p.ID == Id);
-        }
         
     }
 }

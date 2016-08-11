@@ -61,23 +61,6 @@ public partial class UserControls_Common__UserMessageViewer : BaseUserControl
             pnlMessage.Text += "</tr>";
         }
 
-        foreach (UserMessage LoadedMessage in UserSession.CurrentCompeleteMessages)
-        {
-
-            string MessageIcon = "<div class=\"" + ((UserMessageType)LoadedMessage.Type).ToString().ToLower() + "\"></div>";
-            string MessageText = "<div class=\"text\">" + LoadedMessage.Description + "</div>";
-
-            pnlMessage.Text += "<tr>";
-            pnlMessage.Text += "<td class=\"iconcell\">";
-            pnlMessage.Text += MessageIcon;
-            pnlMessage.Text += "</td>";
-            pnlMessage.Text += "<td class=\"textcell\">";
-            pnlMessage.Text += MessageText;
-            pnlMessage.Text += "</td>";
-            pnlMessage.Text += "</tr>";
-
-        }
-
         if (!string.IsNullOrEmpty(pnlMessage.Text))
         {
             pnlMessage.Text = "<table dir='rtl'>" + pnlMessage.Text + "</table>";

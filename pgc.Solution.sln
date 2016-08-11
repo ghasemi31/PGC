@@ -13,7 +13,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost:8035", "ht
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{21f0aa1f-aef6-42f3-9f77-8362de8c6c08}|pgc.Business.dll;{5CCDC27F-E774-48DE-9B2D-50CE699EF6A1}|kFrameWork.dll;{831C6A75-5B84-4555-9B0E-586FC4C58F3E}|pgc.Model.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_8035"
 		Debug.AspNetCompiler.PhysicalPath = "pgc.Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8035\"
