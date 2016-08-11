@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/BaseEntityManagement.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Pages_Admin_OnlinePayment_Default" ValidateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/BaseEntityManagement.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Pages_Admin_Payment_Default" ValidateRequest="false" %>
 <%@ Register Src="Search.ascx" TagName="Search" TagPrefix="kfk" %>
 <%@ Register Src="Detail.ascx" TagName="Detail" TagPrefix="kfk" %>
 <%@ Register Src="List.ascx" TagName="List" TagPrefix="kfk" %>

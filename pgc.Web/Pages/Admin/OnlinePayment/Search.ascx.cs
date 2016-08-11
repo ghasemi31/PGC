@@ -6,21 +6,22 @@ using pgc.Business;
 using System.Web.UI.WebControls;
 using System;
 
-public partial class Pages_Admin_OnlinePayment_Search : BaseSearchControl<OnlinePaymentPattern>
+public partial class Pages_Admin_Payment_Search : BaseSearchControl<PaymentPattern>
 {
-    public override OnlinePaymentPattern Pattern
+    public override PaymentPattern Pattern
     {
         get
         {
             long ID=0;
             long.TryParse(txtOrderID.Text, out ID);
 
-            return new OnlinePaymentPattern()
+            return new PaymentPattern()
             {
                 Amount=nmrAMount.Pattern,
                 Order_ID=ID,
                 PersianDate=pdrDate.DateRange,
-                Status=lkpStatus.GetSelectedValue<OnlineTransactionStatus>()
+                Status = lkpStatus.GetSelectedValue<GameOrderPaymentStatus>(),
+                Game_ID=lkcGame.GetSelectedValue<long>()
             };
         }
         set
@@ -30,20 +31,21 @@ public partial class Pages_Admin_OnlinePayment_Search : BaseSearchControl<Online
                 txtOrderID.Text = value.Order_ID.ToString();
             pdrDate.DateRange = value.PersianDate;
             lkpStatus.SetSelectedValue(value.Status);
+            lkcGame.SetSelectedValue(value.Game_ID);
         }
     }
 
-    public override OnlinePaymentPattern DefaultPattern
+    public override PaymentPattern DefaultPattern
     {
         get
         {
-            OnlinePaymentPattern p=new OnlinePaymentPattern();
+            PaymentPattern p=new PaymentPattern();
 
             if ((this.Page as BasePage).HasValidQueryString<long>(QueryStringKeys.fid))
             {
                 p.Order_ID = (this.Page as BasePage).GetQueryStringValue<long>(QueryStringKeys.fid);
 
-                var page = (this.Page as BaseManagementPage<OnlinePaymentBusiness, OnlinePayment, OnlinePaymentPattern, pgcEntities>);
+                var page = (this.Page as BaseManagementPage<PaymentBusiness, Payment, PaymentPattern, pgcEntities>);
 
                 page.ListControl.FindControl("parentInfo").Visible = true;
                 page.ListControl.FindControl("btnEvent").Visible = true;
@@ -58,7 +60,7 @@ public partial class Pages_Admin_OnlinePayment_Search : BaseSearchControl<Online
     {
         if ((this.Page as BasePage).HasValidQueryString<long>(QueryStringKeys.fid))
         {
-            var page = (this.Page as BaseManagementPage<OnlinePaymentBusiness, OnlinePayment, OnlinePaymentPattern, pgcEntities>);
+            var page = (this.Page as BaseManagementPage<PaymentBusiness, Payment, PaymentPattern, pgcEntities>);
             page.SearchControl.Visible = false;
         }
         base.OnPreRender(e);

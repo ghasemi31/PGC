@@ -21,7 +21,7 @@ public partial class Pages_Guest_OnlinePayment : BasePage
 {
 
     public GameOrder order = null;
-    PaymentBusiness pay_business = new PaymentBusiness();
+    pgc.Business.Payment.OnlinePay.PaymentBusiness pay_business = new pgc.Business.Payment.OnlinePay.PaymentBusiness();
     public string RefId;
     long PayID;
     protected void Page_Load(object sender, EventArgs e)

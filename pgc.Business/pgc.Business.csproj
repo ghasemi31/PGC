@@ -77,6 +77,8 @@
     <Compile Include="EntityManagementBusiness\HeadingBusiness.cs" />
     <Compile Include="EntityManagementBusiness\MainMenuBusiness.cs" />
     <Compile Include="EntityManagementBusiness\MaterialBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\GameOrdersBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\PaymentBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SponsorBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SupportBusiness.cs" />
     <Compile Include="EntityManagementBusiness\OnlinePaymentListBusiness.cs" />
@@ -172,6 +174,7 @@
     <Compile Include="General\UserBusiness.cs" />
     <Compile Include="General\Util.cs" />
     <Compile Include="Lookup\BankAccountLookupBusiness.cs" />
+    <Compile Include="Lookup\GameLookupBusiness.cs" />
     <Compile Include="Lookup\CityLookupBusiness.cs" />
     <Compile Include="Lookup\AccessLevelLookupBusiness.cs" />
     <Compile Include="Lookup\BranchLookupBusiness.cs" />

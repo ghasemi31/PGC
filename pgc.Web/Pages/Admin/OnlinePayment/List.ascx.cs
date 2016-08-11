@@ -10,7 +10,7 @@ using pgc.Model;
 using kFrameWork.Model;
 using kFrameWork.Business;
 
-public partial class Pages_Admin_OnlinePayment_List : BaseListControl
+public partial class Pages_Admin_Payment_List : BaseListControl
 {
     protected override void OnInit(EventArgs e)
     {
@@ -49,20 +49,15 @@ public partial class Pages_Admin_OnlinePayment_List : BaseListControl
             e.Row.Cells[cellOrderID].Controls.Add(hp);
 
             //STATE
-            long result=0;
-            OnlineTransactionStatus status = (OnlineTransactionStatus)Enum.Parse(typeof(OnlineTransactionStatus), DataBinder.Eval(e.Row.DataItem, "TransactionState").ToString());
-            if (status != OnlineTransactionStatus.OK)
+    
+            MellatOnlinePaymentState status = (MellatOnlinePaymentState)Enum.Parse(typeof(OnlineTransactionStatus), DataBinder.Eval(e.Row.DataItem, "State").ToString());
+            if (status != MellatOnlinePaymentState.OK)
                 e.Row.Cells[cellStatus].Text = EnumUtil.GetEnumElementPersianTitle(status);
             else
             {
-                //modification ver 83 on 1392/11/16
-                result = long.Parse(DataBinder.Eval(e.Row.DataItem, "ResultTransaction").ToString());
-                if (result > 0)
+                
                     e.Row.Cells[cellStatus].Text = "پرداخت شده";
-                else if (result == 0 || result < 20)
-                    e.Row.Cells[cellStatus].Text = "توضیحات موجود نیست";//"<span title='توضیحات علت عدم موفقیت پرداخت یا بازگشت از بانک موجود نمی باشد'>[بدون توضیح]<span>";
-                else
-                    e.Row.Cells[cellStatus].Text = UserMessageKeyBusiness.GetUserMessageDescription((UserMessageKey)Enum.Parse(typeof(UserMessageKey), "Err_" + result.ToString().Substring(1)));
+               
             }
 
             if (e.Row.Cells[cellStatus].Text.Length > maxChar)
@@ -75,7 +70,7 @@ public partial class Pages_Admin_OnlinePayment_List : BaseListControl
             string refnum = DataBinder.Eval(e.Row.DataItem, "RefNum").ToString();
             e.Row.Cells[cellRefNum].Text = string.IsNullOrEmpty(refnum) ? "-------" : refnum;
 
-            if (string.IsNullOrEmpty(refnum) || status != OnlineTransactionStatus.OK || result < 0)
+            if (string.IsNullOrEmpty(refnum) || status != MellatOnlinePaymentState.OK )
             {
                 e.Row.Cells[cellReverse].Controls.RemoveAt(0);
                 e.Row.Cells[cellverify].Controls.RemoveAt(0);
@@ -99,16 +94,16 @@ public partial class Pages_Admin_OnlinePayment_List : BaseListControl
     protected override void Grid_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         long id = (long)Grid.DataKeys[int.Parse(e.CommandArgument.ToString())].Value;
-        OnlinePayment online=new OnlinePaymentBusiness().Retrieve(id);
+        Payment online=new PaymentBusiness().Retrieve(id);
         OperationResult op=new OperationResult();
 
         if (e.CommandName == "VerifyRow")
         {
-            op = new SamanOnlinePayment().VerifyTransaction(online.RefNum);
+            //op = new SamanPayment().VerifyTransaction(online.RefNum);
         }
         else if (e.CommandName == "ReverseRow")
         {
-            op =new SamanOnlinePayment().ReversTransaction(online.Amount, online.RefNum);
+            //op =new SamanPayment().ReversTransaction(online.Amount, online.RefNum);
         }
 
         foreach (var item in op.Messages)

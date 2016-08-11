@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_OnlinePayment_Detail" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Payment_Detail" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
 

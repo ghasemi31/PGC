@@ -32,7 +32,7 @@
                                         <td>نام بازی</td>
                                         <td class="text-align-center">تاریخ</td>
                                         
-                                        <td class="text-align-center">هزینه ثبت نام(تومان)</td>
+                                        <td class="text-align-center">هزینه ثبت نام(ریال)</td>
                                        
                                         <td class="text-align-center">وضعیت پرداخت</td>
                                         <td></td>
@@ -51,7 +51,7 @@
                                                 <td><%#Eval("ID") %></td>
                                                 <td><%#Eval("GameTitle") %></td>
                                                 <td><%#kFrameWork.Util.DateUtil.GetPersianDateWithTime(Convert.ToDateTime(Eval("OrderDate")))%></td>
-                                                <td class="text-align-center"><%#kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(Eval("PayableAmount"))/10).ToString())%></td>
+                                                <td class="text-align-center"><%#kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(Eval("PayableAmount"))).ToString())%></td>
                                                
                                                 <td class="text-align-center" data-tooltip="<%# (bool)Eval("IsPaid")?"پرداخت شده":"پرداخت نشده" %>" data-tooltip-position="top" style="display: block"><i class="fa <%# (bool)Eval("IsPaid")?"fa-check paid":"fa-times unpaid" %>" aria-hidden="true"></i></td>
                                                 <td style="<%# (bool)Eval("IsPaid")?"display:none":"" %>">

@@ -45,8 +45,8 @@
                                         <span><%=kFrameWork.Util.DateUtil.GetPersianDateWithTime(Convert.ToDateTime(order.OrderDate)) %></span>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
-                                        <span class="profile-title">هزینه ثبت نام(تومان):  </span>
-                                        <span><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(order.PayableAmount)/10).ToString()) %></span>
+                                        <span class="profile-title">هزینه ثبت نام(ریال):  </span>
+                                        <span><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf((Convert.ToInt64(order.PayableAmount)).ToString()) %></span>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">وضعیت پرداخت:  </span>
@@ -94,21 +94,18 @@
                                     <tr class="order-title table-header">
                                         <td>نام بازیکن</td>
                                         <td>ایمیل</td>
-                                        <td class="text-align-center">کد ملی</td>
+                                        <td>کد ملی</td>
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                    <asp:ObjectDataSource ID="odsOrder"
+                                   <asp:ObjectDataSource ID="odsOrder"
                                         runat="server"
                                         EnablePaging="True"
                                         SelectCountMethod="gamer_count"
                                         SelectMethod="gamer_List"
                                         OnSelecting="odsOrder_Selecting"
                                         TypeName="pgc.Business.General.GameBusiness"
-                                        EnableViewState="false">
-
-
-                                    </asp:ObjectDataSource>
+                                        EnableViewState="false" />
                                     <asp:ListView ID="lsvOrder" runat="server" DataSourceID="odsOrder" EnableViewState="false">
                                         <ItemTemplate>
                                             <tr class="order-tb-row">
