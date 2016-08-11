@@ -1,4 +1,5 @@
 ﻿using kFrameWork.Business;
+using kFrameWork.Model;
 using kFrameWork.UI;
 using kFrameWork.Util;
 using pgc.Business;
@@ -18,9 +19,11 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Guest_OnlinePayment : BasePage
 {
-    public Payment online = null;
-    PaymentBusiness pay_business=new PaymentBusiness();
+
+    public GameOrder order = null;
+    PaymentBusiness pay_business = new PaymentBusiness();
     public string RefId;
+    long PayID;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -28,19 +31,26 @@ public partial class Pages_Guest_OnlinePayment : BasePage
             Response.Redirect(GetRouteUrl("guest-default", null));
         else
         {
-            online = pay_business.RetrievePayment(this.GetQueryStringValue<long>(QueryStringKeys.id));
+            order = pay_business.RetrieveOrder(this.GetQueryStringValue<long>(QueryStringKeys.id));
 
-            if (online.GameOrder.IsPaid )
+            if (order.IsPaid)
                 Response.Redirect(GetRouteUrl("guest-default", null));
 
-            Post();
+            OperationResult res = new OperationResult();
+            res = new pgc.Business.Payment.OnlinePay.PaymentBusiness().CreatePayment(order.ID, OnlineGetway.MellatBankGateWay);
+
+            if (res.Result == ActionResult.Done)
+            {
+                PayID = (long)res.Data["ResNum"];
+                Post();
+            }
         }
     }
 
 
     private void Post()
     {
-        
+
         try
         {
             string result;
@@ -53,8 +63,8 @@ public partial class Pages_Guest_OnlinePayment : BasePage
             result = bpService.bpPayRequest(terminalId,
                 OptionBusiness.GetText(pgc.Model.Enums.OptionKey.Mellat_UserName),
                 OptionBusiness.GetText(pgc.Model.Enums.OptionKey.Mellat_Password),
-                online.ID,
-                (online.GameOrder.PayableAmount),
+                PayID,
+                (order.PayableAmount),
                 DateTime.Now.ToString("yyyyMMdd"),
                 DateTime.Now.ToString("HHmmss"),
                 "",
@@ -72,11 +82,11 @@ public partial class Pages_Guest_OnlinePayment : BasePage
                 string message = EnumUtil.GetEnumElementPersianTitle((MellatOnlinePaymentState)State);
                 UserSession.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, message));
 
-                pay_business.ChangeOrderState(online.ID, State);
+                pay_business.ChangeOrderState(PayID, State);
 
 
-                Response.Redirect(GetRouteUrl("user-gamedetail", new { id = online.Order_ID })) ;
-                
+                Response.Redirect(GetRouteUrl("user-gamedetail", new { id = order.ID }));
+
             }
         }
         catch (Exception exp)
