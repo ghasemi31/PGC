@@ -1,7 +1,5 @@
-﻿using kFrameWork.Model;
-using kFrameWork.UI;
+﻿using kFrameWork.UI;
 using pgc.Business.General;
-using pgc.Business.Payment.OnlinePay;
 using pgc.Model;
 using pgc.Model.Enums;
 using System;
@@ -15,7 +13,6 @@ public partial class Pages_Guest_GameDetail : BasePage
 {
     GameBusiness business = new GameBusiness();
     public Game game;
-    public string redirectUrl;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!HasValidQueryString_Routed<string>(QueryStringKeys.urlkey))
