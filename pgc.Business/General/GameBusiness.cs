@@ -104,7 +104,7 @@ namespace pgc.Business.General
                 return null;
 
             var Result = order.Group.Users.AsQueryable()
-                .OrderBy(f=>f.ID)
+                .OrderBy(f => f.ID)
                 .Select(f => new
                 {
                     f.ID,
@@ -134,6 +134,49 @@ namespace pgc.Business.General
         public User RetriveGamer(string nationalCode)
         {
             return db.Users.SingleOrDefault(u => u.NationalCode == nationalCode);
+        }
+
+        public OperationResult Validate(long userID, long gameID)
+        {
+            OperationResult res = new OperationResult();
+            Game game = db.Games.FirstOrDefault(g => g.ID == gameID);
+            User user = db.Users.FirstOrDefault(g => g.ID == userID);
+
+            if (user.Gender == (int)Gender.Male)
+            {
+                res.Result = ActionResult.Done;
+                return res;
+            }
+            else
+            {
+
+                var groupid = user.Groups.Select(g => g.ID).ToList();
+
+                int gameCount = db.GameOrders.Where(o => o.User_ID == userID || (o.Group_ID != null && groupid.Contains((long)o.Group_ID))).Count();
+
+                if (game.Type_Enum != (int)GameType.Mobile)
+                {
+                    res.Result = ActionResult.Failed;
+                    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در بازی های موبایلی شرکت کنند."));
+                    return res;
+                }
+
+                else if (gameCount >= 3)
+                {
+                    res.Result = ActionResult.Failed;
+                    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در 3 بازی شرکت کنند."));
+                    return res;
+                }
+
+                else
+                {
+
+                    res.Result = ActionResult.Done;
+                    return res;
+                }
+
+
+            }
         }
     }
 }

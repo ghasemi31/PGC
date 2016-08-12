@@ -40,7 +40,7 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
     {
         if (!string.IsNullOrEmpty(Request.QueryString["redirecturl"]))
         {
-            Response.Redirect(Request.QueryString["redirecturl"]);
+            Response.Redirect(Request.QueryString["redirecturl"].Replace("~",""));
         }
         else
         {

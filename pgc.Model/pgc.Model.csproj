@@ -140,6 +140,7 @@
     <Compile Include="Patterns\Project\GameOrdersPattern.cs" />
     <Compile Include="Patterns\Project\PaymentPattern.cs" />
     <Compile Include="Patterns\Project\SponsorPattern.cs" />
+    <Compile Include="Patterns\Project\SlidePattern.cs" />
     <Compile Include="Patterns\Project\SupportPattern.cs" />
     <Compile Include="Patterns\Project\ProductSoldChartPattern.cs" />
     <Compile Include="Patterns\Project\BranchSummaryChartPattern.cs" />

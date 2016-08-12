@@ -28,7 +28,7 @@ namespace kFrameWork.UI
         private void securityCheck()
         {
             pgcEntities db = new pgcEntities();
-            Entity = db.PanelPages.FirstOrDefault(p => p.URL == this.AppRelativeVirtualPath);
+            Entity = db.PanelPages.FirstOrDefault(p => p.URL == this.AppRelativeVirtualPath&&p.Active);
 
             if (this.IsGuestPage)
                 return;

@@ -17,15 +17,18 @@
     <input type="hidden" id="speed-slider-time" value="<%=OptionBusiness.GetDouble(OptionKey.FullPageSpeedSlider)%>" />
     <input type="hidden" id="slider-transaction" value="<%=OptionBusiness.GetText(OptionKey.Slider_transitionStyle) %>" />
     <section class="top-slider" style="direction:ltr">
-        <%--<div id="main-slider" class="owl-carousel container-fluid">
+
+      
+
+        <div id="main-slider" class="owl-carousel">
             <%foreach (var item in DBusiness.GetMainSlider())
               {
                   var imgPath = ResolveClientUrl(item.ImgPath);
             %>
-            <div class="mainSlider-item" style="background-image: url(<%=imgPath%>)"></div>
-            <%} %>--%>
-            <img class="width100" src="/assets/Guest/Image/FIFA-14.jpg" />
-       <%-- </div>--%>
+             <div class="owl-slide" style="background-image: url(<%=imgPath%>)"></div>
+            <%} %>
+   
+        </div>
     </section>
     <!-- slider -->
     <section id="content" class="home clearfix">
@@ -34,27 +37,17 @@
             <div class="container">
                 <div class="row margin-left-right-0">
                     <div id="game-slider" class="owl-carousel">
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
+                        <%foreach (var item in DBusiness.GetGameLogos())
+                          {%>
+                              <div class="game-logo-item">
+                                 <a href="<%=GetRouteUrl("guest-gamedetail", new { urlkey=item.UrlKey})%>">
+                            <img  src="<%=ResolveClientUrl(item.ImagePath) %>" alt="<%=item.Title %>" />
+                        </a>
                         </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
-                        <div class="game-logo-item">
-                            <img src="/assets/Guest/Image/fifa16-logo.png" />
-                        </div>
+
+                        
+                         <% } %>
+                        
                     </div>
                 </div>
             </div>

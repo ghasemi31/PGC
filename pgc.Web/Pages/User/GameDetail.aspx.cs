@@ -1,4 +1,5 @@
-﻿using kFrameWork.UI;
+﻿using kFrameWork.Model;
+using kFrameWork.UI;
 using pgc.Business.General;
 using pgc.Model;
 using pgc.Model.Enums;
@@ -69,8 +70,21 @@ public partial class Pages_User_GameDetail : BasePage
         }
         else
         {
-            var res=b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
-            UserSession.AddMessage(res.Messages);
+
+             OperationResult valRes = new OperationResult();
+            valRes = b.Validate(user.ID,(long)order.Game_ID );
+
+            if (valRes.Result == ActionResult.Done)
+            {
+
+
+                var res = b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
+                UserSession.AddMessage(res.Messages);
+            }
+            else
+            {
+                UserSession.AddCompeleteMessage(valRes.CompleteMessages);
+            }
         }
     }
 }

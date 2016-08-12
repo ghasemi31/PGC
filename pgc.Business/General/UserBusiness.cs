@@ -34,6 +34,12 @@ namespace pgc.Business.General
                     return res;
                 }
 
+                if (db.Users.Where(u => u.NationalCode == user.NationalCode).Count() > 0)
+                {
+                    res.Result = ActionResult.Failed;
+                    res.AddMessage(UserMessageKey.DuplicateNationalCode);
+                    return res;
+                }
                 user.AccessLevel_ID = 2;
                 user.ActivityStatus = Convert.ToInt32(UserActivityStatus.Enabled);
                 user.SignUpPersianDate = DateUtil.GetPersianDateShortString(DateTime.Now);

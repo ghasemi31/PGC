@@ -17,9 +17,9 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         Data.AccessLevel_ID = lkcAccessLevel.GetSelectedValue<long>();
         Data.ActivityStatus = lkcActivityStatus.GetSelectedValue<int>();
         Data.Address = txtAddress.Text;
-        //Data.City_ID = lkcCity.GetSelectedValue<long>();
-        Data.Email = txtEmail.Text;
-        Data.Fax = txtFax.Text;
+        Data.City_ID = lkcCity.GetSelectedValue<long>();
+        Data.FatherName = txtFatherName.Text;
+       
         Data.FullName = txtFullName.Text;
         Data.Mobile = txtMobile.Text;
         Data.NationalCode = txtNationalCode.Text;
@@ -27,18 +27,22 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         if (Mode == ManagementPageMode.Add)
             Data.pwd = txtPassword.Text;
         Data.Tel = txtTel.Text;
-        Data.Username = txtEmail.Text;
+        
         Data.SignUpPersianDate = pdpSignUpPersianDate.PersianDate;
         Data.Gender = lkcGender.GetSelectedValue<int>();
 
-        if (lkcRole.GetSelectedValue<Role>() == Role.Agent)
-            Data.Branch_ID = lkcBranch.GetSelectedValue<long>();
-        else
+      
             Data.Branch_ID = null;
+
+        if (Mode == ManagementPageMode.Add)
+        {
+            Data.Username = txtEmail.Text;
+            Data.Email = txtEmail.Text;
+        }
 
         return Data;
     }
-    
+
     public override void SetEntity(User Data, ManagementPageMode Mode)
     {
 
@@ -49,14 +53,16 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         lkcAccessLevel.SetSelectedValue(Data.AccessLevel_ID);
         lkcActivityStatus.SetSelectedValue(Data.ActivityStatus);
         txtAddress.Text = Data.Address;
-        //lkcProvince.SetSelectedValue(Data.City.Province_ID);
-        //lkcCity.SetSelectedValue(Data.City_ID );
+        lkcProvince.SetSelectedValue(Data.City.Province_ID);
+        lkcCity.SetSelectedValue(Data.City_ID);
         txtEmail.Text = Data.Email;
-        txtFax.Text = Data.Fax;
+        lblEmail.Text = Data.Email;
+   
         txtFullName.Text = Data.FullName;
         txtMobile.Text = Data.Mobile;
         txtNationalCode.Text = Data.NationalCode;
         txtPostalCode.Text = Data.PostalCode;
+        txtFatherName.Text = Data.FatherName;
         //txtPassword.Text = Data.pwd;
         txtTel.Text = Data.Tel;
         //txtUsername.Text = Data.Username;
@@ -65,10 +71,6 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         //hplResetPwd.NavigateUrl = string.Format("~/Pages/Admin/ResetPwd/Default.aspx?id={0}", Data.ID);
         hplResetPwd.NavigateUrl = GetRouteUrl("Admin-resetpwd", null) + "?" + QueryStringKeys.id.ToString() + "=" + Data.ID;
 
-        if (Data.Branch_ID == null)
-            lkcBranch.SetSelectedValue(-1);
-        else
-            lkcBranch.SetSelectedValue(Data.Branch_ID);
     }
 
     public override void BeginMode(ManagementPageMode Mode)
@@ -79,7 +81,18 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         UserID.Visible = (Mode == ManagementPageMode.Edit);
 
         if (Mode == ManagementPageMode.Add)
-            branch.Visible = false;
+        {
+            lblEmail.Visible = false;
+            txtEmail.Visible = true;
+           
+        }
+
+        if (Mode == ManagementPageMode.Edit)
+        {
+            lblEmail.Visible = true;
+            txtEmail.Visible = false;
+        }
+
     }
 
     public override bool Validate(ManagementPageMode Mode)
@@ -96,19 +109,14 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
     protected void Role_Changed(object sender, EventArgs e)
     {
 
-        if (lkcRole.GetSelectedValue<Role>() == Role.Agent)
-        {
-            branch.Visible = true;
-        }
-        else
-            branch.Visible = false;
+        
     }
 
     public override void Reset()
     {
         base.Reset();
-        //lkcCity.DependOnParameterValue = lkcProvince.GetSelectedValue<long>();
-        //lkcCity.DataBind();
+        lkcCity.DependOnParameterValue = lkcProvince.GetSelectedValue<long>();
+        lkcCity.DataBind();
         lkcAccessLevel.DependOnParameterValue = lkcRole.GetSelectedValue<long>();
         lkcAccessLevel.DataBind();
     }

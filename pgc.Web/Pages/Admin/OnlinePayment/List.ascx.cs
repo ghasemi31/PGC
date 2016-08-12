@@ -9,6 +9,7 @@ using pgc.Business.Core;
 using pgc.Model;
 using kFrameWork.Model;
 using kFrameWork.Business;
+using pgc.Business.Payment.OnlinePay;
 
 public partial class Pages_Admin_Payment_List : BaseListControl
 {
@@ -94,21 +95,29 @@ public partial class Pages_Admin_Payment_List : BaseListControl
     protected override void Grid_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         long id = (long)Grid.DataKeys[int.Parse(e.CommandArgument.ToString())].Value;
-        Payment online=new PaymentBusiness().Retrieve(id);
+        Payment online=new pgc.Business.PaymentBusiness().Retrieve(id);
         OperationResult op=new OperationResult();
 
         if (e.CommandName == "VerifyRow")
         {
-            //op = new SamanPayment().VerifyTransaction(online.RefNum);
+
+            MellatOnlinePaymentBusiness mellat_business = new MellatOnlinePaymentBusiness();
+            op = mellat_business.Verify(online.ID, online.RefNum, false);
         }
         else if (e.CommandName == "ReverseRow")
         {
             //op =new SamanPayment().ReversTransaction(online.Amount, online.RefNum);
+            MellatOnlinePaymentBusiness mellat_business = new MellatOnlinePaymentBusiness();
+            op = mellat_business.Reverse(online.ID, online.RefNum);
         }
 
         foreach (var item in op.Messages)
         {
             UserSession.AddMessage(item);
+        }
+        foreach (var item in op.CompleteMessages)
+        {
+            UserSession.AddCompeleteMessage(item);
         }
         
 

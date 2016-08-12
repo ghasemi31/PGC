@@ -286,6 +286,7 @@
         NoRefNum,
         OnlinePaymentIsSuccessful,
         PaymentStatusChangedToNotPaid,
-        BankWebServiceNoResponse
+        BankWebServiceNoResponse,
+        DuplicateNationalCode
     }
 }

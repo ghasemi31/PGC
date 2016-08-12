@@ -49,26 +49,38 @@ public partial class Pages_Guest_GameDetail : BasePage
     {
         if (UserSession.IsUserLogined)
         {
+
             GameOrderBusiness business = new GameOrderBusiness();
             GameBusiness gameBusiness = new GameBusiness();
-            GameOrder model = new GameOrder();
-            model.Game_ID = game.ID;
-            model.User_ID = UserSession.UserID;
-            if (game.GamerCount > 1)
+            OperationResult valRes = new OperationResult();
+            valRes = gameBusiness.Validate(UserSession.UserID, game.ID);
+
+            if (valRes.Result == ActionResult.Done)
             {
-                model.Group_ID = gameBusiness.AddNewGameGroup(txtTeamName.Text);
-                gameBusiness.AddNewGamerToGroup((long)model.Group_ID, (long)model.User_ID);
+
+                GameOrder model = new GameOrder();
+                model.Game_ID = game.ID;
+                model.User_ID = UserSession.UserID;
+                if (game.GamerCount > 1)
+                {
+                    model.Group_ID = gameBusiness.AddNewGameGroup(txtTeamName.Text);
+                    gameBusiness.AddNewGamerToGroup((long)model.Group_ID, (long)model.User_ID);
+                }
+
+                OperationResult result = new OperationResult();
+                result = business.AddNewOrder(model);
+                UserSession.AddMessage(result.Messages);
+
+                if (result.Result == ActionResult.Done)
+                {
+                    long orderID = (long)result.Data["Order_ID"];
+                    Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + orderID);
+
+                }
             }
-
-            OperationResult result = new OperationResult();
-            result = business.AddNewOrder(model);
-            UserSession.AddMessage(result.Messages);
-
-            if (result.Result == ActionResult.Done)
+            else
             {
-                long orderID = (long)result.Data["Order_ID"];
-                Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + orderID);
-
+                UserSession.AddCompeleteMessage(valRes.CompleteMessages);
             }
         }
     }

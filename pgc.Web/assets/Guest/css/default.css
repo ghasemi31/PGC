@@ -220,46 +220,60 @@
 }
 
 /***********************************BEGIN MAIN SLIDER**************************************/
-#main-slider {
-    position: relative;
-    height: 100%;
-    direction:ltr;
+.top-slider .owl-carousel {
+  position: relative;
+  height: 100%;
+}
+.top-slider .owl-carousel div:not(.owl-controls) {
+  height: 100%;
+}
+.top-slider .owl-carousel .owl-slide {
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.top-slider .owl-carousel div.owl--text {
+  position: absolute;
+  bottom: 4em;
+  left: 2em;
+  width: 20em;
+  height: 8em;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+.top-slider .owl-carousel .owl-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+.top-slider .owl-carousel .owl-controls .owl-buttons div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  zoom: 1;
+  margin: 0;
+  width: 50px;
+  height: 30px;
+  line-height: 25px;
+  text-align: center;
+  font-size: .9em;
+  border-radius: 3px;
+  color: #FFF;
+  background: #000;
+  opacity: .6;
+  text-transform: capitalize;
+}
+.top-slider .owl-carousel .owl-controls .owl-buttons .owl-prev {
+  left: 5px;
+}
+.top-slider .owl-carousel .owl-controls .owl-buttons .owl-next {
+  right: 5px;
 }
 
-    #main-slider  div:not(.owl-controls) {
-        height: 100%;
-    }
+	
 
-    #main-slider .mainSlider-item {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        display: block;
-    }
-
-   #main-slider .owl-controls {
-        position: absolute;
-        top: 93%;
-        left: 0;
-        right: 0;
-    }
-
-        #main-slider .owl-controls .owl-buttons div {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            display: inline-block;
-            zoom: 1;
-            margin: 0;
-            width: 50px;
-            height: 30px;
-            line-height: 25px;
-            text-align: center;
-            font-size: .9em;
-            border-radius: 3px;
-            color: #FFF;
-            background: #000;
-            opacity: .6;
-            text-transform: capitalize;
-        }
 /***********************************END MAIN SLIDER**************************************/

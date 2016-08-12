@@ -20,22 +20,31 @@
     }
 
     $("#main-slider").owlCarousel({
-        autoPlay: time,
-        navigation: false,
-        slideSpeed: speedTime,
-        paginationSpeed: speedTime,
+        autoPlay: 3000,
+      
         singleItem: true,
-        pagination: true,
-        rewindSpeed: speedTime,
-        goToFirst: true,
-        loop:true,
-        transitionStyle: transactionStyle,
-
-        afterInit: afterOWLinit,
+        pagination: false,
+   
+        autoHeight: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            400: {
+                items: 1
+            },
+            700: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            }
+        }
     });
-    function afterOWLinit() {
-        $('#main-slider .mainSlider-item').css("display", "block")
-    }
+    //function afterOWLinit() {
+    //    $('#main-slider .mainSlider-item').css("display", "block")
+    //}
 
 
 

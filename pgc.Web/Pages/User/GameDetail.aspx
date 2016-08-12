@@ -15,7 +15,7 @@
                         <div class="order-code">
                             <ul class="list-inline">
                                 <li><a href="/userprofile">حساب کاربری من  <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                                 <li><a href="/userprofile">بازیهای من  <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                 <li><a href="/user/gamelist">بازیهای من  <i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                                 <li>بازی <%=order.GameTitle %></li>
                             </ul>
                         </div>

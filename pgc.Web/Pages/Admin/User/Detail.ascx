@@ -44,19 +44,20 @@
         </td>
 
     </tr>
-    <tr runat="server" id="branch">
-        <td class="caption">شعبه</td>
+    <tr runat="server" >
+        <td class="caption">ایمیل</td>
         <td class="control">
-            <kfk:LookupCombo ID="lkcBranch"
-                runat="server"
-                BusinessTypeName="pgc.Business.Lookup.BranchLookupBusiness"
-                DefaultItemText="--"
-                AddDefaultItem="True" />
+            <kfk:NormalTextBox runat="server" ID="txtEmail" Mode="Email" Required="true"/>
+            <asp:Label ID="lblEmail" runat="server"></asp:Label>
         </td>
-        <td></td>
-        <td></td>
+        <td class="caption">نام پدر</td>
+        <td class="control">
+            <kfk:NormalTextBox runat="server" ID="txtFatherName"  Required="true"  />
+        </td>
+      
+
     </tr>
-    <%--<tr>
+    <tr>
         <td class="caption">استان</td>
         <td class="control">
             <kfk:LookupCombo ID="lkcProvince"
@@ -75,16 +76,13 @@
                 DependOnParameterType="Int64"
                 Required="true" />
         </td>
-    </tr>--%>
+    </tr>
     <tr>
-        <%--<td class="caption">نام کاربری</td>
+       <td class="caption">تاریخ عضویت</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtUsername" Required="true" />
-        </td>--%>
-        <td class="caption">ایمیل</td>
-        <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtEmail" Mode="Email" Required="true"/>
+            <kfk:PersianDatePicker runat="server" ID="pdpSignUpPersianDate" Required="true" />
         </td>
+        
         <td class="caption">وضعیت</td>
         <td class="control">
             <kfk:LookupCombo ID="lkcActivityStatus"
@@ -114,40 +112,31 @@
         </td>
     </tr>
     <tr>
-        <td class="caption">تاریخ عضویت</td>
+        <td class="caption">کد پستی</td>
         <td class="control">
-            <kfk:PersianDatePicker runat="server" ID="pdpSignUpPersianDate" Required="true" />
+            <kfk:NormalTextBox runat="server" ID="txtPostalCode" Mode="Phone"  Required="true" />
         </td>
         <td class="caption">کد ملی</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtNationalCode" />
+            <kfk:NormalTextBox runat="server" ID="txtNationalCode"  Required="true" />
         </td>
     </tr>
     <tr>
         
         <td class="caption">شماره تماس</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtTel" Mode="Phone" />
+            <kfk:NormalTextBox runat="server" ID="txtTel" Mode="Phone"  Required="true" />
         </td>
         <td class="caption">تلفن همراه</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtMobile" Mode="Phone" />
+            <kfk:NormalTextBox runat="server" ID="txtMobile" Mode="Phone"  Required="true" />
         </td>
     </tr>
-    <tr>
-        <td class="caption">دور نگار</td>
-        <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtFax" Mode="Phone" />
-        </td>
-        <td class="caption">کد پستی</td>
-        <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtPostalCode" Mode="Phone" />
-        </td>
-    </tr>
+ 
     <tr>     
         <td class="caption">آدرس</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtAddress" TextMode="MultiLine" />
+            <kfk:NormalTextBox runat="server" ID="txtAddress" TextMode="MultiLine"  Required="true" />
         </td>
     </tr>
 
