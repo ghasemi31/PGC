@@ -15,17 +15,17 @@
                     </asp:ScriptManager>
                     <asp:UpdatePanel ID="uplCaptcha" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 padding-left-right-0">
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 padding-left-right-0">
                                 <asp:TextBox ID="txtCaptcha" CssClass="form-control" placeholder="کد امنیتی" ClientIDMode="Static" runat="server"></asp:TextBox>
                                 <span runat="server" id="captchavalidation" style="font-size:10px; color:#CC0000;font-family:Tahoma;display:none;">لطفا کد امنیتی را وارد نمایید</span>
                                 <asp:CustomValidator ErrorMessage="کد امنیتی اشتباه است" OnServerValidate="ValidateCaptcha"
                                     runat="server" Visible="True" Font-Names="Tahoma" ForeColor="#CC0000" Font-Size="10px" Display="Dynamic" />
                             </div>
-                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 padding-left-right-0">
+                            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                                 <div id="captcha" class="display-center">
                                     <kfk:CaptchaControl ID="Captcha1" runat="server"
                                         CaptchaBackgroundNoise="Low" CaptchaLength="5"
-                                        CaptchaHeight="40" CaptchaWidth="120" CssClass="col-md-8"
+                                        CaptchaHeight="40" CaptchaWidth="160"
                                         CaptchaLineNoise="None" CaptchaMinTimeout="5"
                                         CaptchaMaxTimeout="240" FontColor="#da251d" />
                                     <input type="submit" runat="server" class="btn-captch" value="&#xf021;" onclick="" causesvalidation="false" />

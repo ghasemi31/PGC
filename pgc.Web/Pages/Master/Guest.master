@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Guest.master.cs" Inherits="Pages_Master_Guest" %>
+
 <%@ Register Src="~/UserControls/Common/UserMessageViewer.ascx" TagName="UserMessageViewer" TagPrefix="uc2" %>
 <%@ Import Namespace="pgc.Model.Enums" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,8 +18,8 @@
     <link href="/assets/Template/css/layout.css" rel="stylesheet" />
     <link href="/assets/Template/css/colors.css" rel="stylesheet" />
 
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
 
 
@@ -41,10 +43,41 @@
                         <div class="container">
                             <div class="row">
                                 <div class="clearfix col-sm-6 col-md-6">
+
+                                    <%if (kFrameWork.UI.UserSession.IsUserLogined)
+                                      {%>
+                                    <ul class="quickMenu">
+                                        <li><a href="#"><%=(kFrameWork.UI.UserSession.User.Gender==(int)pgc.Model.Enums.Gender.Female)?"خانم":"آقای" %> <%=kFrameWork.UI.UserSession.User.FullName %>، خوش آمدید</a></li>
+                                        <%if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.User)
+                                          {%>
+                                              <li><a href="<%=GetRouteUrl("user-userprofile",null) %>">حساب کاربری من</a>
+                                            <ul>
+                                                <li><a href="<%=GetRouteUrl("user-userprofile",null) %>">پروفایل من</a></li>
+                                                <li><a href="<%=GetRouteUrl("user-gamelist",null) %>">بازی های من</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-login",null) %>">خروج</a></li>
+                                            </ul>
+                                        </li>
+                                          <%}
+                                          else
+                                              if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Admin)
+                                              {%>
+                                                  <li><a href="<%=GetRouteUrl("admin-default",null) %>">پنل مدیریت</a></li>
+                                             <% }
+                                              else if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Agent)
+                                              {%>
+                                                  <li><a href="<%=GetRouteUrl("agent-default",null) %>">پنل مدیریت</a></li>
+                                              <%}
+                                            %>
+                                        
+                                    </ul>
+                                    <%}
+                                      else
+                                      {%>
                                     <ul class="quickMenu">
                                         <li><a href="<%=GetRouteUrl("guest-login",null) %>">ورود به سایت</a></li>
                                         <li><a href="<%=GetRouteUrl("guest-signup",null) %>">ثبت نام</a></li>
                                     </ul>
+                                    <%} %>
                                 </div>
                                 <div class="clearfix col-sm-6 col-md-6">
                                     <ul class="socialNetwork">
@@ -81,10 +114,10 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" class="firstLevel">قوانین و مقررات</a>
+                                        <a href="<%=GetRouteUrl("guest-laws",null) %>" class="firstLevel">قوانین و مقررات</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" class="firstLevel">جدول جوایز</a>
+                                        <a href="<%=GetRouteUrl("guest-awards",null) %>" class="firstLevel">جدول جوایز</a>
                                     </li>
                                     <li>
                                         <a href="<%=GetRouteUrl("guest-contacts",null) %>" class="firstLevel">ارتباط با ما</a>
@@ -109,6 +142,56 @@
                         <div class="container"><a href="#" class="iconWrapper"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
                     </div>
                     <div class="container" id="footer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 display-center">
+                                <img src="/assets/Guest/Image/enamad.png" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="footer-title">Iran PGC</span>
+                                        <nav>
+                                            <ul>
+                                                <li><a href="<%=GetRouteUrl("guest-default",null) %>" class="firstLevel">صفحه اصلی</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-laws",null) %>" class="firstLevel">قوانین و مقررات</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-awards",null) %>" class="firstLevel">جدول جوایز</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-contacts",null) %>" class="firstLevel">ارتباط با ما</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-aboutus",null) %>" class="firstLevel">درباره ما</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-newslist",null) %>">وبلاگ</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="footer-title">انواع بازی</span>
+                                        <nav>
+                                            <ul>
+                                                <li><a href="<%=GetRouteUrl("guest-gamelist", new { id=(int)GameType.Iranian})%>">بازیهای ایرانی</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Foreign}) %>">بازیهای خارجی</a></li>
+                                                <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Mobile}) %>">بازیهای موبایلی</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                                <span class="footer-title">آدرس</span>
+                                <br />
+                                <span class="footer-item">تهران</span>
+                                <br />
+                                <span class="footer-title">تلفن</span>
+                                <br />
+                                <span class="footer-item">11111</span>
+                                <br />
+                                <span class="footer-title">پست الکترونیک</span>
+                                <br />
+                                <span class="footer-item">gmail</span>
+                                <div id="footer-contactus" class="display-center">
+                                    <a href="<%=GetRouteUrl("guest-contacts",null) %>">ارتباط با ما</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
                 <section id="footerRights">
@@ -116,7 +199,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-md-12">
                                 <div class="innerBg">
-                                    <p>Copyright © 2012 Little NEKO / All rights reserved.</p>
+                                    <p><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.Licence) %></p>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +213,7 @@
 
         <!-- scripts -->
         <%--<script src="/assets/Template/respond/respond.min.js"></script>--%>
-       <%-- <script src="/assets/Plugin/jquery/js/jquery.min.v2.1.4.js"></script>--%>
+        <%-- <script src="/assets/Plugin/jquery/js/jquery.min.v2.1.4.js"></script>--%>
 
         <script src="/assets/Template/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
 
@@ -144,11 +227,11 @@
         <!-- Custom  -->
         <script src="/assets/Template/js/custom.js"></script>
 
-         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 
 
         <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
-         <uc2:UserMessageViewer runat="server" ID="umv" />
+        <uc2:UserMessageViewer runat="server" ID="umv" />
     </form>
 </body>
 </html>

@@ -60,7 +60,6 @@
     }
 
 .btnLoginForm, .btnRegisterForm {
-
     font-size: 1em;
     padding: 7px;
     color: #F3F2F0;
@@ -85,7 +84,7 @@
 }
 
 .btnEndLoginForm {
-   margin: 1em 1em 2em 1em;
+    margin: -1em 1em 2em 1em;
     width: 35%;
 }
 
@@ -101,13 +100,13 @@
 
 #login-form-link {
     text-align: right;
-    margin-top:2em;
-    margin-bottom:2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #captcha {
     /*margin-top: -2.8em;*/
-    margin-right: 1em;
+    /*margin-right: 1em;*/
 }
 
     #captcha a {
@@ -116,3 +115,11 @@
         margin-right: 1.4em;
     }
 
+.btn-captch {
+    font-family: FontAwesome;
+    background: none;
+    font-size: 1.2em;
+    color: #808080;
+    /* margin-right: 1em; */
+    border: none;
+}

@@ -3,18 +3,18 @@ using kFrameWork.UI;
 using pgc.Model;
 using kFrameWork.Enums;
 
-public partial class Pages_Admin_Payment_Detail : BaseDetailControl<Payment>
+public partial class Pages_Admin_OnlinePayment_Detail : BaseDetailControl<OnlinePayment>
 {
-    public override Payment GetEntity(Payment Data, ManagementPageMode Mode)
+    public override OnlinePayment GetEntity(OnlinePayment Data, ManagementPageMode Mode)
     {
         if (Data == null)
-            Data = new Payment();
+            Data = new OnlinePayment();
 
 
         return Data;
     }
 
-    public override void SetEntity(Payment Data, ManagementPageMode Mode)
+    public override void SetEntity(OnlinePayment Data, ManagementPageMode Mode)
     {
         
     }

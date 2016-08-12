@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Search.ascx.cs" Inherits="Pages_Admin_GameOrder_Search" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Search.ascx.cs" Inherits="Pages_Admin_Order_Search" %>
 <legend>جستجو</legend>
 <table>   
     <tr>
@@ -10,24 +10,38 @@
     </tr>
     <tr>
         <td class="caption">تاریخ سفارش</td>
-        <td class="control"><kfk:PersianDateRange runat="server" ID="pdrGameOrderPersianDate" /></td>
+        <td class="control"><kfk:PersianDateRange runat="server" ID="pdrOrderPersianDate" /></td>
 
         <td class="caption">مبلغ سفارش</td>
         <td class="control"><kfk:NumericRange ID="nrAmount" runat="server" /></td>
     </tr>
- 
+    <tr>
+        <td class="caption">وضعیت سفارش</td>
+        <td class="control"><kfk:LookupCombo ID="lkcStatus" 
+                                    runat="server" 
+                                    EnumParameterType="pgc.Model.Enums.OrderStatus"
+                                    AddDefaultItem="true"
+                                    CssClass="large"/></td>
+
+        <td class="caption">محصولات</td>
+        <td class="control"><kfk:LookupCombo ID="lkcProduct" 
+                                            runat="server" 
+                                            BusinessTypeName="pgc.Business.Lookup.ProductLookupBusiness"
+                                            AddDefaultItem="true"
+                                            CssClass="large"/></td>
+    </tr>
     <tr>
         <td class="caption">وضعیت پرداخت</td>
         <td class="control"><kfk:LookupCombo ID="lkcPaymentStatus" 
                                                 runat="server" 
-                                                EnumParameterType="pgc.Model.Enums.GameOrderPaymentStatus"
+                                                EnumParameterType="pgc.Model.Enums.OrderPaymentStatus"
                                                 AddDefaultItem="true"                                                                                                
                                                 CssClass="large" /></td>
     
-        <td class="caption">بازی</td>
-        <td class="control"><kfk:LookupCombo ID="lkcGame" 
+        <td class="caption">شعبه</td>
+        <td class="control"><kfk:LookupCombo ID="lkcBranch" 
                                             runat="server" 
-                                            BusinessTypeName="pgc.Business.Lookup.GameLookupBusiness"
+                                            BusinessTypeName="pgc.Business.Lookup.BranchLookupBusiness"
                                             AddDefaultItem="true"
                                             CssClass="large"/></td>
     </tr>

@@ -13,8 +13,8 @@
                     <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <div class="order-code">
                             <ul class="list-inline">
-                                <li>حساب کاربری من </li>
-                               
+                                <li>حساب کاربری من  <i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                <li>پروفایل من </li>
                             </ul>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">نام پدر:  </span>
-                                        <span><%=(!string.IsNullOrEmpty(user.FatherName))?user.FatherName:"" %></span>
+                                        <span>دیتابیس</span>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 profile-item">
                                         <span class="profile-title">پست الکترونیک:  </span>

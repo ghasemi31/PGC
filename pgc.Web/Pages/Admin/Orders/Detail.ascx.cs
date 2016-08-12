@@ -3,71 +3,69 @@ using kFrameWork.UI;
 using pgc.Model;
 using kFrameWork.Enums;
 using pgc.Model.Enums;
-
+using pgc.Business;
 using pgc.Model.Patterns;
 using kFrameWork.Util;
 using System.Web.UI.WebControls;
 
-using pgc.Business;
-
-public partial class Pages_Admin_GameOrder_Detail : BaseDetailControl<GameOrder>
+public partial class Pages_Admin_Order_Detail : BaseDetailControl<Order>
 {
-    public pgc.Business.General.GameBusiness business = new pgc.Business.General.GameBusiness();
+    public OrdersBusiness business = new OrdersBusiness();
+    public Order order = new Order();
 
-    public GameOrder GameOrder = new GameOrder();
-
-    public override GameOrder GetEntity(GameOrder Data, ManagementPageMode Mode)
+    public override Order GetEntity(Order Data, ManagementPageMode Mode)
     {
         if (Data == null)
-            Data = new GameOrder();
-        
+            Data = new Order();
+        Data.OrderStatus = lkcOrderStatus.GetSelectedValue<int>();
+
+        if (lkcBranch.GetSelectedValue<long>() == -1)
+            Data.Branch_ID = null;
+        else
+        {
+            Data.Branch_ID = lkcBranch.GetSelectedValue<long>();
+            Data.BranchTitle = new BranchBusiness().Retrieve(lkcBranch.GetSelectedValue<long>()).Title;
+        }
+
 
         return Data;
     }
 
-    public override void SetEntity(GameOrder Data, ManagementPageMode Mode)
+    public override void SetEntity(Order Data, ManagementPageMode Mode)
     {
-        GameOrder = Data;
-        lblGameOrderID.Text = Data.ID.ToString();
+        order = Data;
+        lblOrderID.Text = Data.ID.ToString();
         lblAddress.Text = Data.Address;
-        lblGameTitle.Text = Data.GameTitle;
-        lblFullName.Text = Data.Name;
-        lblGameOrderPersianDate.Text = DateUtil.GetPersianDateWithTime(Data.OrderDate).ToString();
+        lblComment.Text = Data.Comment;
+        lblFullName.Text = Data.User.FullName;
+        lblOrderPersianDate.Text = DateUtil.GetPersianDateWithTime(Data.OrderDate).ToString();
         lblPayableAmount.Text = UIUtil.GetCommaSeparatedOf(Data.PayableAmount) + " ریال";
         //lblPaymentType.Text = EnumUtil.GetEnumElementPersianTitle((PaymentType)Data.PaymentType);
-        lblGameOrderPaymentStatus.Text = Data.IsPaid ? "پرداخت شده" : "پرداخت نشده";
-        lblGameType.Text=Data.Group!=null?"تیمی":"انفرادی";
-        lblUserTel.Text = string.IsNullOrEmpty(Data.Mobile) ? Data.Tel : Data.Mobile;
+        lblOrderPaymentStatus.Text = EnumUtil.GetEnumElementPersianTitle(business.GetPaymentStatus(Data.ID));
+        lblTel.Text = Data.Tel;
+        lblUserTel.Text = string.IsNullOrEmpty(Data.User.Mobile) ? Data.User.Tel : Data.User.Mobile;
+        lblTotalAmount.Text = UIUtil.GetCommaSeparatedOf(Data.TotalAmount) + " ریال";
+        lblEmail.Text = Data.User.Email;
+        if (Data.Branch_ID == null)
+            lkcBranch.SetSelectedValue(-1);
+        else
+            lkcBranch.SetSelectedValue(Data.Branch_ID);
 
-        if (Data.User != null)
-        {
-            lblEmail.Text = Data.User.Email;
-            lblNationalCode.Text = Data.User.NationalCode;
-        }
+        lkcOrderStatus.SetSelectedValue(Data.OrderStatus);
 
-        lblTeamName.Text = Data.GroupName;
-
-        if (GameOrder.Group != null)
-        {
-            lsvGroup.DataSource = business.gamer_List(0, 100,Data.ID);
-            lsvGroup.DataBind();
-        }
-
-       
+        lsvOrderDetail.DataSource = business.OrderDetail_List(Data.ID);
+        lsvOrderDetail.DataBind();
 
     }
 
     public override void EndMode(ManagementPageMode Mode)
     {
-        (this.Page as BaseManagementPage<GameOrdersBusiness, GameOrder, GameOrdersPattern, pgcEntities>).ListControl.Grid.DataBind();
+        (this.Page as BaseManagementPage<OrdersBusiness, Order, OrdersPattern, pgcEntities>).ListControl.Grid.DataBind();
         base.EndMode(Mode);
     }
 
     protected void btnOnline_Click(object sender, EventArgs e)
     {
-        Response.Redirect(GetRouteUrl("admin-onlinepayment", null) + "?fid=" + (this.Page as BaseManagementPage<GameOrdersBusiness, GameOrder, GameOrdersPattern, pgcEntities>).SelectedID.ToString());
+        Response.Redirect(GetRouteUrl("admin-onlinepayment", null) + "?fid=" + (this.Page as BaseManagementPage<OrdersBusiness, Order, OrdersPattern, pgcEntities>).SelectedID.ToString());
     }
-
-
-    
 }

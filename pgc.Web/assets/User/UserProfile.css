@@ -306,3 +306,12 @@
     height: 34px;
     border-radius: 4px;
 }
+
+#awards-header {
+    background-image: url('../Guest/Image/GamePoster/8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 400px;
+}

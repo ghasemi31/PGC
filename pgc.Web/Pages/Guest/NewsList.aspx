@@ -1,21 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/Guest.master" AutoEventWireup="true" CodeFile="NewsList.aspx.cs" Inherits="Pages_Guest_NewsList" %>
-
 <%@ Import Namespace="pgc.Model" %>
 <%@ Import Namespace="pgc.Business" %>
 <%@ Import Namespace="kFrameWork.Business" %>
 <%@ Import Namespace="pgc.Model.Enums" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="cphStylePege" runat="Server">
-
-    <%this.Title = OptionBusiness.GetText(pgc.Model.Enums.OptionKey.NewsListTitle); %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <%this.Title = OptionBusiness.GetText(pgc.Model.Enums.OptionKey.NewsListTitle); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Description_NewsList) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Keywords_NewsList) %>" />
-    <!-- BEGIN AECHIVE PAGE STYLE -->
-    <link href="/assets/css/Archive/archive.min.css?v=2.2" rel="stylesheet" />
-    <!-- END AECHIVE PAGE STYLE -->
+    <link href="/assets/Guest/css/archive.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContentPage" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" Runat="Server">
     <!-- BEGIN CONTENT -->
-    <section id="main-content" class="main-body">
+    <section class="main-body">
         <div class="container">
             <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-0 col-sm-12 col-xs-offset-0 col-xs-12">
                 <asp:ObjectDataSource ID="odsNews"
@@ -81,5 +77,6 @@
     </section>
     <!-- END CONTENT -->
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphScriptPage" runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" Runat="Server">
 </asp:Content>
+

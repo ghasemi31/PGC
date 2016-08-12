@@ -7,20 +7,21 @@ using System;
 using System.Web.UI.WebControls;
 using kFrameWork.Enums;
 
-public partial class Pages_Admin_GameOrder_Search : BaseSearchControl<GameOrdersPattern>
+public partial class Pages_Admin_Order_Search : BaseSearchControl<OrdersPattern>
 {
   
-    public override GameOrdersPattern Pattern
+    public override OrdersPattern Pattern
     {
         get
         {
-            GameOrdersPattern pattern= new GameOrdersPattern()
-            {   
-                OrderPersianDate = pdrGameOrderPersianDate.DateRange,
-                
-                Game_ID = lkcGame.GetSelectedValue<long>(),
-GameOrderPaymentStatus=lkcPaymentStatus.GetSelectedValue<GameOrderPaymentStatus>(),
-Amount = nrAmount.Pattern,
+            OrdersPattern pattern= new OrdersPattern()
+            {       
+                Status = lkcStatus.GetSelectedValue<OrderStatus>(),
+                OrderPersianDate = pdrOrderPersianDate.DateRange,
+                OrderPaymentStatus = lkcPaymentStatus.GetSelectedValue<OrderPaymentStatus>(),
+                Branch_ID = lkcBranch.GetSelectedValue<long>(),
+                Product_ID = lkcProduct.GetSelectedValue<long>(),
+                Amount = nrAmount.Pattern,
                 RefNum=txtRefNum.Text,                
                 UserName=txtUser.Text
             };
@@ -28,52 +29,54 @@ Amount = nrAmount.Pattern,
             int number=0;
             int.TryParse(txtNumber.Text,out number);
             pattern.Numbers = number;
-            Session["GameOrderPattern"] = pattern;
+            Session["OrderPattern"] = pattern;
             return pattern;
         }
         set
         {
 
             txtNumber.Text = (value.Numbers == 0) ? "" : value.Numbers.ToString();
-            lkcGame.SetSelectedValue(value.Game_ID);
-            lkcPaymentStatus.SetSelectedValue(value.GameOrderPaymentStatus);
-            pdrGameOrderPersianDate.DateRange = value.OrderPersianDate;
+            lkcBranch.SetSelectedValue(value.Branch_ID);
+            lkcPaymentStatus.SetSelectedValue(value.OrderPaymentStatus);
+            lkcProduct.SetSelectedValue(value.Product_ID);
+            lkcStatus.SetSelectedValue(value.Status);
+            pdrOrderPersianDate.DateRange = value.OrderPersianDate;
             nrAmount.Pattern = value.Amount;
             txtRefNum.Text = value.RefNum;
             txtUser.Text = value.UserName;
         }
     }
-    public override GameOrdersPattern DefaultPattern
+    public override OrdersPattern DefaultPattern
     {
         get
         {
-            GameOrdersPattern p = new GameOrdersPattern();
+            OrdersPattern p = new OrdersPattern();
             if ((this.Page as BasePage).HasValidQueryString<long>(QueryStringKeys.id))
             {
                 if ((this.Page as BasePage).HasValidQueryString<long>(QueryStringKeys.id))
                 {
-                    var page = (this.Page as BaseManagementPage<GameOrdersBusiness, GameOrder, GameOrdersPattern, pgcEntities>);
+                    var page = (this.Page as BaseManagementPage<OrdersBusiness, Order, OrdersPattern, pgcEntities>);
                     page.SelectedID = (this.Page as BasePage).GetQueryStringValue<long>(QueryStringKeys.id);
                     page.DetailControl.BeginMode(ManagementPageMode.Edit);
-                    page.DetailControl.SetEntity(new GameOrdersBusiness().Retrieve(page.SelectedID), ManagementPageMode.Edit);
+                    page.DetailControl.SetEntity(new OrdersBusiness().Retrieve(page.SelectedID), ManagementPageMode.Edit);
                     page.Mode = kFrameWork.Enums.ManagementPageMode.Edit;
                 }                
             }
             
-            if (Session["GameOrderPattern"] != null)
+            if (Session["OrderPattern"] != null)
             {
-                try { p = (GameOrdersPattern)Session["GameOrderPattern"]; }
+                try { p = (OrdersPattern)Session["OrderPattern"]; }
                 catch (Exception) { }
             }
             return p;
         }
     }
 
-    public override GameOrdersPattern SearchAllPattern
+    public override OrdersPattern SearchAllPattern
     {
         get
         {
-            Session["GameOrderPattern"] = null;
+            Session["OrderPattern"] = null;
             return base.SearchAllPattern;
         }
     }

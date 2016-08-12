@@ -9,7 +9,7 @@ using pgc.Business;
 using pgc.Model;
 using pgc.Model.Patterns;
 
-public partial class Pages_Admin_GameOrder_Default : BaseManagementPage<GameOrdersBusiness, GameOrder, GameOrdersPattern, pgcEntities>
+public partial class Pages_Admin_Order_Default : BaseManagementPage<OrdersBusiness, Order, OrdersPattern, pgcEntities>
 {
     protected override void OnInit(EventArgs e)
     {
@@ -19,6 +19,6 @@ public partial class Pages_Admin_GameOrder_Default : BaseManagementPage<GameOrde
         base.ListControl = pnlList;
         base.SearchControl = pnlSearch;
 
-        base.Business = new GameOrdersBusiness();
+        base.Business = new OrdersBusiness();
     }
 }

@@ -84,11 +84,8 @@
     <Compile Include="Enums\Project\Finance\BranchOfflineReceiptType.cs" />
     <Compile Include="Enums\Project\IconPickerIconset.cs" />
     <Compile Include="Enums\Project\IconPickerMode.cs" />
-    <Compile Include="Enums\Project\GameOrderPaymentStatus.cs" />
     <Compile Include="Enums\Project\OrderPaymentStatus.cs" />
     <Compile Include="Enums\Project\GameType.cs" />
-    <Compile Include="Enums\Project\Order\MellatOnlinePaymentState.cs" />
-    <Compile Include="Enums\Project\Order\OnlineGetway.cs" />
     <Compile Include="Enums\Project\PrivateNoStatus.cs" />
     <Compile Include="Enums\Project\NewsStatus.cs" />
     <Compile Include="Enums\Project\TransactionStatus.cs" />
@@ -137,8 +134,6 @@
     <Compile Include="Patterns\Project\AgentCircularPattern.cs" />
     <Compile Include="Patterns\Project\BranchContactPattern.cs" />
     <Compile Include="Patterns\Project\GamePattern.cs" />
-    <Compile Include="Patterns\Project\GameOrdersPattern.cs" />
-    <Compile Include="Patterns\Project\PaymentPattern.cs" />
     <Compile Include="Patterns\Project\SponsorPattern.cs" />
     <Compile Include="Patterns\Project\SlidePattern.cs" />
     <Compile Include="Patterns\Project\SupportPattern.cs" />

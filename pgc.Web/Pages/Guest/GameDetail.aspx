@@ -18,8 +18,8 @@
                                     <span>لطفا برای ثبت نام در بازی وارد سایت شوید و یا ثبت نام کنید</span>
                                     <br />
                                     <div class="display-center">
-                                        <a href="<%=GetRouteUrl("guest-signup",null)+redirectUrl %>" class="btn-game btn-login-game">ثبت نام</a>
-                                        <a href="<%=GetRouteUrl("guest-login",null)+redirectUrl %>" class="btn-game btn-login-game">ورود به سایت</a>
+                                        <a href="<%=GetRouteUrl("guest-signup",null) %>" class="btn-game btn-login-game">ثبت نام</a>
+                                        <a href="<%=GetRouteUrl("guest-login",null) %>" class="btn-game btn-login-game">ورود به سایت</a>
                                     </div>
                                 </asp:View>
                                 <asp:View runat="server">
@@ -33,7 +33,7 @@
                                     </asp:RequiredFieldValidator>
                                     <%} %>
                                     <div class="<%=(game.GamerCount > 1)?"":"display-center" %>">
-                                        <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام در بازی" OnClick="Unnamed_Click" />
+                                        <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام بازی" OnClick="Unnamed_Click" />
                                     </div>
                                 </asp:View>
                             </asp:MultiView>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">هزینه ثبت نام:</span>
-                                <span class="game-detail-info"><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(game.Cost) %> ریال</span>
+                                <span class="game-detail-info"><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(game.Cost) %></span>
                             </div>
                             <div class="col-md-12">
                                 <span class="game-detail-title">قوانین و مقررات بازی:</span>

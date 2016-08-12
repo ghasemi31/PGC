@@ -1,0 +1,144 @@
+﻿#main-section {
+    margin-bottom: 3em;
+    color: #919090;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+    #main-section a:hover {
+        color: #DA251D;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #main-section li:hover {
+        color: #DA251D;
+        cursor: pointer;
+    }
+
+        #main-section li:hover ul {
+            color: #919090;
+        }
+
+    #main-section .fa {
+        padding-left: .5em;
+        padding-right: .5em;
+        font-size: .7em;
+    }
+
+    #main-section ul {
+        line-height: 3em;
+    }
+
+    #main-section li > ul {
+        padding-right: 2em;
+        line-height: 1.7em;
+    }
+
+    #main-section img {
+        width: 100%;
+        margin-bottom: 3em;
+    }
+    /*header image*/
+    #main-section > header {
+        position: relative;
+        padding: 0 !important;
+        margin-bottom: 2em;
+    }
+
+/*header title*/
+.header-title-red {
+    background-image: url('/assets/Images/branch-agreement/left-bottom-red.svg'), url('/assets/Images/branch-agreement/right-top-red.svg');
+    background-position: left bottom,right top;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 10%,10%;
+    color: #DA251D;
+    position: absolute;
+    /*bottom: 25%;
+    right: 15%;*/
+    padding: 1% 2%;
+    font-size: 5vmin;
+}
+
+.header-title-white {
+    background-image: url('/assets/Images/branch-agreement/left-bottom-white.svg'), url('/assets/Images/branch-agreement/right-top-white.svg');
+    background-position: left bottom,right top;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 10%,10%;
+    color: #ffffff;
+    position: absolute;
+    /*bottom: 25%;
+    right: 15%;*/
+    padding: 1% 2%;
+    font-size: 5vmin;
+}
+
+.header-title-gray {
+    background-image: url('/assets/Images/branch-agreement/left-bottom-gray.svg'), url('/assets/Images/branch-agreement/right-top-gray.svg');
+    background-position: left bottom,right top;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 10%,10%;
+    color: #919090;
+    position: absolute;
+    /*bottom: 25%;
+    right: 15%;*/
+    padding: 1% 2%;
+    font-size: 5vmin;
+}
+
+/*tip div*/
+.tip {
+    text-align: justify;
+    color: #3e4d5c;
+    font-size: .9em;
+    padding: 2% 3%;
+    margin: 3% 15%;
+    background-color: #fde8a4;
+    border-right: 4px solid #f4c571;
+}
+
+.bottom-tip {
+    color: #DA251D;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+    .bottom-tip .fa {
+    }
+
+/*article*/
+article {
+    color: #8c8b8b;
+    text-align: justify;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+h1 {
+    color: #DA251D;
+    font-size: 26px;
+    letter-spacing: -1.8px;
+    line-height: 35px;
+}
+
+section header {
+    text-align: center;
+}
+
+/*Button Class*/
+.btn {
+    background-color: #DA251D;
+    font-size: 1.1em;
+    margin: 10px 30px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: solid 3px #DA251D;
+    color: #FFF;
+    transition: all .4s ease;
+}
+
+    .btn:hover {
+        background-color: #FFF;
+        color: #DA251D;
+        transition: all .4s ease;
+    }

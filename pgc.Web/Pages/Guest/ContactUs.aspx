@@ -1,23 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Master/Guest.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="Pages_Guest_ContactUs" %>
 
+<%@ Import Namespace="pgc.Model" %>
+<%@ Import Namespace="pgc.Business" %>
+<%@ Import Namespace="pgc.Model.Enums" %>
+<%@ Import Namespace="kFrameWork.Business" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <%this.Title = OptionBusiness.GetText(OptionKey.contact_Title); %>
+    <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Description_Contact) %>" />
+    <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Keywords_Contact) %>" />
     <link href="/assets/Guest/css/Contact.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" Runat="Server">
 
         <section id="page">
             <header id="contact-header">
-                <!--<div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h1>Contact us</h1>
-                                        </div>
-                                    </div>
-                                </div>-->
-            </header>
+                          </header>
 
             <!-- main content -->
-            <section id="main-content">
+            <section id="main-content" class="main-body">
                 <div class="container">
                     <div class="row">
                         <!-- map -->
@@ -55,7 +55,7 @@
                                 </select>
                                 <textarea name="comment" id="comments" cols="4" rows="5" placeholder="متن پیام..." class="width100"></textarea>
                                 
-                                <button name="submit" type="submit" class="btn btn-default" id="submit">ارسال</button>
+                                <button name="submit" type="submit" class="btn btn-default" id="submit" onclick="btnSave_Click">ارسال</button>
                             </form>
                             <div class="result"></div>
                         </div>
@@ -71,10 +71,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC--heJUlVdZJY1OjwnwZd1aVSX-Lpeo00&callback=initMap" async defer></script>
     <script>
         function initMap() {
-            var longitude = 35.73;
-            var latitude = 51.33;
+            var longitude = <%=OptionBusiness.GetDouble(OptionKey.Longitude)%>;
+            var latitude = <%=OptionBusiness.GetDouble(OptionKey.Latitude)%>;
             var title = "Iran PGC";
-            var position = new google.maps.LatLng(longitude, latitude);
+            var position = new google.maps.LatLng(latitude,longitude);
             var myOptions = {
                 zoom: 13,
                 center: position,

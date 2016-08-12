@@ -10,7 +10,7 @@ using pgc.Model;
 using pgc.Model.Patterns;
 using System.Threading;
 
-public partial class Pages_Admin_Payment_Default : BaseManagementPage<PaymentBusiness, Payment, PaymentPattern, pgcEntities>
+public partial class Pages_Admin_OnlinePayment_Default : BaseManagementPage<OnlinePaymentBusiness, OnlinePayment, OnlinePaymentPattern, pgcEntities>
 {
     protected override void OnInit(EventArgs e)
     {
@@ -20,6 +20,6 @@ public partial class Pages_Admin_Payment_Default : BaseManagementPage<PaymentBus
         base.ListControl = pnlList;
         base.SearchControl = pnlSearch;
 
-        base.Business = new PaymentBusiness();
+        base.Business = new OnlinePaymentBusiness();
     }   
 }

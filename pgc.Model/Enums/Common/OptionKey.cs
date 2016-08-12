@@ -11,6 +11,10 @@ namespace pgc.Model.Enums
         AboutUs_Description,
         AboutUs_Content,
 
+        Laws_Title,
+        Laws_Keywords,
+        Laws_Description,
+        Laws_Content,
 
         Admin_GreetingMessage,
         User_GreetingMessage,
@@ -21,6 +25,9 @@ namespace pgc.Model.Enums
         contact_header_text,
         Contact_Specification,
         Contact_Body,
+
+        Latitude,
+        Longitude,
 
         User_Title,
         User_Description,
@@ -198,10 +205,6 @@ namespace pgc.Model.Enums
         Login_Title,
         Login_Description,
         Login_Keywords,
-        Mellat_TerminalId,
-        Mellat_UserName,
-        Mellat_Password,
-        Mellat_BankURL
     }
 
 }

@@ -37,6 +37,32 @@ var UA = 'UA-36433263-5';
 $(document).ready(function () {
 
 
+
+    ////hover queckmenu
+    $('ul.quickMenu > li').hover(
+        function () {
+            $('ul', this).css('display', 'block');
+        },
+        function () {
+            $('ul', this).css('display', 'none');
+        })
+    ////profile menu
+    //var delay = 400, setTimeoutConst;
+    //$('ul.quickMenu > li').hover(function () {
+    //    setTimeoutConst = setTimeout(function () {
+    //        $('ul', this).css('display', 'block');
+    //        //$("#btn-profile").addClass("active-profile");
+    //        //$(".active-profile").css({ "transition": "all .1s ease", "-webkit-transition": "all .1s ease", "-o-transition": "all .1s ease" });
+    //    }, delay);
+    //}, function () {
+    //    clearTimeout(setTimeoutConst);
+    //    $('ul', this).css('display', 'none');
+    //    //$(".active-profile").css({ "transition": "all 2s ease", "-webkit-transition": "all 2s ease", "-o-transition": "all 2s ease" });
+    //    //$(this).removeClass("active-profile");
+    //})
+
+
+
     // $('#mainFooter').one('inview', function (event, visible) {
     //     if (visible == true) {
     //          alert('tt');
