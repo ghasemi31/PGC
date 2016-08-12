@@ -1,1 +1,59 @@
-﻿
+﻿INSERT INTO [UserManagement].[UserMessage]
+           ([Key]
+           ,[Type]
+           ,[Direction]
+           ,[Behaviour]
+           ,[Description])
+     VALUES
+           ('DuplicateNationalCode'
+           ,4
+           ,2
+           ,1
+           ,N'این کد ملی قبلا ثبت شده است')
+GO
+
+ALTER TABLE Security.MenuItem ADD
+	Active bit NOT NULL  DEFAULT 1
+GO
+
+ALTER TABLE Security.PanelPage ADD
+	Active bit NOT NULL  DEFAULT 1
+GO
+
+ALTER TABLE Configuration.[Option] ADD
+	Active bit NOT NULL  DEFAULT 1
+GO
+
+
+
+ALTER TABLE Game.Game ADD
+	LogoPath nvarchar(350) NULL
+GO
+
+
+
+
+
+
+
+
+
+
+ALTER TABLE Security.MenuCategory ADD
+	Active bit NOT NULL  DEFAULT 1
+GO
+
+
+
+UPDATE [Security].[MenuItem]
+   SET [IsNew] = 0
+GO
+
+
+
+
+
+
+UPDATE [UserManagement].[UserMessage]
+SET [Description] = REPLACE([Description], N'مستردیزی', 'Iran PGC')
+where [Description] like N'%مستردیزی%'
