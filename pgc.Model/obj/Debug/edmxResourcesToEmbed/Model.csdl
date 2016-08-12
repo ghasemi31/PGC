@@ -381,6 +381,7 @@
     <Property Name="DisplayOrder" Type="Single" Nullable="false" />
     <NavigationProperty Name="OptionCategory" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="Option" ToRole="OptionCategory" />
     <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="Option" ToRole="OptionLookup" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="OptionCategory">
     <Key>
@@ -435,6 +436,7 @@
     <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
     <Property Name="DisplayOrder" Type="Single" Nullable="false" />
     <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuCategory" ToRole="MenuItem" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="PanelPage">
     <Key>
@@ -456,6 +458,7 @@
     <Property Type="Boolean" Name="AdvSupport" Nullable="false" />
     <NavigationProperty Name="Advertisements" Relationship="pgcModel.AdvPage" FromRole="PanelPage" ToRole="Advertisement" />
     <NavigationProperty Name="Feature" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="PanelPage" ToRole="Feature" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="City">
     <Key>
@@ -2248,6 +2251,7 @@
     <Property Name="IsNew" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Feature" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="MenuItem" ToRole="Feature" />
     <NavigationProperty Name="MenuCategory" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuItem" ToRole="MenuCategory" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_MenuItem_Feature">
     <End Type="pgcModel.Feature" Role="Feature" Multiplicity="1" />
@@ -2344,6 +2348,7 @@
     <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
     <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
+    <Property Name="LogoPath" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GameOrder">
     <Key>

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Options">
       <EntityTypeMapping TypeName="pgcModel.Option">
         <MappingFragment StoreEntitySet="Option">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="OptionCategory_ID" ColumnName="OptionCategory_ID" />
           <ScalarProperty Name="OptionLookup_ID" ColumnName="OptionLookup_ID" />
@@ -57,6 +58,7 @@
     <EntitySetMapping Name="MenuCategories">
       <EntityTypeMapping TypeName="pgcModel.MenuCategory">
         <MappingFragment StoreEntitySet="MenuCategory">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="UIClass" ColumnName="UIClass" />
@@ -67,6 +69,7 @@
     <EntitySetMapping Name="PanelPages">
       <EntityTypeMapping TypeName="pgcModel.PanelPage">
         <MappingFragment StoreEntitySet="PanelPage">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="AdvSupport" ColumnName="AdvSupport" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Feature_ID" ColumnName="Feature_ID" />
@@ -1109,6 +1112,7 @@
     <EntitySetMapping Name="MenuItems">
       <EntityTypeMapping TypeName="pgcModel.MenuItem">
         <MappingFragment StoreEntitySet="MenuItem">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="IsNew" ColumnName="IsNew" />
           <ScalarProperty Name="RouteName" ColumnName="RouteName" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
@@ -1183,6 +1187,7 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="pgcModel.Game">
         <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
           <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />

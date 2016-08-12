@@ -493,6 +493,7 @@
     <Property Name="Type" Type="int" Nullable="false" />
     <Property Name="Value" Type="ntext" Nullable="false" />
     <Property Name="DisplayOrder" Type="real" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="OptionCategory">
     <Key>
@@ -886,6 +887,7 @@
     <Property Name="DispOrder" Type="int" Nullable="false" />
     <Property Name="Cost" Type="bigint" Nullable="false" />
     <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
   </EntityType>
   <EntityType Name="Game_GameManager">
     <Key>
@@ -1066,6 +1068,7 @@
     <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="UIClass" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="DisplayOrder" Type="real" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="MenuItem">
     <Key>
@@ -1081,6 +1084,7 @@
     <Property Name="DisplayOrder" Type="real" Nullable="false" />
     <Property Name="RouteName" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="PanelPage">
     <Key>
@@ -1098,6 +1102,7 @@
     <Property Name="RouteUrl" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="IsLookup" Type="bit" Nullable="false" />
     <Property Name="AdvSupport" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Permission">
     <Key>

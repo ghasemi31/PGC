@@ -498,6 +498,7 @@
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="Value" Type="ntext" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="OptionCategory">
           <Key>
@@ -891,6 +892,7 @@
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="Cost" Type="bigint" Nullable="false" />
           <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
         </EntityType>
         <EntityType Name="Game_GameManager">
           <Key>
@@ -1071,6 +1073,7 @@
           <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="UIClass" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MenuItem">
           <Key>
@@ -1086,6 +1089,7 @@
           <Property Name="DisplayOrder" Type="real" Nullable="false" />
           <Property Name="RouteName" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PanelPage">
           <Key>
@@ -1103,6 +1107,7 @@
           <Property Name="RouteUrl" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="IsLookup" Type="bit" Nullable="false" />
           <Property Name="AdvSupport" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Permission">
           <Key>
@@ -2940,6 +2945,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="DisplayOrder" Type="Single" Nullable="false" />
           <NavigationProperty Name="OptionCategory" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="Option" ToRole="OptionCategory" />
           <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="Option" ToRole="OptionLookup" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="OptionCategory">
           <Key>
@@ -2994,6 +3000,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="DisplayOrder" Type="Single" Nullable="false" />
           <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuCategory" ToRole="MenuItem" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="PanelPage">
           <Key>
@@ -3015,6 +3022,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Type="Boolean" Name="AdvSupport" Nullable="false" />
           <NavigationProperty Name="Advertisements" Relationship="pgcModel.AdvPage" FromRole="PanelPage" ToRole="Advertisement" />
           <NavigationProperty Name="Feature" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="PanelPage" ToRole="Feature" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -4807,6 +4815,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="IsNew" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Feature" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="MenuItem" ToRole="Feature" />
           <NavigationProperty Name="MenuCategory" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuItem" ToRole="MenuCategory" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_MenuItem_Feature">
           <End Type="pgcModel.Feature" Role="Feature" Multiplicity="1" />
@@ -4903,6 +4912,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
           <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
+          <Property Name="LogoPath" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GameOrder">
           <Key>
@@ -5026,7 +5036,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="pgcModelStoreContainer" CdmEntityContainer="pgcEntities">
           <EntitySetMapping Name="Options"><EntityTypeMapping TypeName="pgcModel.Option"><MappingFragment StoreEntitySet="Option">
-            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="OptionCategory_ID" ColumnName="OptionCategory_ID" />
             <ScalarProperty Name="OptionLookup_ID" ColumnName="OptionLookup_ID" />
             <ScalarProperty Name="Key" ColumnName="Key" />
@@ -5059,13 +5070,15 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <ScalarProperty Name="Title" ColumnName="Title" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="MenuCategories"><EntityTypeMapping TypeName="pgcModel.MenuCategory"><MappingFragment StoreEntitySet="MenuCategory">
-            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="UIClass" ColumnName="UIClass" />
             <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="PanelPages"><EntityTypeMapping TypeName="pgcModel.PanelPage"><MappingFragment StoreEntitySet="PanelPage">
-            <ScalarProperty Name="AdvSupport" ColumnName="AdvSupport" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AdvSupport" ColumnName="AdvSupport" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Feature_ID" ColumnName="Feature_ID" />
             <ScalarProperty Name="Parent_Page_ID" ColumnName="Parent_Page_ID" />
@@ -6089,6 +6102,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="MenuItems">
             <EntityTypeMapping TypeName="pgcModel.MenuItem">
               <MappingFragment StoreEntitySet="MenuItem">
+                <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="IsNew" ColumnName="IsNew" />
                 <ScalarProperty Name="RouteName" ColumnName="RouteName" />
                 <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
@@ -6163,6 +6177,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="pgcModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
                 <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />

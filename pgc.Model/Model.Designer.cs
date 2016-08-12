@@ -13010,6 +13010,30 @@ namespace pgc.Model
         private global::System.String _UrlKey;
         partial void OnUrlKeyChanging(global::System.String value);
         partial void OnUrlKeyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String LogoPath
+        {
+            get
+            {
+                return _LogoPath;
+            }
+            set
+            {
+                OnLogoPathChanging(value);
+                ReportPropertyChanging("LogoPath");
+                _LogoPath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("LogoPath");
+                OnLogoPathChanged();
+            }
+        }
+        private global::System.String _LogoPath;
+        partial void OnLogoPathChanging(global::System.String value);
+        partial void OnLogoPathChanged();
 
         #endregion
 
@@ -15400,13 +15424,15 @@ namespace pgc.Model
         /// <param name="title">Initial value of the Title property.</param>
         /// <param name="uIClass">Initial value of the UIClass property.</param>
         /// <param name="displayOrder">Initial value of the DisplayOrder property.</param>
-        public static MenuCategory CreateMenuCategory(global::System.Int64 id, global::System.String title, global::System.String uIClass, global::System.Single displayOrder)
+        /// <param name="active">Initial value of the Active property.</param>
+        public static MenuCategory CreateMenuCategory(global::System.Int64 id, global::System.String title, global::System.String uIClass, global::System.Single displayOrder, global::System.Boolean active)
         {
             MenuCategory menuCategory = new MenuCategory();
             menuCategory.ID = id;
             menuCategory.Title = title;
             menuCategory.UIClass = uIClass;
             menuCategory.DisplayOrder = displayOrder;
+            menuCategory.Active = active;
             return menuCategory;
         }
 
@@ -15512,6 +15538,30 @@ namespace pgc.Model
         private global::System.Single _DisplayOrder;
         partial void OnDisplayOrderChanging(global::System.Single value);
         partial void OnDisplayOrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Active
+        {
+            get
+            {
+                return _Active;
+            }
+            set
+            {
+                OnActiveChanging(value);
+                ReportPropertyChanging("Active");
+                _Active = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Active");
+                OnActiveChanged();
+            }
+        }
+        private global::System.Boolean _Active;
+        partial void OnActiveChanging(global::System.Boolean value);
+        partial void OnActiveChanged();
 
         #endregion
 
@@ -15566,7 +15616,8 @@ namespace pgc.Model
         /// <param name="displayOrder">Initial value of the DisplayOrder property.</param>
         /// <param name="routeName">Initial value of the RouteName property.</param>
         /// <param name="isNew">Initial value of the IsNew property.</param>
-        public static MenuItem CreateMenuItem(global::System.Int64 id, global::System.Int64 feature_ID, global::System.String title, global::System.String uIClass, global::System.String navigateURL, global::System.String target, global::System.Single displayOrder, global::System.String routeName, global::System.Boolean isNew)
+        /// <param name="active">Initial value of the Active property.</param>
+        public static MenuItem CreateMenuItem(global::System.Int64 id, global::System.Int64 feature_ID, global::System.String title, global::System.String uIClass, global::System.String navigateURL, global::System.String target, global::System.Single displayOrder, global::System.String routeName, global::System.Boolean isNew, global::System.Boolean active)
         {
             MenuItem menuItem = new MenuItem();
             menuItem.ID = id;
@@ -15578,6 +15629,7 @@ namespace pgc.Model
             menuItem.DisplayOrder = displayOrder;
             menuItem.RouteName = routeName;
             menuItem.IsNew = isNew;
+            menuItem.Active = active;
             return menuItem;
         }
 
@@ -15827,6 +15879,30 @@ namespace pgc.Model
         private global::System.Boolean _IsNew;
         partial void OnIsNewChanging(global::System.Boolean value);
         partial void OnIsNewChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Active
+        {
+            get
+            {
+                return _Active;
+            }
+            set
+            {
+                OnActiveChanging(value);
+                ReportPropertyChanging("Active");
+                _Active = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Active");
+                OnActiveChanged();
+            }
+        }
+        private global::System.Boolean _Active;
+        partial void OnActiveChanging(global::System.Boolean value);
+        partial void OnActiveChanged();
 
         #endregion
 
@@ -17153,7 +17229,8 @@ namespace pgc.Model
         /// <param name="type">Initial value of the Type property.</param>
         /// <param name="value">Initial value of the Value property.</param>
         /// <param name="displayOrder">Initial value of the DisplayOrder property.</param>
-        public static Option CreateOption(global::System.Int64 id, global::System.Int64 optionCategory_ID, global::System.String key, global::System.String title, global::System.Int32 type, global::System.String value, global::System.Single displayOrder)
+        /// <param name="active">Initial value of the Active property.</param>
+        public static Option CreateOption(global::System.Int64 id, global::System.Int64 optionCategory_ID, global::System.String key, global::System.String title, global::System.Int32 type, global::System.String value, global::System.Single displayOrder, global::System.Boolean active)
         {
             Option option = new Option();
             option.ID = id;
@@ -17163,6 +17240,7 @@ namespace pgc.Model
             option.Type = type;
             option.Value = value;
             option.DisplayOrder = displayOrder;
+            option.Active = active;
             return option;
         }
 
@@ -17364,6 +17442,30 @@ namespace pgc.Model
         private global::System.Single _DisplayOrder;
         partial void OnDisplayOrderChanging(global::System.Single value);
         partial void OnDisplayOrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Active
+        {
+            get
+            {
+                return _Active;
+            }
+            set
+            {
+                OnActiveChanging(value);
+                ReportPropertyChanging("Active");
+                _Active = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Active");
+                OnActiveChanged();
+            }
+        }
+        private global::System.Boolean _Active;
+        partial void OnActiveChanging(global::System.Boolean value);
+        partial void OnActiveChanged();
 
         #endregion
 
@@ -18934,7 +19036,8 @@ namespace pgc.Model
         /// <param name="routeUrl">Initial value of the RouteUrl property.</param>
         /// <param name="isLookup">Initial value of the IsLookup property.</param>
         /// <param name="advSupport">Initial value of the AdvSupport property.</param>
-        public static PanelPage CreatePanelPage(global::System.Int64 id, global::System.String title, global::System.String uITitle, global::System.String uRL, global::System.Int32 pageSize, global::System.Single displayOrder, global::System.String routeName, global::System.String routeUrl, global::System.Boolean isLookup, global::System.Boolean advSupport)
+        /// <param name="active">Initial value of the Active property.</param>
+        public static PanelPage CreatePanelPage(global::System.Int64 id, global::System.String title, global::System.String uITitle, global::System.String uRL, global::System.Int32 pageSize, global::System.Single displayOrder, global::System.String routeName, global::System.String routeUrl, global::System.Boolean isLookup, global::System.Boolean advSupport, global::System.Boolean active)
         {
             PanelPage panelPage = new PanelPage();
             panelPage.ID = id;
@@ -18947,6 +19050,7 @@ namespace pgc.Model
             panelPage.RouteUrl = routeUrl;
             panelPage.IsLookup = isLookup;
             panelPage.AdvSupport = advSupport;
+            panelPage.Active = active;
             return panelPage;
         }
 
@@ -19244,6 +19348,30 @@ namespace pgc.Model
         private global::System.Boolean _AdvSupport;
         partial void OnAdvSupportChanging(global::System.Boolean value);
         partial void OnAdvSupportChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Active
+        {
+            get
+            {
+                return _Active;
+            }
+            set
+            {
+                OnActiveChanging(value);
+                ReportPropertyChanging("Active");
+                _Active = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Active");
+                OnActiveChanged();
+            }
+        }
+        private global::System.Boolean _Active;
+        partial void OnActiveChanging(global::System.Boolean value);
+        partial void OnActiveChanged();
 
         #endregion
 
