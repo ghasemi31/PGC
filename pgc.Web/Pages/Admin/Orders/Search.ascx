@@ -2,17 +2,17 @@
 <legend>جستجو</legend>
 <table>   
     <tr>
-        <td class="caption">کد اشتراک /کد سفارش</td>
+        <td class="caption">کد ثبت نام</td>
         <td class="control"><kfk:NormalTextBox runat="server" ID="txtNumber" Mode="Numeric" CssClass="small" /></td>
 
-        <td class="caption">نام سفارش دهنده</td>
+        <td class="caption">نام ثبت نام کننده</td>
         <td class="control"><kfk:NormalTextBox runat="server" ID="txtUser" /></td>
     </tr>
     <tr>
-        <td class="caption">تاریخ سفارش</td>
+        <td class="caption">تاریخ ثبت نام</td>
         <td class="control"><kfk:PersianDateRange runat="server" ID="pdrGameOrderPersianDate" /></td>
 
-        <td class="caption">مبلغ سفارش</td>
+        <td class="caption">مبلغ </td>
         <td class="control"><kfk:NumericRange ID="nrAmount" runat="server" /></td>
     </tr>
  

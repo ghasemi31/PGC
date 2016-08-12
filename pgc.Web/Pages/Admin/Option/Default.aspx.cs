@@ -280,7 +280,7 @@ public partial class Pages_Admin_Option_Default : BasePage
 
     protected void BindCategories(List<OptionCategory> Cats, TreeNodeCollection Nodes)
     {
-        foreach (OptionCategory Cat in Cats.OrderBy(c => c.DisplayOrder))
+        foreach (OptionCategory Cat in Cats.Where(o => o.Active).OrderBy(c => c.DisplayOrder))
         {
             if (IsMetaRequest || Cat.GrantAdmin)
             {
@@ -297,7 +297,7 @@ public partial class Pages_Admin_Option_Default : BasePage
                 }
                 else if (Cat.Options.Count > 0)
                 {
-                    foreach (Option option in Cat.Options.OrderBy(o => o.DisplayOrder))
+                    foreach (Option option in Cat.Options.Where(o=>o.Active).OrderBy(o => o.DisplayOrder))
                     {
                         TreeNode optionNode = new TreeNode()
                         {

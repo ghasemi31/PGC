@@ -37,7 +37,7 @@ public partial class UserControls_Project_RightPanel :BaseUserControl
         List<long> Features = UserSession.User.AccessLevel.Features.Select(f => f.ID).ToList();
         List<pgc.Model.MenuItem> Items = db.MenuItems.Where(m => Features.Contains(m.Feature_ID)).Where(m => m.MenuCategory_ID != null).OrderBy(m => m.DisplayOrder).ToList();
         List<long?> CatIDs = Items.Select(i => i.MenuCategory_ID).ToList();
-        List<MenuCategory> Cats = db.MenuCategories.Where(c => CatIDs.Contains(c.ID)).OrderBy(c => c.DisplayOrder).ToList();
+        List<MenuCategory> Cats = db.MenuCategories.Where(c => c.Active&& CatIDs.Contains(c.ID)).OrderBy(c => c.DisplayOrder).ToList();
 
         foreach (MenuCategory Cat in Cats)
         {

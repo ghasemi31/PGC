@@ -17569,13 +17569,15 @@ namespace pgc.Model
         /// <param name="title">Initial value of the Title property.</param>
         /// <param name="displayOrder">Initial value of the DisplayOrder property.</param>
         /// <param name="grantAdmin">Initial value of the GrantAdmin property.</param>
-        public static OptionCategory CreateOptionCategory(global::System.Int64 id, global::System.String title, global::System.Single displayOrder, global::System.Boolean grantAdmin)
+        /// <param name="active">Initial value of the Active property.</param>
+        public static OptionCategory CreateOptionCategory(global::System.Int64 id, global::System.String title, global::System.Single displayOrder, global::System.Boolean grantAdmin, global::System.Boolean active)
         {
             OptionCategory optionCategory = new OptionCategory();
             optionCategory.ID = id;
             optionCategory.Title = title;
             optionCategory.DisplayOrder = displayOrder;
             optionCategory.GrantAdmin = grantAdmin;
+            optionCategory.Active = active;
             return optionCategory;
         }
 
@@ -17705,6 +17707,30 @@ namespace pgc.Model
         private global::System.Boolean _GrantAdmin;
         partial void OnGrantAdminChanging(global::System.Boolean value);
         partial void OnGrantAdminChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Active
+        {
+            get
+            {
+                return _Active;
+            }
+            set
+            {
+                OnActiveChanging(value);
+                ReportPropertyChanging("Active");
+                _Active = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Active");
+                OnActiveChanged();
+            }
+        }
+        private global::System.Boolean _Active;
+        partial void OnActiveChanging(global::System.Boolean value);
+        partial void OnActiveChanged();
 
         #endregion
 
@@ -26343,7 +26369,8 @@ namespace pgc.Model
         /// <param name="disableUserName">Initial value of the DisableUserName property.</param>
         /// <param name="fatherName">Initial value of the FatherName property.</param>
         /// <param name="isGameManager">Initial value of the IsGameManager property.</param>
-        public static User CreateUser(global::System.Int64 id, global::System.String fullName, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.Boolean disableUserName, global::System.String fatherName, global::System.Boolean isGameManager)
+        /// <param name="visible">Initial value of the Visible property.</param>
+        public static User CreateUser(global::System.Int64 id, global::System.String fullName, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.Boolean disableUserName, global::System.String fatherName, global::System.Boolean isGameManager, global::System.Boolean visible)
         {
             User user = new User();
             user.ID = id;
@@ -26355,6 +26382,7 @@ namespace pgc.Model
             user.DisableUserName = disableUserName;
             user.FatherName = fatherName;
             user.IsGameManager = isGameManager;
+            user.Visible = visible;
             return user;
         }
 
@@ -26892,6 +26920,30 @@ namespace pgc.Model
         private global::System.Boolean _IsGameManager;
         partial void OnIsGameManagerChanging(global::System.Boolean value);
         partial void OnIsGameManagerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Visible
+        {
+            get
+            {
+                return _Visible;
+            }
+            set
+            {
+                OnVisibleChanging(value);
+                ReportPropertyChanging("Visible");
+                _Visible = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Visible");
+                OnVisibleChanged();
+            }
+        }
+        private global::System.Boolean _Visible;
+        partial void OnVisibleChanging(global::System.Boolean value);
+        partial void OnVisibleChanged();
 
         #endregion
 

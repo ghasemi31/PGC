@@ -25,7 +25,7 @@ namespace pgc.Business
 
             string Today = DateUtil.GetPersianDateShortString(DateTime.Now);
 
-            var Result = Search_Where(Context.Users, Pattern)
+            var Result = Search_Where(Context.Users.Where(f=>f.Visible), Pattern)
                 .OrderByDescending(f => f.SignUpPersianDate)
                 .Select(f => new
                 {

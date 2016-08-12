@@ -37,7 +37,7 @@ namespace pgc.Business.General
 
         public List<SocialIcon> GetSocialIcon()
         {
-            return db.SocialIcons.OrderBy(s => s.DispOrder).Take(4).ToList();
+            return db.SocialIcons.Where(s=>s.IsVisible).OrderBy(s => s.DispOrder).ToList();
         }
 
         public IQueryable<MainSlider> GetMainSlider()

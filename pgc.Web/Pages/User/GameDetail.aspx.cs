@@ -18,9 +18,9 @@ public partial class Pages_User_GameDetail : BasePage
     protected void Page_Load(object sender, EventArgs e)
     {
 
-            order_ID = GetQueryStringValue_Routed<long>(QueryStringKeys.id);
-            order = business.RetriveGameOrder(order_ID);
-       
+        order_ID = GetQueryStringValue_Routed<long>(QueryStringKeys.id);
+        order = business.RetriveGameOrder(order_ID);
+
 
     }
 
@@ -35,7 +35,7 @@ public partial class Pages_User_GameDetail : BasePage
             UserSession.AddMessage(res.Messages);
             lsvOrder.DataBind();
         }
-   
+
     }
 
     protected void Btn_remove_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ public partial class Pages_User_GameDetail : BasePage
     }
     protected void Btn_Pay_Click(object sender, EventArgs e)
     {
-        
+
         Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + order.ID);
 
     }
@@ -54,7 +54,7 @@ public partial class Pages_User_GameDetail : BasePage
     {
         e.InputParameters["ID"] = order_ID;
     }
-    
+
     protected void btnAddToGroup_Click(object sender, EventArgs e)
     {
         GameBusiness b = new GameBusiness();
@@ -62,25 +62,29 @@ public partial class Pages_User_GameDetail : BasePage
 
         if (user == null)
         {
-          
+
             UserSession.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنی با این کد ملی یافت نشد"));
         }
         else
         {
 
-             OperationResult valRes = new OperationResult();
-            valRes = b.Validate(user.ID,(long)order.Game_ID );
-
-            if (valRes.Result == ActionResult.Done)
-    {
-
-
-                var res = b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
-                UserSession.AddMessage(res.Messages);
+            if (order.Game != null && order.Game.Users.Any() && order.Game.Users.Count() >= order.Game.GamerCount)
+            {
+                UserSession.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, string.Format("حداکثر تعداد بازیکن در ایم بازی {0} نفر می باشد",order.Game.Users.Count())));
             }
             else
             {
-                UserSession.AddCompeleteMessage(valRes.CompleteMessages);
+                OperationResult valRes = new OperationResult();
+                valRes = b.Validate(user.ID, (long)order.Game_ID);
+                if (valRes.Result == ActionResult.Done)
+                {
+                    var res = b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
+                    UserSession.AddMessage(res.Messages);
+                }
+                else
+                {
+                    UserSession.AddCompeleteMessage(valRes.CompleteMessages);
+                }
             }
         }
     }

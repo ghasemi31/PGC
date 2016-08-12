@@ -29,7 +29,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
 
         Data.DispOrder = txtDispOrder.GetNumber<int>();
         Data.ImagePath = fupPic.FilePath;
-        
+        Data.LogoPath = fupLogo.FilePath;
 
         return Data;
     }
@@ -50,6 +50,6 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
 
         txtDispOrder.SetNumber(Data.DispOrder);
         fupPic.FilePath = Data.ImagePath;
-
+        fupLogo.FilePath = Data.LogoPath;
     }
 }

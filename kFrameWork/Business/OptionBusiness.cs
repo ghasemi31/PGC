@@ -14,7 +14,7 @@ namespace kFrameWork.Business
         pgcEntities Context = new pgcEntities();
         public List<OptionCategory> GetCategories()
         {
-            return Context.OptionCategories.Where(c => c.Parent_OptionCategory_ID == null).ToList();
+            return Context.OptionCategories.Where(c => c.Parent_OptionCategory_ID == null&&c.Active).ToList();
         }
         public Option RetriveOption(long OptionID)
         {

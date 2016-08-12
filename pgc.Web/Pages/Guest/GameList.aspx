@@ -13,7 +13,7 @@
                       {%>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 game">
                         <a href="<%=GetRouteUrl("guest-gamedetail", new { urlkey=item.UrlKey})%>">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(item.ImagePath) %>" />
+                            <img class="img-thumbnail" src="<%=ResolveClientUrl(item.ImagePath) %>?width=260&height=220&mode=cropandscale" />
                             <h1><%=item.Title %></h1>
                         </a>
                     </div>

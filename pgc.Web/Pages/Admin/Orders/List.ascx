@@ -22,7 +22,7 @@
         <kfk:SelectableColumnTemplate />
         <kfk:RowNumberColumnTemplate HeaderText="ردیف" />
         <kfk:BaseBoundField DataField="ID" Visible="True" HeaderText="کد" />
-        <kfk:TextColumnTemplate DataField="Name" HeaderText="سفارش دهنده" MaxLength="20"/>
+        <kfk:TextColumnTemplate DataField="Name" HeaderText="ثبت نام کننده" MaxLength="20"/>
         <kfk:NumberColumnTemplate DataField="PayableAmount" HeaderText="مبلغ"  CommaSeparated="true" UnitText="ریال"/>
         <asp:TemplateField HeaderText="پرداخت" >
             <ItemTemplate>
@@ -30,7 +30,7 @@
             </ItemTemplate>
         </asp:TemplateField>
 
-        <kfk:PersianDateColumnTemplate DataField="OrderPersianDate" HeaderText="تاریخ سفارش" OriginalDataField="OrderDate"  />
+        <kfk:PersianDateColumnTemplate DataField="OrderPersianDate" HeaderText="تاریخ ثبت نام" OriginalDataField="OrderDate"  />
         <kfk:BaseBoundField DataField="GameTitle" HeaderText="بازی" />
         <asp:TemplateField ItemStyle-Width="75px" />
         <kfk:BaseButtonField ButtonType="Button" CommandName="EditRow" Text="مشاهده" />
