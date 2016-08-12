@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_User_GameList :BasePage
+public partial class Pages_User_GameList : BasePage
 {
     private OrderBusiness business = new OrderBusiness();
     protected void Page_Load(object sender, EventArgs e)
@@ -20,9 +20,9 @@ public partial class Pages_User_GameList :BasePage
     }
     protected void Btn_Pay_Click(object sender, EventArgs e)
     {
-        //long orderID = long.Parse(SelectedOrder.Value);
+        long orderID = long.Parse(SelectedOrder.Value);
         //string ResNum = new SamanOnlinePayment().CreateReservationNumber(orderID);
-        //Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + ResNum);
+        Response.Redirect(GetRouteUrl("guest-onlinepayment", null) + "?id=" + orderID);
 
     }
 }

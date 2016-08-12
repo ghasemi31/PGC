@@ -6,7 +6,7 @@
     <link href="/assets/User/UserProfile.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
-    <section class="main-body">
+    <section>
         <header id="awards-header">
         </header>
         <div class="container">

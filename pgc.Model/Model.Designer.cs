@@ -53,6 +53,11 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_BranchOrderDetail_Finance_BranchOrder", "BranchOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.BranchOrder), "BranchOrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchOrderDetail), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_SiteMapItem_SiteMapCat", "SiteMapCat", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SiteMapCat), "SiteMapItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SiteMapItem), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_SideMenuItem_SideMenuCat", "SideMenuCat", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SideMenuCat), "SideMenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SideMenuItem), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_SystemEventAction_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "SystemEventAction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SystemEventAction), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_BranchOrderLog_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "BranchFinanceLog", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchFinanceLog), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_AccessLevel", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.AccessLevel), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.City), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Comment_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Product), "Comment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Comment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Product), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OrderDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Product), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OrderDetail), true)]
@@ -66,9 +71,11 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Comment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "Comment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Comment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_Payment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Branch), "BranchPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchPayment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Finance_Transaction_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Branch), "BranchTransaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchTransaction), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_UserComment_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "UserComment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.UserComment), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OnlinePayment_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Order), "OnlinePayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OnlinePayment), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OrderDetail_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OrderDetail), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "Circular_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Branch), "Circular", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Circular))]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_OccuredSystemEvent_SystemEvent", "SystemEvent", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.SystemEvent), "OccuredSystemEvent", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.OccuredSystemEvent), true)]
@@ -76,14 +83,12 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "Permission", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.AccessLevel), "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Feature))]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_MenuItem_Feature", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.Feature), "MenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.MenuItem), true)]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_MenuItem_MenuCategory", "MenuCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.MenuCategory), "MenuItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.MenuItem), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_Branch", "Branch", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Branch), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_SystemEventAction_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "SystemEventAction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.SystemEventAction), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_BranchOrderLog_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "BranchFinanceLog", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BranchFinanceLog), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_BuyBasket_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "BuyBasket", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.BuyBasket), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_Order_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Order), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_Game_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "Game", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Game), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_AccessLevel", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.AccessLevel), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
-[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.City), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_GameOrder_Game", "Game", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Game), "GameOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.GameOrder), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_GameOrder_Group", "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.Group), "GameOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.GameOrder), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_GameOrder_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.User), "GameOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.GameOrder), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_Payment_GameOrder", "GameOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.GameOrder), "Payment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Payment), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "Game_GameManager", "Game", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Game), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User))]
+[assembly: EdmRelationshipAttribute("pgcModel", "GamerGroup", "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Group), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User))]
 
 #endregion
 
@@ -1098,6 +1103,22 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<User> Users
+        {
+            get
+            {
+                if ((_Users == null))
+                {
+                    _Users = base.CreateObjectSet<User>("Users");
+                }
+                return _Users;
+            }
+        }
+        private ObjectSet<User> _Users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<BranchRequest> BranchRequests
         {
             get
@@ -1322,22 +1343,6 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<AppSetting> AppSettings
-        {
-            get
-            {
-                if ((_AppSettings == null))
-                {
-                    _AppSettings = base.CreateObjectSet<AppSetting>("AppSettings");
-                }
-                return _AppSettings;
-            }
-        }
-        private ObjectSet<AppSetting> _AppSettings;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<DynPage> DynPages
         {
             get
@@ -1354,6 +1359,22 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Feedback> Feedbacks
+        {
+            get
+            {
+                if ((_Feedbacks == null))
+                {
+                    _Feedbacks = base.CreateObjectSet<Feedback>("Feedbacks");
+                }
+                return _Feedbacks;
+            }
+        }
+        private ObjectSet<Feedback> _Feedbacks;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<MainSlider> MainSliders
         {
             get
@@ -1366,38 +1387,6 @@ namespace pgc.Model
             }
         }
         private ObjectSet<MainSlider> _MainSliders;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Game> Games
-        {
-            get
-            {
-                if ((_Games == null))
-                {
-                    _Games = base.CreateObjectSet<Game>("Games");
-                }
-                return _Games;
-            }
-        }
-        private ObjectSet<Game> _Games;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<User> Users
-        {
-            get
-            {
-                if ((_Users == null))
-                {
-                    _Users = base.CreateObjectSet<User>("Users");
-                }
-                return _Users;
-            }
-        }
-        private ObjectSet<User> _Users;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1430,6 +1419,86 @@ namespace pgc.Model
             }
         }
         private ObjectSet<Support> _Supports;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Game> Games
+        {
+            get
+            {
+                if ((_Games == null))
+                {
+                    _Games = base.CreateObjectSet<Game>("Games");
+                }
+                return _Games;
+            }
+        }
+        private ObjectSet<Game> _Games;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<GameOrder> GameOrders
+        {
+            get
+            {
+                if ((_GameOrders == null))
+                {
+                    _GameOrders = base.CreateObjectSet<GameOrder>("GameOrders");
+                }
+                return _GameOrders;
+            }
+        }
+        private ObjectSet<GameOrder> _GameOrders;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Group> Groups
+        {
+            get
+            {
+                if ((_Groups == null))
+                {
+                    _Groups = base.CreateObjectSet<Group>("Groups");
+                }
+                return _Groups;
+            }
+        }
+        private ObjectSet<Group> _Groups;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Payment> Payments
+        {
+            get
+            {
+                if ((_Payments == null))
+                {
+                    _Payments = base.CreateObjectSet<Payment>("Payments");
+                }
+                return _Payments;
+            }
+        }
+        private ObjectSet<Payment> _Payments;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<AppSetting> AppSettings
+        {
+            get
+            {
+                if ((_AppSettings == null))
+                {
+                    _AppSettings = base.CreateObjectSet<AppSetting>("AppSettings");
+                }
+                return _AppSettings;
+            }
+        }
+        private ObjectSet<AppSetting> _AppSettings;
 
         #endregion
 
@@ -1916,6 +1985,14 @@ namespace pgc.Model
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUsers(User user)
+        {
+            base.AddObject("Users", user);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the BranchRequests EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToBranchRequests(BranchRequest branchRequest)
@@ -2028,14 +2105,6 @@ namespace pgc.Model
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the AppSettings EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToAppSettings(AppSetting appSetting)
-        {
-            base.AddObject("AppSettings", appSetting);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the DynPages EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToDynPages(DynPage dynPage)
@@ -2044,27 +2113,19 @@ namespace pgc.Model
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the Feedbacks EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToFeedbacks(Feedback feedback)
+        {
+            base.AddObject("Feedbacks", feedback);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the MainSliders EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToMainSliders(MainSlider mainSlider)
         {
             base.AddObject("MainSliders", mainSlider);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Games EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToGames(Game game)
-        {
-            base.AddObject("Games", game);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToUsers(User user)
-        {
-            base.AddObject("Users", user);
         }
     
         /// <summary>
@@ -2081,6 +2142,46 @@ namespace pgc.Model
         public void AddToSupports(Support support)
         {
             base.AddObject("Supports", support);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Games EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGames(Game game)
+        {
+            base.AddObject("Games", game);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the GameOrders EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGameOrders(GameOrder gameOrder)
+        {
+            base.AddObject("GameOrders", gameOrder);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Groups EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGroups(Group group)
+        {
+            base.AddObject("Groups", group);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Payments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPayments(Payment payment)
+        {
+            base.AddObject("Payments", payment);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the AppSettings EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAppSettings(AppSetting appSetting)
+        {
+            base.AddObject("AppSettings", appSetting);
         }
 
         #endregion
@@ -2228,28 +2329,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "Permission", "Feature")]
-        public EntityCollection<Feature> Features
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("pgcModel.Permission", "Feature");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("pgcModel.Permission", "Feature", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_AccessLevel", "User")]
         public EntityCollection<User> Users
         {
@@ -2262,6 +2341,28 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_AccessLevel", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "Permission", "Feature")]
+        public EntityCollection<Feature> Features
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("pgcModel.Permission", "Feature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("pgcModel.Permission", "Feature", value);
                 }
             }
         }
@@ -4311,6 +4412,28 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_Branch", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_Branch", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_UserComment_Branch", "UserComment")]
         public EntityCollection<UserComment> UserComments
         {
@@ -4367,28 +4490,6 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Circular>("pgcModel.Circular_Branch", "Circular", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "User")]
-        public EntityCollection<User> Users
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_Branch", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_Branch", "User", value);
                 }
             }
         }
@@ -5217,44 +5318,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_Branch", "Branch")]
-        public Branch Branch
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Branch> BranchReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_User", "User")]
         public User User
         {
@@ -5283,6 +5346,44 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BranchOrderLog_User", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BranchOrderLog_Branch", "Branch")]
+        public Branch Branch
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Branch> BranchReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_BranchOrderLog_Branch", "Branch", value);
                 }
             }
         }
@@ -9517,44 +9618,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_Product", "Product")]
-        public Product Product
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Product> ProductReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_User", "User")]
         public User User
         {
@@ -9583,6 +9646,44 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_BuyBasket_User", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_BuyBasket_Product", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("pgcModel.FK_BuyBasket_Product", "Product", value);
                 }
             }
         }
@@ -11972,6 +12073,245 @@ namespace pgc.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Feedback")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Feedback : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Feedback object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="fullName">Initial value of the FullName property.</param>
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="mobile">Initial value of the Mobile property.</param>
+        /// <param name="gameManager">Initial value of the GameManager property.</param>
+        /// <param name="body">Initial value of the Body property.</param>
+        /// <param name="date">Initial value of the Date property.</param>
+        /// <param name="persianDate">Initial value of the PersianDate property.</param>
+        public static Feedback CreateFeedback(global::System.Int64 id, global::System.String fullName, global::System.String email, global::System.String mobile, global::System.Int64 gameManager, global::System.String body, global::System.DateTime date, global::System.String persianDate)
+        {
+            Feedback feedback = new Feedback();
+            feedback.ID = id;
+            feedback.FullName = fullName;
+            feedback.Email = email;
+            feedback.Mobile = mobile;
+            feedback.GameManager = gameManager;
+            feedback.Body = body;
+            feedback.Date = date;
+            feedback.PersianDate = persianDate;
+            return feedback;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FullName
+        {
+            get
+            {
+                return _FullName;
+            }
+            set
+            {
+                OnFullNameChanging(value);
+                ReportPropertyChanging("FullName");
+                _FullName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FullName");
+                OnFullNameChanged();
+            }
+        }
+        private global::System.String _FullName;
+        partial void OnFullNameChanging(global::System.String value);
+        partial void OnFullNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Mobile
+        {
+            get
+            {
+                return _Mobile;
+            }
+            set
+            {
+                OnMobileChanging(value);
+                ReportPropertyChanging("Mobile");
+                _Mobile = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Mobile");
+                OnMobileChanged();
+            }
+        }
+        private global::System.String _Mobile;
+        partial void OnMobileChanging(global::System.String value);
+        partial void OnMobileChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 GameManager
+        {
+            get
+            {
+                return _GameManager;
+            }
+            set
+            {
+                OnGameManagerChanging(value);
+                ReportPropertyChanging("GameManager");
+                _GameManager = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("GameManager");
+                OnGameManagerChanged();
+            }
+        }
+        private global::System.Int64 _GameManager;
+        partial void OnGameManagerChanging(global::System.Int64 value);
+        partial void OnGameManagerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Body
+        {
+            get
+            {
+                return _Body;
+            }
+            set
+            {
+                OnBodyChanging(value);
+                ReportPropertyChanging("Body");
+                _Body = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Body");
+                OnBodyChanged();
+            }
+        }
+        private global::System.String _Body;
+        partial void OnBodyChanging(global::System.String value);
+        partial void OnBodyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Date
+        {
+            get
+            {
+                return _Date;
+            }
+            set
+            {
+                OnDateChanging(value);
+                ReportPropertyChanging("Date");
+                _Date = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Date");
+                OnDateChanged();
+            }
+        }
+        private global::System.DateTime _Date;
+        partial void OnDateChanging(global::System.DateTime value);
+        partial void OnDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PersianDate
+        {
+            get
+            {
+                return _PersianDate;
+            }
+            set
+            {
+                OnPersianDateChanging(value);
+                ReportPropertyChanging("PersianDate");
+                _PersianDate = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PersianDate");
+                OnPersianDateChanged();
+            }
+        }
+        private global::System.String _PersianDate;
+        partial void OnPersianDateChanging(global::System.String value);
+        partial void OnPersianDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Gallery")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -12482,30 +12822,6 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int64> Manager_ID
-        {
-            get
-            {
-                return _Manager_ID;
-            }
-            set
-            {
-                OnManager_IDChanging(value);
-                ReportPropertyChanging("Manager_ID");
-                _Manager_ID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Manager_ID");
-                OnManager_IDChanged();
-            }
-        }
-        private Nullable<global::System.Int64> _Manager_ID;
-        partial void OnManager_IDChanging(Nullable<global::System.Int64> value);
-        partial void OnManager_IDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ImagePath
@@ -12706,16 +13022,529 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Game_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_Game", "GameOrder")]
+        public EntityCollection<GameOrder> GameOrders
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_Game", "GameOrder");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_Game", "GameOrder", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "Game_GameManager", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.Game_GameManager", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.Game_GameManager", "User", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="GameOrder")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class GameOrder : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new GameOrder object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="orderDate">Initial value of the OrderDate property.</param>
+        /// <param name="orderPersianDate">Initial value of the OrderPersianDate property.</param>
+        /// <param name="payableAmount">Initial value of the PayableAmount property.</param>
+        /// <param name="gameTitle">Initial value of the GameTitle property.</param>
+        /// <param name="groupName">Initial value of the GroupName property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="address">Initial value of the Address property.</param>
+        /// <param name="tel">Initial value of the Tel property.</param>
+        /// <param name="isPaid">Initial value of the IsPaid property.</param>
+        /// <param name="mobile">Initial value of the Mobile property.</param>
+        public static GameOrder CreateGameOrder(global::System.Int64 id, global::System.DateTime orderDate, global::System.String orderPersianDate, global::System.Int64 payableAmount, global::System.String gameTitle, global::System.String groupName, global::System.String name, global::System.String address, global::System.String tel, global::System.Boolean isPaid, global::System.String mobile)
+        {
+            GameOrder gameOrder = new GameOrder();
+            gameOrder.ID = id;
+            gameOrder.OrderDate = orderDate;
+            gameOrder.OrderPersianDate = orderPersianDate;
+            gameOrder.PayableAmount = payableAmount;
+            gameOrder.GameTitle = gameTitle;
+            gameOrder.GroupName = groupName;
+            gameOrder.Name = name;
+            gameOrder.Address = address;
+            gameOrder.Tel = tel;
+            gameOrder.IsPaid = isPaid;
+            gameOrder.Mobile = mobile;
+            return gameOrder;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> User_ID
+        {
+            get
+            {
+                return _User_ID;
+            }
+            set
+            {
+                OnUser_IDChanging(value);
+                ReportPropertyChanging("User_ID");
+                _User_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("User_ID");
+                OnUser_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _User_ID;
+        partial void OnUser_IDChanging(Nullable<global::System.Int64> value);
+        partial void OnUser_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Group_ID
+        {
+            get
+            {
+                return _Group_ID;
+            }
+            set
+            {
+                OnGroup_IDChanging(value);
+                ReportPropertyChanging("Group_ID");
+                _Group_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Group_ID");
+                OnGroup_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Group_ID;
+        partial void OnGroup_IDChanging(Nullable<global::System.Int64> value);
+        partial void OnGroup_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Game_ID
+        {
+            get
+            {
+                return _Game_ID;
+            }
+            set
+            {
+                OnGame_IDChanging(value);
+                ReportPropertyChanging("Game_ID");
+                _Game_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Game_ID");
+                OnGame_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Game_ID;
+        partial void OnGame_IDChanging(Nullable<global::System.Int64> value);
+        partial void OnGame_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime OrderDate
+        {
+            get
+            {
+                return _OrderDate;
+            }
+            set
+            {
+                OnOrderDateChanging(value);
+                ReportPropertyChanging("OrderDate");
+                _OrderDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OrderDate");
+                OnOrderDateChanged();
+            }
+        }
+        private global::System.DateTime _OrderDate;
+        partial void OnOrderDateChanging(global::System.DateTime value);
+        partial void OnOrderDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String OrderPersianDate
+        {
+            get
+            {
+                return _OrderPersianDate;
+            }
+            set
+            {
+                OnOrderPersianDateChanging(value);
+                ReportPropertyChanging("OrderPersianDate");
+                _OrderPersianDate = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("OrderPersianDate");
+                OnOrderPersianDateChanged();
+            }
+        }
+        private global::System.String _OrderPersianDate;
+        partial void OnOrderPersianDateChanging(global::System.String value);
+        partial void OnOrderPersianDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 PayableAmount
+        {
+            get
+            {
+                return _PayableAmount;
+            }
+            set
+            {
+                OnPayableAmountChanging(value);
+                ReportPropertyChanging("PayableAmount");
+                _PayableAmount = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PayableAmount");
+                OnPayableAmountChanged();
+            }
+        }
+        private global::System.Int64 _PayableAmount;
+        partial void OnPayableAmountChanging(global::System.Int64 value);
+        partial void OnPayableAmountChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String GameTitle
+        {
+            get
+            {
+                return _GameTitle;
+            }
+            set
+            {
+                OnGameTitleChanging(value);
+                ReportPropertyChanging("GameTitle");
+                _GameTitle = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("GameTitle");
+                OnGameTitleChanged();
+            }
+        }
+        private global::System.String _GameTitle;
+        partial void OnGameTitleChanging(global::System.String value);
+        partial void OnGameTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String GroupName
+        {
+            get
+            {
+                return _GroupName;
+            }
+            set
+            {
+                OnGroupNameChanging(value);
+                ReportPropertyChanging("GroupName");
+                _GroupName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("GroupName");
+                OnGroupNameChanged();
+            }
+        }
+        private global::System.String _GroupName;
+        partial void OnGroupNameChanging(global::System.String value);
+        partial void OnGroupNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Address
+        {
+            get
+            {
+                return _Address;
+            }
+            set
+            {
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
+            }
+        }
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Tel
+        {
+            get
+            {
+                return _Tel;
+            }
+            set
+            {
+                OnTelChanging(value);
+                ReportPropertyChanging("Tel");
+                _Tel = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Tel");
+                OnTelChanged();
+            }
+        }
+        private global::System.String _Tel;
+        partial void OnTelChanging(global::System.String value);
+        partial void OnTelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsPaid
+        {
+            get
+            {
+                return _IsPaid;
+            }
+            set
+            {
+                OnIsPaidChanging(value);
+                ReportPropertyChanging("IsPaid");
+                _IsPaid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsPaid");
+                OnIsPaidChanged();
+            }
+        }
+        private global::System.Boolean _IsPaid;
+        partial void OnIsPaidChanging(global::System.Boolean value);
+        partial void OnIsPaidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Mobile
+        {
+            get
+            {
+                return _Mobile;
+            }
+            set
+            {
+                OnMobileChanging(value);
+                ReportPropertyChanging("Mobile");
+                _Mobile = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Mobile");
+                OnMobileChanged();
+            }
+        }
+        private global::System.String _Mobile;
+        partial void OnMobileChanging(global::System.String value);
+        partial void OnMobileChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_Game", "Game")]
+        public Game Game
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Game>("pgcModel.FK_GameOrder_Game", "Game").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Game>("pgcModel.FK_GameOrder_Game", "Game").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Game> GameReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Game>("pgcModel.FK_GameOrder_Game", "Game");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Game>("pgcModel.FK_GameOrder_Game", "Game", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_Group", "Group")]
+        public Group Group
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("pgcModel.FK_GameOrder_Group", "Group").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("pgcModel.FK_GameOrder_Group", "Group").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Group> GroupReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("pgcModel.FK_GameOrder_Group", "Group");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Group>("pgcModel.FK_GameOrder_Group", "Group", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_Game_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_GameOrder_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_Game_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_GameOrder_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -12727,13 +13556,166 @@ namespace pgc.Model
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_Game_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("pgcModel.FK_GameOrder_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_Game_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_GameOrder_User", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Payment_GameOrder", "Payment")]
+        public EntityCollection<Payment> Payments
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Payment>("pgcModel.FK_Payment_GameOrder", "Payment");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Payment>("pgcModel.FK_Payment_GameOrder", "Payment", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Group")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Group : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Group object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        public static Group CreateGroup(global::System.Int64 id, global::System.String title)
+        {
+            Group group = new Group();
+            group.ID = id;
+            group.Title = title;
+            return group;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_Group", "GameOrder")]
+        public EntityCollection<GameOrder> GameOrders
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_Group", "GameOrder");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_Group", "GameOrder", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "GamerGroup", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.GamerGroup", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.GamerGroup", "User", value);
                 }
             }
         }
@@ -17582,28 +18564,6 @@ namespace pgc.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_OrderDetail_Order", "OrderDetail")]
-        public EntityCollection<OrderDetail> OrderDetails
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "User")]
         public User User
         {
@@ -17632,6 +18592,28 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("pgcModel.FK_Order_User", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_OrderDetail_Order", "OrderDetail")]
+        public EntityCollection<OrderDetail> OrderDetails
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("pgcModel.FK_OrderDetail_Order", "OrderDetail", value);
                 }
             }
         }
@@ -18384,6 +19366,313 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Feature>("pgcModel.FK_PanelPage_Feature", "Feature", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Payment")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Payment : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Payment object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="order_ID">Initial value of the Order_ID property.</param>
+        /// <param name="state">Initial value of the State property.</param>
+        /// <param name="refNum">Initial value of the RefNum property.</param>
+        /// <param name="amount">Initial value of the Amount property.</param>
+        /// <param name="date">Initial value of the Date property.</param>
+        /// <param name="persianDate">Initial value of the PersianDate property.</param>
+        /// <param name="iPAddress">Initial value of the IPAddress property.</param>
+        /// <param name="bankGeway_Enum">Initial value of the BankGeway_Enum property.</param>
+        public static Payment CreatePayment(global::System.Int64 id, global::System.Int64 order_ID, global::System.Int32 state, global::System.String refNum, global::System.Int64 amount, global::System.DateTime date, global::System.String persianDate, global::System.String iPAddress, global::System.Int32 bankGeway_Enum)
+        {
+            Payment payment = new Payment();
+            payment.ID = id;
+            payment.Order_ID = order_ID;
+            payment.State = state;
+            payment.RefNum = refNum;
+            payment.Amount = amount;
+            payment.Date = date;
+            payment.PersianDate = persianDate;
+            payment.IPAddress = iPAddress;
+            payment.BankGeway_Enum = bankGeway_Enum;
+            return payment;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 Order_ID
+        {
+            get
+            {
+                return _Order_ID;
+            }
+            set
+            {
+                OnOrder_IDChanging(value);
+                ReportPropertyChanging("Order_ID");
+                _Order_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Order_ID");
+                OnOrder_IDChanged();
+            }
+        }
+        private global::System.Int64 _Order_ID;
+        partial void OnOrder_IDChanging(global::System.Int64 value);
+        partial void OnOrder_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 State
+        {
+            get
+            {
+                return _State;
+            }
+            set
+            {
+                OnStateChanging(value);
+                ReportPropertyChanging("State");
+                _State = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("State");
+                OnStateChanged();
+            }
+        }
+        private global::System.Int32 _State;
+        partial void OnStateChanging(global::System.Int32 value);
+        partial void OnStateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String RefNum
+        {
+            get
+            {
+                return _RefNum;
+            }
+            set
+            {
+                OnRefNumChanging(value);
+                ReportPropertyChanging("RefNum");
+                _RefNum = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("RefNum");
+                OnRefNumChanged();
+            }
+        }
+        private global::System.String _RefNum;
+        partial void OnRefNumChanging(global::System.String value);
+        partial void OnRefNumChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 Amount
+        {
+            get
+            {
+                return _Amount;
+            }
+            set
+            {
+                OnAmountChanging(value);
+                ReportPropertyChanging("Amount");
+                _Amount = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Amount");
+                OnAmountChanged();
+            }
+        }
+        private global::System.Int64 _Amount;
+        partial void OnAmountChanging(global::System.Int64 value);
+        partial void OnAmountChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Date
+        {
+            get
+            {
+                return _Date;
+            }
+            set
+            {
+                OnDateChanging(value);
+                ReportPropertyChanging("Date");
+                _Date = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Date");
+                OnDateChanged();
+            }
+        }
+        private global::System.DateTime _Date;
+        partial void OnDateChanging(global::System.DateTime value);
+        partial void OnDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PersianDate
+        {
+            get
+            {
+                return _PersianDate;
+            }
+            set
+            {
+                OnPersianDateChanging(value);
+                ReportPropertyChanging("PersianDate");
+                _PersianDate = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PersianDate");
+                OnPersianDateChanged();
+            }
+        }
+        private global::System.String _PersianDate;
+        partial void OnPersianDateChanging(global::System.String value);
+        partial void OnPersianDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String IPAddress
+        {
+            get
+            {
+                return _IPAddress;
+            }
+            set
+            {
+                OnIPAddressChanging(value);
+                ReportPropertyChanging("IPAddress");
+                _IPAddress = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("IPAddress");
+                OnIPAddressChanged();
+            }
+        }
+        private global::System.String _IPAddress;
+        partial void OnIPAddressChanging(global::System.String value);
+        partial void OnIPAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BankGeway_Enum
+        {
+            get
+            {
+                return _BankGeway_Enum;
+            }
+            set
+            {
+                OnBankGeway_EnumChanging(value);
+                ReportPropertyChanging("BankGeway_Enum");
+                _BankGeway_Enum = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BankGeway_Enum");
+                OnBankGeway_EnumChanged();
+            }
+        }
+        private global::System.Int32 _BankGeway_Enum;
+        partial void OnBankGeway_EnumChanging(global::System.Int32 value);
+        partial void OnBankGeway_EnumChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Payment_GameOrder", "GameOrder")]
+        public GameOrder GameOrder
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameOrder>("pgcModel.FK_Payment_GameOrder", "GameOrder").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameOrder>("pgcModel.FK_Payment_GameOrder", "GameOrder").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<GameOrder> GameOrderReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameOrder>("pgcModel.FK_Payment_GameOrder", "GameOrder");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GameOrder>("pgcModel.FK_Payment_GameOrder", "GameOrder", value);
                 }
             }
         }
@@ -24918,24 +26207,26 @@ namespace pgc.Model
         /// Create a new User object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="fullName">Initial value of the FullName property.</param>
         /// <param name="pwd">Initial value of the pwd property.</param>
         /// <param name="activityStatus">Initial value of the ActivityStatus property.</param>
         /// <param name="email">Initial value of the Email property.</param>
         /// <param name="signUpPersianDate">Initial value of the SignUpPersianDate property.</param>
-        /// <param name="fullName">Initial value of the FullName property.</param>
         /// <param name="disableUserName">Initial value of the DisableUserName property.</param>
         /// <param name="fatherName">Initial value of the FatherName property.</param>
-        public static User CreateUser(global::System.Int64 id, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.String fullName, global::System.Boolean disableUserName, global::System.String fatherName)
+        /// <param name="isGameManager">Initial value of the IsGameManager property.</param>
+        public static User CreateUser(global::System.Int64 id, global::System.String fullName, global::System.String pwd, global::System.Int32 activityStatus, global::System.String email, global::System.String signUpPersianDate, global::System.Boolean disableUserName, global::System.String fatherName, global::System.Boolean isGameManager)
         {
             User user = new User();
             user.ID = id;
+            user.FullName = fullName;
             user.pwd = pwd;
             user.ActivityStatus = activityStatus;
             user.Email = email;
             user.SignUpPersianDate = signUpPersianDate;
-            user.FullName = fullName;
             user.DisableUserName = disableUserName;
             user.FatherName = fatherName;
+            user.IsGameManager = isGameManager;
             return user;
         }
 
@@ -24993,6 +26284,30 @@ namespace pgc.Model
         private Nullable<global::System.Int64> _City_ID;
         partial void OnCity_IDChanging(Nullable<global::System.Int64> value);
         partial void OnCity_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FullName
+        {
+            get
+            {
+                return _FullName;
+            }
+            set
+            {
+                OnFullNameChanging(value);
+                ReportPropertyChanging("FullName");
+                _FullName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FullName");
+                OnFullNameChanged();
+            }
+        }
+        private global::System.String _FullName;
+        partial void OnFullNameChanging(global::System.String value);
+        partial void OnFullNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -25383,30 +26698,6 @@ namespace pgc.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String FullName
-        {
-            get
-            {
-                return _FullName;
-            }
-            set
-            {
-                OnFullNameChanging(value);
-                ReportPropertyChanging("FullName");
-                _FullName = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("FullName");
-                OnFullNameChanged();
-            }
-        }
-        private global::System.String _FullName;
-        partial void OnFullNameChanging(global::System.String value);
-        partial void OnFullNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Boolean DisableUserName
         {
             get
@@ -25449,49 +26740,35 @@ namespace pgc.Model
         private global::System.String _FatherName;
         partial void OnFatherNameChanging(global::System.String value);
         partial void OnFatherNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsGameManager
+        {
+            get
+            {
+                return _IsGameManager;
+            }
+            set
+            {
+                OnIsGameManagerChanging(value);
+                ReportPropertyChanging("IsGameManager");
+                _IsGameManager = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsGameManager");
+                OnIsGameManagerChanged();
+            }
+        }
+        private global::System.Boolean _IsGameManager;
+        partial void OnIsGameManagerChanging(global::System.Boolean value);
+        partial void OnIsGameManagerChanged();
 
         #endregion
 
     
         #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "Branch")]
-        public Branch Branch
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Branch> BranchReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -25555,50 +26832,6 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BuyBasket>("pgcModel.FK_BuyBasket_User", "BuyBasket", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "Order")]
-        public EntityCollection<Order> Orders
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("pgcModel.FK_Order_User", "Order");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("pgcModel.FK_Order_User", "Order", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Game_User", "Game")]
-        public EntityCollection<Game> Games
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Game>("pgcModel.FK_Game_User", "Game");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Game>("pgcModel.FK_Game_User", "Game", value);
                 }
             }
         }
@@ -25675,6 +26908,132 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("pgcModel.FK_User_City", "City", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_Branch", "Branch")]
+        public Branch Branch
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Branch> BranchReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Branch>("pgcModel.FK_User_Branch", "Branch", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_Order_User", "Order")]
+        public EntityCollection<Order> Orders
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("pgcModel.FK_Order_User", "Order");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("pgcModel.FK_Order_User", "Order", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_GameOrder_User", "GameOrder")]
+        public EntityCollection<GameOrder> GameOrders
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_User", "GameOrder");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_User", "GameOrder", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "Game_GameManager", "Game")]
+        public EntityCollection<Game> Games
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Game>("pgcModel.Game_GameManager", "Game");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Game>("pgcModel.Game_GameManager", "Game", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "GamerGroup", "Group")]
+        public EntityCollection<Group> Groups
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Group>("pgcModel.GamerGroup", "Group");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Group>("pgcModel.GamerGroup", "Group", value);
                 }
             }
         }

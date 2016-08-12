@@ -1,15 +1,15 @@
-﻿using kFrameWork.UI;
-using pgc.Business;
-using pgc.Model;
-using pgc.Model.Patterns;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using kFrameWork.UI;
+using pgc.Business;
+using pgc.Model;
+using pgc.Model.Patterns;
 
-public partial class Pages_Admin_Comment_Default : BaseManagementPage<CommentBusiness, Comment, CommentPattern, pgcEntities>
+public partial class Pages_Admin_GameManager_Default : BaseManagementPage<GameManagerBusiness, User, GameManagerPattern, pgcEntities>
 {
     protected override void OnInit(EventArgs e)
     {
@@ -19,6 +19,6 @@ public partial class Pages_Admin_Comment_Default : BaseManagementPage<CommentBus
         base.ListControl = pnlList;
         base.SearchControl = pnlSearch;
 
-        base.Business = new CommentBusiness();
+        base.Business = new GameManagerBusiness();
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Comment_Detail" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Feedback_Detail" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
     <tr>
@@ -11,6 +11,10 @@
         <td class="control"><asp:Label ID="txtEmail" runat="server"></asp:Label></td>
     </tr>
     <tr>
+        <td class="caption">مدیر بازی</td>
+        <td class="control"><asp:Label ID="lblGameManager" runat="server"></asp:Label></td>
+    </tr>
+    <tr>
         <td class="caption">تاریخ</td>
         <td class="control"><asp:Label ID="txtDate" runat="server"></asp:Label></td>
     </tr>
@@ -18,10 +22,10 @@
         <td class="caption">متن</td>
         <td class="control"><asp:Label ID="txtBody" runat="server"></asp:Label></td>
     </tr>
-    <tr>
+   <%-- <tr>
         <td class="caption">قابل نمایش</td>
         <td class="control"><asp:CheckBox runat="server" ID="chkIsDisplay" Text="" CssClass="checkbox" /></td>
-    </tr>
+    </tr>--%>
 
 
 </table>

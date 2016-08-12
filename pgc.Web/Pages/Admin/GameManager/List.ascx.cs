@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Admin_Comment_List : BaseListControl
+public partial class Pages_Admin_GameManager_List : BaseListControl
 {
     protected override void OnInit(EventArgs e)
     {

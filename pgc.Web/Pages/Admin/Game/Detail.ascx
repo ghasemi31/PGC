@@ -75,7 +75,7 @@
         <td class="caption">کلمه کلیدی Url </td>
         <td class="control" style="width: 280px">
             <kfk:NormalTextBox ID="txtUrlKey" runat="server" TextBoxWidth="212" Required="true" />
-            /www.pgcizi.com/Game
+            /www.iranpgc.com/gamedetail
             <br />
             <span style="color: #bd0019">ترجیحا از فاصله (space) استفاده نکنید , 
                 فقط از حروف و اعداد استفاده شود , 

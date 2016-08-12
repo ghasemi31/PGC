@@ -20,10 +20,10 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         Data.UrlKey = txtUrlKey.Text;
         Data.Laws = txtLaws.Text;
         var managerId=lkpManager.GetSelectedValue<long>();
-        if (managerId > 0)
-            Data.Manager_ID = managerId;
-        else
-            Data.Manager_ID = null;
+        //if (managerId > 0)
+        //    Data.Manager_ID = managerId;
+        //else
+        //    Data.Manager_ID = null;
 
         Data.Type_Enum = lkcGameType.GetSelectedValue<int>();
 
@@ -44,7 +44,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         ntbGamerCnt.SetNumber(Data.GamerCount);
         txtLaws.Text = Data.Laws;
         lkcGameType.SetSelectedValue(Data.Type_Enum);
-        lkpManager.SetSelectedValue(Data.Manager_ID);
+        //lkpManager.SetSelectedValue(Data.Manager_ID);
 
         txtUrlKey.Text = Data.UrlKey;
 

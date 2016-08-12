@@ -1,14 +1,15 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Order_Detail" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_GameOrder_Detail" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
     <tr runat="server" id="UserID">
         <td class="caption">کد سفارش</td>
-        <td class="control"><asp:Label ID="lblOrderID" runat="server"/></td>
+        <td class="control"><asp:Label ID="lblGameOrderID" runat="server"/></td>
 
     </tr>
+
     <tr>
         <td class="caption">تاریخ</td>
-        <td class="control"><asp:Label ID="lblOrderPersianDate" runat="server"/></td>
+        <td class="control"><asp:Label ID="lblGameOrderPersianDate" runat="server"/></td>
     </tr>
     <tr>
         <td class="caption">نام و نام خانوادگی</td>
@@ -18,91 +19,86 @@
         <td class="caption">پست الکترونیک</td>
         <td class="control"><asp:Label ID="lblEmail" runat="server"/></td>
     </tr>
-
+    <tr>
+        <td class="caption">کد ملی </td>
+        <td class="control"><asp:Label ID="lblNationalCode" runat="server"/></td>
+    </tr>
 
     <tr>
         <td class="caption">آدرس</td>
         <td class="control"><asp:Label ID="lblAddress" runat="server"/></td>
     </tr>
+    
     <tr>
-        <td class="caption">تلفن درج در سفارش</td>
-        <td class="control"><asp:Label ID="lblTel" runat="server"/></td>
-    </tr>
-    <tr>
-        <td class="caption">تلفن سفارش دهنده</td>
+        <td class="caption">تلفن </td>
         <td class="control"><asp:Label ID="lblUserTel" runat="server"/></td>
     </tr>
+   
+ 
+       <tr>
+        <td class="caption">مبلغ قابل پرداخت</td>
+        <td class="control"><asp:Label ID="lblPayableAmount" runat="server"/></td>
+    </tr>
+    
     <tr>
-        <td class="caption">توضیحات</td>
-        <td class="control"><asp:Label ID="lblComment" runat="server"/></td>
+        <td class="caption">وضعیت پرداخت</td>
+        <td class="control"><asp:Label ID="lblGameOrderPaymentStatus" runat="server" /></td>
     </tr>
 
-    <tr>
-        <td></td>
+
+    
+
+         <tr>
+        <td class="caption">نام بازی</td>
+        <td class="control"><asp:Label ID="lblGameTitle" runat="server"/></td>
+    </tr>
+
+         <tr>
+        <td class="caption">نوع بازی</td>
+        <td class="control"><asp:Label ID="lblGameType" runat="server"/></td>
+    </tr>
+    <%if(GameOrder.Group!=null){ %>
+     <tr>
+        <td class="caption">نام تیم</td>
+        <td class="control"><asp:Label ID="lblTeamName" runat="server" /></td>
+    </tr>
+     <tr>
+
+        <td class="caption">اعضای تیم</td>
         <td>
             <table class="Table" style=" width:630px;">
                 <tr class="Header" style="background-color:#AD6868; color:#fff;">
-                    <th scope="col">محصول</th>
-                    <th scope="col">تعداد</th>
-                    <th scope="col">مبلغ</th>
+                    <th scope="col">نام بازیکن</th>
+                    <th scope="col">ایمیل</th>
+                    <th scope="col">کد ملی</th>
                 </tr>
-                <asp:ListView ID="lsvOrderDetail" runat="server"  DataKeyNames="ID" EnableViewState="false" >
+                <asp:ListView ID="lsvGroup" runat="server"  DataKeyNames="ID" EnableViewState="false" >
                     <ItemTemplate>
                 <tr class="Row">
-                    <td class="Cell"><%#Eval("ProductTitle") %></td>
-                    <td class="Cell"><%#Eval("Quantity") %></td>
-                    <td class="Cell"><%#Eval("SumPrice")%></td>
+                    <td class="Cell"><%#Eval("FullName") %></td>
+                    <td class="Cell"><%#Eval("Email") %></td>
+                    <td class="Cell"><%#Eval("NationalCode")%></td>
                 </tr>
                    </ItemTemplate>
                 </asp:ListView>
-                <tr>
-                    <td></td>
-                    <td class="caption">مبلغ کل</td>
-                    <td class="control"><asp:Label ID="lblTotalAmount" runat="server"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="caption">مبلغ قابل پرداخت</td>
-                    <td class="control"><asp:Label ID="lblPayableAmount" runat="server"/></td>
-                </tr>
+               
+              
             </table>
         </td>
     </tr>
-    <%--<tr>
-        <td class="caption">نحوه پرداخت</td>
-        <td class="control"><asp:Label ID="lblPaymentType" runat="server" /></td>
-    </tr>--%>
-    <tr>
-        <td class="caption">وضعیت پرداخت</td>
-        <td class="control"><asp:Label ID="lblOrderPaymentStatus" runat="server" /></td>
-    </tr>
-    <tr runat="server" id="branch">
-        <td class="caption">شعبه</td>
-        <td class="control"><kfk:LookupCombo ID="lkcBranch" 
-                                            runat="server" 
-                                            BusinessTypeName="pgc.Business.Lookup.BranchLookupBusiness"
-                                            DefaultItemText="--"
-                                            AddDefaultItem="True"/></td>   
-    </tr>
-    <%if (order!=null && order.ID>0 && !order.Branch_ID.HasValue && !string.IsNullOrEmpty( order.BranchTitle)) {%>
-        <tr>
-            <td class="caption">شعبه درج شده در پایگاه داده</td>
-            <td class="control"><%=order.BranchTitle %></td>
-        </tr>
+    
     <%} %>
-    <tr>
 
-        <td class="caption">وضعیت سفارش</td>
-        <td class="control"><kfk:LookupCombo ID="lkcOrderStatus" 
-                                    runat="server" 
-                                    EnumParameterType="pgc.Model.Enums.OrderStatus"
-                                    Required="true" /></td>
-    </tr>
+
+    
+   
 </table>
 
 <div class="commands">
     <asp:Button runat="server" ID="btnOnline" Text="لیست تراکنش های آنلاین" CssClass="xlarge" CausesValidation="false" onclick="btnOnline_Click" />
-    <asp:Button runat="server" ID="btnSave" Text="ذخیره" CssClass="large" OnClick="OnSave" CausesValidation="true" />
-    <asp:Button runat="server" ID="btnCancel" Text="انصراف" CssClass="large" OnClick="OnCancel" CausesValidation="false" />
+   
+    <asp:Button runat="server" ID="btnCancel" Text="بازگشت" CssClass="large" OnClick="OnCancel" CausesValidation="false" />
 </div>
+
+
 

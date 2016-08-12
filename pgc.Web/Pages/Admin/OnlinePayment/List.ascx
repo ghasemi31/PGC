@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="Pages_Admin_OnlinePayment_List" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="Pages_Admin_Payment_List" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.Title %></legend>
 <%if(kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage)>0){ %>
     <asp:Timer runat="server" id="Timer" ontick="Timer_Tick"  ></asp:Timer>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="Pages_Admin_Order_List" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="Pages_Admin_GameOrder_List" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.Title %></legend>
 <%if(kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage)>0){ %>
 <asp:Timer runat="server" id="Timer" ontick="Timer_Tick"  ></asp:Timer>
@@ -6,7 +6,7 @@
 <div class="list-help">
     <div class="commands">
         <a href="<%=GetRouteUrl("admin-orderprint",null)%>" target="_blank" class="hbtn" >چاپ سفارشات</a>
-        <asp:Button ID="btnBulkDelete" runat="server" Text="حذف سطر های انتخاب شده" CssClass="dtButton" OnClick="OnBulkDelete" Width="160" OnClientClick="if (!confirm('آیا در حذف کلیه سطرهای انتخاب شده ، اطمینان دارید؟')){return false;}" />
+       
     </div>
 </div>
 <%--<asp:Label runat="server" Text="Page not refreshed yet." id="Label1">
@@ -22,15 +22,18 @@
         <kfk:SelectableColumnTemplate />
         <kfk:RowNumberColumnTemplate HeaderText="ردیف" />
         <kfk:BaseBoundField DataField="ID" Visible="True" HeaderText="کد" />
-        <kfk:TextColumnTemplate DataField="FullName" HeaderText="سفارش دهنده" MaxLength="20"/>
+        <kfk:TextColumnTemplate DataField="Name" HeaderText="سفارش دهنده" MaxLength="20"/>
         <kfk:NumberColumnTemplate DataField="PayableAmount" HeaderText="مبلغ"  CommaSeparated="true" UnitText="ریال"/>
-        <asp:TemplateField HeaderText="پرداخت"  />
+        <asp:TemplateField HeaderText="پرداخت" >
+            <ItemTemplate>
+                <img src="/Styles/Images/<%# (bool)Eval("IsPaid")?"Enabled":"Disabled" %>.png" alt="">
+            </ItemTemplate>
+        </asp:TemplateField>
+
         <kfk:PersianDateColumnTemplate DataField="OrderPersianDate" HeaderText="تاریخ سفارش" OriginalDataField="OrderDate"  />
-        <kfk:BaseBoundField DataField="BranchTitle" HeaderText="شعبه" />
-        <asp:TemplateField HeaderText="نوع دستگاه"/>
+        <kfk:BaseBoundField DataField="GameTitle" HeaderText="بازی" />
         <asp:TemplateField ItemStyle-Width="75px" />
         <kfk:BaseButtonField ButtonType="Button" CommandName="EditRow" Text="مشاهده" />
-        <kfk:BaseButtonField ButtonType="Button" CommandName="DeleteRow" Text="حذف" />
     </Columns>
 </kfk:HKGrid>
 <asp:ObjectDataSource   ID="obdSource"

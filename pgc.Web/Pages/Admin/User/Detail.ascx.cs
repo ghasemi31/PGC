@@ -32,9 +32,9 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         Data.Gender = lkcGender.GetSelectedValue<int>();
 
         if (lkcRole.GetSelectedValue<Role>() == Role.Agent)
-            Data.Branch_ID = lkcBranch.GetSelectedValue<long>();
+            Data.IsGameManager = true;
         else
-            Data.Branch_ID = null;
+            Data.IsGameManager = false;
 
         return Data;
     }
