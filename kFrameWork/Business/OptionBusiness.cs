@@ -18,7 +18,7 @@ namespace kFrameWork.Business
         }
         public Option RetriveOption(long OptionID)
         {
-            return Context.Options.FirstOrDefault(o => o.ID == OptionID);
+            return Context.Options.FirstOrDefault(o => o.ID == OptionID && o.Active==true);
         }
         public OperationResult SaveOption()
         {

@@ -30,15 +30,9 @@
                 AddDefaultItem="true" />
         </td>
     </tr>
-    <tr>
-        <%-- <td class="caption">استان</td>
-        <td class="control"><kfk:LookupCombo ID="lkcProvince" 
-                                            runat="server" 
-                                            BusinessTypeName="pgc.Business.Lookup.ProvinceLookupBusiness"
-                                            AutoPostBack="true"
-                                            AddDefaultItem="true"
-                                            DependantControl="lkcCity"/></td>--%>
-        <td class="caption">نقش</td>
+   
+        <tr>
+             <td class="caption">نقش</td>
         <td class="control">
             <kfk:LookupCombo ID="lkcRole"
                 runat="server"
@@ -47,15 +41,6 @@
                 DependantControl="lkcAccessLevel"
                 AddDefaultItem="true" />
         </td>
-        <%if (lkcRole.GetSelectedValue<pgc.Model.Enums.Role>() == pgc.Model.Enums.Role.Agent)
-          { %>
-        <td class="caption">نام شعبه مربوطه</td>
-        <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtBranchName" />
-        </td>
-        <%} %>
-    </tr>
-    <%--    <tr>
         <td class="caption">شهرستان</td>
         <td class="control"><kfk:LookupCombo ID="lkcCity" 
                                             runat="server" 
@@ -64,7 +49,7 @@
                                             DependOnParameterType="Int64"
                                             AddDefaultItem="true"/></td>
        
-    </tr>--%>
+    </tr>
     <tr>
         <td class="caption">ایمیل</td>
         <td class="control">
@@ -76,9 +61,9 @@
         </td>
     </tr>
     <tr>
-        <td class="caption">دور نگار</td>
+        <td class="caption">کد ملی</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtFax" Mode="Phone" />
+            <kfk:NormalTextBox runat="server" ID="txtNationalCode" Mode="Phone" />
         </td>
         <td class="caption">تلفن همراه</td>
         <td class="control">

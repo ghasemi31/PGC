@@ -147,12 +147,22 @@ namespace pgc.Business
                     res.AddMessage(Model.Enums.UserMessageKey.DuplicateEmail);
                     return res;
                 }
+                if (Context.Users.Count(u => u.NationalCode == Data.NationalCode) > 0)
+                {
+                    res.AddMessage(Model.Enums.UserMessageKey.DuplicateNationalCode);
+                    return res;
+                }
             }
             else if (Mode == SaveValidationMode.Edit)
             {
                 if (Context.Users.Count(u => u.Email == Data.Email && u.ID != Data.ID) > 0)
                 {
                     res.AddMessage(Model.Enums.UserMessageKey.DuplicateEmail);
+                    return res;
+                }
+                if (Context.Users.Count(u => u.NationalCode == Data.NationalCode && u.ID != Data.ID) > 0)
+                {
+                    res.AddMessage(Model.Enums.UserMessageKey.DuplicateNationalCode);
                     return res;
                 }
             }

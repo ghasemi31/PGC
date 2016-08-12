@@ -41,7 +41,7 @@ public partial class UserControls_Project_RightPanel :BaseUserControl
 
         foreach (MenuCategory Cat in Cats)
         {
-            List<pgc.Model.MenuItem> CatItems = Items.Where(i => i.MenuCategory_ID == Cat.ID).ToList();
+            List<pgc.Model.MenuItem> CatItems = Items.Where(i => i.MenuCategory_ID == Cat.ID && i.Active).ToList();
 
             if (CatItems.Count > 0)
             {

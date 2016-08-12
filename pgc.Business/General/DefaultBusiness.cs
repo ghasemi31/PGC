@@ -45,6 +45,10 @@ namespace pgc.Business.General
             return db.MainSliders.Where(r => r.IsVisible).OrderBy(o => o.DispOrder);
         }
 
+        public IQueryable<Game> GetGameLogos()
+        {
+            return db.Games.Where(r => !string.IsNullOrEmpty(r.LogoPath)).OrderBy(o => o.DispOrder);
+        }
 
     }
 }

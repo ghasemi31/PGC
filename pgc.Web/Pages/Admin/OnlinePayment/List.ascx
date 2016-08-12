@@ -30,7 +30,7 @@
         <asp:TemplateField HeaderText="وضعیت تراکنش" />
         <%--<asp:TemplateField HeaderText="نتیجه تایید تراکنش" />--%>
         <kfk:BaseButtonField ButtonType="Button" CommandName="VerifyRow" Text="اعتبارسنجی مجدد" />
-        <%--<kfk:BaseButtonField ButtonType="Button" CommandName="ReverseRow" Text="برگشت" />--%>
+        <kfk:BaseButtonField ButtonType="Button" CommandName="ReverseRow" Text="برگشت" />
         <kfk:BaseButtonField ButtonType="Button" CommandName="EditRow" Text="ویرایش" Visible="false" />
         <kfk:BaseButtonField ButtonType="Button" CommandName="DeleteRow" Text="حذف" Visible="false"  />
     </Columns>

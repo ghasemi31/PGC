@@ -1,4 +1,5 @@
-﻿using kFrameWork.UI;
+﻿using kFrameWork.Model;
+using kFrameWork.UI;
 using pgc.Business.General;
 using pgc.Model;
 using pgc.Model.Enums;
@@ -16,10 +17,7 @@ public partial class Pages_User_GameDetail : BasePage
     public GameOrderBusiness business = new GameOrderBusiness();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!HasValidQueryString_Routed<string>(QueryStringKeys.id))
-            Server.Transfer("~/Pages/Guest/404.aspx");
 
-      
             order_ID = GetQueryStringValue_Routed<long>(QueryStringKeys.id);
             order = business.RetriveGameOrder(order_ID);
        
@@ -69,8 +67,21 @@ public partial class Pages_User_GameDetail : BasePage
         }
         else
         {
-            var res=b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
-            UserSession.AddMessage(res.Messages);
+
+             OperationResult valRes = new OperationResult();
+            valRes = b.Validate(user.ID,(long)order.Game_ID );
+
+            if (valRes.Result == ActionResult.Done)
+    {
+
+
+                var res = b.AddNewGamerToGroup((long)order.Group_ID, user.ID);
+                UserSession.AddMessage(res.Messages);
+            }
+            else
+            {
+                UserSession.AddCompeleteMessage(valRes.CompleteMessages);
+            }
         }
     }
 }
