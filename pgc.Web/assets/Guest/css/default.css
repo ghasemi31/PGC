@@ -222,8 +222,18 @@
 /***********************************BEGIN MAIN SLIDER**************************************/
 .top-slider .owl-carousel {
   position: relative;
-  height: 100%;
+
 }
+
+@media screen and (max-width: 767px) {
+    .top-slider {
+        height:500px;
+    }
+    .top-slider .owl-carousel {
+  height: 100%!important;
+}
+}
+
 .top-slider .owl-carousel div:not(.owl-controls) {
   height: 100%;
 }

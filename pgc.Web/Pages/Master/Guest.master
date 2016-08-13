@@ -81,11 +81,12 @@
                                 </div>
                                 <div class="clearfix col-sm-6 col-md-6">
                                     <ul class="socialNetwork">
-                                        <li><a href="#" class="icon-linkedin socialIcon tips" title="follow us on Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" class="icon-facebook socialIcon tips" title="follow us on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" class="icon-twitter-bird socialIcon tips" title="follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" class="icon-gplus socialIcon tips" title="follow us on Google +"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" class="icon-instagram socialIcon tips" title="follow us on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <%foreach (var item in business.GetSocialIcon() )
+                                          {%>
+                                               <li><a href="<%=item.Url %>" class="icon-linkedin socialIcon tips" title="<%=item.Title %>"><i class="fa <%=item.Icon %>" aria-hidden="true"></i></a></li>
+                                         <% } %>
+                                       
+                                     
                                     </ul>
                                 </div>
                             </div>
@@ -144,14 +145,14 @@
                     <div class="container" id="footer">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 display-center">
-                                <img src="/assets/Guest/Image/enamad.png" />
+                                <img style="width: auto;" src="/assets/Guest/Image/enamad.png" />
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-sm-12">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <span class="footer-title">Iran PGC</span>
                                         <nav>
-                                            <ul>
+                                            <ul style="padding: 0px;">
                                                 <li><a href="<%=GetRouteUrl("guest-default",null) %>" class="firstLevel">صفحه اصلی</a></li>
                                                 <li><a href="<%=GetRouteUrl("guest-laws",null) %>" class="firstLevel">قوانین و مقررات</a></li>
                                                 <li><a href="<%=GetRouteUrl("guest-awards",null) %>" class="firstLevel">جدول جوایز</a></li>
@@ -164,7 +165,7 @@
                                     <div class="col-md-6">
                                         <span class="footer-title">انواع بازی</span>
                                         <nav>
-                                            <ul>
+                                            <ul style="padding: 0px;">
                                                 <li><a href="<%=GetRouteUrl("guest-gamelist", new { id=(int)GameType.Iranian})%>">بازیهای ایرانی</a></li>
                                                 <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Foreign}) %>">بازیهای خارجی</a></li>
                                                 <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Mobile}) %>">بازیهای موبایلی</a></li>
@@ -177,16 +178,16 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
                                 <span class="footer-title">آدرس</span>
                                 <br />
-                                <span class="footer-item">تهران</span>
+                                <span class="footer-item">تهران فلکه دوم صادقیه پلاک 81</span>
                                 <br />
                                 <span class="footer-title">تلفن</span>
                                 <br />
-                                <span class="footer-item">11111</span>
+                                <span class="footer-item">02185696352</span>
                                 <br />
                                 <span class="footer-title">پست الکترونیک</span>
                                 <br />
-                                <span class="footer-item">gmail</span>
-                                <div id="footer-contactus" class="display-center">
+                                <span class="footer-item">info@iranpgc.com</span>
+                                <div id="footer-contactus" >
                                     <a href="<%=GetRouteUrl("guest-contacts",null) %>">ارتباط با ما</a>
                                 </div>
                             </div>

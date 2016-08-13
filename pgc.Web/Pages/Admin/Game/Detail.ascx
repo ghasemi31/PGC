@@ -91,6 +91,12 @@
             <kfk:FileUploader ID="fupPic" runat="server" SaveFolder="~/userfiles/Game/" Required="true"   />
         </td>
     </tr>
+     <tr>
+        <td class="caption">لوگو</td>
+        <td class="control">
+            <kfk:FileUploader ID="fupLogo" runat="server" SaveFolder="~/userfiles/Game/"    />
+        </td>
+    </tr>
 </table>
 <div class="commands">
     <asp:Button runat="server" ID="btnSave" Text="ذخیره" CssClass="large" OnClick="OnSave" CausesValidation="true" />

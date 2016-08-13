@@ -2,7 +2,7 @@
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
     <tr runat="server" id="UserID">
-        <td class="caption">کد سفارش</td>
+        <td class="caption">کد ثبت نام</td>
         <td class="control"><asp:Label ID="lblGameOrderID" runat="server"/></td>
 
     </tr>

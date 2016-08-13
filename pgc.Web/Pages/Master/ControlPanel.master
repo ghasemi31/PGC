@@ -8,7 +8,7 @@
     <link id="page_favicon" href="<%#ResolveClientUrl("~/Styles/Images/favicon.ico") %>" rel="icon" type="image/x-icon" />
     <link href="<%#ResolveClientUrl("~/Styles/form.css") %>" rel="Stylesheet" type="text/css" />
     <%-- <link href="/assets/global/plugins/bootstrap/css/bootstrap-rtl.v3.3.2.min.css" rel="stylesheet" />--%>
-    <link href="/assets/global/plugins/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/Plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/Styles/Shared/bootstrap-iconpicker.min.css" rel="stylesheet" />
     <link href="/assets/Admin/css/panel.css" rel="stylesheet" />
     <%-- <link href="<%#ResolveClientUrl("~/Styles/UserControls/Project/IconPicker.min.css") %>" rel="stylesheet" />--%>

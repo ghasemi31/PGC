@@ -11,7 +11,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
-    <section class="main-body">
+    <section >
     <!-- slider -->
     <input type="hidden" id="slider-time" value="<%=OptionBusiness.GetDouble(OptionKey.FullPageSliderTimer)%>" />
     <input type="hidden" id="speed-slider-time" value="<%=OptionBusiness.GetDouble(OptionKey.FullPageSpeedSlider)%>" />
@@ -41,7 +41,7 @@
                           {%>
                         <div class="game-logo-item">
                                  <a href="<%=GetRouteUrl("guest-gamedetail", new { urlkey=item.UrlKey})%>">
-                            <img  src="<%=ResolveClientUrl(item.ImagePath) %>" alt="<%=item.Title %>" />
+                            <img  src="<%=ResolveClientUrl(item.LogoPath) %>" alt="<%=item.Title %>" />
                         </a>
                         </div>
 
@@ -60,14 +60,14 @@
             <div class="container">
                 <div class="row x" >
                     <div class="col-sm-5 col-md-5">
-                        <img src="/assets/Guest/Image/IranPGC/Poster%20(1).jpg" />
+                        <img class="pgc-poster" src="<%=OptionBusiness.GetText(OptionKey.Hamrah_Dizi_Pic).Replace("~","") %>" />
                     </div>
                     <div class="col-sm-7 col-md-7">
                         <div class="row">
                             <img src="/assets/Guest/Image/IranPGC/05.png" />
                         </div>
                         <div id="" class="row x">
-                            <p>متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه متن دلخواه </p>
+                            <p><%=OptionBusiness.GetText(OptionKey.Quality_Charter) %></p>
                         </div>
                     </div>
                 </div>

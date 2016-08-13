@@ -23,9 +23,14 @@
         autoPlay: 3000,
       
         singleItem: true,
-        pagination: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplaySpeed: 4000,
+        autoplayHoverPause: true,
+        loop: true,
+
    
-        autoHeight: true,
+        autoHeight: false,
         responsiveClass: true,
         responsive: {
             0: {

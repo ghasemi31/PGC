@@ -19,6 +19,7 @@
     <EntitySetMapping Name="OptionCategories">
       <EntityTypeMapping TypeName="pgcModel.OptionCategory">
         <MappingFragment StoreEntitySet="OptionCategory">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Parent_OptionCategory_ID" ColumnName="Parent_OptionCategory_ID" />
@@ -829,6 +830,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="pgcModel.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
           <ScalarProperty Name="IsGameManager" ColumnName="IsGameManager" />
           <ScalarProperty Name="FatherName" ColumnName="FatherName" />
           <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />

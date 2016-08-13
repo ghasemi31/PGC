@@ -504,6 +504,7 @@
     <Property Name="Parent_OptionCategory_ID" Type="bigint" />
     <Property Name="DisplayOrder" Type="real" Nullable="false" />
     <Property Name="GrantAdmin" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="OptionLookup">
     <Key>
@@ -1164,6 +1165,7 @@
     <Property Name="DisableUserName" Type="bit" Nullable="false" />
     <Property Name="FatherName" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="IsGameManager" Type="bit" Nullable="false" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="UserMessage">
     <Key>
