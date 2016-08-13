@@ -23,7 +23,7 @@
 
     <%--  <script type="text/javascript" src="<%#ResolveClientUrl("~/Scripts/UserControls/Project/IconPicker.js") %>"></script>--%>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
-    <title>Mr Dizi - Control Panel</title>
+    <title>Iran PGC - Control Panel</title>
     <%#kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.PostHead)%>
 </head>
 <body>
@@ -39,17 +39,7 @@
                     </div>
                 </div>
                 <div id="footer">
-                    <%-- <div class="copy">تمام حقوق معنوی این پایگاه ثبت رسمی شده است. هرگونه کپی برداری عواقب قانونی در پی خواهد داشت.</div>
-                    <div class="powered">
-                        <span>
-                            <a href="http://www.rondsoft.com" target="_blank">طراحی سایت</a> و 
-				        <a href="http://www.rondsoft.com" target="_blank">پیاده سازی سایت</a> توسط <a href="http://www.rondsoft.com" target="_blank">رند سافت</a>
-                        </span>
-                        <span dir="ltr">© pgcizi.com | <a href="http://www.rondsoft.com" target="_blank">Powered By</a> : [ RondSoft ]</span>
-                    </div>--%>
-                    <%--<div class="copy">
-                        <%=kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.CopyRight)%>
-                    </div>--%>
+
                 </div>
             </div>
         </div>
