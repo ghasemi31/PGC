@@ -1189,6 +1189,7 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="pgcModel.Game">
         <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
           <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
           <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
@@ -1208,6 +1209,8 @@
     <EntitySetMapping Name="GameOrders">
       <EntityTypeMapping TypeName="pgcModel.GameOrder">
         <MappingFragment StoreEntitySet="GameOrder">
+          <ScalarProperty Name="GameCenterTitle" ColumnName="GameCenterTitle" />
+          <ScalarProperty Name="GameCenter_ID" ColumnName="GameCenter_ID" />
           <ScalarProperty Name="Mobile" ColumnName="Mobile" />
           <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
           <ScalarProperty Name="Tel" ColumnName="Tel" />
@@ -1273,6 +1276,16 @@
           <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
           <ScalarProperty Name="NewsCount" ColumnName="NewsCount" />
           <ScalarProperty Name="NavHeaderImage" ColumnName="NavHeaderImage" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameCenters">
+      <EntityTypeMapping TypeName="pgcModel.GameCenter">
+        <MappingFragment StoreEntitySet="GameCenter">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TItle" ColumnName="TItle" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

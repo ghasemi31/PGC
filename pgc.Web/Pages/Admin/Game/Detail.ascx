@@ -17,6 +17,16 @@
                  />
         </td>
     </tr>
+
+    <tr>
+        <td class="caption">نحوه اجرای بازی</td>
+        <td class="control">
+            <kfk:LookupCombo ID="lkcHowType"
+                runat="server"
+                EnumParameterType="pgc.Model.Enums.GameHowType"
+                 />
+        </td>
+    </tr>
     <tr>
                 <td class="caption">مدیر بازی</td>
             <td class="control"><kfk:LookupCombo ID="lkpManager" 

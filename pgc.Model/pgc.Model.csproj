@@ -90,6 +90,7 @@
     <Compile Include="Enums\Project\Finance\OfflineBankAccountStatus.cs" />
     <Compile Include="Enums\Project\Finance\OnlinePaymentStatus.cs" />
     <Compile Include="Enums\Project\GameOrderPaymentStatus.cs" />
+    <Compile Include="Enums\Project\GameHowType.cs" />
     <Compile Include="Enums\Project\GameType.cs" />
     <Compile Include="Enums\Project\Gender.cs" />
     <Compile Include="Enums\Project\HrefTarget.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Patterns\Project\SupportPattern.cs" />
     <Compile Include="Patterns\Project\SystemEventPattern.cs" />
     <Compile Include="Patterns\Project\UserCommentPattern.cs" />
+    <Compile Include="Patterns\Project\GameCenterPattern.cs" />
     <Compile Include="Patterns\Project\UserPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

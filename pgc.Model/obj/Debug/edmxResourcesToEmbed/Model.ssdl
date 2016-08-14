@@ -889,6 +889,7 @@
     <Property Name="Cost" Type="bigint" Nullable="false" />
     <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
+    <Property Name="HowType_Enum" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Game_GameManager">
     <Key>
@@ -897,6 +898,15 @@
     </Key>
     <Property Name="GameManager_ID" Type="bigint" Nullable="false" />
     <Property Name="Game_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GameCenter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TItle" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="City_ID" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="GameOrder">
     <Key>
@@ -916,6 +926,8 @@
     <Property Name="Tel" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="IsPaid" Type="bit" Nullable="false" />
     <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="GameCenter_ID" Type="bigint" />
+    <Property Name="GameCenterTitle" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="GamerGroup">
     <Key>
@@ -1618,6 +1630,20 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_GameCenter_City">
+    <End Role="City" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GameCenter" Type="Self.GameCenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameCenter">
+        <PropertyRef Name="City_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_GameOrder_Game">
     <End Role="Game" Type="Self.Game" Multiplicity="0..1" />
     <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="*" />
@@ -1627,6 +1653,18 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
       </Principal>
       <Dependent Role="GameOrder">
         <PropertyRef Name="Game_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_GameCenter">
+    <End Role="GameCenter" Type="Self.GameCenter" Multiplicity="0..1" />
+    <End Role="GameOrder" Type="Self.GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameCenter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="GameCenter_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2223,6 +2261,7 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
     <EntitySet Name="Product_Material" EntityType="Self.Product_Material" Schema="Finance" store:Type="Tables" />
     <EntitySet Name="Game" EntityType="Self.Game" Schema="Game" store:Type="Tables" />
     <EntitySet Name="Game_GameManager" EntityType="Self.Game_GameManager" Schema="Game" store:Type="Tables" />
+    <EntitySet Name="GameCenter" EntityType="Self.GameCenter" Schema="Game" store:Type="Tables" />
     <EntitySet Name="GameOrder" EntityType="Self.GameOrder" Schema="Game" store:Type="Tables" />
     <EntitySet Name="GamerGroup" EntityType="Self.GamerGroup" Schema="Game" store:Type="Tables" />
     <EntitySet Name="Group" EntityType="Self.Group" Schema="Game" store:Type="Tables" />
@@ -2384,8 +2423,16 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
       <End Role="User" EntitySet="User" />
       <End Role="Game_GameManager" EntitySet="Game_GameManager" />
     </AssociationSet>
+    <AssociationSet Name="FK_GameCenter_City" Association="Self.FK_GameCenter_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="GameCenter" EntitySet="GameCenter" />
+    </AssociationSet>
     <AssociationSet Name="FK_GameOrder_Game" Association="Self.FK_GameOrder_Game">
       <End Role="Game" EntitySet="Game" />
+      <End Role="GameOrder" EntitySet="GameOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_GameCenter" Association="Self.FK_GameOrder_GameCenter">
+      <End Role="GameCenter" EntitySet="GameCenter" />
       <End Role="GameOrder" EntitySet="GameOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_GameOrder_Group" Association="Self.FK_GameOrder_Group">

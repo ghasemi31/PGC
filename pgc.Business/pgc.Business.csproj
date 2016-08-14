@@ -88,6 +88,7 @@
     <Compile Include="EntityManagementBusiness\SideMenuCatBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SideMenuItemBusiness.cs" />
     <Compile Include="EntityManagementBusiness\SocialIconBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\GameCenterBusiness.cs" />
     <Compile Include="Finance\BranchOrderTitleBusiness.cs" />
     <Compile Include="EntityManagementBusiness\UserMessageKeyBusiness.cs" />
     <Compile Include="EntityManagementBusiness\OnlinePaymentBusiness.cs" />
