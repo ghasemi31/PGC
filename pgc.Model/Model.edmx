@@ -6751,7 +6751,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <EntityTypeShape EntityType="pgcModel.MainSlider" Width="1.5" PointX="23.375" PointY="16.75" />
         <EntityTypeShape EntityType="pgcModel.Sponsor" Width="1.5" PointX="17.375" PointY="24.75" />
         <EntityTypeShape EntityType="pgcModel.Support" Width="1.5" PointX="25.375" PointY="0.75" />
-        <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="0.75" PointY="36" />
+        <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="0.5" PointY="35.375" />
         <EntityTypeShape EntityType="pgcModel.GameOrder" Width="1.5" PointX="6.25" PointY="25.375" />
         <EntityTypeShape EntityType="pgcModel.Group" Width="1.5" PointX="0.75" PointY="22.5" />
         <EntityTypeShape EntityType="pgcModel.Payment" Width="1.5" PointX="8.5" PointY="34.125" />

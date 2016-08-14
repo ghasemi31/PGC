@@ -19,6 +19,7 @@ namespace pgc.Model.Patterns
             Fax = "";
             Name = "";
             BranchTitle = "";
+            FatherName = "";
             SignUpPersianDate = new DateRangePattern();
         }
 
@@ -34,6 +35,7 @@ namespace pgc.Model.Patterns
         public Gender Gender { get; set; }
 
         public string Username { get; set; }
+        public string FatherName { get; set; }
         public string NationalCode { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

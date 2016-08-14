@@ -20,10 +20,11 @@ public partial class Pages_Admin_User_Search : BaseSearchControl<UserPattern>
                 Name = txtName.Text,
                 NationalCode = txtNationalCode.Text,
                 PostalCode = txtPostalCode.Text,
-                //Province_ID = lkcProvince.GetSelectedValue<long>(),
+                Province_ID = lkcProvince.GetSelectedValue<long>(),
                 Role = lkcRole.GetSelectedValue<Role>(),
                 Tel = txtTel.Text,
-                Username = txtUsername.Text,
+                FatherName=txtFatherName.Text,
+                //Username = txtUsername.Text,
                 SignUpPersianDate = pdrSignUpPersianDate.DateRange,
                 Gender=lkcGender.GetSelectedValue<Gender>(),
            
@@ -41,13 +42,19 @@ public partial class Pages_Admin_User_Search : BaseSearchControl<UserPattern>
             txtName.Text = value.Name;
             txtNationalCode.Text = value.NationalCode;
             txtPostalCode.Text = value.PostalCode;
-            //lkcProvince.SetSelectedValue(value.Province_ID);
+            lkcProvince.SetSelectedValue(value.Province_ID);
             lkcRole.SetSelectedValue(value.Role);
             txtTel.Text = value.Tel ;
-            txtUsername.Text = value.Username;
+            txtFatherName.Text = value.FatherName;
+            //txtUsername.Text = value.Username;
             pdrSignUpPersianDate.DateRange = value.SignUpPersianDate;
             lkcGender.SetSelectedValue(value.Gender);
             
         }
+    }
+    protected override void OnPreRender(System.EventArgs e)
+    {
+        base.OnPreRender(e);
+        Session["UserListPattern"] = Pattern;
     }
 }

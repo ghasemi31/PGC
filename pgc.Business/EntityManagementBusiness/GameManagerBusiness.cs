@@ -365,5 +365,10 @@ namespace pgc.Business
         {
             return Context.Games.OrderBy(m => m.Title).ToList();
         }
+
+        public Game retrieveGame(long gameid)
+        {
+            return Context.Games.SingleOrDefault(m => m.ID == gameid);
+        }
     }
 }

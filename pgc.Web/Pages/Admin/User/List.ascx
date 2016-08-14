@@ -2,6 +2,8 @@
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.Title %></legend>
 <div class="list-help">
     <div class="commands">
+         <a href="<%=ResolveUrl("~/Pages/Admin/ExcelReport/UserListExcel.aspx")%>" target="_blank" class="excelbtn" >دریافت فایل اکسل نتایج</a>
+        <a href="<%=ResolveUrl("~/Pages/Admin/Prints/UserList.aspx")%>" target="_blank" class="printbtn" >چاپ نتایج</a>
         <asp:Button ID="btnBulkDelete" runat="server" Text="حذف سطر های انتخاب شده" CssClass="dtButton" OnClick="OnBulkDelete" Width="160" OnClientClick="if (!confirm('آیا در حذف کلیه سطرهای انتخاب شده ، اطمینان دارید؟')){return false;}" />
         <asp:Button ID="btnAdd" runat="server" Text="+ ایجاد سطر جدید" CssClass="dtButton" OnClick="OnAdd" Width="150" />
     </div>

@@ -2,21 +2,24 @@
 <legend>جستجو</legend>
 <table>
     <tr>
-        <td class="caption">نام</td>
+        <td class="caption">نام و نام خانوادگی</td>
         <td class="control">
             <kfk:NormalTextBox runat="server" ID="txtName" />
         </td>
-        <td class="caption">نام کاربری</td>
+        <td class="caption">نام پدر</td>
         <td class="control">
-            <kfk:NormalTextBox runat="server" ID="txtUsername" />
+            <kfk:NormalTextBox runat="server" ID="txtFatherName" />
         </td>
     </tr>
     <tr>
-        <td class="caption">وضعیت</td>
+
+        <td class="caption">نقش</td>
         <td class="control">
-            <kfk:LookupCombo ID="lkcActivityStatus"
+            <kfk:LookupCombo ID="lkcRole"
                 runat="server"
-                EnumParameterType="pgc.Model.Enums.UserActivityStatus"
+                EnumParameterType="pgc.Model.Enums.Role"
+                AutoPostBack="true"
+                DependantControl="lkcAccessLevel"
                 AddDefaultItem="true" />
         </td>
 
@@ -30,25 +33,42 @@
                 AddDefaultItem="true" />
         </td>
     </tr>
-   
-        <tr>
-             <td class="caption">نقش</td>
+    <tr>
+        <td class="caption">جنسیت</td>
         <td class="control">
-            <kfk:LookupCombo ID="lkcRole"
+            <kfk:LookupCombo ID="lkcGender"
                 runat="server"
-                EnumParameterType="pgc.Model.Enums.Role"
-                AutoPostBack="true"
-                DependantControl="lkcAccessLevel"
+                EnumParameterType="pgc.Model.Enums.Gender"
                 AddDefaultItem="true" />
         </td>
+        <td class="caption">وضعیت</td>
+        <td class="control">
+            <kfk:LookupCombo ID="lkcActivityStatus"
+                runat="server"
+                EnumParameterType="pgc.Model.Enums.UserActivityStatus"
+                AddDefaultItem="true" />
+        </td>
+    </tr>
+    <tr>
+        <td class="caption">استان</td>
+        <td class="control">
+            <kfk:LookupCombo ID="lkcProvince"
+                runat="server"
+                BusinessTypeName="pgc.Business.Lookup.ProvinceLookupBusiness"
+                AutoPostBack="true"
+                DependantControl="lkcCity"
+                Required="true" />
+        </td>
         <td class="caption">شهرستان</td>
-        <td class="control"><kfk:LookupCombo ID="lkcCity" 
-                                            runat="server" 
-                                            BusinessTypeName="pgc.Business.Lookup.CityLookupBusiness"
-                                            DependOnParameterName="Province_ID" 
-                                            DependOnParameterType="Int64"
-                                            AddDefaultItem="true"/></td>
-       
+        <td class="control">
+            <kfk:LookupCombo ID="lkcCity"
+                runat="server"
+                BusinessTypeName="pgc.Business.Lookup.CityLookupBusiness"
+                DependOnParameterName="Province_ID"
+                DependOnParameterType="Int64"
+                Required="true" />
+        </td>
+
     </tr>
     <tr>
         <td class="caption">ایمیل</td>
@@ -85,13 +105,7 @@
         <td class="control">
             <kfk:PersianDateRange runat="server" ID="pdrSignUpPersianDate" />
         </td>
-        <td class="caption">جنسیت</td>
-        <td class="control">
-            <kfk:LookupCombo ID="lkcGender"
-                runat="server"
-                EnumParameterType="pgc.Model.Enums.Gender"
-                AddDefaultItem="true" />
-        </td>
+        
     </tr>
 </table>
 <div class="commands">

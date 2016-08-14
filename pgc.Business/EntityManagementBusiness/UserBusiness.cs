@@ -83,7 +83,10 @@ namespace pgc.Business
                 list = list.Where(u => u.Branch_ID !=null && u.Branch.Title.Contains(Pattern.BranchTitle));
 
             if (!string.IsNullOrEmpty(Pattern.Name))
-                list = list.Where(u => (u.Fname + " " + u.Lname).Contains(Pattern.Name));
+                list = list.Where(u => (u.FullName).Contains(Pattern.Name));
+
+            if (!string.IsNullOrEmpty(Pattern.FatherName))
+                list = list.Where(u => (u.FatherName).Contains(Pattern.Name));
 
             if (!string.IsNullOrEmpty(Pattern.NationalCode))
                 list = list.Where(u => u.NationalCode.Contains(Pattern.NationalCode));
@@ -134,7 +137,10 @@ namespace pgc.Business
         }
 
 
-
+        public IQueryable<User> Search_SelectPrint(UserPattern Pattern)
+        {
+            return Search_Where(Context.Users, Pattern);
+        }
 
         public override OperationResult Validate(User Data, SaveValidationMode Mode)
         {

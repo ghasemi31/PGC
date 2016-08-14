@@ -137,7 +137,7 @@
     <tr>
         <td class="caption">بازیها</td>
         <td class="control" colspan="3">
-            <asp:CheckBoxList ID="chlgame" RepeatColumns="6" runat="server"></asp:CheckBoxList></td>
+            <asp:CheckBoxList ID="chlgame" RepeatColumns="3" runat="server"></asp:CheckBoxList></td>
     </tr>
 
 </table>

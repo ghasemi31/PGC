@@ -8,6 +8,7 @@ using pgc.Model.Patterns;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using kFrameWork.Util;
+using System.Linq;
 
 public partial class Pages_Admin_GameManager_Detail : BaseDetailControl<User>
 {
@@ -26,6 +27,10 @@ public partial class Pages_Admin_GameManager_Detail : BaseDetailControl<User>
         Data.FatherName = txtFatherName.Text;
         Data.Mobile = txtMobile.Text;
         Data.NationalCode = txtNationalCode.Text;
+        if (Mode == ManagementPageMode.Edit)
+        {
+            Data.Games.Clear();
+        }
         if (Mode == ManagementPageMode.Add)
             Data.pwd = txtPassword.Text;
         Data.Tel = txtTel.Text;
@@ -37,6 +42,13 @@ public partial class Pages_Admin_GameManager_Detail : BaseDetailControl<User>
             Data.IsGameManager = true;
         else
             Data.IsGameManager = false;
+
+        GameManagerBusiness pro_business = (this.Page as BaseManagementPage<GameManagerBusiness, User, GameManagerPattern, pgcEntities>).Business;
+        foreach (ListItem item in chlgame.Items)
+        {
+            if (item.Selected)
+                Data.Games.Add(pro_business.retrieveGame(ConvertorUtil.ToInt64(item.Value)));
+        }
 
         return Data;
     }
@@ -67,12 +79,12 @@ public partial class Pages_Admin_GameManager_Detail : BaseDetailControl<User>
         hplResetPwd.NavigateUrl = GetRouteUrl("Admin-resetpwd", null) + "?" + QueryStringKeys.id.ToString() + "=" + Data.ID;
 
 
-        //bindGame();
-        //var values = Data.Games.Select(m => m.ID).ToList();
-        //foreach (ListItem item in chlgame.Items)
-        //{
-        //    item.Selected = values.Contains(ConvertorUtil.ToInt64(item.Value));
-        //}
+        bindGame();
+        var values = Data.Games.Select(m => m.ID).ToList();
+        foreach (ListItem item in chlgame.Items)
+        {
+            item.Selected = values.Contains(ConvertorUtil.ToInt64(item.Value));
+        }
 
 
         //if (Data.Branch_ID == null)
@@ -84,13 +96,16 @@ public partial class Pages_Admin_GameManager_Detail : BaseDetailControl<User>
     public override void BeginMode(ManagementPageMode Mode)
     {
         base.BeginMode(Mode);
+        if (Mode == ManagementPageMode.Add)
+            bindGame();
         PasswordEntranceRow.Visible = (Mode == ManagementPageMode.Add);
         PasswordResetRow.Visible = (Mode == ManagementPageMode.Edit);
         UserID.Visible = (Mode == ManagementPageMode.Edit);
 
-        //if (Mode == ManagementPageMode.Add)
-        //    branch.Visible = false;
+        
     }
+
+
 
     public override bool Validate(ManagementPageMode Mode)
     {
