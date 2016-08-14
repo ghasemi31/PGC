@@ -65,3 +65,28 @@ hr {
     font-weight: bold;
     font-size: 20px;
 }
+
+
+.right-section input[type="text"], .right-section select{
+        margin-bottom: 0px!important;
+}
+ .right-section select{
+       width:100%;
+}
+
+.right-section .description{
+    font-size: 10pt;
+    color: #b3abab;
+}
+
+.right-section .validator{
+    color: rgb(204, 0, 0);
+    font-size: 10px;
+    display: inline;
+    margin-bottom:10px;
+        font-family: Tahoma;
+}
+
+.right-section .btn-game{
+    width:100%;
+}

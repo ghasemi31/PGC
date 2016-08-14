@@ -31,6 +31,8 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         Data.SignUpPersianDate = pdpSignUpPersianDate.PersianDate;
         Data.Gender = lkcGender.GetSelectedValue<int>();
 
+        Data.Telegram = txtTelegram.Text;
+
         if (lkcRole.GetSelectedValue<Role>() == Role.Agent)
             Data.IsGameManager = true;
         else
@@ -59,7 +61,7 @@ public partial class Pages_Admin_User_Detail : BaseDetailControl<User>
         lkcCity.SetSelectedValue(Data.City_ID);
         txtEmail.Text = Data.Email;
         lblEmail.Text = Data.Email;
-   
+        txtTelegram.Text = Data.Telegram;
         txtFullName.Text = Data.FullName;
         txtMobile.Text = Data.Mobile;
         txtNationalCode.Text = Data.NationalCode;

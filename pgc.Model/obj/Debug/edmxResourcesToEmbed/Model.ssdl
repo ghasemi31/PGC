@@ -1178,6 +1178,7 @@
     <Property Name="FatherName" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="IsGameManager" Type="bit" Nullable="false" />
     <Property Name="Visible" Type="bit" Nullable="false" />
+    <Property Name="Telegram" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="UserMessage">
     <Key>

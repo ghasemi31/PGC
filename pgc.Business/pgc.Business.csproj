@@ -178,6 +178,7 @@
     <Compile Include="General\UserBusiness.cs" />
     <Compile Include="General\Util.cs" />
     <Compile Include="Lookup\BankAccountLookupBusiness.cs" />
+    <Compile Include="Lookup\GameCenterLookupBusiness.cs" />
     <Compile Include="Lookup\GameLookupBusiness.cs" />
     <Compile Include="Lookup\CityLookupBusiness.cs" />
     <Compile Include="Lookup\AccessLevelLookupBusiness.cs" />

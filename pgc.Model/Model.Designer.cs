@@ -27303,6 +27303,30 @@ namespace pgc.Model
         private global::System.Boolean _Visible;
         partial void OnVisibleChanging(global::System.Boolean value);
         partial void OnVisibleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Telegram
+        {
+            get
+            {
+                return _Telegram;
+            }
+            set
+            {
+                OnTelegramChanging(value);
+                ReportPropertyChanging("Telegram");
+                _Telegram = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Telegram");
+                OnTelegramChanged();
+            }
+        }
+        private global::System.String _Telegram;
+        partial void OnTelegramChanging(global::System.String value);
+        partial void OnTelegramChanged();
 
         #endregion
 

@@ -184,5 +184,10 @@ namespace pgc.Business.General
 
             }
         }
+
+        public GameCenter RetriveGameCenter(long id)
+        {
+            return db.GameCenters.SingleOrDefault(g => g.ID == id);
+        }
     }
 }

@@ -830,6 +830,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="pgcModel.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Telegram" ColumnName="Telegram" />
           <ScalarProperty Name="Visible" ColumnName="Visible" />
           <ScalarProperty Name="IsGameManager" ColumnName="IsGameManager" />
           <ScalarProperty Name="FatherName" ColumnName="FatherName" />

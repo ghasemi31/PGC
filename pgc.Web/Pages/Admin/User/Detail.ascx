@@ -138,6 +138,10 @@
         <td class="control">
             <kfk:NormalTextBox runat="server" ID="txtAddress" TextMode="MultiLine"  Required="true" />
         </td>
+        <td class="caption">آدرس تلگرام</td>
+        <td class="control">
+            <kfk:NormalTextBox runat="server" ID="txtTelegram"  />
+        </td>
     </tr>
 
 </table>

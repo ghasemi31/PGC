@@ -1183,6 +1183,7 @@
           <Property Name="FatherName" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="IsGameManager" Type="bit" Nullable="false" />
           <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Telegram" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="UserMessage">
           <Key>
@@ -4278,6 +4279,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
           <NavigationProperty Name="Groups" Relationship="pgcModel.GamerGroup" FromRole="User" ToRole="Group" />
           <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Telegram" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_SystemEventAction_User">
           <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
@@ -5922,6 +5924,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="pgcModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Telegram" ColumnName="Telegram" />
                 <ScalarProperty Name="Visible" ColumnName="Visible" />
                 <ScalarProperty Name="IsGameManager" ColumnName="IsGameManager" />
                 <ScalarProperty Name="FatherName" ColumnName="FatherName" />
