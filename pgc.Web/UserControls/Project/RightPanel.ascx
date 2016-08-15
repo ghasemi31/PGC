@@ -22,7 +22,7 @@
             <b style="color: #f7e302">کد اشتراک شما : <%=kFrameWork.UI.UserSession.UserID%></b>
 
             <%} %>
-            <%if ((pgc.Model.Enums.Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == pgc.Model.Enums.Role.Agent)
+            <%--<%if ((pgc.Model.Enums.Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == pgc.Model.Enums.Role.Agent)
               {
                   long minimumCredit = pgc.Business.BranchCreditBusiness.GetBranchMinimumCredit(kFrameWork.UI.UserSession.User.Branch_ID.Value) * (-1);
             %>
@@ -42,7 +42,7 @@
                 <br />
                 <%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(Credit)%> ریال</div>
             <%} %>
-            <%} %>
+            <%} %>--%>
         </div>
 
 

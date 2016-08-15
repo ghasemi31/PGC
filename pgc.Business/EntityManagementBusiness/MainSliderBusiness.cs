@@ -8,9 +8,9 @@ using System.Text;
 
 namespace pgc.Business
 {
-    public class RandomImageBusiness : BaseEntityManagementBusiness<MainSlider, pgcEntities>
+    public class MainSliderBusiness : BaseEntityManagementBusiness<MainSlider, pgcEntities>
     {
-        public RandomImageBusiness()
+        public MainSliderBusiness()
         {
             Context = new pgcEntities();
         }

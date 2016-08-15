@@ -17,7 +17,7 @@ using System.Net.Security;
 
 namespace pgc.Business.Payment.OnlinePay
 {
-    public class MellatOnlinePaymentBusiness : OnlinePaymentBusiness
+    public class MellatOnlinePaymentBusiness : PaymentBusiness
     {
 
 

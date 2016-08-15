@@ -54,10 +54,7 @@ namespace pgc.Business
                     if (e.Related_Doer != null)
                         occured.Actor = e.Related_Doer.Email;
                     else
-                        if (e.Related_Branch != null)
-                            occured.Actor = e.Related_Branch.Title;
-                        else
-                            occured.Actor = "-";
+                        occured.Actor = "-";
 
                 OperationResult dbRES = OccuredBusiness.Insert(occured);
 
@@ -416,16 +413,16 @@ namespace pgc.Business
 
 
                     //Related Branch Email
-                    if ((SystemEvent.Support_Related_Branch_Email) &&
-                        (SystemEvent.SystemEventAction != null) &&
-                        (SystemEvent.SystemEventAction.Related_Branch_Email) &&
-                        (e.Related_Branch != null && e.Related_Branch.ID > 0))
-                    {
-                        UserList = new BranchBusiness().Retrieve(e.Related_Branch.ID).Users.ToList();
-                        foreach (User item in UserList)
-                            if (!string.IsNullOrEmpty(item.Email))
-                                result.Add(item.Email);
-                    }
+                    //if ((SystemEvent.Support_Related_Branch_Email) &&
+                    //    (SystemEvent.SystemEventAction != null) &&
+                    //    (SystemEvent.SystemEventAction.Related_Branch_Email) &&
+                    //    (e.Related_Branch != null && e.Related_Branch.ID > 0))
+                    //{
+                    //    UserList = new BranchBusiness().Retrieve(e.Related_Branch.ID).Users.ToList();
+                    //    foreach (User item in UserList)
+                    //        if (!string.IsNullOrEmpty(item.Email))
+                    //            result.Add(item.Email);
+                    //}
                     #endregion
                 }
                 else
@@ -505,16 +502,16 @@ namespace pgc.Business
 
 
                     //Related Branch SMS
-                    if ((SystemEvent.Support_Related_Branch_SMS) &&
-                        (SystemEvent.SystemEventAction != null) &&
-                        (SystemEvent.SystemEventAction.Related_Branch_SMS) &&
-                        (e.Related_Branch != null && e.Related_Branch.ID > 0))
-                    {
-                        UserList = new BranchBusiness().Retrieve(e.Related_Branch.ID).Users.ToList();
-                        foreach (User item in UserList)
-                            if (!string.IsNullOrEmpty(item.Mobile))
-                                result.Add(item.Mobile);
-                    }
+                    //if ((SystemEvent.Support_Related_Branch_SMS) &&
+                    //    (SystemEvent.SystemEventAction != null) &&
+                    //    (SystemEvent.SystemEventAction.Related_Branch_SMS) &&
+                    //    (e.Related_Branch != null && e.Related_Branch.ID > 0))
+                    //{
+                    //    UserList = new BranchBusiness().Retrieve(e.Related_Branch.ID).Users.ToList();
+                    //    foreach (User item in UserList)
+                    //        if (!string.IsNullOrEmpty(item.Mobile))
+                    //            result.Add(item.Mobile);
+                    //}
                     #endregion
                 }
             }

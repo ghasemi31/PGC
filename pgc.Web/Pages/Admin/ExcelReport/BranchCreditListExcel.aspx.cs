@@ -19,45 +19,45 @@ public partial class Pages_Admin_ExcelReport_BranchCreditListExcel : System.Web.
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchCreditPattern pattern = (BranchCreditPattern)Session["BranchCreditPrintPattern"];
-            BranchCreditBusiness business = new BranchCreditBusiness();
-            IQueryable<BranchCredit> CreditsList = business.Search_SelectPrint(pattern);
+            //BranchCreditPattern pattern = (BranchCreditPattern)Session["BranchCreditPrintPattern"];
+            //BranchCreditBusiness business = new BranchCreditBusiness();
+            //IQueryable<BranchCredit> CreditsList = business.Search_SelectPrint(pattern);
 
 
-            DataTable table = new DataTable("Orders");
+            //DataTable table = new DataTable("Orders");
 
-            table.Columns.Add("ردیف");
-            table.Columns.Add("نام شعبه");
-            table.Columns.Add("بدهکار");
-            table.Columns.Add("بستانکار");
-            table.Columns.Add("سقف حداقل اعتبار");
-            table.Columns.Add("وضعیت");
+            //table.Columns.Add("ردیف");
+            //table.Columns.Add("نام شعبه");
+            //table.Columns.Add("بدهکار");
+            //table.Columns.Add("بستانکار");
+            //table.Columns.Add("سقف حداقل اعتبار");
+            //table.Columns.Add("وضعیت");
 
-            int i=0;
-            foreach (var order in CreditsList)
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    order.Title,                    
-                    order.CurrentDebt,
-                    order.CurrentDebt,
-                    UIUtil.GetCommaSeparatedOf(order.MinimumCredit) + " ریال",
-                    EnumUtil.GetEnumElementPersianTitle((BranchCreditStatus)order.Status)
-                    );
-            }
+            //int i=0;
+            //foreach (var order in CreditsList)
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        order.Title,                    
+            //        order.CurrentDebt,
+            //        order.CurrentDebt,
+            //        UIUtil.GetCommaSeparatedOf(order.MinimumCredit) + " ریال",
+            //        EnumUtil.GetEnumElementPersianTitle((BranchCreditStatus)order.Status)
+            //        );
+            //}
            
            
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();            
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();            
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);            
+            //ExportUtil.Export(filePath, gv, true);            
         }
         catch (Exception ex)
         {

@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Admin_RandomImage_Detail : BaseDetailControl<MainSlider>
 {
-    private RandomImageBusiness business = new RandomImageBusiness();
+   // private RandomImageBusiness business = new RandomImageBusiness();
     public override MainSlider GetEntity(MainSlider Data, ManagementPageMode Mode)
     {
         if (Data == null)

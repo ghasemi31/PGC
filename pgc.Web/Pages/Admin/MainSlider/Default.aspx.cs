@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Admin_RandomImage_Default : BaseManagementPage<RandomImageBusiness, MainSlider, RandomImagePattern, pgcEntities>
+public partial class Pages_Admin_RandomImage_Default : BaseManagementPage<MainSliderBusiness, MainSlider, RandomImagePattern, pgcEntities>
 {
     protected override void OnInit(EventArgs e)
     {
@@ -19,6 +19,6 @@ public partial class Pages_Admin_RandomImage_Default : BaseManagementPage<Random
         base.ListControl = pnlList;
         base.SearchControl = pnlSearch;
 
-        base.Business = new RandomImageBusiness();
+        base.Business = new MainSliderBusiness();
     }
 }

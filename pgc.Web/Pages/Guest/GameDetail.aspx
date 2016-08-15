@@ -111,7 +111,7 @@
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">نوع بازی:</span>
-                                <span class="game-detail-info"><%=(game.GamerCount>1)?"بازی انفرادی":"بازی تیمی" %></span>
+                                <span class="game-detail-info"><%=(game.GamerCount>1)?"بازی تیمی":"بازی انفرادی" %></span>
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">پلتفرم بازی:</span>

@@ -19,55 +19,55 @@ public partial class Pages_Admin_ExcelReport_BranchOrderNoMoneyListExcel : Syste
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchOrderPattern pattern = (BranchOrderPattern)Session["BranchOrderPrintPattern"];
-            BranchOrderBusiness business = new BranchOrderBusiness();
-            IQueryable<BranchOrder> OrdersList = business.Search_SelectPrint(pattern);
-
-
-            DataTable table = new DataTable("Orders");
-
-            table.Columns.Add("ردیف");
-            table.Columns.Add("نام شعبه");
-            table.Columns.Add("کد درخواست");
-            table.Columns.Add("تاریخ تحویل");
-            table.Columns.Add("تاریخ ثبت");
-            table.Columns.Add("وضعیت");
-            table.Columns.Add("وضعیت ارسالی");
-            //table.Columns.Add("مبلغ");
-            table.Columns.Add("توضیحات مدیر");
-            table.Columns.Add("توضیحات شعبه");
-            table.Columns.Add("   "); 
-
-            int i=0;
-            foreach (var order in OrdersList.OrderByDescending(f=>f.ID))
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    order.Branch.Title,
-                    order.ID,
-                    order.OrderedPersianDate,
-                    Util.GetPersianDateWithTime(order.RegDate),
-                    EnumUtil.GetEnumElementPersianTitle((BranchOrderStatus)order.Status),
-                    (order.ShipmentStatus_ID.HasValue) ? order.BranchOrderShipmentState.Title : "----",
-                    //UIUtil.GetCommaSeparatedOf(order.TotalPrice) + " ریال",
-                    order.AdminDescription,
-                    order.BranchDescription,                    
-                    (order.BranchLackOrders.Where(f => f.Status == (int)BranchLackOrderStatus.Confirmed).Count() > 0) ? "کسری دارد" : "کسری ندارد"
-                    );
-            }
+            //BranchOrderPattern pattern = (BranchOrderPattern)Session["BranchOrderPrintPattern"];
+            //BranchOrderBusiness business = new BranchOrderBusiness();
+            //IQueryable<BranchOrder> OrdersList = business.Search_SelectPrint(pattern);
 
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //DataTable table = new DataTable("Orders");
+
+            //table.Columns.Add("ردیف");
+            //table.Columns.Add("نام شعبه");
+            //table.Columns.Add("کد درخواست");
+            //table.Columns.Add("تاریخ تحویل");
+            //table.Columns.Add("تاریخ ثبت");
+            //table.Columns.Add("وضعیت");
+            //table.Columns.Add("وضعیت ارسالی");
+            ////table.Columns.Add("مبلغ");
+            //table.Columns.Add("توضیحات مدیر");
+            //table.Columns.Add("توضیحات شعبه");
+            //table.Columns.Add("   "); 
+
+            //int i=0;
+            //foreach (var order in OrdersList.OrderByDescending(f=>f.ID))
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        order.Branch.Title,
+            //        order.ID,
+            //        order.OrderedPersianDate,
+            //        Util.GetPersianDateWithTime(order.RegDate),
+            //        EnumUtil.GetEnumElementPersianTitle((BranchOrderStatus)order.Status),
+            //        (order.ShipmentStatus_ID.HasValue) ? order.BranchOrderShipmentState.Title : "----",
+            //        //UIUtil.GetCommaSeparatedOf(order.TotalPrice) + " ریال",
+            //        order.AdminDescription,
+            //        order.BranchDescription,                    
+            //        (order.BranchLackOrders.Where(f => f.Status == (int)BranchLackOrderStatus.Confirmed).Count() > 0) ? "کسری دارد" : "کسری ندارد"
+            //        );
+            //}
+
+
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {

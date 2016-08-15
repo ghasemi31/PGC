@@ -19,40 +19,40 @@ public partial class Pages_Admin_ExcelReport_BranchOrderedTitleNoMoneyListExcel 
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchOrderedTitlePattern pattern = (BranchOrderedTitlePattern)Session["BranchOrderedTitlePrintPattern"];
-            BranchOrderedTitleBusiness business = new BranchOrderedTitleBusiness();
-            IQueryable<BranchOrderedTitle> OrderedsList = business.Search_SelectPrint(pattern);
+            //BranchOrderedTitlePattern pattern = (BranchOrderedTitlePattern)Session["BranchOrderedTitlePrintPattern"];
+            //BranchOrderedTitleBusiness business = new BranchOrderedTitleBusiness();
+            //IQueryable<BranchOrderedTitle> OrderedsList = business.Search_SelectPrint(pattern);
 
-            DataTable table = new DataTable("Ordereds");
+            //DataTable table = new DataTable("Ordereds");
 
-            table.Columns.Add("ردیف");
-            table.Columns.Add("عنوان");
-            table.Columns.Add("نام گروه");
-            table.Columns.Add("تعداد");
+            //table.Columns.Add("ردیف");
+            //table.Columns.Add("عنوان");
+            //table.Columns.Add("نام گروه");
+            //table.Columns.Add("تعداد");
 
-            int i=0;
-            foreach (var order in OrderedsList)
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    order.Title,
-                    order.GroupTitle,
-                    UIUtil.GetCommaSeparatedOf(order.Quantity) + " عدد"
-                    );
-            }
+            //int i=0;
+            //foreach (var order in OrderedsList)
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        order.Title,
+            //        order.GroupTitle,
+            //        UIUtil.GetCommaSeparatedOf(order.Quantity) + " عدد"
+            //        );
+            //}
 
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {

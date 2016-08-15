@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_User_GameList : BasePage
 {
-    private OrderBusiness business = new OrderBusiness();
+   // private OrderBusiness business = new OrderBusiness();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!UserSession.IsUserLogined)

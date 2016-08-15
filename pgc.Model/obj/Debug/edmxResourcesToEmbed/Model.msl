@@ -103,18 +103,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Samples">
-      <EntityTypeMapping TypeName="pgcModel.Sample">
-        <MappingFragment StoreEntitySet="Sample">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="StartPersianDate" ColumnName="StartPersianDate" />
-          <ScalarProperty Name="EndPersianDate" ColumnName="EndPersianDate" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="IsDone" ColumnName="IsDone" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserMessages">
       <EntityTypeMapping TypeName="pgcModel.UserMessage">
         <MappingFragment StoreEntitySet="UserMessage">
@@ -124,38 +112,6 @@
           <ScalarProperty Name="Direction" ColumnName="Direction" />
           <ScalarProperty Name="Behaviour" ColumnName="Behaviour" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Faqs">
-      <EntityTypeMapping TypeName="pgcModel.Faq">
-        <MappingFragment StoreEntitySet="Faq">
-          <ScalarProperty Name="Summery" ColumnName="Summery" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Helps">
-      <EntityTypeMapping TypeName="pgcModel.Help">
-        <MappingFragment StoreEntitySet="Help">
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Articles">
-      <EntityTypeMapping TypeName="pgcModel.Article">
-        <MappingFragment StoreEntitySet="Article">
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="Summary" ColumnName="Summary" />
-          <ScalarProperty Name="MetaKeyWords" ColumnName="MetaKeyWords" />
-          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -173,158 +129,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Headings">
-      <EntityTypeMapping TypeName="pgcModel.Heading">
-        <MappingFragment StoreEntitySet="Heading">
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="IndexSlides">
-      <EntityTypeMapping TypeName="pgcModel.IndexSlide">
-        <MappingFragment StoreEntitySet="IndexSlide">
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Galleries">
-      <EntityTypeMapping TypeName="pgcModel.Gallery">
-        <MappingFragment StoreEntitySet="Gallery">
-          <ScalarProperty Name="GalleryThumbImagePath" ColumnName="GalleryThumbImagePath" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GalleryPics">
-      <EntityTypeMapping TypeName="pgcModel.GalleryPic">
-        <MappingFragment StoreEntitySet="GalleryPic">
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Gallery_ID" ColumnName="Gallery_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchPics">
-      <EntityTypeMapping TypeName="pgcModel.BranchPic">
-        <MappingFragment StoreEntitySet="BranchPic">
-          <ScalarProperty Name="ThumbPath" ColumnName="ThumbPath" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Polls">
-      <EntityTypeMapping TypeName="pgcModel.Poll">
-        <MappingFragment StoreEntitySet="Poll">
-          <ScalarProperty Name="PollPersianDate" ColumnName="PollPersianDate" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PollChoises">
-      <EntityTypeMapping TypeName="pgcModel.PollChoise">
-        <MappingFragment StoreEntitySet="PollChoise">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Poll_ID" ColumnName="Poll_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PollResults">
-      <EntityTypeMapping TypeName="pgcModel.PollResult">
-        <MappingFragment StoreEntitySet="PollResult">
-          <ScalarProperty Name="ResultDateTime" ColumnName="ResultDateTime" />
-          <ScalarProperty Name="ResultPersianDate" ColumnName="ResultPersianDate" />
-          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
-          <ScalarProperty Name="Poll_ID" ColumnName="Poll_ID" />
-          <ScalarProperty Name="PollChoise_ID" ColumnName="PollChoise_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LotteryDetails">
-      <EntityTypeMapping TypeName="pgcModel.LotteryDetail">
-        <MappingFragment StoreEntitySet="LotteryDetail">
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="LName" ColumnName="LName" />
-          <ScalarProperty Name="FName" ColumnName="FName" />
-          <ScalarProperty Name="LotteryID" ColumnName="LotteryID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Lotteries">
-      <EntityTypeMapping TypeName="pgcModel.Lottery">
-        <MappingFragment StoreEntitySet="Lottery">
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LotteryWiners">
-      <EntityTypeMapping TypeName="pgcModel.LotteryWiner">
-        <MappingFragment StoreEntitySet="LotteryWiner">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Rank" ColumnName="Rank" />
-          <ScalarProperty Name="LName" ColumnName="LName" />
-          <ScalarProperty Name="FName" ColumnName="FName" />
-          <ScalarProperty Name="LotteryID" ColumnName="LotteryID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Advertisements">
-      <EntityTypeMapping TypeName="pgcModel.Advertisement">
-        <MappingFragment StoreEntitySet="Advertisement">
-          <ScalarProperty Name="MarginLeft" ColumnName="MarginLeft" />
-          <ScalarProperty Name="MarginBottom" ColumnName="MarginBottom" />
-          <ScalarProperty Name="MarginRight" ColumnName="MarginRight" />
-          <ScalarProperty Name="MarginTop" ColumnName="MarginTop" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="ExpirePersianDate" ColumnName="ExpirePersianDate" />
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="Html" ColumnName="Html" />
-          <ScalarProperty Name="AltText" ColumnName="AltText" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="Height" ColumnName="Height" />
-          <ScalarProperty Name="Width" ColumnName="Width" />
-          <ScalarProperty Name="FileAddress" ColumnName="FileAddress" />
-          <ScalarProperty Name="AdvType" ColumnName="AdvType" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="AdvPage" TypeName="pgcModel.AdvPage" StoreEntitySet="AdvPage">
-      <EndProperty Name="PanelPage">
-        <ScalarProperty Name="ID" ColumnName="PageID" />
-      </EndProperty>
-      <EndProperty Name="Advertisement">
-        <ScalarProperty Name="ID" ColumnName="AdvID" />
-      </EndProperty>
-    </AssociationSetMapping>
     <EntitySetMapping Name="SystemEventVariables">
       <EntityTypeMapping TypeName="pgcModel.SystemEventVariable">
         <MappingFragment StoreEntitySet="SystemEventVariable">
@@ -511,318 +315,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserComments">
-      <EntityTypeMapping TypeName="pgcModel.UserComment">
-        <MappingFragment StoreEntitySet="UserComment">
-          <ScalarProperty Name="BranchTitle" ColumnName="BranchTitle" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="UCDate" ColumnName="UCDate" />
-          <ScalarProperty Name="UCPersianDate" ColumnName="UCPersianDate" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Topic" ColumnName="Topic" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PrivateNoes">
       <EntityTypeMapping TypeName="pgcModel.PrivateNo">
         <MappingFragment StoreEntitySet="PrivateNo">
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Number" ColumnName="Number" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BankAccounts">
-      <EntityTypeMapping TypeName="pgcModel.BankAccount">
-        <MappingFragment StoreEntitySet="BankAccount">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="OnlinePayments">
-      <EntityTypeMapping TypeName="pgcModel.OnlinePayment">
-        <MappingFragment StoreEntitySet="OnlinePayment">
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="ResultTransaction" ColumnName="ResultTransaction" />
-          <ScalarProperty Name="RefNum" ColumnName="RefNum" />
-          <ScalarProperty Name="TransactionState" ColumnName="TransactionState" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="ResNum" ColumnName="ResNum" />
-          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BuyBaskets">
-      <EntityTypeMapping TypeName="pgcModel.BuyBasket">
-        <MappingFragment StoreEntitySet="BuyBasket">
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetails">
-      <EntityTypeMapping TypeName="pgcModel.OrderDetail">
-        <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
-          <ScalarProperty Name="SumPrice" ColumnName="SumPrice" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchPayments">
-      <EntityTypeMapping TypeName="pgcModel.BranchPayment">
-        <MappingFragment StoreEntitySet="BranchPayment">
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="OfflineBankAccountDescription" ColumnName="OfflineBankAccountDescription" />
-          <ScalarProperty Name="OfflineBankAccountTitle" ColumnName="OfflineBankAccountTitle" />
-          <ScalarProperty Name="OfflineDescription" ColumnName="OfflineDescription" />
-          <ScalarProperty Name="OfflinePaymentStatus" ColumnName="OfflinePaymentStatus" />
-          <ScalarProperty Name="OfflineReceiptType" ColumnName="OfflineReceiptType" />
-          <ScalarProperty Name="OfflineReceiptPersianDate" ColumnName="OfflineReceiptPersianDate" />
-          <ScalarProperty Name="OfflineReceiptNumber" ColumnName="OfflineReceiptNumber" />
-          <ScalarProperty Name="OfflineReceiptLiquidator" ColumnName="OfflineReceiptLiquidator" />
-          <ScalarProperty Name="OfflineBankAccount_ID" ColumnName="OfflineBankAccount_ID" />
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="OnlineResultTransaction" ColumnName="OnlineResultTransaction" />
-          <ScalarProperty Name="OnlineRefNum" ColumnName="OnlineRefNum" />
-          <ScalarProperty Name="OnlineTransactionState" ColumnName="OnlineTransactionState" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="OnlineResNum" ColumnName="OnlineResNum" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchTransactions">
-      <EntityTypeMapping TypeName="pgcModel.BranchTransaction">
-        <MappingFragment StoreEntitySet="BranchTransaction">
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="TransactionType_ID" ColumnName="TransactionType_ID" />
-          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
-          <ScalarProperty Name="BranchDebt" ColumnName="BranchDebt" />
-          <ScalarProperty Name="BranchCredit" ColumnName="BranchCredit" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchOrderTitles">
-      <EntityTypeMapping TypeName="pgcModel.BranchOrderTitle">
-        <MappingFragment StoreEntitySet="BranchOrderTitle">
-          <ScalarProperty Name="IsOrderForAllBranch" ColumnName="IsOrderForAllBranch" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="BranchOrderTitleGroup_ID" ColumnName="BranchOrderTitleGroup_ID" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchOrderTitleGroups">
-      <EntityTypeMapping TypeName="pgcModel.BranchOrderTitleGroup">
-        <MappingFragment StoreEntitySet="BranchOrderTitleGroup">
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Branch_BranchOrderTitle">
-      <EntityTypeMapping TypeName="pgcModel.Branch_BranchOrderTitle">
-        <MappingFragment StoreEntitySet="Branch_BranchOrderTitle">
-          <ScalarProperty Name="MinimumQuantity" ColumnName="MinimumQuantity" />
-          <ScalarProperty Name="BranchOrderTitle_ID" ColumnName="BranchOrderTitle_ID" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchLackOrders">
-      <EntityTypeMapping TypeName="pgcModel.BranchLackOrder">
-        <MappingFragment StoreEntitySet="BranchLackOrder">
-          <ScalarProperty Name="OrderedPersianDate" ColumnName="OrderedPersianDate" />
-          <ScalarProperty Name="BranchOrder_ID" ColumnName="BranchOrder_ID" />
-          <ScalarProperty Name="AdminDescription" ColumnName="AdminDescription" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchLackOrderDetails">
-      <EntityTypeMapping TypeName="pgcModel.BranchLackOrderDetail">
-        <MappingFragment StoreEntitySet="BranchLackOrderDetail">
-          <ScalarProperty Name="BranchLackOrder_ID" ColumnName="BranchLackOrder_ID" />
-          <ScalarProperty Name="BranchOrderTitle_ID" ColumnName="BranchOrderTitle_ID" />
-          <ScalarProperty Name="BranchOrderTitle_Title" ColumnName="BranchOrderTitle_Title" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="SinglePrice" ColumnName="SinglePrice" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchOrderDetails">
-      <EntityTypeMapping TypeName="pgcModel.BranchOrderDetail">
-        <MappingFragment StoreEntitySet="BranchOrderDetail">
-          <ScalarProperty Name="BranchOrder_ID" ColumnName="BranchOrder_ID" />
-          <ScalarProperty Name="BranchOrderTitle_ID" ColumnName="BranchOrderTitle_ID" />
-          <ScalarProperty Name="BranchOrderTitle_Title" ColumnName="BranchOrderTitle_Title" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="SinglePrice" ColumnName="SinglePrice" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchOrderShipmentStates">
-      <EntityTypeMapping TypeName="pgcModel.BranchOrderShipmentState">
-        <MappingFragment StoreEntitySet="BranchOrderShipmentState">
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchReturnOrders">
-      <EntityTypeMapping TypeName="pgcModel.BranchReturnOrder">
-        <MappingFragment StoreEntitySet="BranchReturnOrder">
-          <ScalarProperty Name="OrderedPersianDate" ColumnName="OrderedPersianDate" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="AdminDescription" ColumnName="AdminDescription" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchReturnOrderDetails">
-      <EntityTypeMapping TypeName="pgcModel.BranchReturnOrderDetail">
-        <MappingFragment StoreEntitySet="BranchReturnOrderDetail">
-          <ScalarProperty Name="BranchReturnOrder_ID" ColumnName="BranchReturnOrder_ID" />
-          <ScalarProperty Name="BranchOrderTitle_ID" ColumnName="BranchOrderTitle_ID" />
-          <ScalarProperty Name="BranchOrderTitle_Title" ColumnName="BranchOrderTitle_Title" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="SinglePrice" ColumnName="SinglePrice" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchOrders">
-      <EntityTypeMapping TypeName="pgcModel.BranchOrder">
-        <MappingFragment StoreEntitySet="BranchOrder">
-          <ScalarProperty Name="ShipmentStatus_ID" ColumnName="ShipmentStatus_ID" />
-          <ScalarProperty Name="AdminDescription" ColumnName="AdminDescription" />
-          <ScalarProperty Name="OrderedPersianDate" ColumnName="OrderedPersianDate" />
-          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="RegPersianDate" ColumnName="RegPersianDate" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchFinanceLogs">
-      <EntityTypeMapping TypeName="pgcModel.BranchFinanceLog">
-        <MappingFragment StoreEntitySet="BranchFinanceLog">
-          <ScalarProperty Name="LogType_ID" ColumnName="LogType_ID" />
-          <ScalarProperty Name="LogType" ColumnName="LogType" />
-          <ScalarProperty Name="BranchTitle" ColumnName="BranchTitle" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SiteMapCats">
-      <EntityTypeMapping TypeName="pgcModel.SiteMapCat">
-        <MappingFragment StoreEntitySet="SiteMapCat">
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
-          <ScalarProperty Name="IsBlank" ColumnName="IsBlank" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SiteMapItems">
-      <EntityTypeMapping TypeName="pgcModel.SiteMapItem">
-        <MappingFragment StoreEntitySet="SiteMapItem">
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
-          <ScalarProperty Name="IsBlank" ColumnName="IsBlank" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="SiteMapCat_ID" ColumnName="SiteMapCat_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SideMenuCats">
-      <EntityTypeMapping TypeName="pgcModel.SideMenuCat">
-        <MappingFragment StoreEntitySet="SideMenuCat">
-          <ScalarProperty Name="IsBlank" ColumnName="IsBlank" />
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
-          <ScalarProperty Name="NavigationUrl" ColumnName="NavigationUrl" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SideMenuItems">
-      <EntityTypeMapping TypeName="pgcModel.SideMenuItem">
-        <MappingFragment StoreEntitySet="SideMenuItem">
-          <ScalarProperty Name="SideMenuCat_ID" ColumnName="SideMenuCat_ID" />
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
-          <ScalarProperty Name="IsBlank" ColumnName="IsBlank" />
-          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Materials">
-      <EntityTypeMapping TypeName="pgcModel.Material">
-        <MappingFragment StoreEntitySet="Material">
-          <ScalarProperty Name="MaterialPicPath" ColumnName="MaterialPicPath" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -835,7 +332,6 @@
           <ScalarProperty Name="IsGameManager" ColumnName="IsGameManager" />
           <ScalarProperty Name="FatherName" ColumnName="FatherName" />
           <ScalarProperty Name="DisableUserName" ColumnName="DisableUserName" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="SignUpPersianDate" ColumnName="SignUpPersianDate" />
           <ScalarProperty Name="Lname" ColumnName="Lname" />
@@ -857,28 +353,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BranchRequests">
-      <EntityTypeMapping TypeName="pgcModel.BranchRequest">
-        <MappingFragment StoreEntitySet="BranchRequest">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="BRPersianDate" ColumnName="BRPersianDate" />
-          <ScalarProperty Name="BRDate" ColumnName="BRDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="HaveBackgroung" ColumnName="HaveBackgroung" />
-          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
-          <ScalarProperty Name="BranchLocation" ColumnName="BranchLocation" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="ApplicatorName" ColumnName="ApplicatorName" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Lname" ColumnName="Lname" />
-          <ScalarProperty Name="Fname" ColumnName="Fname" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SocialIcons">
       <EntityTypeMapping TypeName="pgcModel.SocialIcon">
         <MappingFragment StoreEntitySet="SocialIcon">
@@ -886,101 +360,6 @@
           <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
           <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="Icon" ColumnName="Icon" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Comments">
-      <EntityTypeMapping TypeName="pgcModel.Comment">
-        <MappingFragment StoreEntitySet="Comment">
-          <ScalarProperty Name="Like" ColumnName="Like" />
-          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="SenderEmail" ColumnName="SenderEmail" />
-          <ScalarProperty Name="SenderName" ColumnName="SenderName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BranchContacts">
-      <EntityTypeMapping TypeName="pgcModel.BranchContact">
-        <MappingFragment StoreEntitySet="BranchContact">
-          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-          <ScalarProperty Name="BranchTitle" ColumnName="BranchTitle" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="pgcModel.Product">
-        <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="PageKeywords" ColumnName="PageKeywords" />
-          <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
-          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="DisplayInSlider" ColumnName="DisplayInSlider" />
-          <ScalarProperty Name="SliderHoverProductPicPath" ColumnName="SliderHoverProductPicPath" />
-          <ScalarProperty Name="SliderProductPicPath" ColumnName="SliderProductPicPath" />
-          <ScalarProperty Name="AllowOnlineOrder" ColumnName="AllowOnlineOrder" />
-          <ScalarProperty Name="Accessories" ColumnName="Accessories" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="ProductPicPath" ColumnName="ProductPicPath" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="Product_Material" TypeName="pgcModel.Product_Material" StoreEntitySet="Product_Material">
-      <EndProperty Name="Product">
-        <ScalarProperty Name="ID" ColumnName="Product_ID" />
-      </EndProperty>
-      <EndProperty Name="Material">
-        <ScalarProperty Name="ID" ColumnName="Material_ID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="Branches">
-      <EntityTypeMapping TypeName="pgcModel.Branch">
-        <MappingFragment StoreEntitySet="Branch">
-          <ScalarProperty Name="PageKeywords" ColumnName="PageKeywords" />
-          <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
-          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
-          <ScalarProperty Name="PhoneNumbers" ColumnName="PhoneNumbers" />
-          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
-          <ScalarProperty Name="latitude" ColumnName="latitude" />
-          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-          <ScalarProperty Name="BranchType" ColumnName="BranchType" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="MinimumCredit" ColumnName="MinimumCredit" />
-          <ScalarProperty Name="AllowOnlineOrderTimeTo" ColumnName="AllowOnlineOrderTimeTo" />
-          <ScalarProperty Name="AllowOnlineOrderTimeFrom" ColumnName="AllowOnlineOrderTimeFrom" />
-          <ScalarProperty Name="AllowOnlineOrder" ColumnName="AllowOnlineOrder" />
-          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="ThumbListPath" ColumnName="ThumbListPath" />
-          <ScalarProperty Name="LargeImagePath" ColumnName="LargeImagePath" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
-          <ScalarProperty Name="LargeThumbImagePath" ColumnName="LargeThumbImagePath" />
-          <ScalarProperty Name="TransportCost" ColumnName="TransportCost" />
-          <ScalarProperty Name="NumberOfChair" ColumnName="NumberOfChair" />
-          <ScalarProperty Name="HoursOrdering" ColumnName="HoursOrdering" />
-          <ScalarProperty Name="HoursServingFood" ColumnName="HoursServingFood" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="BranchInfo" ColumnName="BranchInfo" />
-          <ScalarProperty Name="Summary" ColumnName="Summary" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -1005,63 +384,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="pgcModel.Order">
-        <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="DeviceType_Enum" ColumnName="DeviceType_Enum" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="BranchTitle" ColumnName="BranchTitle" />
-          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
-          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
-          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="OrderPersianDate" ColumnName="OrderPersianDate" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Circulars">
-      <EntityTypeMapping TypeName="pgcModel.Circular">
-        <MappingFragment StoreEntitySet="Circular">
-          <ScalarProperty Name="IsActiveForUser" ColumnName="IsActiveForUser" />
-          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
-          <ScalarProperty Name="PersiabDate" ColumnName="PersiabDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="Circular_Branch" TypeName="pgcModel.Circular_Branch" StoreEntitySet="Circular_Branch">
-      <EndProperty Name="Circular">
-        <ScalarProperty Name="ID" ColumnName="Circular_ID" />
-      </EndProperty>
-      <EndProperty Name="Branch">
-        <ScalarProperty Name="ID" ColumnName="Branch_ID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="OccuredSystemEvents">
-      <EntityTypeMapping TypeName="pgcModel.OccuredSystemEvent">
-        <MappingFragment StoreEntitySet="OccuredSystemEvent">
-          <ScalarProperty Name="Actor" ColumnName="Actor" />
-          <ScalarProperty Name="DeviceType_Enum" ColumnName="DeviceType_Enum" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="SystemEvent_ID" ColumnName="SystemEvent_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="OnlinePaymentLists">
       <EntityTypeMapping TypeName="pgcModel.OnlinePaymentList">
         <MappingFragment StoreEntitySet="OnlinePaymentList">
@@ -1077,23 +399,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MainMenus">
-      <EntityTypeMapping TypeName="pgcModel.MainMenu">
-        <MappingFragment StoreEntitySet="MainMenu">
-          <ScalarProperty Name="IsBlank" ColumnName="IsBlank" />
-          <ScalarProperty Name="DispInOtherPage" ColumnName="DispInOtherPage" />
-          <ScalarProperty Name="DispInHome" ColumnName="DispInHome" />
-          <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
-          <ScalarProperty Name="NavigationUrl" ColumnName="NavigationUrl" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Features">
       <EntityTypeMapping TypeName="pgcModel.Feature">
         <MappingFragment StoreEntitySet="Feature">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="IsNew" ColumnName="IsNew" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
           <ScalarProperty Name="CanGrantToAgent" ColumnName="CanGrantToAgent" />
@@ -1125,19 +434,6 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Feature_ID" ColumnName="Feature_ID" />
           <ScalarProperty Name="MenuCategory_ID" ColumnName="MenuCategory_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DynPages">
-      <EntityTypeMapping TypeName="pgcModel.DynPage">
-        <MappingFragment StoreEntitySet="DynPage">
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="Heading" ColumnName="Heading" />
-          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
-          <ScalarProperty Name="MetaKeyWords" ColumnName="MetaKeyWords" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -1268,25 +564,25 @@
         <ScalarProperty Name="ID" ColumnName="Group_ID" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="AppSettings">
-      <EntityTypeMapping TypeName="pgcModel.AppSetting">
-        <MappingFragment StoreEntitySet="AppSetting">
-          <ScalarProperty Name="MrDizi_LatLng" ColumnName="MrDizi_LatLng" />
-          <ScalarProperty Name="BranchAgreement_Content" ColumnName="BranchAgreement_Content" />
-          <ScalarProperty Name="BranchAgreement_Image" ColumnName="BranchAgreement_Image" />
-          <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
-          <ScalarProperty Name="NewsCount" ColumnName="NewsCount" />
-          <ScalarProperty Name="NavHeaderImage" ColumnName="NavHeaderImage" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GameCenters">
       <EntityTypeMapping TypeName="pgcModel.GameCenter">
         <MappingFragment StoreEntitySet="GameCenter">
           <ScalarProperty Name="City_ID" ColumnName="City_ID" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="TItle" ColumnName="TItle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OccuredSystemEvents">
+      <EntityTypeMapping TypeName="pgcModel.OccuredSystemEvent">
+        <MappingFragment StoreEntitySet="OccuredSystemEvent">
+          <ScalarProperty Name="Actor" ColumnName="Actor" />
+          <ScalarProperty Name="DeviceType_Enum" ColumnName="DeviceType_Enum" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SystemEvent_ID" ColumnName="SystemEvent_ID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -19,44 +19,44 @@ public partial class Pages_Admin_ExcelReport_BranchReturnOrderNoMoneyListExcel :
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchReturnOrderPattern pattern = (BranchReturnOrderPattern)Session["BranchReturnPrintPattern"];
-            BranchReturnOrderBusiness business = new BranchReturnOrderBusiness();
-            IQueryable<BranchReturnOrder> OrdersList = business.Search_SelectPrint(pattern);
+            //BranchReturnOrderPattern pattern = (BranchReturnOrderPattern)Session["BranchReturnPrintPattern"];
+            //BranchReturnOrderBusiness business = new BranchReturnOrderBusiness();
+            //IQueryable<BranchReturnOrder> OrdersList = business.Search_SelectPrint(pattern);
                     
             
-            DataTable table = new DataTable("Orders");
+            //DataTable table = new DataTable("Orders");
 
-            table.Columns.Add("ردیف");
-            table.Columns.Add("نام شعبه");
-            table.Columns.Add("کد مرجوعی");
-            table.Columns.Add("تاریخ مرجوعی");
-            table.Columns.Add("وضعیت");
-            table.Columns.Add("توضیحات مدیر");
-            table.Columns.Add("توضیحات شعبه");
+            //table.Columns.Add("ردیف");
+            //table.Columns.Add("نام شعبه");
+            //table.Columns.Add("کد مرجوعی");
+            //table.Columns.Add("تاریخ مرجوعی");
+            //table.Columns.Add("وضعیت");
+            //table.Columns.Add("توضیحات مدیر");
+            //table.Columns.Add("توضیحات شعبه");
 
-            int i=0;
-            foreach (var order in OrdersList.OrderByDescending(f=>f.ID))
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    order.Branch.Title,
-                    order.ID,
-                    Util.GetPersianDateWithTime(order.RegDate),
-                    EnumUtil.GetEnumElementPersianTitle((BranchReturnOrderStatus)order.Status),
-                    order.AdminDescription,
-                    order.BranchDescription
-                    );
-            }
+            //int i=0;
+            //foreach (var order in OrdersList.OrderByDescending(f=>f.ID))
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        order.Branch.Title,
+            //        order.ID,
+            //        Util.GetPersianDateWithTime(order.RegDate),
+            //        EnumUtil.GetEnumElementPersianTitle((BranchReturnOrderStatus)order.Status),
+            //        order.AdminDescription,
+            //        order.BranchDescription
+            //        );
+            //}
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
-            ExportUtil.Export(filePath, gv, true);
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {
