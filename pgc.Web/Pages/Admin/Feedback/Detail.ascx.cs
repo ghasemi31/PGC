@@ -24,7 +24,7 @@ public partial class Pages_Admin_Feedback_Detail : BaseDetailControl<Feedback>
         //chkIsDisplay.Checked = Data.IsDisplay;
         txtName.Text = Data.FullName;
         txtEmail.Text = Data.Email;
-        lblGameManager.Text = Data.GameManager.ToString();
+        //lblGameManager.Text = Data.GameManager.ToString();
         txtDate.Text = DateUtil.GetPersianDateWithTime(Data.Date);
         txtBody.Text = Data.Body;
     }

@@ -19,9 +19,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     <ProjectGuid>{869b3c53-0be3-42a9-b68b-de6f55289154}</ProjectGuid>
     <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
     <SourceWebVirtualPath>/pgc.Web</SourceWebVirtualPath>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <SourceWebProject>http://localhost:8030</SourceWebProject>
-    <SourceWebMetabasePath>/LM/W3SVC/4/ROOT</SourceWebMetabasePath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceWebProject>http://localhost:8065</SourceWebProject>
+    <SourceWebMetabasePath>/LM/W3SVC/7/ROOT</SourceWebMetabasePath>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

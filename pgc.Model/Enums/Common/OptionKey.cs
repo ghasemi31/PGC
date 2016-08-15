@@ -29,6 +29,10 @@ namespace pgc.Model.Enums
         Latitude,
         Longitude,
 
+        PGC_Address,
+        PGC_Tel,
+        PGC_Email,
+
         User_Title,
         User_Description,
         User_Keywords,

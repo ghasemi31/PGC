@@ -70,7 +70,7 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
             if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.User)
             {
                 //Response.Redirect("~/Pages/User/Default.aspx");
-                Response.Redirect(this.Page.GetRouteUrl("user-userprofile", null));
+                Response.Redirect(this.Page.GetRouteUrl("guest-default", null));
             }
 
             if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.Admin)
@@ -80,7 +80,7 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
             }
             if (UserSession.IsUserLogined && (Role)UserSession.User.AccessLevel.Role == Role.Agent)
             {
-                Response.Redirect(this.Page.GetRouteUrl("agent-default", null));
+                Response.Redirect(this.Page.GetRouteUrl("admin-default", null));
             }
         }
     }
@@ -194,11 +194,11 @@ public partial class UserControls_Project_LoginControl : BaseUserControl
                 }
                 else if ((Role)UserSession.User.AccessLevel.Role == Role.User)
                 {
-                    Response.Redirect(this.Page.GetRouteUrl("user-userprofile", null));
+                    Response.Redirect(this.Page.GetRouteUrl("guest-default", null));
                 }
                 else if ((Role)UserSession.User.AccessLevel.Role == Role.Agent)
                 {
-                    Response.Redirect(this.Page.GetRouteUrl("agent-default", null));
+                    Response.Redirect(this.Page.GetRouteUrl("admin-default", null));
                 }
             }
         }

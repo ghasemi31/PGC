@@ -50,15 +50,19 @@
                 <div class="row">
                     <%=(!string.IsNullOrEmpty(kFrameWork.UI.UserSession.User.FullName)?kFrameWork.UI.UserSession.User.FullName:"کاربر")  + "  عزیز،"%>  خوش آمدید
                 </div>
-                <div class="row display-center">
-                    <%if (kFrameWork.UI.UserSession.User.AccessLevel_ID == 2)
+                <div class="row display-center" style="margin-top: 2em;">
+                    <%--<%if (kFrameWork.UI.UserSession.User.AccessLevel_ID == 2)
                       {%>
                     <asp:Button runat="server" Text="پروفایل من" CssClass="btnLoginForm btnEndLoginForm" OnClick="CPanelClick" autocomplete="off" />
                     <%}
                       else
                       {%>
                     <asp:Button runat="server" Text="کنترل پنل" CssClass="btnLoginForm btnEndLoginForm" OnClick="CPanelClick" autocomplete="off" />
-                    <% }%>
+                    <% }%>--%>
+                    <%if (true)
+                      {%>
+                          <asp:Button runat="server" Text="کنترل پنل" CssClass="btnLoginForm btnEndLoginForm" OnClick="CPanelClick" autocomplete="off" />
+                      <%} %>
                     <asp:Button runat="server" ID="t" Text="خروج" CssClass="btnLoginForm btnEndLoginForm" OnClick="LogOut" autocomplete="off" />
                 </div>
             </div>

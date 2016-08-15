@@ -19,7 +19,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
 
         Data.UrlKey = txtUrlKey.Text;
         Data.Laws = txtLaws.Text;
-        var managerId=lkpManager.GetSelectedValue<long>();
+        
         //if (managerId > 0)
         //    Data.Manager_ID = managerId;
         //else

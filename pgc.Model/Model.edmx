@@ -188,7 +188,6 @@
           <Property Name="FullName" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="GameManager" Type="bigint" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="PersianDate" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -2899,7 +2898,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="MenuItem" EntitySet="MenuItems" />
           </AssociationSet>
           <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
-          <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
           <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
           <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
           <EntitySet Name="Supports" EntityType="pgcModel.Support" />
@@ -2932,6 +2930,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
           <EntitySet Name="AppSettings" EntityType="pgcModel.AppSetting" />
+          <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
           </EntityContainer>
         <EntityType Name="Option">
           <Key>
@@ -4857,19 +4856,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="Heading" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GameManager" Type="Int64" Nullable="false" />
-          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="MainSlider">
           <Key>
             <PropertyRef Name="ID" />
@@ -5032,6 +5018,18 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="BranchAgreement_Image" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="BranchAgreement_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MrDizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -6135,20 +6133,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Feedbacks">
-            <EntityTypeMapping TypeName="pgcModel.Feedback">
-              <MappingFragment StoreEntitySet="Feedback">
-                <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Body" ColumnName="Body" />
-                <ScalarProperty Name="GameManager" ColumnName="GameManager" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="MainSliders">
             <EntityTypeMapping TypeName="pgcModel.MainSlider">
               <MappingFragment StoreEntitySet="MainSlider">
@@ -6267,6 +6251,19 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
                 <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
                 <ScalarProperty Name="NewsCount" ColumnName="NewsCount" />
                 <ScalarProperty Name="NavHeaderImage" ColumnName="NavHeaderImage" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="pgcModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -6636,7 +6633,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <AssociationConnector Association="pgcModel.FK_MenuItem_Feature" />
         <AssociationConnector Association="pgcModel.FK_MenuItem_MenuCategory" />
         <EntityTypeShape EntityType="pgcModel.DynPage" Width="1.5" PointX="13.375" PointY="23.75" />
-        <EntityTypeShape EntityType="pgcModel.Feedback" Width="1.5" PointX="15.375" PointY="23.75" />
         <EntityTypeShape EntityType="pgcModel.MainSlider" Width="1.5" PointX="23.375" PointY="16.75" />
         <EntityTypeShape EntityType="pgcModel.Sponsor" Width="1.5" PointX="17.375" PointY="24.75" />
         <EntityTypeShape EntityType="pgcModel.Support" Width="1.5" PointX="25.375" PointY="0.75" />
@@ -6651,6 +6647,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <AssociationConnector Association="pgcModel.Game_GameManager" />
         <AssociationConnector Association="pgcModel.GamerGroup" />
         <EntityTypeShape EntityType="pgcModel.AppSetting" Width="1.5" PointX="23.375" PointY="12.75" />
+        <EntityTypeShape EntityType="pgcModel.Feedback" Width="1.5" PointX="25.375" PointY="3.75" />
         </Diagram>
     </Diagrams>
   </Designer>

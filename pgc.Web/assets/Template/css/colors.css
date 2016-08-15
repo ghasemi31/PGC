@@ -189,7 +189,7 @@ ul.iconsList li a {
 
     .btn:hover, .btn-inverse {
         color: #fff;
-        background: #3c3c3c;
+        background: #DA251D;
     }
 
         .btn-inverse:hover {
@@ -307,7 +307,7 @@ ul.iconsList li a {
 }
 
     #mainMenu ul ul li a:hover, #mainMenu ul ul li.hover > a {
-        background: #44BCDD;
+        background: #ea7c1b;
         color: #fff;
     }
 
@@ -321,7 +321,7 @@ ul.iconsList li a {
     }
 
     #mainMenu ul ul li:hover {
-        border-top: 1px solid #44BCDD !important;
+        border-top: 1px solid #ea7c1b !important;
     }
 
 #mainMenu .hasSubMenu {
@@ -1097,10 +1097,12 @@ ul.quickMenu li a {
     color: #CCC;
 }
 
-    ul.quickMenu li a:hover {
-        color: #ed8d43;
+ul.quickMenu li a:hover {
         text-decoration: none;
     }
+.quickMenu-submenu:hover {
+    background-color: #ed8d43;
+}
 /*SOCIAL ICONS*/
 a.socialIcon {
     color: #DDD;

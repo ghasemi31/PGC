@@ -1141,20 +1141,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Feedbacks">
-      <EntityTypeMapping TypeName="pgcModel.Feedback">
-        <MappingFragment StoreEntitySet="Feedback">
-          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Body" ColumnName="Body" />
-          <ScalarProperty Name="GameManager" ColumnName="GameManager" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="MainSliders">
       <EntityTypeMapping TypeName="pgcModel.MainSlider">
         <MappingFragment StoreEntitySet="MainSlider">
@@ -1273,6 +1259,19 @@
           <ScalarProperty Name="QualityCharter" ColumnName="QualityCharter" />
           <ScalarProperty Name="NewsCount" ColumnName="NewsCount" />
           <ScalarProperty Name="NavHeaderImage" ColumnName="NavHeaderImage" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="pgcModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -1,12 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="Pages_Admin_GameOrder_List" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.Title %></legend>
-<%if(kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage)>0){ %>
+<%--<%if(kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage)>0){ %>
 <asp:Timer runat="server" id="Timer" ontick="Timer_Tick"  ></asp:Timer>
-<%} %>
+<%} %>--%>
 <div class="list-help">
     <div class="commands">
-        <a href="<%=GetRouteUrl("admin-orderprint",null)%>" target="_blank" class="hbtn" >چاپ سفارشات</a>
-       
+         <a href="<%=ResolveUrl("~/Pages/Admin/ExcelReport/OrderListExcel.aspx")%>" target="_blank" class="excelbtn" >دریافت فایل اکسل نتایج</a>
+        <a href="<%=ResolveUrl("~/Pages/Admin/Prints/OrderList.aspx")%>" target="_blank" class="printbtn" >چاپ نتایج</a>    
     </div>
 </div>
 <%--<asp:Label runat="server" Text="Page not refreshed yet." id="Label1">

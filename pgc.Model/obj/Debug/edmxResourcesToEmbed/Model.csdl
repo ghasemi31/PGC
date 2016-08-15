@@ -333,7 +333,6 @@
       <End Role="MenuItem" EntitySet="MenuItems" />
     </AssociationSet>
     <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
-    <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
     <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
     <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
     <EntitySet Name="Supports" EntityType="pgcModel.Support" />
@@ -366,6 +365,7 @@
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <EntitySet Name="AppSettings" EntityType="pgcModel.AppSetting" />
+    <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
   </EntityContainer>
   <EntityType Name="Option">
     <Key>
@@ -2291,19 +2291,6 @@
     <Property Name="Heading" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Feedback">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="GameManager" Type="Int64" Nullable="false" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="MainSlider">
     <Key>
       <PropertyRef Name="ID" />
@@ -2466,5 +2453,17 @@
     <Property Name="BranchAgreement_Image" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="BranchAgreement_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MrDizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

@@ -1359,22 +1359,6 @@ namespace pgc.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Feedback> Feedbacks
-        {
-            get
-            {
-                if ((_Feedbacks == null))
-                {
-                    _Feedbacks = base.CreateObjectSet<Feedback>("Feedbacks");
-                }
-                return _Feedbacks;
-            }
-        }
-        private ObjectSet<Feedback> _Feedbacks;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<MainSlider> MainSliders
         {
             get
@@ -1499,6 +1483,22 @@ namespace pgc.Model
             }
         }
         private ObjectSet<AppSetting> _AppSettings;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Feedback> Feedbacks
+        {
+            get
+            {
+                if ((_Feedbacks == null))
+                {
+                    _Feedbacks = base.CreateObjectSet<Feedback>("Feedbacks");
+                }
+                return _Feedbacks;
+            }
+        }
+        private ObjectSet<Feedback> _Feedbacks;
 
         #endregion
 
@@ -2113,14 +2113,6 @@ namespace pgc.Model
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Feedbacks EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToFeedbacks(Feedback feedback)
-        {
-            base.AddObject("Feedbacks", feedback);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the MainSliders EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToMainSliders(MainSlider mainSlider)
@@ -2182,6 +2174,14 @@ namespace pgc.Model
         public void AddToAppSettings(AppSetting appSetting)
         {
             base.AddObject("AppSettings", appSetting);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Feedbacks EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToFeedbacks(Feedback feedback)
+        {
+            base.AddObject("Feedbacks", feedback);
         }
 
         #endregion
@@ -12087,18 +12087,16 @@ namespace pgc.Model
         /// <param name="fullName">Initial value of the FullName property.</param>
         /// <param name="email">Initial value of the Email property.</param>
         /// <param name="mobile">Initial value of the Mobile property.</param>
-        /// <param name="gameManager">Initial value of the GameManager property.</param>
         /// <param name="body">Initial value of the Body property.</param>
         /// <param name="date">Initial value of the Date property.</param>
         /// <param name="persianDate">Initial value of the PersianDate property.</param>
-        public static Feedback CreateFeedback(global::System.Int64 id, global::System.String fullName, global::System.String email, global::System.String mobile, global::System.Int64 gameManager, global::System.String body, global::System.DateTime date, global::System.String persianDate)
+        public static Feedback CreateFeedback(global::System.Int64 id, global::System.String fullName, global::System.String email, global::System.String mobile, global::System.String body, global::System.DateTime date, global::System.String persianDate)
         {
             Feedback feedback = new Feedback();
             feedback.ID = id;
             feedback.FullName = fullName;
             feedback.Email = email;
             feedback.Mobile = mobile;
-            feedback.GameManager = gameManager;
             feedback.Body = body;
             feedback.Date = date;
             feedback.PersianDate = persianDate;
@@ -12207,30 +12205,6 @@ namespace pgc.Model
         private global::System.String _Mobile;
         partial void OnMobileChanging(global::System.String value);
         partial void OnMobileChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 GameManager
-        {
-            get
-            {
-                return _GameManager;
-            }
-            set
-            {
-                OnGameManagerChanging(value);
-                ReportPropertyChanging("GameManager");
-                _GameManager = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("GameManager");
-                OnGameManagerChanged();
-            }
-        }
-        private global::System.Int64 _GameManager;
-        partial void OnGameManagerChanging(global::System.Int64 value);
-        partial void OnGameManagerChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

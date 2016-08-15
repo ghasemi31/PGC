@@ -45,8 +45,13 @@
                                 <span id="game-title"><%=game.Title %></span>
                             </div>
                             <div class="col-md-6">
+                                <% string gameManager = "";
+                                    foreach (var item in game.Users)
+                                  {
+                                      gameManager = item.FullName + "," + gameManager;
+                                  } %>
                                 <span class="game-detail-title">مدیر بازی:</span>
-                                <span class="game-detail-info"><%--<%=game.User.FullName %>--%></span>
+                                <span class="game-detail-info"><%=(gameManager.Length-1>0)?gameManager.Substring(0,gameManager.Length-1):gameManager %></span>
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">نوع بازی:</span>
@@ -72,7 +77,7 @@
                                 <span class="game-detail-title">هزینه ثبت نام:</span>
                                 <span class="game-detail-info"><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(game.Cost) %> ریال</span>
                             </div>
-                            <div class="col-md-12">
+                            <div id="game-law" class="col-md-12">
                                 <span class="game-detail-title">قوانین و مقررات بازی:</span>
                                 <hr />
                                 <div>

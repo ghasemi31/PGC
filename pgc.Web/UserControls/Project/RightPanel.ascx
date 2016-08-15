@@ -16,7 +16,7 @@
             <span style="font-size: 20px;"><i class="fa fa-user" aria-hidden="true"></i></span>
             <%=(!string.IsNullOrEmpty(kFrameWork.UI.UserSession.User.FullName)?kFrameWork.UI.UserSession.User.FullName:"کاربر") + "  عزیز،" %><br />
             به Iran PGC خوش آمدید.
-          <%if ((pgc.Model.Enums.Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == pgc.Model.Enums.Role.User)
+         <%-- <%if ((pgc.Model.Enums.Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == pgc.Model.Enums.Role.User)
             {%>
             <br />
             <b style="color: #f7e302">کد اشتراک شما : <%=kFrameWork.UI.UserSession.UserID%></b>
@@ -42,7 +42,7 @@
                 <br />
                 <%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(Credit)%> ریال</div>
             <%} %>
-            <%} %>
+            <%} %>--%>
         </div>
 
 

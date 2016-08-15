@@ -155,6 +155,12 @@ namespace pgc.Business
             return list;
         }
 
+
+        public IQueryable<GameOrder> Search_SelectPrint(GameOrdersPattern Pattern)
+        {
+            return Search_Where(Context.GameOrders, Pattern);
+        }
+
         public override OperationResult Insert(pgc.Model.GameOrder Data)
         {
             return base.Insert(Data);
@@ -301,7 +307,7 @@ namespace pgc.Business
         }
 
 
-       
+
 
 
         public IQueryable pay_List(int startRowIndex, int maximumRows, long ID)
@@ -311,7 +317,7 @@ namespace pgc.Business
 
             var order = Context.GameOrders.SingleOrDefault(g => g.ID == ID);
 
-            if (order == null )
+            if (order == null)
                 return null;
 
             var Result = order.Payments.AsQueryable()

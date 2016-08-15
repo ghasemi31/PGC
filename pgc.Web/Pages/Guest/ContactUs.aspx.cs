@@ -12,9 +12,11 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Guest_ContactUs : BasePage
 {
+    GameBusiness business = new GameBusiness();
+    public IQueryable<Game> games;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        games =business.GetAllGame();
     }
 
     protected void btnSave_Click(object sender, EventArgs e)
@@ -24,7 +26,6 @@ public partial class Pages_Guest_ContactUs : BasePage
         feed.Email = txtEmail.Text;
         feed.Mobile = txtMobile.Text;
         feed.Body = txtBody.Value;
-        feed.GameManager = ConvertorUtil.ToInt32(ddlGameManager.SelectedValue);
 
         OperationResult result = new OperationResult();
 

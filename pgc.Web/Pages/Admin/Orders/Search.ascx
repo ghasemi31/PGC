@@ -31,12 +31,12 @@
                                             AddDefaultItem="true"
                                             CssClass="large"/></td>
     </tr>
-    <tr>
+    <%--<tr>
         <td class="caption">رسید دیجیتالی</td>
         <td class="control"><kfk:NormalTextBox ID="txtRefNum" runat="server" CssClass="large" /></td>
         
         
-    </tr>
+    </tr>--%>
 </table>
 <div class="commands">
     <asp:Button runat="server" ID="btnSearch" Text="جستجو" CssClass="" OnClick="OnSearch" />

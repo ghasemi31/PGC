@@ -20,20 +20,20 @@ public partial class Pages_Admin_GameOrder_List : BaseListControl
         base.DataSource = this.obdSource;
     }
 
-    protected override void OnPreRender(EventArgs e)
-    {
-        int second=kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage);
+    //protected override void OnPreRender(EventArgs e)
+    //{
+    //    int second=kFrameWork.Business.OptionBusiness.GetInt(pgc.Model.Enums.OptionKey.SecondOfRefreshOrderPage);
 
-        if(second>0)
-            Timer.Interval = second * 1000;
+    //    if(second>0)
+    //        Timer.Interval = second * 1000;
         
-        base.OnPreRender(e);
-    }
+    //    base.OnPreRender(e);
+    //}
 
-    protected void Timer_Tick(object sender, EventArgs e)
-    {
-        grdList.DataBind();
-    }
+    //protected void Timer_Tick(object sender, EventArgs e)
+    //{
+    //    grdList.DataBind();
+    //}
 
     protected void grdList_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
     {

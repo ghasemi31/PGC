@@ -66,7 +66,7 @@
                         <div class="row">
                             <img src="/assets/Guest/Image/IranPGC/05.png" />
                         </div>
-                        <div id="" class="row x">
+                        <div id="quality" class="row x">
                             <p><%=OptionBusiness.GetText(OptionKey.Quality_Charter) %></p>
                         </div>
                     </div>

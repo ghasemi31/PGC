@@ -18,5 +18,12 @@
     }
 
 #map_canvas {
-height:415px;
+    height: 415px;
 }
+
+.btn-contact {
+    width: 170px;
+    float:left;
+}
+
+

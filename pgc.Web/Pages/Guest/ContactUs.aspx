@@ -9,6 +9,7 @@
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Description_Contact) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Keywords_Contact) %>" />
     <link href="/assets/Guest/css/Contact.css" rel="stylesheet" />
+    <link href="/assets/User/UserProfile.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
 
@@ -26,11 +27,11 @@
                             <div id="map_canvas" class="col-md-12"></div>
                         </div>
                         <div id="address-info" class="row">
-                            <span><i class="fa fa-map-marker" aria-hidden="true"></i>تهران آریاشهر</span>
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Address) %></span>
                             <br />
-                            <span><i class="fa fa-phone" aria-hidden="true"></i>09132541924</span>
+                            <span><i class="fa fa-phone" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Tel) %></span>
                             <br />
-                            <span><i class="fa fa-envelope" aria-hidden="true"></i>s.ghasem365@gmail.com</span>
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Email) %></span>
 
                         </div>
                     </div>
@@ -44,34 +45,27 @@
                             ID="RequiredFieldValidator1" runat="server"
                             ErrorMessage="لطفا نام و نام خانوادگی خود را وارد نمایید" ControlToValidate="txtFullName"
                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
-                                    </asp:RequiredFieldValidator>
+                        </asp:RequiredFieldValidator>
 
                         <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" placeholder="پست الکترونیک" runat="server" autocomplete="off" ToolTip="پست الکترونیک"></asp:TextBox>
                         <asp:RequiredFieldValidator
                             ID="RequiredEmail" runat="server"
                             ErrorMessage="لطفا پست الکترونیک خود را وارد نمایید" ControlToValidate="txtEmail"
                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
-                                    </asp:RequiredFieldValidator>
+                        </asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
                             ErrorMessage="پست الکترونیک معتبر نمی باشد"
                             Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" ControlToValidate="txtEmail"
                             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                             Display="Dynamic">
-                                    </asp:RegularExpressionValidator>
+                        </asp:RegularExpressionValidator>
 
                         <asp:TextBox ID="txtMobile" CssClass="form-control" placeholder="تلفن همراه" ClientIDMode="Static" runat="server" autocomplete="off" ToolTip="تلفن همراه"></asp:TextBox>
                         <asp:RequiredFieldValidator
                             ID="RequiredFieldValidator5" runat="server"
                             ErrorMessage="لطفا تلفن همراه خود را وارد نمایید" ControlToValidate="txtMobile"
                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
-                                    </asp:RequiredFieldValidator>
-
-                        <asp:DropDownList ID="ddlGameManager" runat="server" class="form-control">
-                            <asp:ListItem Value="1" Text="انتقاد" Selected="True"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="پیشنهاد"></asp:ListItem>
-                            <asp:ListItem Value="3" Text="پرسش"></asp:ListItem>
-                            <asp:ListItem Value="4" Text="درخواست"></asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:RequiredFieldValidator>
 
                         <textarea runat="server" name="txtBody" id="txtBody" cols="4" rows="5" placeholder="متن پیام..." class="width100"></textarea>
                         <asp:RequiredFieldValidator
@@ -79,12 +73,46 @@
                             ErrorMessage="لطفا متن پیام را وارد کنید." ControlToValidate="txtBody"
                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
                         </asp:RequiredFieldValidator>
-
-                        <asp:Button CssClass="btn btn-default" runat="server" Text="ارسال" OnClick="btnSave_Click" />
+                        <asp:Button CssClass="btn btn-default btn-contact" runat="server" Text="ارسال" OnClick="btnSave_Click" />
 
                         <div class="result"></div>
                     </div>
                     <!-- contact form -->
+                </div>
+                <div class="row">
+                    <div class="user-info" style="margin-top: 3em">
+                        <header>
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                            <span>لیست مدیران بازی</span>
+                            <hr />
+                        </header>
+                        <div class="row margin0" style="padding: 0 20px;">
+                            <table class="table">
+                                <tr class="order-title table-header">
+                                    <td>نام بازی</td>
+                                    <td>نام مدیر بازی</td>
+                                    <td>پست الکترونیک مدیر بازی</td>
+                                    <td>شماره تماس مدیر بازی</td>
+                                    <td>شماره همراه مدیر بازی</td>
+                                    <td>آدرس تلگرام مدیر بازی</td>
+                                </tr>
+                                <tr class="order-tb-row">
+                                    <%foreach (var item in games)
+                                      {
+                                          foreach (var useritem in item.Users)
+                                          {%>
+                                    <td><%=item.Title %></td>
+                                    <td><%=useritem.FullName %></td>
+                                    <td><%=useritem.Email %></td>
+                                    <td><%=useritem.Tel %></td>
+                                    <td><%=useritem.Mobile %></td>
+                                    <td>telegram</td>
+                                    <%}
+                                      } %>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
             </div>

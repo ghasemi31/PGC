@@ -7,6 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <%#kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.PreHead)%>
     <meta charset="utf-8" />
     <meta name="description" content="Snowflake an HTML5 responsive Website template by Little Neko" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -31,9 +32,10 @@
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
     <script src="/assets/Template/js/modernizr-2.6.1.min.js"></script>
 
-
+    <%#kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.PostHead)%>
 </head>
 <body>
+    <%=kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.PreBody)%>
     <form runat="server">
         <div id="globalWrapper">
             <!-- header -->
@@ -50,25 +52,22 @@
                                         <li><a href="#"><%=(kFrameWork.UI.UserSession.User.Gender==(int)pgc.Model.Enums.Gender.Female)?"خانم":"آقای" %> <%=kFrameWork.UI.UserSession.User.FullName %>، خوش آمدید</a></li>
                                         <%if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.User)
                                           {%>
-                                              <li><a href="<%=GetRouteUrl("user-userprofile",null) %>">حساب کاربری من</a>
+                                        <li><a href="<%=GetRouteUrl("guest-login",null) %>">خروج</a></li>
+                                        <%--<li><a href="<%=GetRouteUrl("user-userprofile",null) %>">حساب کاربری من</a>
                                             <ul>
-                                                <li><a href="<%=GetRouteUrl("user-userprofile",null) %>">پروفایل من</a></li>
-                                                <li><a href="<%=GetRouteUrl("user-gamelist",null) %>">بازی های من</a></li>
-                                                <li><a href="<%=GetRouteUrl("guest-login",null) %>">خروج</a></li>
+                                                <li class="quickMenu-submenu"><a href="<%=GetRouteUrl("user-userprofile",null) %>">پروفایل من</a></li>
+                                                <li class="quickMenu-submenu"><a href="<%=GetRouteUrl("user-gamelist",null) %>">بازی های من</a></li>
+                                                <li class="quickMenu-submenu"><a href="<%=GetRouteUrl("guest-login",null) %>">خروج</a></li>
                                             </ul>
-                                        </li>
-                                          <%}
+                                        </li>--%>
+                                        <%}
                                           else
-                                              if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Admin)
+                                              if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Admin || (Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Agent)
                                               {%>
-                                                  <li><a href="<%=GetRouteUrl("admin-default",null) %>">پنل مدیریت</a></li>
-                                             <% }
-                                              else if ((Role)kFrameWork.UI.UserSession.User.AccessLevel.Role == Role.Agent)
-                                              {%>
-                                                  <li><a href="<%=GetRouteUrl("agent-default",null) %>">پنل مدیریت</a></li>
-                                              <%}
-                                            %>
-                                        
+                                        <li><a href="<%=GetRouteUrl("admin-default",null) %>">پنل مدیریت</a></li>
+                                        <li><a href="<%=GetRouteUrl("guest-login",null) %>">خروج</a></li>
+                                        <% }                                          
+                                        %>
                                     </ul>
                                     <%}
                                       else
@@ -81,12 +80,10 @@
                                 </div>
                                 <div class="clearfix col-sm-6 col-md-6">
                                     <ul class="socialNetwork">
-                                        <%foreach (var item in business.GetSocialIcon() )
+                                        <%foreach (var item in business.GetSocialIcon())
                                           {%>
-                                               <li><a href="<%=item.Url %>" class="icon-linkedin socialIcon tips" title="<%=item.Title %>"><i class="fa <%=item.Icon %>" aria-hidden="true"></i></a></li>
-                                         <% } %>
-                                       
-                                     
+                                        <li><a href="<%=item.Url %>" class="icon-linkedin socialIcon tips" title="<%=item.Title %>"><i class="fa <%=item.Icon %>" aria-hidden="true"></i></a></li>
+                                        <% } %>
                                     </ul>
                                 </div>
                             </div>
@@ -178,16 +175,16 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
                                 <span class="footer-title">آدرس</span>
                                 <br />
-                                <span class="footer-item">تهران فلکه دوم صادقیه پلاک 81</span>
+                                <span class="footer-item"><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Address) %></span>
                                 <br />
                                 <span class="footer-title">تلفن</span>
                                 <br />
-                                <span class="footer-item">02185696352</span>
+                                <span class="footer-item"><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Tel) %></span>
                                 <br />
                                 <span class="footer-title">پست الکترونیک</span>
                                 <br />
-                                <span class="footer-item">info@iranpgc.com</span>
-                                <div id="footer-contactus" >
+                                <span class="footer-item"><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Email) %></span>
+                                <div id="footer-contactus">
                                     <a href="<%=GetRouteUrl("guest-contacts",null) %>">ارتباط با ما</a>
                                 </div>
                             </div>
@@ -234,5 +231,6 @@
         <asp:ContentPlaceHolder ID="cphfoot" runat="server"></asp:ContentPlaceHolder>
         <uc2:UserMessageViewer runat="server" ID="umv" />
     </form>
+    <%=kFrameWork.Business.OptionBusiness.GetHtml(pgc.Model.Enums.OptionKey.PostBody)%>
 </body>
 </html>

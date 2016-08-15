@@ -184,5 +184,10 @@ namespace pgc.Business.General
 
             }
         }
+
+        public IQueryable<Game> GetAllGame()
+        {
+            return db.Games;
+        }
     }
 }

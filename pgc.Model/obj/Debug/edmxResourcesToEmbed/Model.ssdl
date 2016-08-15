@@ -183,7 +183,6 @@
     <Property Name="FullName" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="GameManager" Type="bigint" Nullable="false" />
     <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="PersianDate" Type="nvarchar" MaxLength="10" Nullable="false" />

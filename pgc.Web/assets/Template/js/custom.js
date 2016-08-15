@@ -42,32 +42,13 @@ $(document).ready(function () {
     $('ul.quickMenu > li').hover(
         function () {
             $('ul', this).css('display', 'block');
+            //$(this).css('background-color', '#ed8d43')
         },
         function () {
             $('ul', this).css('display', 'none');
+            //$(this).css('background-color', '#000')
         })
-    ////profile menu
-    //var delay = 400, setTimeoutConst;
-    //$('ul.quickMenu > li').hover(function () {
-    //    setTimeoutConst = setTimeout(function () {
-    //        $('ul', this).css('display', 'block');
-    //        //$("#btn-profile").addClass("active-profile");
-    //        //$(".active-profile").css({ "transition": "all .1s ease", "-webkit-transition": "all .1s ease", "-o-transition": "all .1s ease" });
-    //    }, delay);
-    //}, function () {
-    //    clearTimeout(setTimeoutConst);
-    //    $('ul', this).css('display', 'none');
-    //    //$(".active-profile").css({ "transition": "all 2s ease", "-webkit-transition": "all 2s ease", "-o-transition": "all 2s ease" });
-    //    //$(this).removeClass("active-profile");
-    //})
-
-
-
-    // $('#mainFooter').one('inview', function (event, visible) {
-    //     if (visible == true) {
-    //          alert('tt');
-    //     }
-    // });
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -905,13 +886,13 @@ function animateTxt(curSlide, action) {
 
 
         if ($subMenu.length) $this.addClass('hover').stop();
-        else {
-            if ($this.parent().is($(':gt(1)', $mainMenu))) {
-                $this.stop(false, true).hide().fadeIn('slow');
-            } else {
-                $this.stop(false, true);
-            }
-        }
+        //else {
+        //    if ($this.parent().is($(':gt(1)', $mainMenu))) {
+        //        $this.stop(false, true).hide().fadeIn('slow');
+        //    } else {
+        //        $this.stop(false, true);
+        //    }
+        //}
 
 
         if ($this.parent().is($(':gt(1)', $mainMenu))) {
@@ -920,14 +901,14 @@ function animateTxt(curSlide, action) {
             $subMenu.stop(false, true).animate({
                 left: 150,
                 opacity: 1
-            }, 300, 'easeOutQuad');
+            }, 100, 'easeOutQuad');
 
 
 
 
         } else {
 
-            $subMenu.stop(false, true).slideDown(400, 'easeInOutQuad');
+            $subMenu.stop(false, true).slideDown(100, 'easeInOutQuad');
 
         }
 
