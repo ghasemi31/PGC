@@ -8,7 +8,7 @@ using kFrameWork.Model;
 
 namespace pgc.Business
 {
-    public class SentSMSBusiness : BaseEntityManagementBusiness<SentSMS,pgcEntities>
+    public class SentSMSBusiness : BaseEntityManagementBusiness<SentSMS, pgcEntities>
     {
         public SentSMSBusiness()
         {

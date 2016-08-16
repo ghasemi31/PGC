@@ -57,6 +57,13 @@
         <td class="caption">نوع بازی</td>
         <td class="control"><asp:Label ID="lblGameType" runat="server"/></td>
     </tr>
+    <%if(GameOrder.GameCenterTitle!=null){ %>
+             <tr>
+        <td class="caption">مرکز بازی</td>
+        <td class="control"><asp:Label ID="lblgameCenter" runat="server"/></td>
+    </tr>
+    <%} %>
+
     <%if(GameOrder.Group!=null){ %>
      <tr>
         <td class="caption">نام تیم</td>

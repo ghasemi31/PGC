@@ -55,6 +55,18 @@ public partial class UserControl_Common_LookupCombo : BaseUserControl
     }
 
     /// <summary>
+    /// Default Value is "مقدار این مشخصه الزامی می باشد"
+    /// </summary>
+    private string _RequireText = "*";
+
+    [Category("Validation")]
+    public string RequireText
+    {
+        get { return _RequireText; }
+        set { _RequireText = value; }
+    }
+
+    /// <summary>
     /// Default Value is string.Empty
     /// </summary>
     private string _ValidationGroup = string.Empty;
@@ -384,7 +396,7 @@ public partial class UserControl_Common_LookupCombo : BaseUserControl
             RequiredFieldValidator validator = new RequiredFieldValidator();
             validator.ControlToValidate = "cboLookup";
             validator.ToolTip = ValidationText;
-            validator.Text = "*";
+            validator.Text = RequireText;
             validator.CssClass = "validator";
             validator.ValidationGroup = ValidationGroup;
             this.Controls.Add(validator);

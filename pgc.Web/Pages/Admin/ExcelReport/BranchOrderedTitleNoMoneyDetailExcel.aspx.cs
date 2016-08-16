@@ -19,58 +19,58 @@ public partial class Pages_Admin_ExcelReport_BranchOrderedTitleNoMoneyDetailExce
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchOrderedTitleBusiness business = new BranchOrderedTitleBusiness();
-            BranchOrderedTitlePattern pattern = (BranchOrderedTitlePattern)Session["BranchOrderedTitlePrintPattern"];
+            //BranchOrderedTitleBusiness business = new BranchOrderedTitleBusiness();
+            //BranchOrderedTitlePattern pattern = (BranchOrderedTitlePattern)Session["BranchOrderedTitlePrintPattern"];
 
-            var orderDetailList = business.RetrieveOrderedTitle(long.Parse(Request.QueryString["id"]), pattern);
-            BranchOrderTitle ttl = business.RetrieveBranchOrderTitle(long.Parse(Request.QueryString["id"]));
+            //var orderDetailList = business.RetrieveOrderedTitle(long.Parse(Request.QueryString["id"]), pattern);
+            //BranchOrderTitle ttl = business.RetrieveBranchOrderTitle(long.Parse(Request.QueryString["id"]));
 
-            DataTable table = new DataTable("Orders");
+            //DataTable table = new DataTable("Orders");
 
-            table.Columns.Add(" ");
-            table.Columns.Add("  ");
-            table.Columns.Add("   ");
-            table.Columns.Add("    ");
-            table.Columns.Add("     ");
-
-
-            table.Rows.Add("عنوان کالا", ttl.Title, "", "", "");
-            table.Rows.Add("عنوان گروه", ttl.BranchOrderTitleGroup.Title, "", "", "");
-            table.Rows.Add("وضعیت", EnumUtil.GetEnumElementPersianTitle((BranchOrderTitleStatus)ttl.Status), "", "", "");
+            //table.Columns.Add(" ");
+            //table.Columns.Add("  ");
+            //table.Columns.Add("   ");
+            //table.Columns.Add("    ");
+            //table.Columns.Add("     ");
 
 
-            table.Rows.Add("", "", "", "", "");
-
-            table.Rows.Add("ردیف", "نام شعبه", "تعداد درخواستی", "تعداد کسری", "تعداد مرجوعی");
-
-            int i=0;
-            foreach (var dtl in orderDetailList.OrderBy(f=>f.DisplayOrder))
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-
-                    dtl.Title,
-
-                    UIUtil.GetCommaSeparatedOf(dtl.OrderQuantity) + " عدد",
-
-                    UIUtil.GetCommaSeparatedOf(dtl.LackQuantity) + " عدد",
-
-                    UIUtil.GetCommaSeparatedOf(dtl.ReturnQuantity) + " عدد"
-                    );
-            }
+            //table.Rows.Add("عنوان کالا", ttl.Title, "", "", "");
+            //table.Rows.Add("عنوان گروه", ttl.BranchOrderTitleGroup.Title, "", "", "");
+            //table.Rows.Add("وضعیت", EnumUtil.GetEnumElementPersianTitle((BranchOrderTitleStatus)ttl.Status), "", "", "");
 
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //table.Rows.Add("", "", "", "", "");
+
+            //table.Rows.Add("ردیف", "نام شعبه", "تعداد درخواستی", "تعداد کسری", "تعداد مرجوعی");
+
+            //int i=0;
+            //foreach (var dtl in orderDetailList.OrderBy(f=>f.DisplayOrder))
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+
+            //        dtl.Title,
+
+            //        UIUtil.GetCommaSeparatedOf(dtl.OrderQuantity) + " عدد",
+
+            //        UIUtil.GetCommaSeparatedOf(dtl.LackQuantity) + " عدد",
+
+            //        UIUtil.GetCommaSeparatedOf(dtl.ReturnQuantity) + " عدد"
+            //        );
+            //}
+
+
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {

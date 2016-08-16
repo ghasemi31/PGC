@@ -19,53 +19,53 @@ public partial class Pages_Admin_ExcelReport_BranchOrderNoMoneyDetailExcel : Sys
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchOrderBusiness business = new BranchOrderBusiness();
+            //BranchOrderBusiness business = new BranchOrderBusiness();
 
 
-            BranchOrder order = business.Retrieve(long.Parse(Request.QueryString["id"]));
+            //BranchOrder order = business.Retrieve(long.Parse(Request.QueryString["id"]));
 
-            DataTable table = new DataTable("Orders");
+            //DataTable table = new DataTable("Orders");
 
-            table.Columns.Add(" ");
-            table.Columns.Add("  ");
-            table.Columns.Add("   ");
-            table.Columns.Add("    ");
+            //table.Columns.Add(" ");
+            //table.Columns.Add("  ");
+            //table.Columns.Add("   ");
+            //table.Columns.Add("    ");
 
             
-            table.Rows.Add("کد درخواست", order.ID,  "");
-            table.Rows.Add("نام شعبه", order.Branch.Title,  "");
-            table.Rows.Add("تاریخ تحویل", order.OrderedPersianDate,  "");
-            table.Rows.Add("تاریخ درج", Util.GetPersianDateWithTime(order.RegDate),  "");
-            table.Rows.Add("وضعیت ارسالی", (order.ShipmentStatus_ID.HasValue)?order.BranchOrderShipmentState.Title:"----", "");
-            table.Rows.Add("وضعیت",EnumUtil.GetEnumElementPersianTitle((BranchOrderStatus) order.Status),  "");
-            //table.Rows.Add("مبلغ کل",UIUtil.GetCommaSeparatedOf(order.TotalPrice)+" ریال", "", "", "");
-            table.Rows.Add("توضیح مدیر", order.AdminDescription,  "");
-            table.Rows.Add("توضیح شعبه", order.BranchDescription, "");
+            //table.Rows.Add("کد درخواست", order.ID,  "");
+            //table.Rows.Add("نام شعبه", order.Branch.Title,  "");
+            //table.Rows.Add("تاریخ تحویل", order.OrderedPersianDate,  "");
+            //table.Rows.Add("تاریخ درج", Util.GetPersianDateWithTime(order.RegDate),  "");
+            //table.Rows.Add("وضعیت ارسالی", (order.ShipmentStatus_ID.HasValue)?order.BranchOrderShipmentState.Title:"----", "");
+            //table.Rows.Add("وضعیت",EnumUtil.GetEnumElementPersianTitle((BranchOrderStatus) order.Status),  "");
+            ////table.Rows.Add("مبلغ کل",UIUtil.GetCommaSeparatedOf(order.TotalPrice)+" ریال", "", "", "");
+            //table.Rows.Add("توضیح مدیر", order.AdminDescription,  "");
+            //table.Rows.Add("توضیح شعبه", order.BranchDescription, "");
 
-            table.Rows.Add("", "", "");
-            table.Rows.Add("ردیف", "نام کالا", "تعداد");
-            int i=0;
-            foreach (var dtl in order.BranchOrderDetails)
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    dtl.BranchOrderTitle_Title,
-                    UIUtil.GetCommaSeparatedOf(dtl.Quantity) + " عدد"                    
-                    );
-            }
+            //table.Rows.Add("", "", "");
+            //table.Rows.Add("ردیف", "نام کالا", "تعداد");
+            //int i=0;
+            //foreach (var dtl in order.BranchOrderDetails)
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        dtl.BranchOrderTitle_Title,
+            //        UIUtil.GetCommaSeparatedOf(dtl.Quantity) + " عدد"                    
+            //        );
+            //}
 
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {

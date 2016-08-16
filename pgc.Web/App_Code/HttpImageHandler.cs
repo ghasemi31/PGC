@@ -351,7 +351,17 @@ namespace ImageHandler
         private Image getResizedImageKeepRatio(Image image, int width, int height)
         {
             Size newSize = GetNewSize(image.Width, image.Height, width, height);
-            return image.GetThumbnailImage(newSize.Width, newSize.Height, () => false, IntPtr.Zero);
+
+            Bitmap newImage = new Bitmap(newSize.Width, newSize.Height);
+            using (Graphics gr = Graphics.FromImage(newImage))
+            {
+                gr.SmoothingMode = SmoothingMode.HighQuality;
+                gr.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                gr.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                gr.DrawImage(image, new Rectangle(0, 0, newSize.Width, newSize.Height));
+            }
+
+            return newImage;
 
         }
 

@@ -66,13 +66,7 @@ namespace kFrameWork.UI
                 Res.AddMessage(UserMessageKey.ContactAdminInErrorPersistance);
                 return Res;
             }
-            else if (CurrentUser.Branch_ID.HasValue && !CurrentUser.Branch.IsActive)
-            {
-                Res.Result = ActionResult.Failed;
-                Res.AddMessage(UserMessageKey.InactiveUser);
-                Res.AddMessage(UserMessageKey.ContactAdminInErrorPersistance);
-                return Res;
-            }
+           
 
             HttpContext.Current.Session["CurrentUser"] = CurrentUser;
             HttpContext.Current.Session["login"] = null;

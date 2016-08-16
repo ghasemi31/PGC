@@ -14,7 +14,7 @@ namespace pgc.Business
         public Device Device_Type { get; set; }
 
         public User Related_User { get; set; }
-        public Branch Related_Branch { get; set; }
+       
         public User Related_Doer { get; set; }
         
         public string Related_Guest_Phone { get; set; }

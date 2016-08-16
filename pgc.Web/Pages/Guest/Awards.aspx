@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <%--<%this.Title = (!string.IsNullOrEmpty(kFrameWork.UI.UserSession.User.FullName)) ? "لیست بازیهای من-" + kFrameWork.UI.UserSession.User.FullName : ""; %>--%>
+  <%this.Title = "جوایز بازیها"; %>
     <link href="/assets/User/UserProfile.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">

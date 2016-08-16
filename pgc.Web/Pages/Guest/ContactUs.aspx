@@ -27,9 +27,7 @@
                             <div id="map_canvas" class="col-md-12"></div>
                         </div>
                         <div id="address-info" class="row">
-                            <span><i class="fa fa-map-marker" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Address) %></span>
-                            <br />
-                            <span><i class="fa fa-phone" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Tel) %></span>
+                            <span><i class="fa fa-phone" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Telegram) %></span>
                             <br />
                             <span><i class="fa fa-envelope" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Email) %></span>
 

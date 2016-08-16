@@ -62,7 +62,7 @@
 </script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <%--<form id="form1" runat="server">
         <div>
             
               <%try
@@ -143,6 +143,6 @@ else if (RowNumber == RowPerPage)
                     Response.Redirect(GetRouteUrl("admin-orders"));
                 }%>
         </div>
-    </form>
+    </form>--%>
 </body>
 </html>

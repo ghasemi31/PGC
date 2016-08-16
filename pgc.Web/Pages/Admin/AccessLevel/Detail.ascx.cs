@@ -54,7 +54,7 @@ public partial class Pages_Admin_AccessLevel_Detail : BaseDetailControl<AccessLe
         AccessLevelBusiness business = (this.Page as BaseManagementPage<AccessLevelBusiness, AccessLevel, AccessLevelPattern, pgcEntities>).Business;
         Role role = lkcRole.GetSelectedValue<Role>();
         List<Feature> features = business.GetFeaturesForRole(role);
-        var datasource = from x in features
+        var datasource = from x in features.Where(f=>f.Active)
                          select new
                          {
                              x.ID,

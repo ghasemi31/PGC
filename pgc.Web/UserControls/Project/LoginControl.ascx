@@ -59,7 +59,7 @@
                       {%>
                     <asp:Button runat="server" Text="کنترل پنل" CssClass="btnLoginForm btnEndLoginForm" OnClick="CPanelClick" autocomplete="off" />
                     <% }%>--%>
-                    <%if (true)
+                    <%if (kFrameWork.UI.UserSession.User.AccessLevel_ID != 2)
                       {%>
                           <asp:Button runat="server" Text="کنترل پنل" CssClass="btnLoginForm btnEndLoginForm" OnClick="CPanelClick" autocomplete="off" />
                       <%} %>

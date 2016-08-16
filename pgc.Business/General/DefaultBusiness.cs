@@ -12,10 +12,7 @@ namespace pgc.Business.General
     {
         pgcEntities db = new pgcEntities();
 
-        public List<Product> GetDefaultFoodSlider()
-        {
-            return db.Products.Where(p => p.DisplayInSlider == true && p.Accessories == false && p.IsActive == true).OrderBy(p => p.DispOrder).ToList();
-        }
+       
 
         public IQueryable<News> GetLastNews()
         {
@@ -30,10 +27,7 @@ namespace pgc.Business.General
             return list.OrderBy(r => r.ID).Skip(index).FirstOrDefault().ImgPath;
         }
 
-        public List<MainMenu> GetMainMenu()
-        {
-            return db.MainMenus.Where(m => m.DispInHome == true).OrderBy(m => m.DisplayOrder).ToList();
-        }
+        
 
         public List<SocialIcon> GetSocialIcon()
         {

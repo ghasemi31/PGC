@@ -184,10 +184,14 @@ namespace pgc.Business.General
 
             }
         }
-
         public IQueryable<Game> GetAllGame()
         {
             return db.Games;
+        }
+
+        public GameCenter RetriveGameCenter(long id)
+        {
+            return db.GameCenters.SingleOrDefault(g => g.ID == id);
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
 
     //main slider
-    SetScreenHeight();
-    $(window).resize(function () {
-        SetScreenHeight();
-    })
+    //SetScreenHeight();
+    //$(window).resize(function () {
+    //    SetScreenHeight();
+    //})
 
 
 
@@ -19,16 +19,16 @@
         transactionStyle = transaction;
     }
 
-    $("#main-slider").owlCarousel({
+    $("#mainSlider").owlCarousel({
         autoPlay: 3000,
       
         singleItem: true,
         autoplay: true,
-        autoplayTimeout: 3000,
-        autoplaySpeed: 4000,
+        autoplayTimeout: speedTime,
+        autoplaySpeed: time,
         autoplayHoverPause: true,
         loop: true,
-
+        transitionStyle: transactionStyle,
    
         autoHeight: false,
         responsiveClass: true,
@@ -181,11 +181,11 @@
     });
 })
 
-var SetScreenHeight = function () {
-    var screenHeight = $(window).height();
-    var screenWidth = $(window).width();
-    if (screenHeight > screenWidth) {
-        screenHeight = screenHeight / 2;
-    }
-    $('#main-slider').css("height", screenHeight-150);
-}
+//var SetScreenHeight = function () {
+//    var screenHeight = $(window).height();
+//    var screenWidth = $(window).width();
+//    if (screenHeight > screenWidth) {
+//        screenHeight = screenHeight / 2;
+//    }
+//    $('#main-slider').css("height", screenHeight-150);
+//}

@@ -19,48 +19,48 @@ public partial class Pages_Admin_ExcelReport_BranchFinanceLogListExcel : System.
     {
         try
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
+            //string filePath = HttpContext.Current.Server.MapPath("~/UserFiles/Report.xls");
 
-            BranchFinanceLogPattern pattern = (BranchFinanceLogPattern)Session["BranchFinanceLogPrintPattern"];
-            BranchFinanceLogBusiness business = new BranchFinanceLogBusiness();
-            IQueryable<BranchFinanceLog> FinanceLogsList = business.Search_SelectPrint(pattern);
+            //BranchFinanceLogPattern pattern = (BranchFinanceLogPattern)Session["BranchFinanceLogPrintPattern"];
+            //BranchFinanceLogBusiness business = new BranchFinanceLogBusiness();
+            //IQueryable<BranchFinanceLog> FinanceLogsList = business.Search_SelectPrint(pattern);
             
-            DataTable table = new DataTable("FinanceLogs");
+            //DataTable table = new DataTable("FinanceLogs");
 
-            table.Columns.Add("ردیف");
-            table.Columns.Add("نام شعبه");
-            table.Columns.Add("نوع تغییر");
-            table.Columns.Add("تغییر توسط");
-            table.Columns.Add("تاریخ");
-            table.Columns.Add("توضیحات");
-            table.Columns.Add("سند مربوطه");
+            //table.Columns.Add("ردیف");
+            //table.Columns.Add("نام شعبه");
+            //table.Columns.Add("نوع تغییر");
+            //table.Columns.Add("تغییر توسط");
+            //table.Columns.Add("تاریخ");
+            //table.Columns.Add("توضیحات");
+            //table.Columns.Add("سند مربوطه");
 
 
-            int i=0;
-            foreach (var order in FinanceLogsList)
-            {
-                i++;
-                table.Rows.Add(
-                    i,
-                    order.BranchTitle,
-                    EnumUtil.GetEnumElementPersianTitle((BranchFinanceLogActionType)order.ActionType),
-                    order.UserName,
-                    Util.GetPersianDateWithTime(order.Date),
-                    order.Description,
-                    EnumUtil.GetEnumElementPersianTitle((BranchFinanceLogType)order.LogType) + "(کد" + order.LogType_ID.ToString() + ")"
-                    );
-            }
+            //int i=0;
+            //foreach (var order in FinanceLogsList)
+            //{
+            //    i++;
+            //    table.Rows.Add(
+            //        i,
+            //        order.BranchTitle,
+            //        EnumUtil.GetEnumElementPersianTitle((BranchFinanceLogActionType)order.ActionType),
+            //        order.UserName,
+            //        Util.GetPersianDateWithTime(order.Date),
+            //        order.Description,
+            //        EnumUtil.GetEnumElementPersianTitle((BranchFinanceLogType)order.LogType) + "(کد" + order.LogType_ID.ToString() + ")"
+            //        );
+            //}
         
 
 
-            DataSet dSet = new DataSet("table");
-            dSet.Tables.Add(table);
+            //DataSet dSet = new DataSet("table");
+            //dSet.Tables.Add(table);
             
-            GridView gv = new GridView();
-            gv.DataSource = dSet;
-            gv.DataBind();
+            //GridView gv = new GridView();
+            //gv.DataSource = dSet;
+            //gv.DataBind();
             
-            ExportUtil.Export(filePath, gv, true);
+            //ExportUtil.Export(filePath, gv, true);
         }
         catch (Exception ex)
         {

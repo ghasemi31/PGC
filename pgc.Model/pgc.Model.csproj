@@ -101,6 +101,7 @@
     <Compile Include="Enums\Project\NewsStatus.cs" />
     <Compile Include="Enums\Project\OrderPaymentStatus.cs" />
     <Compile Include="Enums\Project\OrderStatus.cs" />
+    <Compile Include="Enums\Project\GameHowType.cs" />
     <Compile Include="Enums\Project\Order\MellatOnlinePaymentState.cs" />
     <Compile Include="Enums\Project\Order\OnlineGetway.cs" />
     <Compile Include="Enums\Project\PaymentType.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Patterns\Project\FooterItemPattern.cs" />
     <Compile Include="Patterns\Project\GalleryPattern.cs" />
     <Compile Include="Patterns\Project\GalleryPicPattern.cs" />
+    <Compile Include="Patterns\Project\GameCenterPattern.cs" />
     <Compile Include="Patterns\Project\GameManagerPattern.cs" />
     <Compile Include="Patterns\Project\GameOrdersPattern.cs" />
     <Compile Include="Patterns\Project\GamePattern.cs" />

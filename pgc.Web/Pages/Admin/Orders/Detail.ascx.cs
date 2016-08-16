@@ -53,6 +53,7 @@ public partial class Pages_Admin_GameOrder_Detail : BaseDetailControl<GameOrder>
             lsvGroup.DataBind();
         }
 
+        lblgameCenter.Text = Data.GameCenterTitle ?? "";
        
 
     }

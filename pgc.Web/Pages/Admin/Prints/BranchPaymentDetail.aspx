@@ -20,7 +20,7 @@
 </script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <%--<form id="form1" runat="server">
         <div>
                      <table border="0px" class="lsttbl">
                         <tr>
@@ -140,6 +140,6 @@
                     Response.Redirect(GetRouteUrl("admin-branchpayment", null));
                 }%>
         </div>
-    </form>
+    </form>--%>
 </body>
 </html>

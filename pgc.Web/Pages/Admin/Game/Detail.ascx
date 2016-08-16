@@ -17,7 +17,25 @@
                  />
         </td>
     </tr>
-   
+
+    <tr>
+        <td class="caption">نحوه اجرای بازی</td>
+        <td class="control">
+            <kfk:LookupCombo ID="lkcHowType"
+                runat="server"
+                EnumParameterType="pgc.Model.Enums.GameHowType"
+                 />
+        </td>
+    </tr>
+    <tr>
+                <td class="caption">مدیر بازی</td>
+            <td class="control"><kfk:LookupCombo ID="lkpManager" 
+               
+                                            BusinessTypeName="pgc.Business.Lookup.GameManagerLookupBusiness"
+                                            runat="server"  /></td>
+
+           
+        </tr>
     <tr>
         <td class="caption">تعداد بازیکن ها</td>
         <td class="control">
@@ -67,7 +85,7 @@
         <td class="caption">کلمه کلیدی Url </td>
         <td class="control" style="width: 280px">
             <kfk:NormalTextBox ID="txtUrlKey" runat="server" TextBoxWidth="212" Required="true" />
-            /www.iranpgc.ir/gamedetail
+            /www.iranpgc.com/gamedetail
             <br />
             <span style="color: #bd0019">ترجیحا از فاصله (space) استفاده نکنید , 
                 فقط از حروف و اعداد استفاده شود , 

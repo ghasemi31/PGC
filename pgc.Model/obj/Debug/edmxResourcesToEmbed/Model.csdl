@@ -1,17 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pgcModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="pgcEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
+    <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
+    <EntitySet Name="News" EntityType="pgcModel.News" />
+    <EntitySet Name="Reports" EntityType="pgcModel.Report" />
+    <EntitySet Name="SocialIcons" EntityType="pgcModel.SocialIcon" />
+    <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
+    <EntitySet Name="Supports" EntityType="pgcModel.Support" />
+    <EntitySet Name="ExceptionLogs" EntityType="pgcModel.ExceptionLog" />
+    <EntitySet Name="OccuredSystemEvents" EntityType="pgcModel.OccuredSystemEvent" />
     <EntitySet Name="Options" EntityType="pgcModel.Option" />
     <EntitySet Name="OptionCategories" EntityType="pgcModel.OptionCategory" />
     <EntitySet Name="OptionLookups" EntityType="pgcModel.OptionLookup" />
     <EntitySet Name="OptionLookupDetails" EntityType="pgcModel.OptionLookupDetail" />
+    <EntitySet Name="PrivateNoes" EntityType="pgcModel.PrivateNo" />
+    <EntitySet Name="SystemEvents" EntityType="pgcModel.SystemEvent" />
+    <EntitySet Name="SystemEventActions" EntityType="pgcModel.SystemEventAction" />
+    <EntitySet Name="SystemEventVariables" EntityType="pgcModel.SystemEventVariable" />
+    <EntitySet Name="Games" EntityType="pgcModel.Game" />
+    <EntitySet Name="GameCenters" EntityType="pgcModel.GameCenter" />
+    <EntitySet Name="GameOrders" EntityType="pgcModel.GameOrder" />
+    <EntitySet Name="Groups" EntityType="pgcModel.Group" />
+    <EntitySet Name="Payments" EntityType="pgcModel.Payment" />
+    <EntitySet Name="EmailSendAttempts" EntityType="pgcModel.EmailSendAttempt" />
+    <EntitySet Name="ReceivedMessages" EntityType="pgcModel.ReceivedMessage" />
+    <EntitySet Name="SentEmailBlocks" EntityType="pgcModel.SentEmailBlock" />
+    <EntitySet Name="SentSMS" EntityType="pgcModel.SentSMS" />
+    <EntitySet Name="SMSSendAttempts" EntityType="pgcModel.SMSSendAttempt" />
     <EntitySet Name="AccessLevels" EntityType="pgcModel.AccessLevel" />
+    <EntitySet Name="Features" EntityType="pgcModel.Feature" />
     <EntitySet Name="MenuCategories" EntityType="pgcModel.MenuCategory" />
+    <EntitySet Name="MenuItems" EntityType="pgcModel.MenuItem" />
     <EntitySet Name="PanelPages" EntityType="pgcModel.PanelPage" />
     <EntitySet Name="Cities" EntityType="pgcModel.City" />
     <EntitySet Name="Provinces" EntityType="pgcModel.Province" />
-    <EntitySet Name="Samples" EntityType="pgcModel.Sample" />
+    <EntitySet Name="Users" EntityType="pgcModel.User" />
     <EntitySet Name="UserMessages" EntityType="pgcModel.UserMessage" />
+    <EntitySet Name="OnlinePaymentLists" EntityType="pgcModel.OnlinePaymentList" />
+    <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="pgcModel.FK_OccuredSystemEvent_SystemEvent">
+      <End Role="SystemEvent" EntitySet="SystemEvents" />
+      <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvents" />
+    </AssociationSet>
     <AssociationSet Name="FK_Option_OptionCategory" Association="pgcModel.FK_Option_OptionCategory">
       <End Role="OptionCategory" EntitySet="OptionCategories" />
       <End Role="Option" EntitySet="Options" />
@@ -28,74 +58,18 @@
       <End Role="OptionLookup" EntitySet="OptionLookups" />
       <End Role="OptionLookupDetail" EntitySet="OptionLookupDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_PanelPage_PanelPage" Association="pgcModel.FK_PanelPage_PanelPage">
-      <End Role="PanelPage" EntitySet="PanelPages" />
-      <End Role="PanelPage1" EntitySet="PanelPages" />
+    <AssociationSet Name="FK_ReceivedMessage_PrivateNo" Association="pgcModel.FK_ReceivedMessage_PrivateNo">
+      <End Role="PrivateNo" EntitySet="PrivateNoes" />
+      <End Role="ReceivedMessage" EntitySet="ReceivedMessages" />
     </AssociationSet>
-    <AssociationSet Name="FK_City_Province" Association="pgcModel.FK_City_Province">
-      <End Role="Province" EntitySet="Provinces" />
-      <End Role="City" EntitySet="Cities" />
+    <AssociationSet Name="FK_SentSMS_PrivateNo" Association="pgcModel.FK_SentSMS_PrivateNo">
+      <End Role="PrivateNo" EntitySet="PrivateNoes" />
+      <End Role="SentSM" EntitySet="SentSMS" />
     </AssociationSet>
-    <EntitySet Name="Faqs" EntityType="pgcModel.Faq" />
-    <EntitySet Name="Helps" EntityType="pgcModel.Help" />
-    <EntitySet Name="Articles" EntityType="pgcModel.Article" />
-    <EntitySet Name="Reports" EntityType="pgcModel.Report" />
-    <EntitySet Name="Headings" EntityType="pgcModel.Heading" />
-    <EntitySet Name="IndexSlides" EntityType="pgcModel.IndexSlide" />
-    <EntitySet Name="Galleries" EntityType="pgcModel.Gallery" />
-    <EntitySet Name="GalleryPics" EntityType="pgcModel.GalleryPic" />
-    <AssociationSet Name="FK_GalleryPic_Gallery" Association="pgcModel.FK_GalleryPic_Gallery">
-      <End Role="Gallery" EntitySet="Galleries" />
-      <End Role="GalleryPic" EntitySet="GalleryPics" />
+    <AssociationSet Name="FK_SystemEventAction_PrivateNo" Association="pgcModel.FK_SystemEventAction_PrivateNo">
+      <End Role="PrivateNo" EntitySet="PrivateNoes" />
+      <End Role="SystemEventAction" EntitySet="SystemEventActions" />
     </AssociationSet>
-    <EntitySet Name="BranchPics" EntityType="pgcModel.BranchPic" />
-    <EntitySet Name="Polls" EntityType="pgcModel.Poll" />
-    <EntitySet Name="PollChoises" EntityType="pgcModel.PollChoise" />
-    <EntitySet Name="PollResults" EntityType="pgcModel.PollResult" />
-    <AssociationSet Name="FK_PollChoise_Poll" Association="pgcModel.FK_PollChoise_Poll">
-      <End Role="Poll" EntitySet="Polls" />
-      <End Role="PollChoise" EntitySet="PollChoises" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PollResult_Poll" Association="pgcModel.FK_PollResult_Poll">
-      <End Role="Poll" EntitySet="Polls" />
-      <End Role="PollResult" EntitySet="PollResults" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PollResult_PollChoise" Association="pgcModel.FK_PollResult_PollChoise">
-      <End Role="PollChoise" EntitySet="PollChoises" />
-      <End Role="PollResult" EntitySet="PollResults" />
-    </AssociationSet>
-    <EntitySet Name="LotteryDetails" EntityType="pgcModel.LotteryDetail" />
-    <EntitySet Name="Lotteries" EntityType="pgcModel.Lottery" />
-    <AssociationSet Name="FK_LotteryDetail_Lottery" Association="pgcModel.FK_LotteryDetail_Lottery">
-      <End Role="Lottery" EntitySet="Lotteries" />
-      <End Role="LotteryDetail" EntitySet="LotteryDetails" />
-    </AssociationSet>
-    <EntitySet Name="LotteryWiners" EntityType="pgcModel.LotteryWiner" />
-    <AssociationSet Name="FK_LotteryWiner_Lottery" Association="pgcModel.FK_LotteryWiner_Lottery">
-      <End Role="Lottery" EntitySet="Lotteries" />
-      <End Role="LotteryWiner" EntitySet="LotteryWiners" />
-    </AssociationSet>
-    <EntitySet Name="Advertisements" EntityType="pgcModel.Advertisement" />
-    <AssociationSet Name="AdvPage" Association="pgcModel.AdvPage">
-      <End Role="Advertisement" EntitySet="Advertisements" />
-      <End Role="PanelPage" EntitySet="PanelPages" />
-    </AssociationSet>
-    <EntitySet Name="SystemEventVariables" EntityType="pgcModel.SystemEventVariable" />
-    <EntitySet Name="EmailSendAttempts" EntityType="pgcModel.EmailSendAttempt" />
-    <EntitySet Name="ReceivedMessages" EntityType="pgcModel.ReceivedMessage" />
-    <EntitySet Name="SentEmailBlocks" EntityType="pgcModel.SentEmailBlock" />
-    <AssociationSet Name="FK_SentEmailBlock_EmailSentAttempt" Association="pgcModel.FK_SentEmailBlock_EmailSentAttempt">
-      <End Role="EmailSendAttempt" EntitySet="EmailSendAttempts" />
-      <End Role="SentEmailBlock" EntitySet="SentEmailBlocks" />
-    </AssociationSet>
-    <EntitySet Name="SentSMSList" EntityType="pgcModel.SentSMS" />
-    <EntitySet Name="SMSSendAttempts" EntityType="pgcModel.SMSSendAttempt" />
-    <AssociationSet Name="FK_SentSMS_SMSSendAttempt" Association="pgcModel.FK_SentSMS_SMSSendAttempt">
-      <End Role="SMSSendAttempt" EntitySet="SMSSendAttempts" />
-      <End Role="SentSMS" EntitySet="SentSMSList" />
-    </AssociationSet>
-    <EntitySet Name="SystemEvents" EntityType="pgcModel.SystemEvent" />
-    <EntitySet Name="SystemEventActions" EntityType="pgcModel.SystemEventAction" />
     <AssociationSet Name="FK_SystemEventAction_SystemEvent" Association="pgcModel.FK_SystemEventAction_SystemEvent">
       <End Role="SystemEvent" EntitySet="SystemEvents" />
       <End Role="SystemEventAction" EntitySet="SystemEventActions" />
@@ -108,240 +82,20 @@
       <End Role="AccessLevel" EntitySet="AccessLevels" />
       <End Role="SystemEventAction" EntitySet="SystemEventActions" />
     </AssociationSet>
-    <EntitySet Name="ExceptionLogs" EntityType="pgcModel.ExceptionLog" />
-    <EntitySet Name="UserComments" EntityType="pgcModel.UserComment" />
-    <EntitySet Name="PrivateNoes" EntityType="pgcModel.PrivateNo" />
-    <AssociationSet Name="FK_ReceivedMessage_PrivateNo" Association="pgcModel.FK_ReceivedMessage_PrivateNo">
-      <End Role="PrivateNo" EntitySet="PrivateNoes" />
-      <End Role="ReceivedMessage" EntitySet="ReceivedMessages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SentSMS_PrivateNo" Association="pgcModel.FK_SentSMS_PrivateNo">
-      <End Role="PrivateNo" EntitySet="PrivateNoes" />
-      <End Role="SentSMS" EntitySet="SentSMSList" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SystemEventAction_PrivateNo" Association="pgcModel.FK_SystemEventAction_PrivateNo">
-      <End Role="PrivateNo" EntitySet="PrivateNoes" />
-      <End Role="SystemEventAction" EntitySet="SystemEventActions" />
-    </AssociationSet>
-    <EntitySet Name="BankAccounts" EntityType="pgcModel.BankAccount" />
-    <EntitySet Name="OnlinePayments" EntityType="pgcModel.OnlinePayment" />
-    <EntitySet Name="BuyBaskets" EntityType="pgcModel.BuyBasket" />
-    <EntitySet Name="OrderDetails" EntityType="pgcModel.OrderDetail" />
-    <EntitySet Name="BranchPayments" EntityType="pgcModel.BranchPayment" />
-    <AssociationSet Name="FK_BranchPayment_BankAccount" Association="pgcModel.FK_BranchPayment_BankAccount">
-      <End Role="BankAccount" EntitySet="BankAccounts" />
-      <End Role="BranchPayment" EntitySet="BranchPayments" />
-    </AssociationSet>
-    <EntitySet Name="BranchTransactions" EntityType="pgcModel.BranchTransaction" />
-    <EntitySet Name="BranchOrderTitles" EntityType="pgcModel.BranchOrderTitle" />
-    <EntitySet Name="BranchOrderTitleGroups" EntityType="pgcModel.BranchOrderTitleGroup" />
-    <AssociationSet Name="FK_BranchOrderTitle_BranchOrderTitleGroup" Association="pgcModel.FK_BranchOrderTitle_BranchOrderTitleGroup">
-      <End Role="BranchOrderTitleGroup" EntitySet="BranchOrderTitleGroups" />
-      <End Role="BranchOrderTitle" EntitySet="BranchOrderTitles" />
-    </AssociationSet>
-    <EntitySet Name="Branch_BranchOrderTitle" EntityType="pgcModel.Branch_BranchOrderTitle" />
-    <AssociationSet Name="FK_Branch_BranchOrderTitle_BranchOrderTitle" Association="pgcModel.FK_Branch_BranchOrderTitle_BranchOrderTitle">
-      <End Role="BranchOrderTitle" EntitySet="BranchOrderTitles" />
-      <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
-    </AssociationSet>
-    <EntitySet Name="BranchLackOrders" EntityType="pgcModel.BranchLackOrder" />
-    <EntitySet Name="BranchLackOrderDetails" EntityType="pgcModel.BranchLackOrderDetail" />
-    <EntitySet Name="BranchOrderDetails" EntityType="pgcModel.BranchOrderDetail" />
-    <EntitySet Name="BranchOrderShipmentStates" EntityType="pgcModel.BranchOrderShipmentState" />
-    <EntitySet Name="BranchReturnOrders" EntityType="pgcModel.BranchReturnOrder" />
-    <EntitySet Name="BranchReturnOrderDetails" EntityType="pgcModel.BranchReturnOrderDetail" />
-    <AssociationSet Name="FK_BranchLackOrderDetail_BranchLackOrder" Association="pgcModel.FK_BranchLackOrderDetail_BranchLackOrder">
-      <End Role="BranchLackOrder" EntitySet="BranchLackOrders" />
-      <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle">
-      <End Role="BranchOrderTitle" EntitySet="BranchOrderTitles" />
-      <End Role="BranchLackOrderDetail" EntitySet="BranchLackOrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle">
-      <End Role="BranchOrderTitle" EntitySet="BranchOrderTitles" />
-      <End Role="BranchOrderDetail" EntitySet="BranchOrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle" Association="pgcModel.FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle">
-      <End Role="BranchOrderTitle" EntitySet="BranchOrderTitles" />
-      <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchReturnOrderDetail_BranchReturnOrder" Association="pgcModel.FK_BranchReturnOrderDetail_BranchReturnOrder">
-      <End Role="BranchReturnOrder" EntitySet="BranchReturnOrders" />
-      <End Role="BranchReturnOrderDetail" EntitySet="BranchReturnOrderDetails" />
-    </AssociationSet>
-    <EntitySet Name="BranchOrders" EntityType="pgcModel.BranchOrder" />
-    <AssociationSet Name="FK_BranchLackOrder_BranchOrder" Association="pgcModel.FK_BranchLackOrder_BranchOrder">
-      <End Role="BranchOrder" EntitySet="BranchOrders" />
-      <End Role="BranchLackOrder" EntitySet="BranchLackOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchOrder_BranchOrderShipmentStatus" Association="pgcModel.FK_BranchOrder_BranchOrderShipmentStatus">
-      <End Role="BranchOrderShipmentState" EntitySet="BranchOrderShipmentStates" />
-      <End Role="BranchOrder" EntitySet="BranchOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_BranchOrderDetail_Finance_BranchOrder" Association="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrder">
-      <End Role="BranchOrder" EntitySet="BranchOrders" />
-      <End Role="BranchOrderDetail" EntitySet="BranchOrderDetails" />
-    </AssociationSet>
-    <EntitySet Name="BranchFinanceLogs" EntityType="pgcModel.BranchFinanceLog" />
-    <EntitySet Name="SiteMapCats" EntityType="pgcModel.SiteMapCat" />
-    <EntitySet Name="SiteMapItems" EntityType="pgcModel.SiteMapItem" />
-    <AssociationSet Name="FK_SiteMapItem_SiteMapCat" Association="pgcModel.FK_SiteMapItem_SiteMapCat">
-      <End Role="SiteMapCat" EntitySet="SiteMapCats" />
-      <End Role="SiteMapItem" EntitySet="SiteMapItems" />
-    </AssociationSet>
-    <EntitySet Name="SideMenuCats" EntityType="pgcModel.SideMenuCat" />
-    <EntitySet Name="SideMenuItems" EntityType="pgcModel.SideMenuItem" />
-    <AssociationSet Name="FK_SideMenuItem_SideMenuCat" Association="pgcModel.FK_SideMenuItem_SideMenuCat">
-      <End Role="SideMenuCat" EntitySet="SideMenuCats" />
-      <End Role="SideMenuItem" EntitySet="SideMenuItems" />
-    </AssociationSet>
-    <EntitySet Name="Materials" EntityType="pgcModel.Material" />
-    <EntitySet Name="Users" EntityType="pgcModel.User" />
     <AssociationSet Name="FK_SystemEventAction_User" Association="pgcModel.FK_SystemEventAction_User">
       <End Role="User" EntitySet="Users" />
       <End Role="SystemEventAction" EntitySet="SystemEventActions" />
     </AssociationSet>
-    <AssociationSet Name="FK_BranchOrderLog_User" Association="pgcModel.FK_BranchOrderLog_User">
-      <End Role="User" EntitySet="Users" />
-      <End Role="BranchFinanceLog" EntitySet="BranchFinanceLogs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BuyBasket_User" Association="pgcModel.FK_BuyBasket_User">
-      <End Role="User" EntitySet="Users" />
-      <End Role="BuyBasket" EntitySet="BuyBaskets" />
-    </AssociationSet>
-    <AssociationSet Name="FK_User_AccessLevel" Association="pgcModel.FK_User_AccessLevel">
-      <End Role="AccessLevel" EntitySet="AccessLevels" />
-      <End Role="User" EntitySet="Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK_User_City" Association="pgcModel.FK_User_City">
-      <End Role="City" EntitySet="Cities" />
-      <End Role="User" EntitySet="Users" />
-    </AssociationSet>
-    <EntitySet Name="BranchRequests" EntityType="pgcModel.BranchRequest" />
-    <EntitySet Name="SocialIcons" EntityType="pgcModel.SocialIcon" />
-    <EntitySet Name="Comments" EntityType="pgcModel.Comment" />
-    <EntitySet Name="BranchContacts" EntityType="pgcModel.BranchContact" />
-    <EntitySet Name="Products" EntityType="pgcModel.Product" />
-    <AssociationSet Name="FK_Comment_Product" Association="pgcModel.FK_Comment_Product">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="Comment" EntitySet="Comments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BuyBasket_Product" Association="pgcModel.FK_BuyBasket_Product">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="BuyBasket" EntitySet="BuyBaskets" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderDetail_Product" Association="pgcModel.FK_OrderDetail_Product">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="OrderDetail" EntitySet="OrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="Product_Material" Association="pgcModel.Product_Material">
-      <End Role="Material" EntitySet="Materials" />
-      <End Role="Product" EntitySet="Products" />
-    </AssociationSet>
-    <EntitySet Name="Branches" EntityType="pgcModel.Branch" />
-    <AssociationSet Name="FK_Branch_BranchOrderTitle_Branch" Association="pgcModel.FK_Branch_BranchOrderTitle_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="Branch_BranchOrderTitle" EntitySet="Branch_BranchOrderTitle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchComment_Branch" Association="pgcModel.FK_BranchComment_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchContact" EntitySet="BranchContacts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchOrder_Branch" Association="pgcModel.FK_BranchOrder_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchOrder" EntitySet="BranchOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchOrderLog_Branch" Association="pgcModel.FK_BranchOrderLog_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchFinanceLog" EntitySet="BranchFinanceLogs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchPic_Branch" Association="pgcModel.FK_BranchPic_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchPic" EntitySet="BranchPics" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BranchReturnOrder_Branch" Association="pgcModel.FK_BranchReturnOrder_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchReturnOrder" EntitySet="BranchReturnOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Comment_Branch" Association="pgcModel.FK_Comment_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="Comment" EntitySet="Comments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_Payment_Branch" Association="pgcModel.FK_Finance_Payment_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchPayment" EntitySet="BranchPayments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Finance_Transaction_Branch" Association="pgcModel.FK_Finance_Transaction_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="BranchTransaction" EntitySet="BranchTransactions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_User_Branch" Association="pgcModel.FK_User_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="User" EntitySet="Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserComment_Branch" Association="pgcModel.FK_UserComment_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="UserComment" EntitySet="UserComments" />
-    </AssociationSet>
-    <EntitySet Name="News" EntityType="pgcModel.News" />
-    <EntitySet Name="Orders" EntityType="pgcModel.Order" />
-    <AssociationSet Name="FK_Order_Branch" Association="pgcModel.FK_Order_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OnlinePayment_Order" Association="pgcModel.FK_OnlinePayment_Order">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="OnlinePayment" EntitySet="OnlinePayments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_User" Association="pgcModel.FK_Order_User">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderDetail_Order" Association="pgcModel.FK_OrderDetail_Order">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="OrderDetail" EntitySet="OrderDetails" />
-    </AssociationSet>
-    <EntitySet Name="Circulars" EntityType="pgcModel.Circular" />
-    <AssociationSet Name="Circular_Branch" Association="pgcModel.Circular_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="Circular" EntitySet="Circulars" />
-    </AssociationSet>
-    <EntitySet Name="OccuredSystemEvents" EntityType="pgcModel.OccuredSystemEvent" />
-    <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="pgcModel.FK_OccuredSystemEvent_SystemEvent">
-      <End Role="SystemEvent" EntitySet="SystemEvents" />
-      <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvents" />
-    </AssociationSet>
-    <EntitySet Name="OnlinePaymentLists" EntityType="pgcModel.OnlinePaymentList" />
-    <EntitySet Name="MainMenus" EntityType="pgcModel.MainMenu" />
-    <EntitySet Name="Features" EntityType="pgcModel.Feature" />
-    <AssociationSet Name="FK_PanelPage_Feature" Association="pgcModel.FK_PanelPage_Feature">
-      <End Role="Feature" EntitySet="Features" />
-      <End Role="PanelPage" EntitySet="PanelPages" />
-    </AssociationSet>
-    <AssociationSet Name="Permission" Association="pgcModel.Permission">
-      <End Role="AccessLevel" EntitySet="AccessLevels" />
-      <End Role="Feature" EntitySet="Features" />
-    </AssociationSet>
-    <EntitySet Name="MenuItems" EntityType="pgcModel.MenuItem" />
-    <AssociationSet Name="FK_MenuItem_Feature" Association="pgcModel.FK_MenuItem_Feature">
-      <End Role="Feature" EntitySet="Features" />
-      <End Role="MenuItem" EntitySet="MenuItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MenuItem_MenuCategory" Association="pgcModel.FK_MenuItem_MenuCategory">
-      <End Role="MenuCategory" EntitySet="MenuCategories" />
-      <End Role="MenuItem" EntitySet="MenuItems" />
-    </AssociationSet>
-    <EntitySet Name="DynPages" EntityType="pgcModel.DynPage" />
-    <EntitySet Name="MainSliders" EntityType="pgcModel.MainSlider" />
-    <EntitySet Name="Sponsors" EntityType="pgcModel.Sponsor" />
-    <EntitySet Name="Supports" EntityType="pgcModel.Support" />
-    <EntitySet Name="Games" EntityType="pgcModel.Game" />
-    <EntitySet Name="GameOrders" EntityType="pgcModel.GameOrder" />
-    <EntitySet Name="Groups" EntityType="pgcModel.Group" />
-    <EntitySet Name="Payments" EntityType="pgcModel.Payment" />
     <AssociationSet Name="FK_GameOrder_Game" Association="pgcModel.FK_GameOrder_Game">
       <End Role="Game" EntitySet="Games" />
+      <End Role="GameOrder" EntitySet="GameOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameCenter_City" Association="pgcModel.FK_GameCenter_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="GameCenter" EntitySet="GameCenters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameOrder_GameCenter" Association="pgcModel.FK_GameOrder_GameCenter">
+      <End Role="GameCenter" EntitySet="GameCenters" />
       <End Role="GameOrder" EntitySet="GameOrders" />
     </AssociationSet>
     <AssociationSet Name="FK_GameOrder_Group" Association="pgcModel.FK_GameOrder_Group">
@@ -356,6 +110,42 @@
       <End Role="GameOrder" EntitySet="GameOrders" />
       <End Role="Payment" EntitySet="Payments" />
     </AssociationSet>
+    <AssociationSet Name="FK_SentEmailBlock_EmailSentAttempt" Association="pgcModel.FK_SentEmailBlock_EmailSentAttempt">
+      <End Role="EmailSendAttempt" EntitySet="EmailSendAttempts" />
+      <End Role="SentEmailBlock" EntitySet="SentEmailBlocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SentSMS_SMSSendAttempt" Association="pgcModel.FK_SentSMS_SMSSendAttempt">
+      <End Role="SMSSendAttempt" EntitySet="SMSSendAttempts" />
+      <End Role="SentSM" EntitySet="SentSMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_AccessLevel" Association="pgcModel.FK_User_AccessLevel">
+      <End Role="AccessLevel" EntitySet="AccessLevels" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuItem_Feature" Association="pgcModel.FK_MenuItem_Feature">
+      <End Role="Feature" EntitySet="Features" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PanelPage_Feature" Association="pgcModel.FK_PanelPage_Feature">
+      <End Role="Feature" EntitySet="Features" />
+      <End Role="PanelPage" EntitySet="PanelPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuItem_MenuCategory" Association="pgcModel.FK_MenuItem_MenuCategory">
+      <End Role="MenuCategory" EntitySet="MenuCategories" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PanelPage_PanelPage" Association="pgcModel.FK_PanelPage_PanelPage">
+      <End Role="PanelPage" EntitySet="PanelPages" />
+      <End Role="PanelPage1" EntitySet="PanelPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Province" Association="pgcModel.FK_City_Province">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_City" Association="pgcModel.FK_User_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
     <AssociationSet Name="Game_GameManager" Association="pgcModel.Game_GameManager">
       <End Role="Game" EntitySet="Games" />
       <End Role="User" EntitySet="Users" />
@@ -364,1675 +154,37 @@
       <End Role="Group" EntitySet="Groups" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
-    <EntitySet Name="AppSettings" EntityType="pgcModel.AppSetting" />
-    <EntitySet Name="Feedbacks" EntityType="pgcModel.Feedback" />
+    <AssociationSet Name="Permission" Association="pgcModel.Permission">
+      <End Role="AccessLevel" EntitySet="AccessLevels" />
+      <End Role="Feature" EntitySet="Features" />
+    </AssociationSet>
+    <FunctionImport Name="GetColumnsOfTable" ReturnType="Collection(pgcModel.GetColumnsOfTable_Result)">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetTablesOfDb" ReturnType="Collection(pgcModel.GetTablesOfDb_Result)" />
   </EntityContainer>
-  <EntityType Name="Option">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="OptionCategory_ID" Type="Int64" Nullable="false" />
-    <Property Name="OptionLookup_ID" Type="Int64" />
-    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="Type" Type="Int32" Nullable="false" />
-    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <NavigationProperty Name="OptionCategory" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="Option" ToRole="OptionCategory" />
-    <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="Option" ToRole="OptionLookup" />
-    <Property Name="Active" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OptionCategory">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="Parent_OptionCategory_ID" Type="Int64" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <Property Name="GrantAdmin" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Options" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="OptionCategory" ToRole="Option" />
-    <NavigationProperty Name="OptionCategory1" Relationship="pgcModel.FK_OptionCategory_OptionCategory" FromRole="OptionCategory" ToRole="OptionCategory1" />
-    <NavigationProperty Name="OptionCategory2" Relationship="pgcModel.FK_OptionCategory_OptionCategory" FromRole="OptionCategory1" ToRole="OptionCategory" />
-    <Property Name="Active" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OptionLookup">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Options" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="OptionLookup" ToRole="Option" />
-    <NavigationProperty Name="OptionLookupDetails" Relationship="pgcModel.FK_OptionLookupDetail_OptionLookup" FromRole="OptionLookup" ToRole="OptionLookupDetail" />
-  </EntityType>
-  <EntityType Name="OptionLookupDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="OptionLookup_ID" Type="Int64" Nullable="false" />
-    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="Value" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_OptionLookupDetail_OptionLookup" FromRole="OptionLookupDetail" ToRole="OptionLookup" />
-  </EntityType>
-  <EntityType Name="AccessLevel">
+  <EntityType Name="Feedback">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Role" Type="Int32" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="AccessLevel" ToRole="SystemEventAction" />
-    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_AccessLevel" FromRole="AccessLevel" ToRole="User" />
-    <NavigationProperty Name="Features" Relationship="pgcModel.Permission" FromRole="AccessLevel" ToRole="Feature" />
-  </EntityType>
-  <EntityType Name="MenuCategory">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuCategory" ToRole="MenuItem" />
-    <Property Name="Active" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PanelPage">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="Feature_ID" Type="Int64" />
-    <Property Name="Parent_Page_ID" Type="Int64" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="UITitle" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="URL" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="PageSize" Type="Int32" Nullable="false" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <Property Name="RouteName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="RouteUrl" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="IsLookup" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="PanelPage1" Relationship="pgcModel.FK_PanelPage_PanelPage" FromRole="PanelPage" ToRole="PanelPage1" />
-    <NavigationProperty Name="PanelPage2" Relationship="pgcModel.FK_PanelPage_PanelPage" FromRole="PanelPage1" ToRole="PanelPage" />
-    <Property Type="Boolean" Name="AdvSupport" Nullable="false" />
-    <NavigationProperty Name="Advertisements" Relationship="pgcModel.AdvPage" FromRole="PanelPage" ToRole="Advertisement" />
-    <NavigationProperty Name="Feature" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="PanelPage" ToRole="Feature" />
-    <Property Name="Active" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="City">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Province_ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Province" Relationship="pgcModel.FK_City_Province" FromRole="City" ToRole="Province" />
-    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_City" FromRole="City" ToRole="User" />
-  </EntityType>
-  <EntityType Name="Province">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Cities" Relationship="pgcModel.FK_City_Province" FromRole="Province" ToRole="City" />
-  </EntityType>
-  <EntityType Name="Sample">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-    <Property Name="StartPersianDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-    <Property Name="EndPersianDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
-    <Property Name="IsDone" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="UserMessage">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
-    <Property Name="Type" Type="Int32" Nullable="false" />
-    <Property Name="Direction" Type="Int32" Nullable="false" />
-    <Property Name="Behaviour" Type="Int32" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <Association Name="FK_Option_OptionCategory">
-    <End Role="OptionCategory" Type="pgcModel.OptionCategory" Multiplicity="1" />
-    <End Role="Option" Type="pgcModel.Option" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OptionCategory">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Option">
-        <PropertyRef Name="OptionCategory_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Option_OptionLookup">
-    <End Role="OptionLookup" Type="pgcModel.OptionLookup" Multiplicity="0..1" />
-    <End Role="Option" Type="pgcModel.Option" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OptionLookup">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Option">
-        <PropertyRef Name="OptionLookup_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OptionCategory_OptionCategory">
-    <End Role="OptionCategory" Type="pgcModel.OptionCategory" Multiplicity="0..1" />
-    <End Role="OptionCategory1" Type="pgcModel.OptionCategory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OptionCategory">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OptionCategory1">
-        <PropertyRef Name="Parent_OptionCategory_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OptionLookupDetail_OptionLookup">
-    <End Role="OptionLookup" Type="pgcModel.OptionLookup" Multiplicity="1" />
-    <End Role="OptionLookupDetail" Type="pgcModel.OptionLookupDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OptionLookup">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OptionLookupDetail">
-        <PropertyRef Name="OptionLookup_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PanelPage_PanelPage">
-    <End Role="PanelPage" Type="pgcModel.PanelPage" Multiplicity="0..1" />
-    <End Role="PanelPage1" Type="pgcModel.PanelPage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PanelPage">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PanelPage1">
-        <PropertyRef Name="Parent_Page_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_City_Province">
-    <End Role="Province" Type="pgcModel.Province" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="City" Type="pgcModel.City" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Province">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="City">
-        <PropertyRef Name="Province_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Faq">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Summery" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Help">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Article">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="MetaDescription" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="MetaKeyWords" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Summary" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Note" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Report">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Summary" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Note" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="MetaKeyWords" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="MetaDescription" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ThumbImageUrl" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Heading">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="NavigateUrl" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="DispOrder" Nullable="false" />
-  </EntityType>
-  <EntityType Name="IndexSlide">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="NavigateUrl" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ImagePath" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="DispOrder" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Gallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="DispOrder" Nullable="false" />
-    <Property Type="String" Name="GalleryThumbImagePath" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="GalleryPics" Relationship="pgcModel.FK_GalleryPic_Gallery" FromRole="Gallery" ToRole="GalleryPic" />
-  </EntityType>
-  <EntityType Name="GalleryPic">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="Gallery_ID" Nullable="false" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="DispOrder" Nullable="false" />
-    <Property Type="String" Name="ImagePath" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Gallery" Relationship="pgcModel.FK_GalleryPic_Gallery" FromRole="GalleryPic" ToRole="Gallery" />
-  </EntityType>
-  <Association Name="FK_GalleryPic_Gallery">
-    <End Type="pgcModel.Gallery" Role="Gallery" Multiplicity="1" />
-    <End Type="pgcModel.GalleryPic" Role="GalleryPic" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Gallery">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="GalleryPic">
-        <PropertyRef Name="Gallery_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchPic">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="String" Name="ImagePath" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ThumbPath" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchPic_Branch" FromRole="BranchPic" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="Poll">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Boolean" Name="IsActive" Nullable="false" />
-    <Property Type="String" Name="PollPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="PollChoises" Relationship="pgcModel.FK_PollChoise_Poll" FromRole="Poll" ToRole="PollChoise" />
-    <NavigationProperty Name="PollResults" Relationship="pgcModel.FK_PollResult_Poll" FromRole="Poll" ToRole="PollResult" />
-  </EntityType>
-  <EntityType Name="PollChoise">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="Poll_ID" Nullable="false" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Poll" Relationship="pgcModel.FK_PollChoise_Poll" FromRole="PollChoise" ToRole="Poll" />
-    <NavigationProperty Name="PollResults" Relationship="pgcModel.FK_PollResult_PollChoise" FromRole="PollChoise" ToRole="PollResult" />
-  </EntityType>
-  <EntityType Name="PollResult">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="PollChoise_ID" Nullable="false" />
-    <Property Type="Int64" Name="Poll_ID" Nullable="false" />
-    <Property Type="String" Name="IPAddress" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ResultPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="ResultDateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Poll" Relationship="pgcModel.FK_PollResult_Poll" FromRole="PollResult" ToRole="Poll" />
-    <NavigationProperty Name="PollChoise" Relationship="pgcModel.FK_PollResult_PollChoise" FromRole="PollResult" ToRole="PollChoise" />
-  </EntityType>
-  <Association Name="FK_PollChoise_Poll">
-    <End Type="pgcModel.Poll" Role="Poll" Multiplicity="1" />
-    <End Type="pgcModel.PollChoise" Role="PollChoise" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Poll">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PollChoise">
-        <PropertyRef Name="Poll_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PollResult_Poll">
-    <End Type="pgcModel.Poll" Role="Poll" Multiplicity="1" />
-    <End Type="pgcModel.PollResult" Role="PollResult" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Poll">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PollResult">
-        <PropertyRef Name="Poll_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PollResult_PollChoise">
-    <End Type="pgcModel.PollChoise" Role="PollChoise" Multiplicity="1" />
-    <End Type="pgcModel.PollResult" Role="PollResult" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PollChoise">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PollResult">
-        <PropertyRef Name="PollChoise_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="LotteryDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="LotteryID" Nullable="false" />
-    <Property Type="String" Name="FName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="LName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Code" Nullable="false" />
-    <NavigationProperty Name="Lottery" Relationship="pgcModel.FK_LotteryDetail_Lottery" FromRole="LotteryDetail" ToRole="Lottery" />
-  </EntityType>
-  <EntityType Name="Lottery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="DateTime" Name="RegDate" Nullable="false" Precision="3" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="LotteryDetails" Relationship="pgcModel.FK_LotteryDetail_Lottery" FromRole="Lottery" ToRole="LotteryDetail" />
-    <NavigationProperty Name="LotteryWiners" Relationship="pgcModel.FK_LotteryWiner_Lottery" FromRole="Lottery" ToRole="LotteryWiner" />
-  </EntityType>
-  <Association Name="FK_LotteryDetail_Lottery">
-    <End Type="pgcModel.Lottery" Role="Lottery" Multiplicity="1" />
-    <End Type="pgcModel.LotteryDetail" Role="LotteryDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lottery">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="LotteryDetail">
-        <PropertyRef Name="LotteryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="LotteryWiner">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="LotteryID" Nullable="false" />
-    <Property Type="String" Name="FName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="LName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Rank" Nullable="false" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Lottery" Relationship="pgcModel.FK_LotteryWiner_Lottery" FromRole="LotteryWiner" ToRole="Lottery" />
-  </EntityType>
-  <Association Name="FK_LotteryWiner_Lottery">
-    <End Type="pgcModel.Lottery" Role="Lottery" Multiplicity="1" />
-    <End Type="pgcModel.LotteryWiner" Role="LotteryWiner" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lottery">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="LotteryWiner">
-        <PropertyRef Name="LotteryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Advertisement">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="AdvType" Nullable="false" />
-    <Property Type="String" Name="FileAddress" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Width" Nullable="false" />
-    <Property Type="Int32" Name="Height" Nullable="false" />
-    <Property Type="String" Name="NavigateUrl" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="AltText" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Html" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ExpirePersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="DispOrder" Nullable="false" />
-    <NavigationProperty Name="PanelPages" Relationship="pgcModel.AdvPage" FromRole="Advertisement" ToRole="PanelPage" />
-    <Property Type="Int32" Name="MarginTop" Nullable="false" />
-    <Property Type="Int32" Name="MarginRight" Nullable="false" />
-    <Property Type="Int32" Name="MarginBottom" Nullable="false" />
-    <Property Type="Int32" Name="MarginLeft" Nullable="false" />
-  </EntityType>
-  <Association Name="AdvPage">
-    <End Type="pgcModel.Advertisement" Role="Advertisement" Multiplicity="*" />
-    <End Type="pgcModel.PanelPage" Role="PanelPage" Multiplicity="*" />
-  </Association>
-  <EntityType Name="SystemEventVariable">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="SystemEvent_ID" Nullable="false" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Alias" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_SystemEventVariable_SystemEvent" FromRole="SystemEventVariable" ToRole="SystemEvent" />
-  </EntityType>
-  <EntityType Name="EmailSendAttempt">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Subject" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Recipients" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="EventType" Nullable="false" />
-    <Property Type="Int64" Name="OccuredEvent_ID" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Type="String" Name="FilePath1" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath2" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath3" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath4" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath5" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath6" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath7" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath8" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath9" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="FilePath10" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="SentEmail_Count" Nullable="false" />
-    <Property Type="Int32" Name="FailedEmail_Count" Nullable="false" />
-    <Property Type="Int32" Name="TotalEmail_Count" Nullable="false" />
-    <Property Type="Int32" Name="SentBlock_Count" Nullable="false" />
-    <Property Type="Int32" Name="FailedBlock_Count" Nullable="false" />
-    <Property Type="Int32" Name="TotalBlock_Count" Nullable="false" />
-    <Property Type="Int32" Name="BlockSize" Nullable="false" />
-    <Property Type="Int32" Name="InvalidEmailAddress_Count" Nullable="false" />
-    <NavigationProperty Name="SentEmailBlocks" Relationship="pgcModel.FK_SentEmailBlock_EmailSentAttempt" FromRole="EmailSendAttempt" ToRole="SentEmailBlock" />
-  </EntityType>
-  <EntityType Name="ReceivedMessage">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="PrivateNo_ID" Nullable="false" />
-    <Property Type="String" Name="SenderNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_ReceivedMessage_PrivateNo" FromRole="ReceivedMessage" ToRole="PrivateNo" />
-  </EntityType>
-  <EntityType Name="SentEmailBlock">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="EmailSentAttempt_ID" Nullable="false" />
-    <Property Type="Int32" Name="Size" Nullable="false" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Type="Boolean" Name="IsSent" Nullable="false" />
-    <Property Type="String" Name="RecipientMailAddress" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="EmailSendAttempt" Relationship="pgcModel.FK_SentEmailBlock_EmailSentAttempt" FromRole="SentEmailBlock" ToRole="EmailSendAttempt" />
-  </EntityType>
-  <Association Name="FK_SentEmailBlock_EmailSentAttempt">
-    <End Type="pgcModel.EmailSendAttempt" Role="EmailSendAttempt" Multiplicity="1" />
-    <End Type="pgcModel.SentEmailBlock" Role="SentEmailBlock" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EmailSendAttempt">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SentEmailBlock">
-        <PropertyRef Name="EmailSentAttempt_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="SentSMS">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="GatewayMessageID" />
-    <Property Type="Int64" Name="PrivateNo_ID" Nullable="false" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="RecipientNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="SendStatus" Nullable="false" />
-    <Property Type="Int32" Name="PhoneDeliveryCount" Nullable="false" />
-    <Property Type="Int32" Name="PhoneFailCount" Nullable="false" />
-    <Property Type="Int32" Name="TeleDeliveryCount" Nullable="false" />
-    <Property Type="Int32" Name="TeleFailCount" Nullable="false" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="MessageType" Nullable="false" />
-    <Property Type="Int32" Name="FaultType" />
-    <Property Type="Int32" Name="SMSCount" Nullable="false" />
-    <Property Type="Int64" Name="SMSSendAttempt_ID" Nullable="false" />
-    <NavigationProperty Name="SMSSendAttempt" Relationship="pgcModel.FK_SentSMS_SMSSendAttempt" FromRole="SentSMS" ToRole="SMSSendAttempt" />
-    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_SentSMS_PrivateNo" FromRole="SentSMS" ToRole="PrivateNo" />
-  </EntityType>
-  <EntityType Name="SMSSendAttempt">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="EventType" Nullable="false" />
-    <Property Type="Int64" Name="OccuredEvent_ID" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Total_SucceedCount" Nullable="false" />
-    <Property Type="Int32" Name="Total_FailedCount" Nullable="false" />
-    <Property Type="Int32" Name="Total_SumCount" Nullable="false" />
-    <Property Type="Int32" Name="Total_ErrorCount" Nullable="false" />
-    <Property Type="Int32" Name="Total_UnknownCount" Nullable="false" />
-    <Property Type="Int32" Name="MessageType" Nullable="false" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="SMSCount" Nullable="false" />
-    <Property Type="Int32" Name="CharCount" Nullable="false" />
-    <Property Type="String" Name="Recipients" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SentSMS" Relationship="pgcModel.FK_SentSMS_SMSSendAttempt" FromRole="SMSSendAttempt" ToRole="SentSMS" />
-  </EntityType>
-  <Association Name="FK_SentSMS_SMSSendAttempt">
-    <End Type="pgcModel.SMSSendAttempt" Role="SMSSendAttempt" Multiplicity="1" />
-    <End Type="pgcModel.SentSMS" Role="SentSMS" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SMSSendAttempt">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SentSMS">
-        <PropertyRef Name="SMSSendAttempt_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="SystemEvent">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="800" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="EventKey" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="Boolean" Name="Support_Manual_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Manual_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_User_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_User_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_Role_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_Role_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_AccessLevel_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Custom_AccessLevel_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Guest_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_User_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Branch_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Doer_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Guest_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_User_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Branch_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Support_Related_Doer_SMS" Nullable="false" />
-    <Property Type="String" Name="Template_Admin_Email" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Template_Admin_SMS" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Template_User_Email" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Template_User_SMS" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SystemEventAction" Relationship="pgcModel.FK_SystemEventAction_SystemEvent" FromRole="SystemEvent" ToRole="SystemEventAction" />
-    <NavigationProperty Name="SystemEventVariables" Relationship="pgcModel.FK_SystemEventVariable_SystemEvent" FromRole="SystemEvent" ToRole="SystemEventVariable" />
-    <NavigationProperty Name="OccuredSystemEvents" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="SystemEvent" ToRole="OccuredSystemEvent" />
-  </EntityType>
-  <EntityType Name="SystemEventAction">
-    <Key>
-      <PropertyRef Name="SystemEvent_ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="SystemEvent_ID" Nullable="false" />
-    <Property Type="String" Name="ManualEmail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ManualSMS" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Boolean" Name="Custom_User_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Custom_User_Email" Nullable="false" />
-    <Property Type="Int64" Name="Custom_User_ID" />
-    <Property Type="Boolean" Name="Custom_Role_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Custom_Role_Email" Nullable="false" />
-    <Property Type="Int32" Name="Custom_Role_ID" />
-    <Property Type="Boolean" Name="Custom_AccessLevel_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Custom_AccessLevel_Email" Nullable="false" />
-    <Property Type="Int64" Name="Custom_AccessLevel_ID" />
-    <Property Type="Boolean" Name="Related_Guest_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Related_User_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Related_Branch_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Related_Doer_Email" Nullable="false" />
-    <Property Type="Boolean" Name="Related_Guest_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Related_User_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Related_Branch_SMS" Nullable="false" />
-    <Property Type="Boolean" Name="Related_Doer_SMS" Nullable="false" />
-    <Property Type="Int64" Name="PrivateNo_ID" />
-    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_SystemEventAction_SystemEvent" FromRole="SystemEventAction" ToRole="SystemEvent" />
-    <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="SystemEventAction" ToRole="AccessLevel" />
-    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_SystemEventAction_PrivateNo" FromRole="SystemEventAction" ToRole="PrivateNo" />
-    <NavigationProperty Name="User" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="SystemEventAction" ToRole="User" />
-    <Property Name="Custom_User_ID_SMS" Type="Int64" />
-    <Property Name="Custom_Role_ID_SMS" Type="Int32" />
-    <Property Name="Custom_AccessLevel_ID_SMS" Type="Int64" />
-  </EntityType>
-  <Association Name="FK_SystemEventAction_SystemEvent">
-    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
-    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="SystemEvent">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemEventAction">
-        <PropertyRef Name="SystemEvent_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SystemEventVariable_SystemEvent">
-    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
-    <End Type="pgcModel.SystemEventVariable" Role="SystemEventVariable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SystemEvent">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemEventVariable">
-        <PropertyRef Name="SystemEvent_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SystemEventAction_AccessLevel">
-    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
-    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AccessLevel">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemEventAction">
-        <PropertyRef Name="Custom_AccessLevel_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="ExceptionLog">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ExceptionMessage" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="ExceptionType" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="InnerException" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="StackTrace" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="User_ID" />
-  </EntityType>
-  <EntityType Name="UserComment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="Type" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Phone" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Email" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Topic" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="UCPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="UCDate" Nullable="false" Precision="3" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="Int64" Name="Branch_ID" />
-    <Property Type="String" Name="BranchTitle" MaxLength="300" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_UserComment_Branch" FromRole="UserComment" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="PrivateNo">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Number" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Status" />
-    <NavigationProperty Name="ReceivedMessages" Relationship="pgcModel.FK_ReceivedMessage_PrivateNo" FromRole="PrivateNo" ToRole="ReceivedMessage" />
-    <NavigationProperty Name="SentSMS" Relationship="pgcModel.FK_SentSMS_PrivateNo" FromRole="PrivateNo" ToRole="SentSMS" />
-    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_PrivateNo" FromRole="PrivateNo" ToRole="SystemEventAction" />
-  </EntityType>
-  <Association Name="FK_ReceivedMessage_PrivateNo">
-    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="1" />
-    <End Type="pgcModel.ReceivedMessage" Role="ReceivedMessage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PrivateNo">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ReceivedMessage">
-        <PropertyRef Name="PrivateNo_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SentSMS_PrivateNo">
-    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="1" />
-    <End Type="pgcModel.SentSMS" Role="SentSMS" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PrivateNo">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SentSMS">
-        <PropertyRef Name="PrivateNo_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SystemEventAction_PrivateNo">
-    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="0..1" />
-    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PrivateNo">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemEventAction">
-        <PropertyRef Name="PrivateNo_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BankAccount">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <NavigationProperty Name="BranchPayments" Relationship="pgcModel.FK_BranchPayment_BankAccount" FromRole="BankAccount" ToRole="BranchPayment" />
-  </EntityType>
-  <EntityType Name="OnlinePayment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="Order_ID" Nullable="false" />
-    <Property Type="String" Name="ResNum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Amount" Nullable="false" />
-    <Property Type="String" Name="TransactionState" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="RefNum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="ResultTransaction" Nullable="false" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Order" Relationship="pgcModel.FK_OnlinePayment_Order" FromRole="OnlinePayment" ToRole="Order" />
-  </EntityType>
-  <EntityType Name="BuyBasket">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="User_ID" Nullable="false" />
-    <Property Type="Int64" Name="Product_ID" Nullable="false" />
-    <Property Type="Int32" Name="Quantity" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="pgcModel.FK_BuyBasket_User" FromRole="BuyBasket" ToRole="User" />
-    <NavigationProperty Name="Product" Relationship="pgcModel.FK_BuyBasket_Product" FromRole="BuyBasket" ToRole="Product" />
-  </EntityType>
-  <EntityType Name="OrderDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="Order_ID" Nullable="false" />
-    <Property Type="Int64" Name="Product_ID" />
-    <Property Type="Int32" Name="Quantity" Nullable="false" />
-    <Property Type="Int64" Name="UnitPrice" Nullable="false" />
-    <Property Type="Int64" Name="SumPrice" Nullable="false" />
-    <Property Type="String" Name="ProductTitle" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Product" Relationship="pgcModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
-    <NavigationProperty Name="Order" Relationship="pgcModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
-  </EntityType>
-  <EntityType Name="BranchPayment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="OnlineResNum" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Amount" Nullable="false" />
-    <Property Type="String" Name="OnlineTransactionState" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="OnlineRefNum" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="OnlineResultTransaction" Nullable="false" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int64" Name="OfflineBankAccount_ID" />
-    <Property Type="String" Name="OfflineReceiptLiquidator" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="OfflineReceiptNumber" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="OfflineReceiptPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="OfflineReceiptType" Nullable="false" />
-    <Property Type="Int32" Name="OfflinePaymentStatus" Nullable="false" />
-    <Property Type="String" Name="OfflineDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="OfflineBankAccountTitle" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="OfflineBankAccountDescription" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="Int32" Name="Type" Nullable="false" />
-    <NavigationProperty Name="BankAccount" Relationship="pgcModel.FK_BranchPayment_BankAccount" FromRole="BranchPayment" ToRole="BankAccount" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Finance_Payment_Branch" FromRole="BranchPayment" ToRole="Branch" />
-  </EntityType>
-  <Association Name="FK_BranchPayment_BankAccount">
-    <End Type="pgcModel.BankAccount" Role="BankAccount" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchPayment" Role="BranchPayment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BankAccount">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchPayment">
-        <PropertyRef Name="OfflineBankAccount_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchTransaction">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="Int64" Name="BranchCredit" Nullable="false" />
-    <Property Type="Int64" Name="BranchDebt" Nullable="false" />
-    <Property Type="Int32" Name="TransactionType" Nullable="false" />
-    <Property Type="Int64" Name="TransactionType_ID" Nullable="false" />
-    <Property Type="DateTime" Name="RegDate" Nullable="false" Precision="3" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Finance_Transaction_Branch" FromRole="BranchTransaction" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="BranchOrderTitle">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="Int64" Name="Price" Nullable="false" />
-    <Property Type="Int64" Name="BranchOrderTitleGroup_ID" Nullable="false" />
-    <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
-    <NavigationProperty Name="BranchOrderTitleGroup" Relationship="pgcModel.FK_BranchOrderTitle_BranchOrderTitleGroup" FromRole="BranchOrderTitle" ToRole="BranchOrderTitleGroup" />
-    <NavigationProperty Name="Branch_BranchOrderTitle" Relationship="pgcModel.FK_Branch_BranchOrderTitle_BranchOrderTitle" FromRole="BranchOrderTitle" ToRole="Branch_BranchOrderTitle" />
-    <NavigationProperty Name="BranchLackOrderDetails" Relationship="pgcModel.FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle" FromRole="BranchOrderTitle" ToRole="BranchLackOrderDetail" />
-    <NavigationProperty Name="BranchOrderDetails" Relationship="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle" FromRole="BranchOrderTitle" ToRole="BranchOrderDetail" />
-    <NavigationProperty Name="BranchReturnOrderDetails" Relationship="pgcModel.FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle" FromRole="BranchOrderTitle" ToRole="BranchReturnOrderDetail" />
-    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="IsOrderForAllBranch" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="BranchOrderTitleGroup">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
-    <NavigationProperty Name="BranchOrderTitles" Relationship="pgcModel.FK_BranchOrderTitle_BranchOrderTitleGroup" FromRole="BranchOrderTitleGroup" ToRole="BranchOrderTitle" />
-  </EntityType>
-  <Association Name="FK_BranchOrderTitle_BranchOrderTitleGroup">
-    <End Type="pgcModel.BranchOrderTitleGroup" Role="BranchOrderTitleGroup" Multiplicity="1" />
-    <End Type="pgcModel.BranchOrderTitle" Role="BranchOrderTitle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderTitleGroup">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchOrderTitle">
-        <PropertyRef Name="BranchOrderTitleGroup_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Branch_BranchOrderTitle">
-    <Key>
-      <PropertyRef Name="Branch_ID" />
-      <PropertyRef Name="BranchOrderTitle_ID" />
-    </Key>
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="Int64" Name="BranchOrderTitle_ID" Nullable="false" />
-    <Property Type="Int64" Name="MinimumQuantity" Nullable="false" />
-    <NavigationProperty Name="BranchOrderTitle" Relationship="pgcModel.FK_Branch_BranchOrderTitle_BranchOrderTitle" FromRole="Branch_BranchOrderTitle" ToRole="BranchOrderTitle" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Branch_BranchOrderTitle_Branch" FromRole="Branch_BranchOrderTitle" ToRole="Branch" />
-  </EntityType>
-  <Association Name="FK_Branch_BranchOrderTitle_BranchOrderTitle">
-    <End Type="pgcModel.BranchOrderTitle" Role="BranchOrderTitle" Multiplicity="1" />
-    <End Type="pgcModel.Branch_BranchOrderTitle" Role="Branch_BranchOrderTitle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderTitle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Branch_BranchOrderTitle">
-        <PropertyRef Name="BranchOrderTitle_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchLackOrder">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="BranchDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="RegDate" Nullable="false" Precision="3" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="AdminDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="BranchOrder_ID" Nullable="false" />
-    <Property Type="String" Name="OrderedPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BranchLackOrderDetails" Relationship="pgcModel.FK_BranchLackOrderDetail_BranchLackOrder" FromRole="BranchLackOrder" ToRole="BranchLackOrderDetail" />
-    <NavigationProperty Name="BranchOrder" Relationship="pgcModel.FK_BranchLackOrder_BranchOrder" FromRole="BranchLackOrder" ToRole="BranchOrder" />
-  </EntityType>
-  <EntityType Name="BranchLackOrderDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="SinglePrice" Nullable="false" />
-    <Property Type="Int64" Name="Quantity" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="BranchOrderTitle_Title" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="BranchOrderTitle_ID" />
-    <Property Type="Int64" Name="BranchLackOrder_ID" Nullable="false" />
-    <NavigationProperty Name="BranchLackOrder" Relationship="pgcModel.FK_BranchLackOrderDetail_BranchLackOrder" FromRole="BranchLackOrderDetail" ToRole="BranchLackOrder" />
-    <NavigationProperty Name="BranchOrderTitle" Relationship="pgcModel.FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle" FromRole="BranchLackOrderDetail" ToRole="BranchOrderTitle" />
-  </EntityType>
-  <EntityType Name="BranchOrderDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="SinglePrice" Nullable="false" />
-    <Property Type="Int64" Name="Quantity" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="BranchOrderTitle_Title" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="BranchOrderTitle_ID" />
-    <Property Type="Int64" Name="BranchOrder_ID" Nullable="false" />
-    <NavigationProperty Name="BranchOrderTitle" Relationship="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle" FromRole="BranchOrderDetail" ToRole="BranchOrderTitle" />
-    <NavigationProperty Name="BranchOrder" Relationship="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrder" FromRole="BranchOrderDetail" ToRole="BranchOrder" />
-  </EntityType>
-  <EntityType Name="BranchOrderShipmentState">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="BranchOrders" Relationship="pgcModel.FK_BranchOrder_BranchOrderShipmentStatus" FromRole="BranchOrderShipmentState" ToRole="BranchOrder" />
-  </EntityType>
-  <EntityType Name="BranchReturnOrder">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="BranchDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="RegDate" Nullable="false" Precision="3" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="AdminDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="String" Name="OrderedPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BranchReturnOrderDetails" Relationship="pgcModel.FK_BranchReturnOrderDetail_BranchReturnOrder" FromRole="BranchReturnOrder" ToRole="BranchReturnOrderDetail" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchReturnOrder_Branch" FromRole="BranchReturnOrder" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="BranchReturnOrderDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int64" Name="SinglePrice" Nullable="false" />
-    <Property Type="Int64" Name="Quantity" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="BranchOrderTitle_Title" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="BranchOrderTitle_ID" />
-    <Property Type="Int64" Name="BranchReturnOrder_ID" Nullable="false" />
-    <NavigationProperty Name="BranchOrderTitle" Relationship="pgcModel.FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle" FromRole="BranchReturnOrderDetail" ToRole="BranchOrderTitle" />
-    <NavigationProperty Name="BranchReturnOrder" Relationship="pgcModel.FK_BranchReturnOrderDetail_BranchReturnOrder" FromRole="BranchReturnOrderDetail" ToRole="BranchReturnOrder" />
-  </EntityType>
-  <Association Name="FK_BranchLackOrderDetail_BranchLackOrder">
-    <End Type="pgcModel.BranchLackOrder" Role="BranchLackOrder" Multiplicity="1" />
-    <End Type="pgcModel.BranchLackOrderDetail" Role="BranchLackOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchLackOrder">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchLackOrderDetail">
-        <PropertyRef Name="BranchLackOrder_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_BranchLackOrderDetail_Finance_BranchOrderTitle">
-    <End Type="pgcModel.BranchOrderTitle" Role="BranchOrderTitle" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchLackOrderDetail" Role="BranchLackOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderTitle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchLackOrderDetail">
-        <PropertyRef Name="BranchOrderTitle_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_BranchOrderDetail_Finance_BranchOrderTitle">
-    <End Type="pgcModel.BranchOrderTitle" Role="BranchOrderTitle" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchOrderDetail" Role="BranchOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderTitle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchOrderDetail">
-        <PropertyRef Name="BranchOrderTitle_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_BranchReturnOrderDetail_Finance_BranchOrderTitle">
-    <End Type="pgcModel.BranchOrderTitle" Role="BranchOrderTitle" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchReturnOrderDetail" Role="BranchReturnOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderTitle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchReturnOrderDetail">
-        <PropertyRef Name="BranchOrderTitle_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchReturnOrderDetail_BranchReturnOrder">
-    <End Type="pgcModel.BranchReturnOrder" Role="BranchReturnOrder" Multiplicity="1" />
-    <End Type="pgcModel.BranchReturnOrderDetail" Role="BranchReturnOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchReturnOrder">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchReturnOrderDetail">
-        <PropertyRef Name="BranchReturnOrder_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchOrder">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="BranchDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="RegDate" Nullable="false" Precision="3" />
-    <Property Type="String" Name="RegPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="Status" Nullable="false" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="Int64" Name="TotalPrice" Nullable="false" />
-    <Property Type="String" Name="OrderedPersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="AdminDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="ShipmentStatus_ID" />
-    <NavigationProperty Name="BranchLackOrders" Relationship="pgcModel.FK_BranchLackOrder_BranchOrder" FromRole="BranchOrder" ToRole="BranchLackOrder" />
-    <NavigationProperty Name="BranchOrderShipmentState" Relationship="pgcModel.FK_BranchOrder_BranchOrderShipmentStatus" FromRole="BranchOrder" ToRole="BranchOrderShipmentState" />
-    <NavigationProperty Name="BranchOrderDetails" Relationship="pgcModel.FK_Finance_BranchOrderDetail_Finance_BranchOrder" FromRole="BranchOrder" ToRole="BranchOrderDetail" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchOrder_Branch" FromRole="BranchOrder" ToRole="Branch" />
-  </EntityType>
-  <Association Name="FK_BranchLackOrder_BranchOrder">
-    <End Type="pgcModel.BranchOrder" Role="BranchOrder" Multiplicity="1" />
-    <End Type="pgcModel.BranchLackOrder" Role="BranchLackOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrder">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchLackOrder">
-        <PropertyRef Name="BranchOrder_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchOrder_BranchOrderShipmentStatus">
-    <End Type="pgcModel.BranchOrderShipmentState" Role="BranchOrderShipmentState" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchOrder" Role="BranchOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrderShipmentState">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchOrder">
-        <PropertyRef Name="ShipmentStatus_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_BranchOrderDetail_Finance_BranchOrder">
-    <End Type="pgcModel.BranchOrder" Role="BranchOrder" Multiplicity="1" />
-    <End Type="pgcModel.BranchOrderDetail" Role="BranchOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BranchOrder">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchOrderDetail">
-        <PropertyRef Name="BranchOrder_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchFinanceLog">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="ActionType" Nullable="false" />
-    <Property Type="Int64" Name="User_ID" />
-    <Property Type="String" Name="UserName" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="PersianDate" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="Branch_ID" Nullable="false" />
-    <Property Type="String" Name="BranchTitle" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="LogType" Nullable="false" />
-    <Property Type="Int64" Name="LogType_ID" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="BranchFinanceLog" ToRole="User" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchOrderLog_Branch" FromRole="BranchFinanceLog" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="SiteMapCat">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="DispOrder" Type="Int32" Nullable="false" />
-    <Property Name="NavigateUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="IsBlank" Type="Boolean" Nullable="false" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="SiteMapItems" Relationship="pgcModel.FK_SiteMapItem_SiteMapCat" FromRole="SiteMapCat" ToRole="SiteMapItem" />
-  </EntityType>
-  <EntityType Name="SiteMapItem">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SiteMapCat_ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="DispOrder" Type="Int32" Nullable="false" />
-    <Property Name="NavigateUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="IsBlank" Type="Boolean" Nullable="false" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="SiteMapCat" Relationship="pgcModel.FK_SiteMapItem_SiteMapCat" FromRole="SiteMapItem" ToRole="SiteMapCat" />
-  </EntityType>
-  <Association Name="FK_SiteMapItem_SiteMapCat">
-    <End Type="pgcModel.SiteMapCat" Role="SiteMapCat" Multiplicity="1" />
-    <End Type="pgcModel.SiteMapItem" Role="SiteMapItem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SiteMapCat">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SiteMapItem">
-        <PropertyRef Name="SiteMapCat_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="SideMenuCat">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-    <Property Name="NavigationUrl" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
-    <Property Name="IsBlank" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="SideMenuItems" Relationship="pgcModel.FK_SideMenuItem_SideMenuCat" FromRole="SideMenuCat" ToRole="SideMenuItem" />
-  </EntityType>
-  <EntityType Name="SideMenuItem">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="DispOrder" Type="Int32" Nullable="false" />
-    <Property Name="NavigateUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="IsBlank" Type="Boolean" Nullable="false" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
-    <Property Name="SideMenuCat_ID" Type="Int64" Nullable="false" />
-    <NavigationProperty Name="SideMenuCat" Relationship="pgcModel.FK_SideMenuItem_SideMenuCat" FromRole="SideMenuItem" ToRole="SideMenuCat" />
-  </EntityType>
-  <Association Name="FK_SideMenuItem_SideMenuCat">
-    <End Type="pgcModel.SideMenuCat" Role="SideMenuCat" Multiplicity="1" />
-    <End Type="pgcModel.SideMenuItem" Role="SideMenuItem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SideMenuCat">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SideMenuItem">
-        <PropertyRef Name="SideMenuCat_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Material">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MaterialPicPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Products" Relationship="pgcModel.Product_Material" FromRole="Material" ToRole="Product" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="City_ID" Type="Int64" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="AccessLevel_ID" Type="Int64" />
-    <Property Name="Username" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="pwd" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="ActivityStatus" Type="Int32" Nullable="false" />
-    <Property Name="NationalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Fname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Lname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="SignUpPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Gender" Type="Int32" />
-    <Property Name="Branch_ID" Type="Int64" />
-    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="User" ToRole="SystemEventAction" />
-    <NavigationProperty Name="BranchFinanceLogs" Relationship="pgcModel.FK_BranchOrderLog_User" FromRole="User" ToRole="BranchFinanceLog" />
-    <NavigationProperty Name="BuyBaskets" Relationship="pgcModel.FK_BuyBasket_User" FromRole="User" ToRole="BuyBasket" />
-    <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
-    <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_User_Branch" FromRole="User" ToRole="Branch" />
-    <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_User" FromRole="User" ToRole="Order" />
-    <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
-    <Property Name="FatherName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="IsGameManager" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_User" FromRole="User" ToRole="GameOrder" />
-    <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
-    <NavigationProperty Name="Groups" Relationship="pgcModel.GamerGroup" FromRole="User" ToRole="Group" />
-    <Property Name="Visible" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_SystemEventAction_User">
-    <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
-    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemEventAction">
-        <PropertyRef Name="Custom_User_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchOrderLog_User">
-    <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
-    <End Type="pgcModel.BranchFinanceLog" Role="BranchFinanceLog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchFinanceLog">
-        <PropertyRef Name="User_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BuyBasket_User">
-    <End Type="pgcModel.User" Role="User" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.BuyBasket" Role="BuyBasket" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BuyBasket">
-        <PropertyRef Name="User_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_User_AccessLevel">
-    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
-    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AccessLevel">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="AccessLevel_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_User_City">
-    <End Type="pgcModel.City" Role="City" Multiplicity="0..1" />
-    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="City">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="City_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="BranchRequest">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Lname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="ApplicatorName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Tel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="BranchLocation" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="LocationType" Type="Int32" Nullable="false" />
-    <Property Name="HaveBackgroung" Type="Boolean" Nullable="false" />
-    <Property Name="Status" Type="Int32" Nullable="false" />
-    <Property Name="BRDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="BRPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="SocialIcon">
+  <EntityType Name="MainSlider">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Icon" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ImgPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="DispOrder" Type="Int32" Nullable="false" />
     <Property Name="IsVisible" Type="Boolean" Nullable="false" />
   </EntityType>
-  <EntityType Name="Comment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SenderName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="SenderEmail" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
-    <Property Name="Branch_ID" Type="Int64" />
-    <Property Name="Product_ID" Type="Int64" />
-    <NavigationProperty Name="Product" Relationship="pgcModel.FK_Comment_Product" FromRole="Comment" ToRole="Product" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Comment_Branch" FromRole="Comment" ToRole="Branch" />
-    <Property Name="Like" Type="Int64" Nullable="false" />
-  </EntityType>
-  <EntityType Name="BranchContact">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Branch_ID" Type="Int64" Nullable="false" />
-    <Property Name="BranchTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="IsRead" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_BranchComment_Branch" FromRole="BranchContact" ToRole="Branch" />
-  </EntityType>
-  <EntityType Name="Product">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ProductPicPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="Int64" Nullable="false" />
-    <Property Name="Accessories" Type="Boolean" Nullable="false" />
-    <Property Name="AllowOnlineOrder" Type="Boolean" Nullable="false" />
-    <Property Name="SliderProductPicPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="SliderHoverProductPicPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="DisplayInSlider" Type="Boolean" Nullable="false" />
-    <Property Name="DispOrder" Type="Int32" Nullable="false" />
-    <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Comments" Relationship="pgcModel.FK_Comment_Product" FromRole="Product" ToRole="Comment" />
-    <NavigationProperty Name="BuyBaskets" Relationship="pgcModel.FK_BuyBasket_Product" FromRole="Product" ToRole="BuyBasket" />
-    <NavigationProperty Name="OrderDetails" Relationship="pgcModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
-    <NavigationProperty Name="Materials" Relationship="pgcModel.Product_Material" FromRole="Product" ToRole="Material" />
-    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="PageDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="PageKeywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <Association Name="FK_Comment_Product">
-    <End Type="pgcModel.Product" Role="Product" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.Comment" Role="Comment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Comment">
-        <PropertyRef Name="Product_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BuyBasket_Product">
-    <End Type="pgcModel.Product" Role="Product" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.BuyBasket" Role="BuyBasket" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BuyBasket">
-        <PropertyRef Name="Product_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OrderDetail_Product">
-    <End Type="pgcModel.Product" Role="Product" Multiplicity="0..1" />
-    <End Type="pgcModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OrderDetail">
-        <PropertyRef Name="Product_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Product_Material">
-    <End Type="pgcModel.Material" Role="Material" Multiplicity="*" />
-    <End Type="pgcModel.Product" Role="Product" Multiplicity="*" />
-  </Association>
-  <EntityType Name="Branch">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Summary" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="BranchInfo" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="HoursServingFood" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="HoursOrdering" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="NumberOfChair" Type="Int32" Nullable="false" />
-    <Property Name="TransportCost" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="LargeThumbImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="LargeImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="ThumbListPath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DispOrder" Type="Int32" Nullable="false" />
-    <Property Name="AllowOnlineOrder" Type="Boolean" Nullable="false" />
-    <Property Name="AllowOnlineOrderTimeFrom" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="AllowOnlineOrderTimeTo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="MinimumCredit" Type="Int64" Nullable="false" />
-    <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <Property Name="BranchType" Type="Int32" Nullable="false" />
-    <Property Name="Longitude" Type="Double" Nullable="false" />
-    <Property Name="latitude" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Branch_BranchOrderTitle" Relationship="pgcModel.FK_Branch_BranchOrderTitle_Branch" FromRole="Branch" ToRole="Branch_BranchOrderTitle" />
-    <NavigationProperty Name="BranchContacts" Relationship="pgcModel.FK_BranchComment_Branch" FromRole="Branch" ToRole="BranchContact" />
-    <NavigationProperty Name="BranchOrders" Relationship="pgcModel.FK_BranchOrder_Branch" FromRole="Branch" ToRole="BranchOrder" />
-    <NavigationProperty Name="BranchFinanceLogs" Relationship="pgcModel.FK_BranchOrderLog_Branch" FromRole="Branch" ToRole="BranchFinanceLog" />
-    <NavigationProperty Name="BranchPics" Relationship="pgcModel.FK_BranchPic_Branch" FromRole="Branch" ToRole="BranchPic" />
-    <NavigationProperty Name="BranchReturnOrders" Relationship="pgcModel.FK_BranchReturnOrder_Branch" FromRole="Branch" ToRole="BranchReturnOrder" />
-    <NavigationProperty Name="Comments" Relationship="pgcModel.FK_Comment_Branch" FromRole="Branch" ToRole="Comment" />
-    <NavigationProperty Name="BranchPayments" Relationship="pgcModel.FK_Finance_Payment_Branch" FromRole="Branch" ToRole="BranchPayment" />
-    <NavigationProperty Name="BranchTransactions" Relationship="pgcModel.FK_Finance_Transaction_Branch" FromRole="Branch" ToRole="BranchTransaction" />
-    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_Branch" FromRole="Branch" ToRole="User" />
-    <NavigationProperty Name="UserComments" Relationship="pgcModel.FK_UserComment_Branch" FromRole="Branch" ToRole="UserComment" />
-    <NavigationProperty Name="Orders" Relationship="pgcModel.FK_Order_Branch" FromRole="Branch" ToRole="Order" />
-    <NavigationProperty Name="Circulars" Relationship="pgcModel.Circular_Branch" FromRole="Branch" ToRole="Circular" />
-    <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="PhoneNumbers" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="PageDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="PageKeywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <Association Name="FK_Branch_BranchOrderTitle_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.Branch_BranchOrderTitle" Role="Branch_BranchOrderTitle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Branch_BranchOrderTitle">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchComment_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.BranchContact" Role="BranchContact" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchContact">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchOrder_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchOrder" Role="BranchOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchOrder">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchOrderLog_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchFinanceLog" Role="BranchFinanceLog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchFinanceLog">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchPic_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchPic" Role="BranchPic" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchPic">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BranchReturnOrder_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchReturnOrder" Role="BranchReturnOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchReturnOrder">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Comment_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.Comment" Role="Comment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Comment">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_Payment_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchPayment" Role="BranchPayment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchPayment">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Finance_Transaction_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="1" />
-    <End Type="pgcModel.BranchTransaction" Role="BranchTransaction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="BranchTransaction">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_User_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
-    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserComment_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
-    <End Type="pgcModel.UserComment" Role="UserComment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="UserComment">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="News">
     <Key>
       <PropertyRef Name="ID" />
@@ -2051,253 +203,27 @@
     <Property Name="PageDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="PageKeywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Order">
+  <EntityType Name="Report">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="User_ID" Type="Int64" Nullable="false" />
-    <Property Name="Branch_ID" Type="Int64" />
-    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="OrderPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="TotalAmount" Type="Int64" Nullable="false" />
-    <Property Name="PayableAmount" Type="Int64" Nullable="false" />
-    <Property Name="OrderStatus" Type="Int32" Nullable="false" />
-    <Property Name="PaymentType" Type="Int32" Nullable="false" />
-    <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="Tel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
-    <Property Name="BranchTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Branch" Relationship="pgcModel.FK_Order_Branch" FromRole="Order" ToRole="Branch" />
-    <NavigationProperty Name="OnlinePayments" Relationship="pgcModel.FK_OnlinePayment_Order" FromRole="Order" ToRole="OnlinePayment" />
-    <NavigationProperty Name="User" Relationship="pgcModel.FK_Order_User" FromRole="Order" ToRole="User" />
-    <NavigationProperty Name="OrderDetails" Relationship="pgcModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
-    <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_Order_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="0..1" />
-    <End Type="pgcModel.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="Branch_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OnlinePayment_Order">
-    <End Type="pgcModel.Order" Role="Order" Multiplicity="1" />
-    <End Type="pgcModel.OnlinePayment" Role="OnlinePayment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OnlinePayment">
-        <PropertyRef Name="Order_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_User">
-    <End Type="pgcModel.User" Role="User" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="User_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OrderDetail_Order">
-    <End Type="pgcModel.Order" Role="Order" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="pgcModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OrderDetail">
-        <PropertyRef Name="Order_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Circular">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersiabDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
-    <Property Name="IsActiveForUser" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Branches" Relationship="pgcModel.Circular_Branch" FromRole="Circular" ToRole="Branch" />
-  </EntityType>
-  <Association Name="Circular_Branch">
-    <End Type="pgcModel.Branch" Role="Branch" Multiplicity="*" />
-    <End Type="pgcModel.Circular" Role="Circular" Multiplicity="*" />
-  </Association>
-  <EntityType Name="OccuredSystemEvent">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="OccuredSystemEvent" ToRole="SystemEvent" />
-    <Property Name="Actor" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <Association Name="FK_OccuredSystemEvent_SystemEvent">
-    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
-    <End Type="pgcModel.OccuredSystemEvent" Role="OccuredSystemEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SystemEvent">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OccuredSystemEvent">
-        <PropertyRef Name="SystemEvent_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="OnlinePaymentList">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="TransactionState" />
-      <PropertyRef Name="RefNum" />
-      <PropertyRef Name="Order_ID" />
-      <PropertyRef Name="ResNum" />
-      <PropertyRef Name="Amount" />
-      <PropertyRef Name="ResultTransaction" />
-      <PropertyRef Name="Date" />
-      <PropertyRef Name="PersianDate" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="TransactionState" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="RefNum" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Order_ID" Type="Int64" Nullable="false" />
-    <Property Name="ResNum" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Amount" Type="Int64" Nullable="false" />
-    <Property Name="ResultTransaction" Type="Int64" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="MainMenu">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-    <Property Name="NavigationUrl" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="IsHtml" Type="Boolean" Nullable="false" />
-    <Property Name="DispInHome" Type="Boolean" Nullable="false" />
-    <Property Name="DispInOtherPage" Type="Boolean" Nullable="false" />
-    <Property Name="IsBlank" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Feature">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="CanGrantToAdmin" Type="Boolean" Nullable="false" />
-    <Property Name="CanGrantToUser" Type="Boolean" Nullable="false" />
-    <Property Name="CanGrantToAgent" Type="Boolean" Nullable="false" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <Property Name="IsNew" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="PanelPages" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="Feature" ToRole="PanelPage" />
-    <NavigationProperty Name="AccessLevels" Relationship="pgcModel.Permission" FromRole="Feature" ToRole="AccessLevel" />
-    <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="Feature" ToRole="MenuItem" />
-  </EntityType>
-  <Association Name="FK_PanelPage_Feature">
-    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="0..1" />
-    <End Type="pgcModel.PanelPage" Role="PanelPage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Feature">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PanelPage">
-        <PropertyRef Name="Feature_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Permission">
-    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="*" />
-    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="*" />
-  </Association>
-  <EntityType Name="MenuItem">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="MenuCategory_ID" Type="Int64" />
-    <Property Name="Feature_ID" Type="Int64" Nullable="false" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="NavigateURL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Target" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
-    <Property Name="RouteName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="IsNew" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Feature" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="MenuItem" ToRole="Feature" />
-    <NavigationProperty Name="MenuCategory" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuItem" ToRole="MenuCategory" />
-    <Property Name="Active" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_MenuItem_Feature">
-    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="1" />
-    <End Type="pgcModel.MenuItem" Role="MenuItem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Feature">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="MenuItem">
-        <PropertyRef Name="Feature_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MenuItem_MenuCategory">
-    <End Type="pgcModel.MenuCategory" Role="MenuCategory" Multiplicity="0..1" />
-    <End Type="pgcModel.MenuItem" Role="MenuItem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MenuCategory">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="MenuItem">
-        <PropertyRef Name="MenuCategory_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="DynPage">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Summary" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="MetaKeyWords" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="MetaDescription" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Heading" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbImageUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="MainSlider">
+  <EntityType Name="SocialIcon">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="ImgPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Icon" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="DispOrder" Type="Int32" Nullable="false" />
     <Property Name="IsVisible" Type="Boolean" Nullable="false" />
   </EntityType>
@@ -2319,6 +245,170 @@
     <Property Name="Link" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="ExceptionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ExceptionMessage" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionType" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="InnerException" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="StackTrace" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="OccuredSystemEvent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
+    <Property Name="Actor" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="OccuredSystemEvent" ToRole="SystemEvent" />
+  </EntityType>
+  <EntityType Name="Option">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="OptionCategory_ID" Type="Int64" Nullable="false" />
+    <Property Name="OptionLookup_ID" Type="Int64" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="OptionCategory" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="Option" ToRole="OptionCategory" />
+    <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="Option" ToRole="OptionLookup" />
+  </EntityType>
+  <EntityType Name="OptionCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Parent_OptionCategory_ID" Type="Int64" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="GrantAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Options" Relationship="pgcModel.FK_Option_OptionCategory" FromRole="OptionCategory" ToRole="Option" />
+    <NavigationProperty Name="OptionCategory1" Relationship="pgcModel.FK_OptionCategory_OptionCategory" FromRole="OptionCategory" ToRole="OptionCategory1" />
+    <NavigationProperty Name="OptionCategory2" Relationship="pgcModel.FK_OptionCategory_OptionCategory" FromRole="OptionCategory1" ToRole="OptionCategory" />
+  </EntityType>
+  <EntityType Name="OptionLookup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Options" Relationship="pgcModel.FK_Option_OptionLookup" FromRole="OptionLookup" ToRole="Option" />
+    <NavigationProperty Name="OptionLookupDetails" Relationship="pgcModel.FK_OptionLookupDetail_OptionLookup" FromRole="OptionLookup" ToRole="OptionLookupDetail" />
+  </EntityType>
+  <EntityType Name="OptionLookupDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="OptionLookup_ID" Type="Int64" Nullable="false" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OptionLookup" Relationship="pgcModel.FK_OptionLookupDetail_OptionLookup" FromRole="OptionLookupDetail" ToRole="OptionLookup" />
+  </EntityType>
+  <EntityType Name="PrivateNo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="ReceivedMessages" Relationship="pgcModel.FK_ReceivedMessage_PrivateNo" FromRole="PrivateNo" ToRole="ReceivedMessage" />
+    <NavigationProperty Name="SentSMS" Relationship="pgcModel.FK_SentSMS_PrivateNo" FromRole="PrivateNo" ToRole="SentSM" />
+    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_PrivateNo" FromRole="PrivateNo" ToRole="SystemEventAction" />
+  </EntityType>
+  <EntityType Name="SystemEvent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EventKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Support_Manual_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Manual_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_User_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_User_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_Role_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_Role_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_AccessLevel_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Custom_AccessLevel_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Guest_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_User_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Branch_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Doer_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Guest_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_User_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Branch_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Support_Related_Doer_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Template_Admin_Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Template_Admin_SMS" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Template_User_Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Template_User_SMS" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OccuredSystemEvents" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="SystemEvent" ToRole="OccuredSystemEvent" />
+    <NavigationProperty Name="SystemEventAction" Relationship="pgcModel.FK_SystemEventAction_SystemEvent" FromRole="SystemEvent" ToRole="SystemEventAction" />
+    <NavigationProperty Name="SystemEventVariables" Relationship="pgcModel.FK_SystemEventVariable_SystemEvent" FromRole="SystemEvent" ToRole="SystemEventVariable" />
+  </EntityType>
+  <EntityType Name="SystemEventAction">
+    <Key>
+      <PropertyRef Name="SystemEvent_ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
+    <Property Name="ManualEmail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ManualSMS" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom_User_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_User_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_User_ID" Type="Int64" />
+    <Property Name="Custom_User_ID_SMS" Type="Int64" />
+    <Property Name="Custom_Role_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_Role_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_Role_ID" Type="Int32" />
+    <Property Name="Custom_Role_ID_SMS" Type="Int32" />
+    <Property Name="Custom_AccessLevel_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_AccessLevel_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Custom_AccessLevel_ID" Type="Int64" />
+    <Property Name="Custom_AccessLevel_ID_SMS" Type="Int64" />
+    <Property Name="Related_Guest_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Related_User_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Related_Branch_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Related_Doer_Email" Type="Boolean" Nullable="false" />
+    <Property Name="Related_Guest_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Related_User_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Related_Branch_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="Related_Doer_SMS" Type="Boolean" Nullable="false" />
+    <Property Name="PrivateNo_ID" Type="Int64" />
+    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_SystemEventAction_PrivateNo" FromRole="SystemEventAction" ToRole="PrivateNo" />
+    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_SystemEventAction_SystemEvent" FromRole="SystemEventAction" ToRole="SystemEvent" />
+    <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="SystemEventAction" ToRole="AccessLevel" />
+    <NavigationProperty Name="User" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="SystemEventAction" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SystemEventVariable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="Alias" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_SystemEventVariable_SystemEvent" FromRole="SystemEventVariable" ToRole="SystemEvent" />
+  </EntityType>
   <EntityType Name="Game">
     <Key>
       <PropertyRef Name="ID" />
@@ -2335,9 +425,21 @@
     <Property Name="DispOrder" Type="Int32" Nullable="false" />
     <Property Name="Cost" Type="Int64" Nullable="false" />
     <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="LogoPath" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="HowType_Enum" Type="Int32" Nullable="false" />
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
     <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
-    <Property Name="LogoPath" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GameCenter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TItle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="City_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="pgcModel.FK_GameCenter_City" FromRole="GameCenter" ToRole="City" />
+    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_GameCenter" FromRole="GameCenter" ToRole="GameOrder" />
   </EntityType>
   <EntityType Name="GameOrder">
     <Key>
@@ -2357,7 +459,10 @@
     <Property Name="Tel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="IsPaid" Type="Boolean" Nullable="false" />
     <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GameCenter_ID" Type="Int64" />
+    <Property Name="GameCenterTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Game" Relationship="pgcModel.FK_GameOrder_Game" FromRole="GameOrder" ToRole="Game" />
+    <NavigationProperty Name="GameCenter" Relationship="pgcModel.FK_GameOrder_GameCenter" FromRole="GameOrder" ToRole="GameCenter" />
     <NavigationProperty Name="Group" Relationship="pgcModel.FK_GameOrder_Group" FromRole="GameOrder" ToRole="Group" />
     <NavigationProperty Name="User" Relationship="pgcModel.FK_GameOrder_User" FromRole="GameOrder" ToRole="User" />
     <NavigationProperty Name="Payments" Relationship="pgcModel.FK_Payment_GameOrder" FromRole="GameOrder" ToRole="Payment" />
@@ -2386,6 +491,416 @@
     <Property Name="BankGeway_Enum" Type="Int32" Nullable="false" />
     <NavigationProperty Name="GameOrder" Relationship="pgcModel.FK_Payment_GameOrder" FromRole="Payment" ToRole="GameOrder" />
   </EntityType>
+  <EntityType Name="EmailSendAttempt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Recipients" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EventType" Type="Int32" Nullable="false" />
+    <Property Name="OccuredEvent_ID" Type="Int64" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FilePath1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath2" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath3" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath4" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath5" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath6" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath7" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath8" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath9" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath10" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SentEmail_Count" Type="Int32" Nullable="false" />
+    <Property Name="FailedEmail_Count" Type="Int32" Nullable="false" />
+    <Property Name="TotalEmail_Count" Type="Int32" Nullable="false" />
+    <Property Name="SentBlock_Count" Type="Int32" Nullable="false" />
+    <Property Name="FailedBlock_Count" Type="Int32" Nullable="false" />
+    <Property Name="TotalBlock_Count" Type="Int32" Nullable="false" />
+    <Property Name="BlockSize" Type="Int32" Nullable="false" />
+    <Property Name="InvalidEmailAddress_Count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SentEmailBlocks" Relationship="pgcModel.FK_SentEmailBlock_EmailSentAttempt" FromRole="EmailSendAttempt" ToRole="SentEmailBlock" />
+  </EntityType>
+  <EntityType Name="ReceivedMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrivateNo_ID" Type="Int64" Nullable="false" />
+    <Property Name="SenderNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_ReceivedMessage_PrivateNo" FromRole="ReceivedMessage" ToRole="PrivateNo" />
+  </EntityType>
+  <EntityType Name="SentEmailBlock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailSentAttempt_ID" Type="Int64" Nullable="false" />
+    <Property Name="Size" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IsSent" Type="Boolean" Nullable="false" />
+    <Property Name="RecipientMailAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmailSendAttempt" Relationship="pgcModel.FK_SentEmailBlock_EmailSentAttempt" FromRole="SentEmailBlock" ToRole="EmailSendAttempt" />
+  </EntityType>
+  <EntityType Name="SentSMS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GatewayMessageID" Type="Int64" />
+    <Property Name="PrivateNo_ID" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RecipientNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SendStatus" Type="Int32" Nullable="false" />
+    <Property Name="PhoneDeliveryCount" Type="Int32" Nullable="false" />
+    <Property Name="PhoneFailCount" Type="Int32" Nullable="false" />
+    <Property Name="TeleDeliveryCount" Type="Int32" Nullable="false" />
+    <Property Name="TeleFailCount" Type="Int32" Nullable="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MessageType" Type="Int32" Nullable="false" />
+    <Property Name="FaultType" Type="Int32" />
+    <Property Name="SMSCount" Type="Int32" Nullable="false" />
+    <Property Name="SMSSendAttempt_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="PrivateNo" Relationship="pgcModel.FK_SentSMS_PrivateNo" FromRole="SentSM" ToRole="PrivateNo" />
+    <NavigationProperty Name="SMSSendAttempt" Relationship="pgcModel.FK_SentSMS_SMSSendAttempt" FromRole="SentSM" ToRole="SMSSendAttempt" />
+  </EntityType>
+  <EntityType Name="SMSSendAttempt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventType" Type="Int32" Nullable="false" />
+    <Property Name="OccuredEvent_ID" Type="Int64" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Total_SucceedCount" Type="Int32" Nullable="false" />
+    <Property Name="Total_FailedCount" Type="Int32" Nullable="false" />
+    <Property Name="Total_SumCount" Type="Int32" Nullable="false" />
+    <Property Name="Total_ErrorCount" Type="Int32" Nullable="false" />
+    <Property Name="Total_UnknownCount" Type="Int32" Nullable="false" />
+    <Property Name="MessageType" Type="Int32" Nullable="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SMSCount" Type="Int32" Nullable="false" />
+    <Property Name="CharCount" Type="Int32" Nullable="false" />
+    <Property Name="Recipients" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SentSMS" Relationship="pgcModel.FK_SentSMS_SMSSendAttempt" FromRole="SMSSendAttempt" ToRole="SentSM" />
+  </EntityType>
+  <EntityType Name="AccessLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_AccessLevel" FromRole="AccessLevel" ToRole="SystemEventAction" />
+    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_AccessLevel" FromRole="AccessLevel" ToRole="User" />
+    <NavigationProperty Name="Features" Relationship="pgcModel.Permission" FromRole="AccessLevel" ToRole="Feature" />
+  </EntityType>
+  <EntityType Name="Feature">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CanGrantToAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="CanGrantToUser" Type="Boolean" Nullable="false" />
+    <Property Name="CanGrantToAgent" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="IsNew" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="Feature" ToRole="MenuItem" />
+    <NavigationProperty Name="PanelPages" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="Feature" ToRole="PanelPage" />
+    <NavigationProperty Name="AccessLevels" Relationship="pgcModel.Permission" FromRole="Feature" ToRole="AccessLevel" />
+  </EntityType>
+  <EntityType Name="MenuCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MenuItems" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuCategory" ToRole="MenuItem" />
+  </EntityType>
+  <EntityType Name="MenuItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="MenuCategory_ID" Type="Int64" />
+    <Property Name="Feature_ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UIClass" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="NavigateURL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Target" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="RouteName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsNew" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Feature" Relationship="pgcModel.FK_MenuItem_Feature" FromRole="MenuItem" ToRole="Feature" />
+    <NavigationProperty Name="MenuCategory" Relationship="pgcModel.FK_MenuItem_MenuCategory" FromRole="MenuItem" ToRole="MenuCategory" />
+  </EntityType>
+  <EntityType Name="PanelPage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Feature_ID" Type="Int64" />
+    <Property Name="Parent_Page_ID" Type="Int64" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UITitle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PageSize" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Single" Nullable="false" />
+    <Property Name="RouteName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RouteUrl" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsLookup" Type="Boolean" Nullable="false" />
+    <Property Name="AdvSupport" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Feature" Relationship="pgcModel.FK_PanelPage_Feature" FromRole="PanelPage" ToRole="Feature" />
+    <NavigationProperty Name="PanelPage1" Relationship="pgcModel.FK_PanelPage_PanelPage" FromRole="PanelPage" ToRole="PanelPage1" />
+    <NavigationProperty Name="PanelPage2" Relationship="pgcModel.FK_PanelPage_PanelPage" FromRole="PanelPage1" ToRole="PanelPage" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Province_ID" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GameCenters" Relationship="pgcModel.FK_GameCenter_City" FromRole="City" ToRole="GameCenter" />
+    <NavigationProperty Name="Province" Relationship="pgcModel.FK_City_Province" FromRole="City" ToRole="Province" />
+    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_City" FromRole="City" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cities" Relationship="pgcModel.FK_City_Province" FromRole="Province" ToRole="City" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_ID" Type="Int64" />
+    <Property Name="AccessLevel_ID" Type="Int64" />
+    <Property Name="Username" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="pwd" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityStatus" Type="Int32" Nullable="false" />
+    <Property Name="NationalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="SignUpPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisableUserName" Type="Boolean" Nullable="false" />
+    <Property Name="FatherName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsGameManager" Type="Boolean" Nullable="false" />
+    <Property Name="Visible" Type="Boolean" Nullable="false" />
+    <Property Name="Telegram" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SystemEventActions" Relationship="pgcModel.FK_SystemEventAction_User" FromRole="User" ToRole="SystemEventAction" />
+    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_User" FromRole="User" ToRole="GameOrder" />
+    <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
+    <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
+    <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
+    <NavigationProperty Name="Groups" Relationship="pgcModel.GamerGroup" FromRole="User" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="UserMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Direction" Type="Int32" Nullable="false" />
+    <Property Name="Behaviour" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OnlinePaymentList">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TransactionState" />
+      <PropertyRef Name="RefNum" />
+      <PropertyRef Name="Order_ID" />
+      <PropertyRef Name="ResNum" />
+      <PropertyRef Name="Amount" />
+      <PropertyRef Name="ResultTransaction" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="PersianDate" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TransactionState" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RefNum" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Order_ID" Type="Int64" Nullable="false" />
+    <Property Name="ResNum" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int64" Nullable="false" />
+    <Property Name="ResultTransaction" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_OccuredSystemEvent_SystemEvent">
+    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
+    <End Type="pgcModel.OccuredSystemEvent" Role="OccuredSystemEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OccuredSystemEvent">
+        <PropertyRef Name="SystemEvent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Option_OptionCategory">
+    <End Type="pgcModel.OptionCategory" Role="OptionCategory" Multiplicity="1" />
+    <End Type="pgcModel.Option" Role="Option" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Option">
+        <PropertyRef Name="OptionCategory_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Option_OptionLookup">
+    <End Type="pgcModel.OptionLookup" Role="OptionLookup" Multiplicity="0..1" />
+    <End Type="pgcModel.Option" Role="Option" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionLookup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Option">
+        <PropertyRef Name="OptionLookup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OptionCategory_OptionCategory">
+    <End Type="pgcModel.OptionCategory" Role="OptionCategory" Multiplicity="0..1" />
+    <End Type="pgcModel.OptionCategory" Role="OptionCategory1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OptionCategory1">
+        <PropertyRef Name="Parent_OptionCategory_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OptionLookupDetail_OptionLookup">
+    <End Type="pgcModel.OptionLookup" Role="OptionLookup" Multiplicity="1" />
+    <End Type="pgcModel.OptionLookupDetail" Role="OptionLookupDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionLookup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OptionLookupDetail">
+        <PropertyRef Name="OptionLookup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceivedMessage_PrivateNo">
+    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="1" />
+    <End Type="pgcModel.ReceivedMessage" Role="ReceivedMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivateNo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReceivedMessage">
+        <PropertyRef Name="PrivateNo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SentSMS_PrivateNo">
+    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="1" />
+    <End Type="pgcModel.SentSMS" Role="SentSM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivateNo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SentSM">
+        <PropertyRef Name="PrivateNo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventAction_PrivateNo">
+    <End Type="pgcModel.PrivateNo" Role="PrivateNo" Multiplicity="0..1" />
+    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivateNo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemEventAction">
+        <PropertyRef Name="PrivateNo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventAction_SystemEvent">
+    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
+    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SystemEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemEventAction">
+        <PropertyRef Name="SystemEvent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventVariable_SystemEvent">
+    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pgcModel.SystemEventVariable" Role="SystemEventVariable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemEventVariable">
+        <PropertyRef Name="SystemEvent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventAction_AccessLevel">
+    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
+    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemEventAction">
+        <PropertyRef Name="Custom_AccessLevel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventAction_User">
+    <End Type="pgcModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="pgcModel.SystemEventAction" Role="SystemEventAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemEventAction">
+        <PropertyRef Name="Custom_User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_GameOrder_Game">
     <End Type="pgcModel.Game" Role="Game" Multiplicity="0..1" />
     <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
@@ -2395,6 +910,32 @@
       </Principal>
       <Dependent Role="GameOrder">
         <PropertyRef Name="Game_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameCenter_City">
+    <End Type="pgcModel.City" Role="City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pgcModel.GameCenter" Role="GameCenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameCenter">
+        <PropertyRef Name="City_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameOrder_GameCenter">
+    <End Type="pgcModel.GameCenter" Role="GameCenter" Multiplicity="0..1" />
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameCenter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameOrder">
+        <PropertyRef Name="GameCenter_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2434,6 +975,114 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SentEmailBlock_EmailSentAttempt">
+    <End Type="pgcModel.EmailSendAttempt" Role="EmailSendAttempt" Multiplicity="1" />
+    <End Type="pgcModel.SentEmailBlock" Role="SentEmailBlock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmailSendAttempt">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SentEmailBlock">
+        <PropertyRef Name="EmailSentAttempt_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SentSMS_SMSSendAttempt">
+    <End Type="pgcModel.SMSSendAttempt" Role="SMSSendAttempt" Multiplicity="1" />
+    <End Type="pgcModel.SentSMS" Role="SentSM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMSSendAttempt">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SentSM">
+        <PropertyRef Name="SMSSendAttempt_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_AccessLevel">
+    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
+    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AccessLevel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuItem_Feature">
+    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="1" />
+    <End Type="pgcModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Feature">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="Feature_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PanelPage_Feature">
+    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="0..1" />
+    <End Type="pgcModel.PanelPage" Role="PanelPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Feature">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PanelPage">
+        <PropertyRef Name="Feature_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuItem_MenuCategory">
+    <End Type="pgcModel.MenuCategory" Role="MenuCategory" Multiplicity="0..1" />
+    <End Type="pgcModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="MenuCategory_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PanelPage_PanelPage">
+    <End Type="pgcModel.PanelPage" Role="PanelPage" Multiplicity="0..1" />
+    <End Type="pgcModel.PanelPage" Role="PanelPage1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PanelPage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PanelPage1">
+        <PropertyRef Name="Parent_Page_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Province">
+    <End Type="pgcModel.Province" Role="Province" Multiplicity="1" />
+    <End Type="pgcModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Province_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_City">
+    <End Type="pgcModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="City_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Game_GameManager">
     <End Type="pgcModel.Game" Role="Game" Multiplicity="*" />
     <End Type="pgcModel.User" Role="User" Multiplicity="*" />
@@ -2442,28 +1091,16 @@
     <End Type="pgcModel.Group" Role="Group" Multiplicity="*" />
     <End Type="pgcModel.User" Role="User" Multiplicity="*" />
   </Association>
-  <EntityType Name="AppSetting">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="NavHeaderImage" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="NewsCount" Type="Int32" Nullable="false" />
-    <Property Name="QualityCharter" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="BranchAgreement_Image" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="BranchAgreement_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="MrDizi_LatLng" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Feedback">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-  </EntityType>
+  <Association Name="Permission">
+    <End Type="pgcModel.AccessLevel" Role="AccessLevel" Multiplicity="*" />
+    <End Type="pgcModel.Feature" Role="Feature" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="GetColumnsOfTable_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="163" />
+  </ComplexType>
+  <ComplexType Name="GetTablesOfDb_Result">
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="261" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="261" />
+  </ComplexType>
 </Schema>

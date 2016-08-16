@@ -18,6 +18,7 @@ public partial class Pages_Guest_GameDetail : BasePage
     public string redirectUrl;
     protected void Page_Load(object sender, EventArgs e)
     {
+      
         if (!HasValidQueryString_Routed<string>(QueryStringKeys.urlkey))
             Server.Transfer("~/Pages/Guest/404.aspx");
         string urlKey = GetQueryStringValue_Routed<string>(QueryStringKeys.urlkey);
@@ -37,6 +38,8 @@ public partial class Pages_Guest_GameDetail : BasePage
         {
             mlvGame.ActiveViewIndex = 0;
         }
+
+        //ClientScript.RegisterStartupScript(this.GetType(), "hash", " $(window).scrollTop(500);", true);
     }
     protected void Unnamed_Click(object sender, EventArgs e)
     {
@@ -50,10 +53,10 @@ public partial class Pages_Guest_GameDetail : BasePage
         if (UserSession.IsUserLogined)
         {
 
-            GameOrderBusiness business = new GameOrderBusiness();
-            GameBusiness gameBusiness = new GameBusiness();
+            GameOrderBusiness orderBusiness = new GameOrderBusiness();
+      
             OperationResult valRes = new OperationResult();
-            valRes = gameBusiness.Validate(UserSession.UserID, game.ID);
+            valRes = business.Validate(UserSession.UserID, game.ID);
 
             if (valRes.Result == ActionResult.Done)
             {
@@ -63,12 +66,19 @@ public partial class Pages_Guest_GameDetail : BasePage
                 model.User_ID = UserSession.UserID;
                 if (game.GamerCount > 1)
                 {
-                    model.Group_ID = gameBusiness.AddNewGameGroup(txtTeamName.Text);
-                    gameBusiness.AddNewGamerToGroup((long)model.Group_ID, (long)model.User_ID);
+                    model.Group_ID = business.AddNewGameGroup(txtTeamName.Text);
+                    business.AddNewGamerToGroup((long)model.Group_ID, (long)model.User_ID);
+                }
+                if (game.HowType_Enum == (int)GameHowType.Offline)
+                {
+                    long id = lkcGameCenetr.GetSelectedValue<long>();
+                    GameCenter center = business.RetriveGameCenter(id);
+                    model.GameCenter_ID = id;
+                    model.GameCenterTitle = center.TItle;
                 }
 
                 OperationResult result = new OperationResult();
-                result = business.AddNewOrder(model);
+                result = orderBusiness.AddNewOrder(model);
                 UserSession.AddMessage(result.Messages);
 
                 if (result.Result == ActionResult.Done)
@@ -86,4 +96,13 @@ public partial class Pages_Guest_GameDetail : BasePage
     }
 
 
+    protected void lkcGameCenetr_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        long id = lkcGameCenetr.GetSelectedValue<long>();
+       GameCenter center= business.RetriveGameCenter(id);
+       if (center != null)
+       {
+           lblDesc.Text = center.Description;
+       }
+    }
 }

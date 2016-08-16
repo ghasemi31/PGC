@@ -40,6 +40,17 @@
 #game-slider .owl-nav div:hover {
     color: #1704c5;
 }
+
+.adv {
+    /*border: 1px solid black;*/
+    display: block;
+    padding: 0;
+}
+
+    .adv img {
+        width: 100%;
+
+    }
 /*****************************************/
 .pgc-title h1 {
     font-size: 1.3em;
@@ -297,3 +308,19 @@
 
 
 /***********************************END MAIN SLIDER**************************************/
+#mainSlider {
+    border: solid 1px rgba(0,0,0,.05);
+    padding: 5px;
+    direction: ltr;
+}
+
+.mainSlider-item {
+    position: relative;
+    cursor: url('/assets/Guest/Image/hand-pan-icon.png'),auto;
+}
+
+    .mainSlider-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }

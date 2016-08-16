@@ -79,8 +79,7 @@ namespace pgc.Business
             if (!string.IsNullOrEmpty(Pattern.Mobile))
                 list = list.Where(u => u.Mobile.Contains(Pattern.Mobile));
 
-            if (!string.IsNullOrEmpty(Pattern.BranchTitle))
-                list = list.Where(u => u.Branch_ID !=null && u.Branch.Title.Contains(Pattern.BranchTitle));
+            
 
             if (!string.IsNullOrEmpty(Pattern.Name))
                 list = list.Where(u => (u.FullName).Contains(Pattern.Name));
@@ -109,8 +108,8 @@ namespace pgc.Business
             if (!string.IsNullOrEmpty(Pattern.Username))
                 list = list.Where(u => u.Username.Contains(Pattern.Username));
             
-            if (Pattern.Branch_ID> 0)
-                list = list.Where(u => u.Branch_ID == Pattern.Branch_ID);
+            //if (Pattern.Branch_ID> 0)
+            //    list = list.Where(u => u.Branch_ID == Pattern.Branch_ID);
 
             switch (Pattern.SignUpPersianDate.SearchMode)
             {
@@ -176,13 +175,13 @@ namespace pgc.Business
             if (Data.AccessLevel_ID.HasValue)
             {
                 AccessLevel accessLevel = new AccessLevelBusiness().Retrieve(Data.AccessLevel_ID.Value);
-                if (accessLevel.Role == (int)pgc.Model.Enums.Role.Agent && Data.Branch_ID.HasValue && Data.Branch_ID == -1)
-                {
-                    res.Result = ActionResult.Failed;
-                    res.AddMessage(UserMessageKey.UnselectedBranch);
-                    return res;
+                //if (accessLevel.Role == (int)pgc.Model.Enums.Role.Agent && Data.Branch_ID.HasValue && Data.Branch_ID == -1)
+                //{
+                //    res.Result = ActionResult.Failed;
+                //    res.AddMessage(UserMessageKey.UnselectedBranch);
+                //    return res;
 
-                }
+                //}
             }
             return base.Validate(Data, Mode);
         }
@@ -218,8 +217,8 @@ namespace pgc.Business
 
                     eArg.Related_Doer = doer;
                     eArg.Related_User = user;
-                    if (user.Branch_ID.HasValue && user.Branch_ID.Value > 0)
-                        eArg.Related_Branch = new BranchBusiness().Retrieve(user.Branch_ID.Value);
+                    //if (user.Branch_ID.HasValue && user.Branch_ID.Value > 0)
+                    //    eArg.Related_Branch = new BranchBusiness().Retrieve(user.Branch_ID.Value);
 
                     eArg.EventVariables.Add("%user%", user.FullName);
                     eArg.EventVariables.Add("%username%", user.Username);
@@ -263,8 +262,8 @@ namespace pgc.Business
 
                 eArg.Related_Doer = user;
                 eArg.Related_User = Data;
-                if (Data.Branch_ID.HasValue && Data.Branch_ID.Value > 0)
-                    eArg.Related_Branch = new BranchBusiness().Retrieve(Data.Branch_ID.Value);
+                //if (Data.Branch_ID.HasValue && Data.Branch_ID.Value > 0)
+                //    eArg.Related_Branch = new BranchBusiness().Retrieve(Data.Branch_ID.Value);
 
                 eArg.EventVariables.Add("%user%",Data.FullName);
                 eArg.EventVariables.Add("%username%", Data.Username);
@@ -297,8 +296,8 @@ namespace pgc.Business
 
                 eArg.Related_Doer = user;
                 eArg.Related_User = Data;
-                if (Data.Branch_ID.HasValue && Data.Branch_ID.Value > 0)
-                    eArg.Related_Branch = new BranchBusiness().Retrieve(Data.Branch_ID.Value);
+                //if (Data.Branch_ID.HasValue && Data.Branch_ID.Value > 0)
+                //    eArg.Related_Branch = new BranchBusiness().Retrieve(Data.Branch_ID.Value);
 
                 eArg.EventVariables.Add("%user%",Data.FullName);
                 eArg.EventVariables.Add("%username%", Data.Username);
@@ -321,13 +320,13 @@ namespace pgc.Business
             OperationResult op1 = new OperationResult();
             op1.Result = ActionResult.Done;
 
-            if (oldUser.Orders != null &&
-                oldUser.Orders.Count > 0 &&
-                oldUser.Orders.Any(g => g.OnlinePayments != null && g.OnlinePayments.Count > 0))
-            {
-                op1.Result = ActionResult.Failed;
-                op1.AddMessage(Model.Enums.UserMessageKey.UserHasOnlineTransactionOnlyCanDeactive);
-            }
+            //if (oldUser.Orders != null &&
+            //    oldUser.Orders.Count > 0 &&
+            //    oldUser.Orders.Any(g => g.OnlinePayments != null && g.OnlinePayments.Count > 0))
+            //{
+            //    op1.Result = ActionResult.Failed;
+            //    op1.AddMessage(Model.Enums.UserMessageKey.UserHasOnlineTransactionOnlyCanDeactive);
+            //}
             
             //if (oldUser.BranchDemands != null && oldUser.BranchDemands.Count > 0)
             //{
@@ -351,8 +350,8 @@ namespace pgc.Business
 
                 eArg.Related_Doer = user;
                 eArg.Related_User = oldUser;
-                if (oldUser.Branch_ID.HasValue && oldUser.Branch_ID.Value > 0)
-                    eArg.Related_Branch = new BranchBusiness().Retrieve(oldUser.Branch_ID.Value);
+                //if (oldUser.Branch_ID.HasValue && oldUser.Branch_ID.Value > 0)
+                //    eArg.Related_Branch = new BranchBusiness().Retrieve(oldUser.Branch_ID.Value);
 
                 eArg.EventVariables.Add("%user%", oldUser.FullName);
                 eArg.EventVariables.Add("%username%", oldUser.Username);

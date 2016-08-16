@@ -63,30 +63,30 @@ public partial class UserControls_Project_RightPanel :BaseUserControl
                     
                     #region customized For Financial Items
 
-                    if (item.RouteName == "admin-branchorder")
-                    {
-                        long numbersOfPendingBranchOrder = new BranchOrderBusiness().GetNumberOfStatus(BranchOrderStatus.Pending);
+                    //if (item.RouteName == "admin-branchorder")
+                    //{
+                    //    long numbersOfPendingBranchOrder = new BranchOrderBusiness().GetNumberOfStatus(BranchOrderStatus.Pending);
 
-                        if (numbersOfPendingBranchOrder > 0)
-                            item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
+                    //    if (numbersOfPendingBranchOrder > 0)
+                    //        item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
 
-                    }
-                    else if (item.RouteName == "admin-branchlackorder")
-                    {
-                        long numbersOfPendingBranchLackOrder = new BranchLackOrderBusiness().GetNumberOfStatus(BranchLackOrderStatus.Pending);
+                    //}
+                    //else if (item.RouteName == "admin-branchlackorder")
+                    //{
+                    //    long numbersOfPendingBranchLackOrder = new BranchLackOrderBusiness().GetNumberOfStatus(BranchLackOrderStatus.Pending);
 
-                        if (numbersOfPendingBranchLackOrder > 0)
-                            item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchLackOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
+                    //    if (numbersOfPendingBranchLackOrder > 0)
+                    //        item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchLackOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
 
-                    }
-                    else if (item.RouteName == "admin-branchreturnorder")
-                    {
-                        long numbersOfPendingBranchReturnOrder = new BranchReturnOrderBusiness().GetNumberOfStatus(BranchReturnOrderStatus.Pending);
+                    //}
+                    //else if (item.RouteName == "admin-branchreturnorder")
+                    //{
+                    //    long numbersOfPendingBranchReturnOrder = new BranchReturnOrderBusiness().GetNumberOfStatus(BranchReturnOrderStatus.Pending);
 
-                        if (numbersOfPendingBranchReturnOrder > 0)
-                            item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchReturnOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
+                    //    if (numbersOfPendingBranchReturnOrder > 0)
+                    //        item.Title += string.Format(" ({0}) {1}", numbersOfPendingBranchReturnOrder, item.IsNew ? "<span style='color:red;font-size: 8px;'> (جدید)</span>" : "");
 
-                    }
+                    //}
 
                         
 
