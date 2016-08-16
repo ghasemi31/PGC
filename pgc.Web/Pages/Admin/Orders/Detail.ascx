@@ -2,7 +2,7 @@
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
     <tr runat="server" id="UserID">
-        <td class="caption">کد ثبت نام</td>
+        <td class="caption">کد رهگیری</td>
         <td class="control"><asp:Label ID="lblGameOrderID" runat="server"/></td>
 
     </tr>
@@ -64,7 +64,7 @@
     </tr>
     <%} %>
 
-    <%if(GameOrder.Group!=null){ %>
+    <%if(!string.IsNullOrEmpty(GameOrder.GroupName)){ %>
      <tr>
         <td class="caption">نام تیم</td>
         <td class="control"><asp:Label ID="lblTeamName" runat="server" /></td>
@@ -76,14 +76,14 @@
             <table class="Table" style=" width:630px;">
                 <tr class="Header" style="background-color:#AD6868; color:#fff;">
                     <th scope="col">نام بازیکن</th>
-                    <th scope="col">ایمیل</th>
+                    <th scope="col">نام پدر</th>
                     <th scope="col">کد ملی</th>
                 </tr>
                 <asp:ListView ID="lsvGroup" runat="server"  DataKeyNames="ID" EnableViewState="false" >
                     <ItemTemplate>
                 <tr class="Row">
                     <td class="Cell"><%#Eval("FullName") %></td>
-                    <td class="Cell"><%#Eval("Email") %></td>
+                    <td class="Cell"><%#Eval("FatherName") %></td>
                     <td class="Cell"><%#Eval("NationalCode")%></td>
                 </tr>
                    </ItemTemplate>

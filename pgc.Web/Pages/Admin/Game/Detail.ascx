@@ -28,6 +28,12 @@
         </td>
     </tr>
     <tr>
+        <td class="caption">پلتفرم</td>
+        <td class="control">
+             <kfk:NormalTextBox ID="txtPlatform" runat="server" TextBoxWidth="212" Required="true" />
+        </td>
+    </tr>
+    <tr>
                 <td class="caption">مدیر بازی</td>
             <td class="control"><kfk:LookupCombo ID="lkpManager" 
                

@@ -24,6 +24,7 @@ public partial class Pages_Guest_OnlinePayment : BasePage
     pgc.Business.Payment.OnlinePay.PaymentBusiness pay_business = new pgc.Business.Payment.OnlinePay.PaymentBusiness();
     public string RefId;
     long PayID;
+    bool isOK;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -43,6 +44,11 @@ public partial class Pages_Guest_OnlinePayment : BasePage
             {
                 PayID = (long)res.Data["ResNum"];
                 Post();
+                if (!isOK)
+                {
+                    var url=GetRouteUrl("guest-ordertracking", new { id = order.ID });
+                    Response.Redirect(url);
+                }
             }
         }
     }
@@ -76,16 +82,17 @@ public partial class Pages_Guest_OnlinePayment : BasePage
             int State = ConvertorUtil.ToInt32(resultArray[0]);
 
             if (State == (int)MellatOnlinePaymentState.OK)
+            {
                 RefId = resultArray[1];
+                isOK = true;
+            }
             else
             {
                 string message = EnumUtil.GetEnumElementPersianTitle((MellatOnlinePaymentState)State);
                 UserSession.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, message));
 
                 pay_business.ChangeOrderState(PayID, State);
-
-
-                Response.Redirect(GetRouteUrl("user-gamedetail", new { id = order.ID }));
+                isOK = false;
 
             }
         }

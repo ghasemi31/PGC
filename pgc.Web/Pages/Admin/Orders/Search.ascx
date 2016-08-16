@@ -2,7 +2,7 @@
 <legend>جستجو</legend>
 <table>   
     <tr>
-        <td class="caption">کد ثبت نام</td>
+        <td class="caption"> کد رهگیری</td>
         <td class="control"><kfk:NormalTextBox runat="server" ID="txtNumber" Mode="Numeric" CssClass="small" /></td>
 
         <td class="caption">نام ثبت نام کننده</td>

@@ -18,7 +18,7 @@
         <kfk:SelectableColumnTemplate />
         <kfk:RowNumberColumnTemplate HeaderText="ردیف" />
         <kfk:BaseBoundField DataField="ID" Visible="false" HeaderText="" />
-        <kfk:TextColumnTemplate DataField="FUllName" HeaderText="نام و نام خانوادگی" />
+        <kfk:TextColumnTemplate DataField="FullName" HeaderText="نام و نام خانوادگی" />
         <kfk:TextColumnTemplate DataField="Email" HeaderText="پست الکترونیک" />
 <%--        <kfk:TextColumnTemplate DataField="City" HeaderText="شهرستان" MaxLength="30"/>--%>
         <kfk:EnumColumnTemplate DataField="Role" HeaderText="نقش" Enum_dllName="pgc.Model" EnumPath="pgc.Model.Enums.Role" ViewMode="PersianTitle"/>
