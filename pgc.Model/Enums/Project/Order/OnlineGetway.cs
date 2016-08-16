@@ -12,6 +12,6 @@ namespace pgc.Model.Enums
         [PersianTitle("درگاه بانک ملت")]
         MellatBankGateWay = 1,
         [PersianTitle("درگاه آسان پرداخت")]
-        UpGateWay = 2
+        AsanPardakhtGateWay = 2
     }
 }

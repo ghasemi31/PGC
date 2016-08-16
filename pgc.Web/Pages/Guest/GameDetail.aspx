@@ -92,9 +92,19 @@
                                     </asp:RequiredFieldValidator>
                                     <%} %>
                                      <br />
-                                     <div class="<%=(game.GamerCount > 1)?"":"display-center" %>">
+
+
+                        <div style="direction:rtl;padding:0px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                         <asp:RadioButtonList ID="rdGetway" CssClass="online-rd" runat="server">
+         <asp:ListItem Text='<img src="/assets/Guest/Image/AsanPardakhtGateWay.png" alt="img1" /> <span>آسان پرداخت</span>' Value="2" Selected="True" />
+         <asp:ListItem Text='<img src="/assets/Guest/Image/MellatBankGateWay.png" alt="img2" /> <span>بانک ملت</span>' Value="1"></asp:ListItem>
+</asp:RadioButtonList>
+
+                            </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <asp:Button CssClass="btn-game btn-add-player" runat="server" Text="ثبت نام در بازی" OnClick="Unnamed_Click" />
-                                    </div>
+                                   </div>
                                         </div>
                                 </asp:View>
                             </asp:MultiView>
@@ -103,27 +113,33 @@
                     <div class="col-lg-9 col=md-9 col-sm-6 col-xs-12">
                         <div class="row" id="game-info">
                             <div class="col-md-12">
-                                <span id="game-title"><%=game.Title %></span>
+                                <span id="game-title"><%=game.Title %> (<%=kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.GameType)game.Type_Enum) %>) </span>
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">مدیر بازی:</span>
                                 <span class="game-detail-info"><%--<%=game.User.FullName %>--%></span>
                             </div>
                             <div class="col-md-6">
-                                <span class="game-detail-title">نوع بازی:</span>
-                                <span class="game-detail-info"><%=(game.GamerCount>1)?"بازی تیمی":"بازی انفرادی" %></span>
-                            </div>
-                            <div class="col-md-6">
-                                <span class="game-detail-title">پلتفرم بازی:</span>
-                                <span class="game-detail-info"><%=kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.GameType)game.Type_Enum) %></span>
-                            </div>
-                            <div class="col-md-6">
                                 <span class="game-detail-title">جایزه نفر اول:</span>
                                 <span class="game-detail-info"><%=game.FirstPresent %></span>
                             </div>
                             <div class="col-md-6">
-                                <span class="game-detail-title">جایزه نفر دوم:</span>
+                                <span class="game-detail-title">نوع بازی:</span>
+                                <span class="game-detail-info"><%=(game.GamerCount>1)?"بازی تیمی":"بازی انفرادی" %> - <%=kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.GameHowType)game.HowType_Enum) %></span>
+
+
+                                
+                            </div>
+                            <div class="col-md-6">
+                                   <span class="game-detail-title">جایزه نفر دوم:</span>
                                 <span class="game-detail-info"><%=game.SecondPresent %></span>
+                            </div>
+                            <div class="col-md-6">
+
+                                <span class="game-detail-title">پلتفرم بازی:</span>
+                                <span class="game-detail-info"><%=game.Platform %></span> 
+
+                             
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">جایزه نفر سوم:</span>
@@ -131,7 +147,7 @@
                             </div>
                             <div class="col-md-6">
                                 <span class="game-detail-title">هزینه ثبت نام:</span>
-                                <span class="game-detail-info"><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(game.Cost) %> ریال</span>
+                                <span class="game-detail-info" style="font-size:15px;color:red;"><%=kFrameWork.Util.UIUtil.GetCommaSeparatedOf(game.Cost) %> ریال</span>
                             </div>
                             <div class="col-md-12">
                                 <span class="game-detail-title">قوانین و مقررات بازی:</span>

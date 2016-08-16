@@ -31,70 +31,47 @@ namespace pgc.Business.General
 
 
 
-        public IQueryable gamer_List(int startRowIndex, int maximumRows, long ID)
+        
+        public IQueryable gamer_List( long ID)
         {
-            if (startRowIndex == 0 && maximumRows == 0)
-                return null;
+          
 
-            var order = db.GameOrders.SingleOrDefault(g => g.ID == ID);
-
-            if (order == null || order.Group_ID == null)
-                return null;
-
-            var Result = order.Group.Users.AsQueryable()
-                .OrderBy(f=>f.ID)
+           return db.TeamMembers.Where(m => m.Order_ID == ID)
+                .OrderBy(f => f.ID)
                 .Select(f => new
                 {
                     f.ID,
                     f.FullName,
-                    f.Email,
+                    f.FatherName,
                     f.NationalCode,
 
                 });
 
-            return Result.Skip(startRowIndex).Take(maximumRows);
+           
         }
+
 
         public int gamer_count(long ID)
         {
 
-            var order = db.GameOrders.SingleOrDefault(g => g.ID == ID);
-
-            if (order == null || order.Group_ID == null)
-                return 0;
-
-            return order.Group.Users.Count();
-
+            return db.TeamMembers.Where(m => m.Order_ID == ID).Count();
         }
 
 
 
-        public User RetriveGamer(string nationalCode)
-        {
-            return db.Users.SingleOrDefault(u => u.NationalCode == nationalCode);
-        }
 
 
-        public long AddNewGameGroup(string title)
-        {
 
-            Group group = new Group();
-            group.Title = title;
-            db.Groups.AddObject(group);
-            db.SaveChanges();
-            return group.ID;
-        }
 
-        public OperationResult AddNewGamerToGroup(long groupID, long gamerID)
+        public OperationResult AddNewGamerToGroup(TeamMember member)
         {
 
             OperationResult res = new OperationResult();
-            Group group = db.Groups.FirstOrDefault(g => g.ID == groupID);
-            User gamer = db.Users.FirstOrDefault(g => g.ID == gamerID);
+            
 
             try
             {
-                group.Users.Add(gamer);
+                db.TeamMembers.AddObject(member);
 
                 db.SaveChanges();
                 res.Result = ActionResult.Done;
@@ -113,33 +90,7 @@ namespace pgc.Business.General
         }
 
 
-        public OperationResult removeGamerFromGroup(long groupID, long gamerID)
-        {
-
-            OperationResult res = new OperationResult();
-            Group group = db.Groups.FirstOrDefault(g => g.ID == groupID);
-            User gamer = db.Users.FirstOrDefault(g => g.ID == gamerID);
-
-            try
-            {
-                group.Users.Remove(gamer);
-
-                db.SaveChanges();
-                res.Result = ActionResult.Done;
-                res.AddMessage(UserMessageKey.Succeed);
-
-
-                return res;
-
-            }
-            catch
-            {
-                res.Result = ActionResult.Failed;
-                res.AddMessage(UserMessageKey.Failed);
-                return res;
-            }
-        }
-
+       
 
 
         public OperationResult Validate(long userID, long gameID)
@@ -156,9 +107,9 @@ namespace pgc.Business.General
             else
             {
 
-                var groupid = user.Groups.Select(g => g.ID).ToList();
+               
 
-                int gameCount = db.GameOrders.Where(o => o.User_ID == userID || (o.Group_ID != null && groupid.Contains((long)o.Group_ID))).Count();
+                int gameCount = db.GameOrders.Where(o => o.User_ID == userID).Count();
 
                 if (game.Type_Enum != (int)GameType.Mobile)
                 {
@@ -176,8 +127,7 @@ namespace pgc.Business.General
 
                 else
                 {
-
-                    res.Result = ActionResult.Done;
+                   res.Result = ActionResult.Done;
                     return res;
                 }
 

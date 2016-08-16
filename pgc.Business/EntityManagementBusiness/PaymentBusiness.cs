@@ -49,10 +49,14 @@ namespace pgc.Business
                     switch (Pattern.Status)
                     {
                         case GameOrderPaymentStatus.OnlineSucced:
-                            list = list.Where(f => f.State == (int)MellatOnlinePaymentState.OK);
+
+
+                            // asan pardakht here
+                            list = list.Where(f => (f.BankGeway_Enum==(int)OnlineGetway.MellatBankGateWay&& f.State == (int)MellatOnlinePaymentState.OK) );
                             break;
                         case GameOrderPaymentStatus.OnlineFailed:
-                            list = list.Where(f => f.State != (int)MellatOnlinePaymentState.OK);
+                            list = list.Where(f => (f.BankGeway_Enum == (int)OnlineGetway.MellatBankGateWay && f.State != (int)MellatOnlinePaymentState.OK));
+                            // asan pardakht here
                             break;
                         default:
                             break;
@@ -118,29 +122,7 @@ namespace pgc.Business
         }
 
 
-        public static string GetOnlinePaymentStateTitle(long onlinePaymentId)
-        {
-            string res = "";
-            pgcEntities context = new pgcEntities();
-            var payment = context.Payments.SingleOrDefault(p => p.ID == onlinePaymentId);
-
-            if (payment != null)
-            {
-                OnlineGetway getway = (OnlineGetway)payment.BankGeway_Enum;
-                switch (getway)
-                {
-                    case OnlineGetway.MellatBankGateWay:
-                        res = EnumUtil.GetEnumElementPersianTitle((MellatOnlinePaymentState)payment.State);
-                        if (payment.State == (int)MellatOnlinePaymentState.OK)
-                            res += "<img src='~/styles/images/Enabled.png' alt=''/>".Replace("~", "");
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-            return res;
-        }
+       
         public pgc.Model.Payment RetrieveByRefNum(string RefNum)
         {
             return Context.Payments.SingleOrDefault(f => f.RefNum == RefNum);

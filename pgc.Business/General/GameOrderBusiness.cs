@@ -34,13 +34,7 @@ namespace pgc.Business.General
                 model.Tel = user.Tel;
 
                 model.IsPaid = false;
-                if (model.Group_ID != null && model.Group_ID > 0)
-                    model.GroupName = db.Groups.FirstOrDefault(b => b.ID == model.Group_ID).Title;
-                else
-                {
-                    model.GroupName = "";
-                    model.Group_ID = null;
-                }
+                model.GroupName = model.GroupName ?? "";
                 var game = db.Games.FirstOrDefault(b => b.ID == model.Game_ID);
                 model.GameTitle = game.Title;
                 model.PayableAmount = game.Cost;
@@ -48,7 +42,6 @@ namespace pgc.Business.General
                 db.GameOrders.AddObject(model);
                 db.SaveChanges();
 
-                db.SaveChanges();
                 res.Result = ActionResult.Done;
                 res.AddMessage(UserMessageKey.Succeed);
                 res.Data.Add("Order_ID", model.ID);
@@ -103,7 +96,7 @@ namespace pgc.Business.General
                 return res;
 
             }
-            catch
+            catch(Exception e)
             {
                 res.Result = ActionResult.Failed;
                 res.AddMessage(UserMessageKey.Failed);

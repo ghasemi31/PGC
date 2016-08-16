@@ -90,3 +90,28 @@ hr {
 .right-section .btn-game{
     width:100%;
 }
+
+
+.online-rd {
+    width: 100%;
+    margin-bottom:20px;
+    border:1px solid #eee;
+    
+}
+.online-rd td {
+    padding:5px;
+}
+
+.online-rd input{
+    width: 15px;
+    margin-top:10px;
+    float: right;
+}
+.online-rd img{
+  height: 35px;
+    margin-right: 7px;
+}
+.online-rd span{
+ font-size:13px;
+  margin-right: 7px;
+}

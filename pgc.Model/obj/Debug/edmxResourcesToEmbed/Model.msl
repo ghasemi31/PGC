@@ -486,6 +486,7 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="pgcModel.Game">
         <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
           <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
           <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
           <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
@@ -506,6 +507,7 @@
     <EntitySetMapping Name="GameOrders">
       <EntityTypeMapping TypeName="pgcModel.GameOrder">
         <MappingFragment StoreEntitySet="GameOrder">
+          <ScalarProperty Name="Getway_Enum" ColumnName="Getway_Enum" />
           <ScalarProperty Name="GameCenterTitle" ColumnName="GameCenterTitle" />
           <ScalarProperty Name="GameCenter_ID" ColumnName="GameCenter_ID" />
           <ScalarProperty Name="Mobile" ColumnName="Mobile" />
@@ -519,16 +521,7 @@
           <ScalarProperty Name="OrderPersianDate" ColumnName="OrderPersianDate" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
           <ScalarProperty Name="Game_ID" ColumnName="Game_ID" />
-          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
           <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Groups">
-      <EntityTypeMapping TypeName="pgcModel.Group">
-        <MappingFragment StoreEntitySet="Group">
-          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -556,24 +549,6 @@
         <ScalarProperty Name="ID" ColumnName="Game_ID" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="GamerGroup" TypeName="pgcModel.GamerGroup" StoreEntitySet="GamerGroup">
-      <EndProperty Name="User">
-        <ScalarProperty Name="ID" ColumnName="Gamer_ID" />
-      </EndProperty>
-      <EndProperty Name="Group">
-        <ScalarProperty Name="ID" ColumnName="Group_ID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="GameCenters">
-      <EntityTypeMapping TypeName="pgcModel.GameCenter">
-        <MappingFragment StoreEntitySet="GameCenter">
-          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="TItle" ColumnName="TItle" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="OccuredSystemEvents">
       <EntityTypeMapping TypeName="pgcModel.OccuredSystemEvent">
         <MappingFragment StoreEntitySet="OccuredSystemEvent">
@@ -583,6 +558,27 @@
           <ScalarProperty Name="PersianDate" ColumnName="PersianDate" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="SystemEvent_ID" ColumnName="SystemEvent_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamMembers">
+      <EntityTypeMapping TypeName="pgcModel.TeamMember">
+        <MappingFragment StoreEntitySet="TeamMember">
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameCenters">
+      <EntityTypeMapping TypeName="pgcModel.GameCenter">
+        <MappingFragment StoreEntitySet="GameCenter">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TItle" ColumnName="TItle" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

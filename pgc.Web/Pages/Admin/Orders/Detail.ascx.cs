@@ -36,7 +36,7 @@ public partial class Pages_Admin_GameOrder_Detail : BaseDetailControl<GameOrder>
         lblPayableAmount.Text = UIUtil.GetCommaSeparatedOf(Data.PayableAmount) + " ریال";
         //lblPaymentType.Text = EnumUtil.GetEnumElementPersianTitle((PaymentType)Data.PaymentType);
         lblGameOrderPaymentStatus.Text = Data.IsPaid ? "پرداخت شده" : "پرداخت نشده";
-        lblGameType.Text=Data.Group!=null?"تیمی":"انفرادی";
+        lblGameType.Text=!string.IsNullOrEmpty(Data.GroupName)?"تیمی":"انفرادی";
         lblUserTel.Text = string.IsNullOrEmpty(Data.Mobile) ? Data.Tel : Data.Mobile;
 
         if (Data.User != null)
@@ -47,9 +47,9 @@ public partial class Pages_Admin_GameOrder_Detail : BaseDetailControl<GameOrder>
 
         lblTeamName.Text = Data.GroupName;
 
-        if (GameOrder.Group != null)
+        if (!string.IsNullOrEmpty(Data.GroupName))
         {
-            lsvGroup.DataSource = business.gamer_List(0, 100,Data.ID);
+            lsvGroup.DataSource = business.gamer_List(Data.ID);
             lsvGroup.DataBind();
         }
 

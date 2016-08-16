@@ -118,14 +118,9 @@
     <EntitySet Name="Supports" EntityType="pgcModel.Support" />
     <EntitySet Name="Games" EntityType="pgcModel.Game" />
     <EntitySet Name="GameOrders" EntityType="pgcModel.GameOrder" />
-    <EntitySet Name="Groups" EntityType="pgcModel.Group" />
     <EntitySet Name="Payments" EntityType="pgcModel.Payment" />
     <AssociationSet Name="FK_GameOrder_Game" Association="pgcModel.FK_GameOrder_Game">
       <End Role="Game" EntitySet="Games" />
-      <End Role="GameOrder" EntitySet="GameOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GameOrder_Group" Association="pgcModel.FK_GameOrder_Group">
-      <End Role="Group" EntitySet="Groups" />
       <End Role="GameOrder" EntitySet="GameOrders" />
     </AssociationSet>
     <AssociationSet Name="FK_GameOrder_User" Association="pgcModel.FK_GameOrder_User">
@@ -140,9 +135,15 @@
       <End Role="Game" EntitySet="Games" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
-    <AssociationSet Name="GamerGroup" Association="pgcModel.GamerGroup">
-      <End Role="Group" EntitySet="Groups" />
-      <End Role="User" EntitySet="Users" />
+    <EntitySet Name="OccuredSystemEvents" EntityType="pgcModel.OccuredSystemEvent" />
+    <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="pgcModel.FK_OccuredSystemEvent_SystemEvent">
+      <End Role="SystemEvent" EntitySet="SystemEvents" />
+      <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvents" />
+    </AssociationSet>
+    <EntitySet Name="TeamMembers" EntityType="pgcModel.TeamMember" />
+    <AssociationSet Name="FK_TeamMember_GameOrder" Association="pgcModel.FK_TeamMember_GameOrder">
+      <End Role="GameOrder" EntitySet="GameOrders" />
+      <End Role="TeamMember" EntitySet="TeamMembers" />
     </AssociationSet>
     <EntitySet Name="GameCenters" EntityType="pgcModel.GameCenter" />
     <AssociationSet Name="FK_GameCenter_City" Association="pgcModel.FK_GameCenter_City">
@@ -152,11 +153,6 @@
     <AssociationSet Name="FK_GameOrder_GameCenter" Association="pgcModel.FK_GameOrder_GameCenter">
       <End Role="GameCenter" EntitySet="GameCenters" />
       <End Role="GameOrder" EntitySet="GameOrders" />
-    </AssociationSet>
-    <EntitySet Name="OccuredSystemEvents" EntityType="pgcModel.OccuredSystemEvent" />
-    <AssociationSet Name="FK_OccuredSystemEvent_SystemEvent" Association="pgcModel.FK_OccuredSystemEvent_SystemEvent">
-      <End Role="SystemEvent" EntitySet="SystemEvents" />
-      <End Role="OccuredSystemEvent" EntitySet="OccuredSystemEvents" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Option">
@@ -697,7 +693,6 @@
     <Property Name="IsGameManager" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_User" FromRole="User" ToRole="GameOrder" />
     <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
-    <NavigationProperty Name="Groups" Relationship="pgcModel.GamerGroup" FromRole="User" ToRole="Group" />
     <Property Name="Visible" Type="Boolean" Nullable="false" />
     <Property Name="Telegram" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
@@ -923,6 +918,7 @@
     <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
     <Property Name="LogoPath" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
     <Property Name="HowType_Enum" Type="Int32" Nullable="false" />
+    <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GameOrder">
     <Key>
@@ -930,7 +926,6 @@
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="User_ID" Type="Int64" />
-    <Property Name="Group_ID" Type="Int64" />
     <Property Name="Game_ID" Type="Int64" />
     <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="OrderPersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -943,21 +938,13 @@
     <Property Name="IsPaid" Type="Boolean" Nullable="false" />
     <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Game" Relationship="pgcModel.FK_GameOrder_Game" FromRole="GameOrder" ToRole="Game" />
-    <NavigationProperty Name="Group" Relationship="pgcModel.FK_GameOrder_Group" FromRole="GameOrder" ToRole="Group" />
     <NavigationProperty Name="User" Relationship="pgcModel.FK_GameOrder_User" FromRole="GameOrder" ToRole="User" />
     <NavigationProperty Name="Payments" Relationship="pgcModel.FK_Payment_GameOrder" FromRole="GameOrder" ToRole="Payment" />
     <Property Name="GameCenter_ID" Type="Int64" />
     <Property Name="GameCenterTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Getway_Enum" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TeamMembers" Relationship="pgcModel.FK_TeamMember_GameOrder" FromRole="GameOrder" ToRole="TeamMember" />
     <NavigationProperty Name="GameCenter" Relationship="pgcModel.FK_GameOrder_GameCenter" FromRole="GameOrder" ToRole="GameCenter" />
-  </EntityType>
-  <EntityType Name="Group">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Group" FromRole="Group" ToRole="GameOrder" />
-    <NavigationProperty Name="Users" Relationship="pgcModel.GamerGroup" FromRole="Group" ToRole="User" />
   </EntityType>
   <EntityType Name="Payment">
     <Key>
@@ -983,18 +970,6 @@
       </Principal>
       <Dependent Role="GameOrder">
         <PropertyRef Name="Game_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GameOrder_Group">
-    <End Type="pgcModel.Group" Role="Group" Multiplicity="0..1" />
-    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Group">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="GameOrder">
-        <PropertyRef Name="Group_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1026,9 +1001,53 @@
     <End Type="pgcModel.Game" Role="Game" Multiplicity="*" />
     <End Type="pgcModel.User" Role="User" Multiplicity="*" />
   </Association>
-  <Association Name="GamerGroup">
-    <End Type="pgcModel.Group" Role="Group" Multiplicity="*" />
-    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+  <EntityType Name="OccuredSystemEvent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
+    <Property Name="Actor" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="OccuredSystemEvent" ToRole="SystemEvent" />
+  </EntityType>
+  <Association Name="FK_OccuredSystemEvent_SystemEvent">
+    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
+    <End Type="pgcModel.OccuredSystemEvent" Role="OccuredSystemEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OccuredSystemEvent">
+        <PropertyRef Name="SystemEvent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TeamMember">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_ID" Type="Int64" Nullable="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NationalCode" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GameOrder" Relationship="pgcModel.FK_TeamMember_GameOrder" FromRole="TeamMember" ToRole="GameOrder" />
+  </EntityType>
+  <Association Name="FK_TeamMember_GameOrder">
+    <End Type="pgcModel.GameOrder" Role="GameOrder" Multiplicity="1" />
+    <End Type="pgcModel.TeamMember" Role="TeamMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TeamMember">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <EntityType Name="GameCenter">
     <Key>
@@ -1064,31 +1083,6 @@
       </Principal>
       <Dependent Role="GameOrder">
         <PropertyRef Name="GameCenter_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="OccuredSystemEvent">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SystemEvent_ID" Type="Int64" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PersianDate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeviceType_Enum" Type="Int32" Nullable="false" />
-    <Property Name="Actor" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SystemEvent" Relationship="pgcModel.FK_OccuredSystemEvent_SystemEvent" FromRole="OccuredSystemEvent" ToRole="SystemEvent" />
-  </EntityType>
-  <Association Name="FK_OccuredSystemEvent_SystemEvent">
-    <End Type="pgcModel.SystemEvent" Role="SystemEvent" Multiplicity="1" />
-    <End Type="pgcModel.OccuredSystemEvent" Role="OccuredSystemEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SystemEvent">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OccuredSystemEvent">
-        <PropertyRef Name="SystemEvent_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

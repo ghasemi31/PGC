@@ -27,7 +27,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         //    Data.Manager_ID = null;
 
         Data.Type_Enum = lkcGameType.GetSelectedValue<int>();
-
+        Data.Platform = txtPlatform.Text;
         Data.DispOrder = txtDispOrder.GetNumber<int>();
         Data.ImagePath = fupPic.FilePath;
         Data.LogoPath = fupLogo.FilePath;
@@ -48,7 +48,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         lkcHowType.SetSelectedValue(Data.HowType_Enum);
 
         txtUrlKey.Text = Data.UrlKey;
-
+        txtPlatform.Text = Data.Platform;
         txtDispOrder.SetNumber(Data.DispOrder);
         fupPic.FilePath = Data.ImagePath;
         fupLogo.FilePath = Data.LogoPath;

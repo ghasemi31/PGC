@@ -77,7 +77,7 @@ namespace pgc.Business
 
             //Search By Pattern
             if (Pattern.Numbers > 0)
-                list = list.Where(o => o.User_ID == Pattern.Numbers || o.ID == Pattern.Numbers);
+                list = list.Where(o => o.ID == Pattern.Numbers);
 
             if (Pattern.Game_ID > 0)
                 list = list.Where(o => o.Game_ID == Pattern.Game_ID);
