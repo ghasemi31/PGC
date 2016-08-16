@@ -255,3 +255,53 @@ GO
 ALTER TABLE Game.Game_GameManager SET (LOCK_ESCALATION = TABLE)
 GO
 COMMIT
+
+
+
+
+------------------------------------------
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE CMS.Feedback
+	DROP COLUMN GameManager
+GO
+ALTER TABLE CMS.Feedback SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+
+
+
+INSERT [Configuration].[OptionCategory] ([ID], [Title], [Parent_OptionCategory_ID], [DisplayOrder], [GrantAdmin], [Active]) VALUES (42, N'سایر تنظیمات', 2, 30, 1, 1)
+GO
+
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (171, 42, NULL, N'PGC_Tel', N'تلگرام Iran PGC', 2, N'09132541924', 2, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (172, 42, NULL, N'PGC_Email', N'پست الکترونیک Iran PGC', 3, N's.ghasemi365@gmail.com', 3, 1)
+GO
+INSERT [Configuration].[OptionCategory] ([ID], [Title], [Parent_OptionCategory_ID], [DisplayOrder], [GrantAdmin], [Active]) VALUES (43, N'بنرهای تبلیغاتی', 2, 29, 1, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (173, 43, NULL, N'Adv_Img_1', N'بنر تبلیغاتی 1', 19, N'~/Userfiles/adv-2.jpg', 1, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (174, 43, NULL, N'Adv_Img_2', N'بنر تبلیغاتی 2', 19, N'~/Userfiles/adv-2_1.jpg', 2, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (175, 43, NULL, N'Adv_Img_3', N'بنر تبلیغاتی 3', 19, N'~/Userfiles/adv-2_2.jpg', 3, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (176, 43, NULL, N'Adv_Img_4', N'بنر تبلیغاتی 4', 19, N'~/Userfiles/adv-2_3.jpg', 4, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (177, 43, NULL, N'Adv_Img_5', N'بنر تبلیغاتی 5', 19, N'~/Userfiles/adv-2_4.jpg', 5, 1)
+GO
+INSERT [Configuration].[Option] ([ID], [OptionCategory_ID], [OptionLookup_ID], [Key], [Title], [Type], [Value], [DisplayOrder], [Active]) VALUES (178, 43, NULL, N'Adv_Img_6', N'بنر تبلیغاتی 6', 19, N'~/Userfiles/adv-2_5.jpg', 6, 1)
+GO
