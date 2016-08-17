@@ -426,6 +426,7 @@
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
     <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
     <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SumPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GameCenter">
     <Key>

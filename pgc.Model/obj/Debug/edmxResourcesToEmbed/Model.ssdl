@@ -245,6 +245,7 @@
     <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
     <Property Name="HowType_Enum" Type="int" Nullable="false" />
     <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="SumPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
   </EntityType>
   <EntityType Name="Game_GameManager">
     <Key>

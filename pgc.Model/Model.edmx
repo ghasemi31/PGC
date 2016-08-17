@@ -250,6 +250,7 @@
           <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
           <Property Name="HowType_Enum" Type="int" Nullable="false" />
           <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="SumPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
         </EntityType>
         <EntityType Name="Game_GameManager">
           <Key>
@@ -1554,6 +1555,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
           <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
           <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="SumPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GameCenter">
           <Key>
@@ -2477,6 +2479,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="pgcModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="SumPresent" ColumnName="SumPresent" />
                 <ScalarProperty Name="Platform" ColumnName="Platform" />
                 <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
                 <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />

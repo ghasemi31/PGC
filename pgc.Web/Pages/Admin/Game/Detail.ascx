@@ -74,6 +74,13 @@
             <kfk:NormalTextBox ID="txtThirdPresent" runat="server" TextBoxWidth="212" Required="true" />
         </td>
     </tr>
+
+     <tr>
+        <td class="caption">مجموع جوایز</td>
+        <td class="control">
+            <kfk:NormalTextBox ID="txtSumPresent" runat="server" TextBoxWidth="212" Required="true" />
+        </td>
+    </tr>
     <tr>
         <td class="caption">هزینه ثبت نام</td>
         <td class="control">

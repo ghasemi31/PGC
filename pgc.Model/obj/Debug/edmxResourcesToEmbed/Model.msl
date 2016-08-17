@@ -247,6 +247,7 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="pgcModel.Game">
         <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="SumPresent" ColumnName="SumPresent" />
           <ScalarProperty Name="Platform" ColumnName="Platform" />
           <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
           <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />

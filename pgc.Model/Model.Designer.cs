@@ -498,25 +498,7 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentSMS> _SentSMS;
-
-
-
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<SentSMS> SentSMSList
-        {
-            get
-            {
-                if ((_SentSMSList == null))
-                {
-                    _SentSMSList = base.CreateObjectSet<SentSMS>("SentSMSList");
-                }
-                return _SentSMSList;
-            }
-        }
-        private ObjectSet<SentSMS> _SentSMSList;
-
+    
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -2939,7 +2921,8 @@ namespace pgc.Model
         /// <param name="urlKey">Initial value of the UrlKey property.</param>
         /// <param name="howType_Enum">Initial value of the HowType_Enum property.</param>
         /// <param name="platform">Initial value of the Platform property.</param>
-        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.String laws, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform)
+        /// <param name="sumPresent">Initial value of the SumPresent property.</param>
+        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.String laws, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform, global::System.String sumPresent)
         {
             Game game = new Game();
             game.ID = id;
@@ -2956,6 +2939,7 @@ namespace pgc.Model
             game.UrlKey = urlKey;
             game.HowType_Enum = howType_Enum;
             game.Platform = platform;
+            game.SumPresent = sumPresent;
             return game;
         }
 
@@ -3325,6 +3309,30 @@ namespace pgc.Model
         private global::System.String _Platform;
         partial void OnPlatformChanging(global::System.String value);
         partial void OnPlatformChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SumPresent
+        {
+            get
+            {
+                return _SumPresent;
+            }
+            set
+            {
+                OnSumPresentChanging(value);
+                ReportPropertyChanging("SumPresent");
+                _SumPresent = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("SumPresent");
+                OnSumPresentChanged();
+            }
+        }
+        private global::System.String _SumPresent;
+        partial void OnSumPresentChanging(global::System.String value);
+        partial void OnSumPresentChanged();
 
         #endregion
 

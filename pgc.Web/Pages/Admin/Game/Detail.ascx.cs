@@ -20,6 +20,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         Data.UrlKey = txtUrlKey.Text;
         Data.Laws = txtLaws.Text;
         Data.HowType_Enum = lkcHowType.GetSelectedValue<int>();
+        Data.SumPresent = txtSumPresent.Text;
         var managerId=lkpManager.GetSelectedValue<long>();
         //if (managerId > 0)
         //    Data.Manager_ID = managerId;
@@ -46,7 +47,7 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         txtLaws.Text = Data.Laws;
         lkcGameType.SetSelectedValue(Data.Type_Enum);
         lkcHowType.SetSelectedValue(Data.HowType_Enum);
-
+        txtSumPresent.Text = Data.SumPresent;
         txtUrlKey.Text = Data.UrlKey;
         txtPlatform.Text = Data.Platform;
         txtDispOrder.SetNumber(Data.DispOrder);
