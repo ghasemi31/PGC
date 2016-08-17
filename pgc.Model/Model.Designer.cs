@@ -516,7 +516,7 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentSMS> _SentSMSList;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>

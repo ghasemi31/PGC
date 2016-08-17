@@ -98,8 +98,8 @@
                         <div style="direction:rtl;padding:0px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                          <asp:RadioButtonList ID="rdGetway" CssClass="online-rd" runat="server">
-         <asp:ListItem Text='<img src="/assets/Guest/Image/AsanPardakhtGateWay.png" alt="img1" /> <span>آسان پرداخت</span>' Value="2" Selected="True" />
-         <asp:ListItem Text='<img src="/assets/Guest/Image/MellatBankGateWay.png" alt="img2" /> <span>بانک ملت</span>' Value="1"></asp:ListItem>
+       <%--  <asp:ListItem Text='<img src="/assets/Guest/Image/AsanPardakhtGateWay.png" alt="img1" /> <span>آسان پرداخت</span>' Value="2" Selected="True" />--%>
+         <asp:ListItem Text='<img src="/assets/Guest/Image/MellatBankGateWay.png" alt="img2" /> <span>بانک ملت</span>' Selected="True" Value="1"></asp:ListItem>
 </asp:RadioButtonList>
 
                             </div>

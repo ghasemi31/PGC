@@ -8,6 +8,7 @@
         <asp:Button ID="btnAdd" runat="server" Text="+ ایجاد سطر جدید" CssClass="dtButton" OnClick="OnAdd" Width="150" />
     </div>
 </div>
+
 <kfk:HKGrid ID="grdList"
             runat="server"
             AllowPaging="True"
@@ -15,7 +16,7 @@
             DataSourceID="obdSource">
     <PagerSettings Mode="NumericFirstLast" />
     <Columns>
-        <kfk:SelectableColumnTemplate />
+       <%-- <kfk:SelectableColumnTemplate />--%>
         <kfk:RowNumberColumnTemplate HeaderText="ردیف" />
         <kfk:BaseBoundField DataField="ID" Visible="false" HeaderText="" />
         <kfk:TextColumnTemplate DataField="FullName" HeaderText="نام و نام خانوادگی" />

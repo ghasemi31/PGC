@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="" style="background-color: #eee;">
                     <div class="">
                         <div class="container">
                             <%--<div class="navbar-header">--%>
@@ -108,7 +108,6 @@
                                         <ul>
                                             <li><a href="<%=GetRouteUrl("guest-gamelist", new { id=(int)GameType.Iranian})%>">بازیهای ایرانی</a></li>
                                             <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Foreign}) %>">بازیهای خارجی</a></li>
-                                            <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Mobile}) %>">بازیهای موبایلی</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -172,7 +171,6 @@
                                             <ul style="padding: 0px;">
                                                 <li><a href="<%=GetRouteUrl("guest-gamelist", new { id=(int)GameType.Iranian})%>">بازیهای ایرانی</a></li>
                                                 <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Foreign}) %>">بازیهای خارجی</a></li>
-                                                <li><a href="<%=GetRouteUrl("guest-gamelist",new { id=(int)GameType.Mobile}) %>">بازیهای موبایلی</a></li>
                                             </ul>
                                         </nav>
                                     </div>
