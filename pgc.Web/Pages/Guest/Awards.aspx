@@ -25,26 +25,26 @@
                                 <tr class="order-title table-header">
                                     <td>کد</td>
                                     <td>نام بازی</td>
-                                    <td>تعداد بازیکن</td>
+                                    <td>نوع</td>
 
-                                    <td>پلتفرم بازی</td>
+                                    <td>مجموع جوایز</td>
 
                                     <td>جایزه نفر اول</td>
                                     <td>جایزه نفر دوم</td>
                                     <td>جایزه نفر سوم</td>
-                                    <td></td>
+                                    <td> ورودی (هزار تومان)</td>
                                 </tr>
                                 <%foreach (var item in business.GameList())
                                   {%>
                                 <tr class="order-tb-row">
                                     <td><%=item.ID %></td>
                                     <td><%=item.Title %></td>
-                                    <td><%=item.GamerCount %>نفر</td>
-                                    <td><%=kFrameWork.Util.EnumUtil.GetEnumElementPersianTitle((pgc.Model.Enums.GameType)item.Type_Enum) %></td>
+                                    <td><%=item.GamerCount==1?"تک نفره":item.GamerCount+" نفره" %></td>
+                                    <td><%=item.SumPresent %></td>
                                     <td><%=item.FirstPresent %></td>
                                     <td><%=item.SecondPresent %></td>
                                     <td><%=item.ThirdPresent %></td>
-                                    <td class="tbl-row"><a href="<%=GetRouteUrl("guest-gamedetail",new { urlkey =item.UrlKey  })%>" class="btn-table">جزئیات بازی</a></td>
+                                    <td><%=item.Cost/10000 %></td>
                                 </tr>
                                 <%} %>
                             </table>

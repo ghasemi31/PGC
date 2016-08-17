@@ -63,7 +63,10 @@ public partial class Pages_User_GameDetail : BasePage
             member.Order_ID = order.ID;
 
             var res = b.AddNewGamerToGroup(member);
-            UserSession.AddMessage(res.Messages);
+            if (res.Result != ActionResult.Done)
+            {
+                UserSession.AddMessage(res.Messages);
+            }
 
         }
 

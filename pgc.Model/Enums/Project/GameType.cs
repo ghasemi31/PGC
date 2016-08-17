@@ -11,8 +11,6 @@ namespace pgc.Model.Enums
        [PersianTitle("بازیهای ایرانی")]
         Iranian = 1,
        [PersianTitle("بازیهای خارجی")]
-        Foreign = 2,
-       [PersianTitle("بازیهای موبایلی")]
-        Mobile = 3
+        Foreign = 2
     }
 }

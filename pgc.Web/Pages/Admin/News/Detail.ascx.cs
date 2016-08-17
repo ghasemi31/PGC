@@ -15,7 +15,7 @@ public partial class Pages_Admin_News_Detail : BaseDetailControl<News>
             Data = new News();
 
         Data.Title = txtTitle.Text;
-        Data.Body = txtBody.Text;
+        Data.Body = ckBody.GetValue();
         Data.Summary = txtSummary.Text;
         Data.NewsPicPath = fupNewsPic.FilePath;
         Data.PageTitle = txtPageTitle.Text;
@@ -34,7 +34,8 @@ public partial class Pages_Admin_News_Detail : BaseDetailControl<News>
     {
 
         txtTitle.Text = Data.Title;
-        txtBody.Text = Data.Body;
+        ckBody.SetValue(Data.Body);
+        //txtBody.Text = Data.Body;
         txtSummary.Text = Data.Summary;
         fupNewsPic.FilePath = Data.NewsPicPath;
         txtPageTitle.Text = Data.PageTitle;

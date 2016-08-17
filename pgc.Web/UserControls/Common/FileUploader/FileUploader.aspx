@@ -6,6 +6,7 @@
 <head>
     <title>jQuery File Upload Example</title>
     <link rel="stylesheet" href="<%=ResolveClientUrl("~/Styles/UserControls/Common/FileUploader/fileupload-ui.css") %>" type="text/css"/>
+    <link href="/assets/global/css/fonts.css" rel="stylesheet" />
 </head>
 <body style="background:transparent;overflow:hidden;" scroll="no">
 

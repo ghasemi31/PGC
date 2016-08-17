@@ -13,7 +13,7 @@ public partial class Pages_Guest_test : System.Web.UI.Page
     }
     protected void Timer1_Tick(object sender, EventArgs e)
     {
-        Label1.Text = "Panel refreshed at: " +
-    DateTime.Now.ToLongTimeString();
+       // Label1.Text = "Panel refreshed at: " +
+    //DateTime.Now.ToLongTimeString();
     }
 }

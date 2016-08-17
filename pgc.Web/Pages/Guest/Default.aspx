@@ -165,7 +165,26 @@
             <section class="slice color2  roundedShadow">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-7 pgc-title">
+                        <div id="news" class="col-md-12 pgc-title">
+                            <h1>آخرین اخبار</h1>
+                            <hr />
+                            <div id="news-slider" class="owl-carousel">
+                                <%foreach (var item in DBusiness.GetLastNews())
+                                  {%>
+                                <div class="news-item">
+                                    <img alt="<%=item.Title %>" src="<%=(!string.IsNullOrEmpty(item.NewsPicPath))?ResolveClientUrl(item.NewsPicPath):"/assets/global/images/branch-default.jpg" %>?height=410&width=436&mode=cropandscale" />
+                                    <a href="<%=GetRouteUrl("guest-newsdetail",new { id = item.ID,title=item.Title.Replace(" ","-") })%>">
+                                        <article class="news-detail">
+                                            <h4><%=item.Title %></h4>
+                                            <p><%=kFrameWork.Util.DateUtil.GetPersianDateWithTime(item.NewsDate) %></p>
+                                            <p><%=item.Summary %></p>
+                                        </article>
+                                    </a>
+                                </div>
+                                <%} %>
+                            </div>
+                        </div>
+                        <div class="col-md-12 pgc-title" style="margin-top:30px">
                             <div class="row margin-left-right-0">
                                 <h1>حامیان معنوی</h1>
                                 <hr />
@@ -196,25 +215,7 @@
                             </div>
 
                         </div>
-                        <div id="news" class="col-md-5 pgc-title">
-                            <h1>آخرین اخبار</h1>
-                            <hr />
-                            <div id="news-slider" class="owl-carousel">
-                                <%foreach (var item in DBusiness.GetLastNews())
-                                  {%>
-                                <div class="news-item">
-                                    <img alt="<%=item.Title %>" src="<%=(!string.IsNullOrEmpty(item.NewsPicPath))?ResolveClientUrl(item.NewsPicPath):"/assets/global/images/branch-default.jpg" %>?height=410&width=436&mode=cropandscale" />
-                                    <a href="<%=GetRouteUrl("guest-newsdetail",new { id = item.ID,title=item.Title.Replace(" ","-") })%>">
-                                        <article class="news-detail">
-                                            <h4><%=item.Title %></h4>
-                                            <p><%=kFrameWork.Util.DateUtil.GetPersianDateWithTime(item.NewsDate) %></p>
-                                            <p><%=item.Summary %></p>
-                                        </article>
-                                    </a>
-                                </div>
-                                <%} %>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </section>

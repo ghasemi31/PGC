@@ -28,19 +28,19 @@
     <tr>
         <td class="caption">پلتفرم</td>
         <td class="control">
-            <kfk:NormalTextBox ID="txtPlatform" runat="server" TextBoxWidth="212" Required="true" />
+             <kfk:NormalTextBox ID="txtPlatform" runat="server" TextBoxWidth="212" Required="true" />
         </td>
     </tr>
     <tr>
-        <td class="caption">مدیر بازی</td>
+                <td class="caption">مدیر بازی</td>
         <td class="control">
             <kfk:LookupCombo ID="lkpManager"
-                BusinessTypeName="pgc.Business.Lookup.GameManagerLookupBusiness"
+                                            BusinessTypeName="pgc.Business.Lookup.GameManagerLookupBusiness"
                 runat="server" />
         </td>
 
-
-    </tr>
+           
+        </tr>
     <tr>
         <td class="caption">تعداد بازیکن ها</td>
         <td class="control">
@@ -48,13 +48,14 @@
         </td>
     </tr>
 
-    <tr>
+        <tr>
         <td class="caption">معرفی بازی</td>
         <td class="control">
-            <kfk:HtmlEditor ID="txtLaws" runat="server" Required="true" />
+           
+            <kfk:CkHtmlEditor ID="ckLaws" runat="server"  Required="true" /> 
         </td>
     </tr>
-
+ 
     <tr>
         <td class="caption">قوانین و مقررات بازی</td>
         <td class="control">
@@ -80,6 +81,13 @@
             <kfk:NormalTextBox ID="txtThirdPresent" runat="server" TextBoxWidth="212" Required="true" />
         </td>
     </tr>
+
+     <tr>
+        <td class="caption">مجموع جوایز</td>
+        <td class="control">
+            <kfk:NormalTextBox ID="txtSumPresent" runat="server" TextBoxWidth="212" Required="true" />
+        </td>
+    </tr>
     <tr>
         <td class="caption">هزینه ثبت نام</td>
         <td class="control">
@@ -87,7 +95,7 @@
             ریال
         </td>
     </tr>
-
+ 
     <tr>
         <td class="caption">اولویت نمایش</td>
         <td class="control">
@@ -108,14 +116,14 @@
             </span>
         </td>
     </tr>
-
+    
     <tr>
         <td class="caption">تصویر</td>
         <td class="control">
             <kfk:FileUploader ID="fupPic" runat="server" SaveFolder="~/userfiles/Game/" Required="true" />
         </td>
     </tr>
-    <tr>
+     <tr>
         <td class="caption">لوگو</td>
         <td class="control">
             <kfk:FileUploader ID="fupLogo" runat="server" SaveFolder="~/userfiles/Game/" />

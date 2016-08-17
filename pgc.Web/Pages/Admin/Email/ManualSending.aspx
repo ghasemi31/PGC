@@ -31,7 +31,7 @@
                         </tr>                    
                         <tr>
                             <td class="caption">متن ایمیل ارسالی</td>
-                            <td class="control" colspan="3"><kfk:HtmlEditor ID="htmlBody" runat="server" /></td>
+                            <td class="control" colspan="3"><kfk:CkHtmlEditor ID="ckBody" runat="server"  Required="true" /> </td>
                         </tr>                        
                     </table>
                     <ul class="fup insert">

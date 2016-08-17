@@ -24,7 +24,7 @@
     </tr>
     <tr>
          <td class="caption">متن اطلاعیه</td>
-        <td class="control"><kfk:HtmlEditor ID="txtBody" runat="server" Required="true" /></td>
+        <td class="control"><kfk:CkHtmlEditor ID="ckBody" runat="server"  Required="true" /> </td>
     </tr>
     <tr>
         <td class="caption">عکس</td>

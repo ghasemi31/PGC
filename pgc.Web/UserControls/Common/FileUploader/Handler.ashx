@@ -29,8 +29,22 @@ public class Handler : IHttpHandler {
 
             string RelativePath = IOUtil.SaveFile(hpf, context.Request.Form["relative_path"]);
             string GlobalPath = VirtualPathUtility.ToAbsolute(RelativePath);
-            string Thumb_RelativePath = IOUtil.MakeThumbnailOf(RelativePath, 80, 80, "");
-            string Thumb_GlobalPath = VirtualPathUtility.ToAbsolute(Thumb_RelativePath);
+            
+            //Thumbnail Handling -----------------------------------------------------------------
+            string Thumb_RelativePath ="";
+            string Thumb_GlobalPath = "";
+            if (IOUtil.IsImageFormat(RelativePath))
+            {
+                Thumb_RelativePath = IOUtil.MakeThumbnailOf(RelativePath, 80, 80, "");
+                Thumb_GlobalPath = VirtualPathUtility.ToAbsolute(Thumb_RelativePath);
+            }
+            else
+            {
+                Thumb_RelativePath = GetFileIconRelativePath(RelativePath);
+                Thumb_GlobalPath = VirtualPathUtility.ToAbsolute(Thumb_RelativePath);
+            }
+            //------------------------------------------------------------------------------------
+            
             string File_Name = System.IO.Path.GetFileName(RelativePath);
             int Len = (int)(hpf.ContentLength / 1000);
             //if (File_Name.Length > 25)
@@ -63,6 +77,17 @@ public class Handler : IHttpHandler {
         }
     }
 
+
+    private string GetFileIconRelativePath(string path)
+    {
+        string ext = System.IO.Path.GetExtension(path).ToLower().Trim('.');
+        string icon_FileName = "icon_" + ext + ".png";
+        string icon_RelativePath = "~/UserFiles/icons/" + icon_FileName;
+        if (System.IO.File.Exists(HttpContext.Current.Server.MapPath(icon_RelativePath)))
+            return icon_RelativePath;
+        else
+            return "~/UserFiles/icons/icon_default.png";
+    }
 }
 
 public class ViewDataUploadFilesResult

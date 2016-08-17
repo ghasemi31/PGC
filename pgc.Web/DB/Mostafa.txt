@@ -1,1 +1,3 @@
-﻿
+﻿ALTER TABLE Game.Game ADD
+	SumPresent nvarchar(350) NOT NULL default N''
+GO

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using kFrameWork.Util;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public partial class UserControls_Common_FileUploader_DeleteFile : System.Web.UI.Page
 {
@@ -31,6 +32,14 @@ public partial class UserControls_Common_FileUploader_DeleteFile : System.Web.UI
         string folder = FilePath.TrimEnd(fullname.ToCharArray());
         IOUtil.DeleteFile(folder + name + "_DefaultThumb" + ext, true);
 
-        return res;
+        //delete all dependencies file
+        Regex reg = new Regex(@"\b" + name + @"_(?:\d*\.)?\d+_(?:\d*\.)?\d+_(keepratio|stretch|cropandscale|crop)?" + ext);
+        var files = Directory.GetFiles(Server.MapPath(folder)).Where(path => reg.IsMatch(path));
+        foreach (var file in files)
+        {
+            IOUtil.DeleteFile(file, false);
+        }
+
+        return true;
     }
 }
