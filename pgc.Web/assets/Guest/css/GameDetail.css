@@ -36,11 +36,12 @@
     float: left;
 }
 
-.btn-login-game{
-    width:100px !important;
+.btn-login-game {
+    width: 100px !important;
     margin-top: 10px;
-    margin-left:10px;
+    margin-left: 10px;
 }
+
 hr {
     margin: 1em 0 !important;
 }
@@ -67,51 +68,59 @@ hr {
 }
 
 
-.right-section input[type="text"], .right-section select{
-        margin-bottom: 0px!important;
-}
- .right-section select{
-       width:100%;
+.right-section input[type="text"], .right-section select {
+    margin-bottom: 0px !important;
 }
 
-.right-section .description{
+.right-section select {
+    width: 100%;
+}
+
+.right-section .description {
     font-size: 10pt;
     color: #b3abab;
 }
 
-.right-section .validator{
+.right-section .validator {
     color: rgb(204, 0, 0);
     font-size: 10px;
     display: inline;
-    margin-bottom:10px;
-        font-family: Tahoma;
+    margin-bottom: 10px;
+    font-family: Tahoma;
 }
 
-.right-section .btn-game{
-    width:100%;
+.right-section .btn-game {
+    width: 100%;
 }
 
 
 .online-rd {
     width: 100%;
-    margin-bottom:20px;
-    border:1px solid #eee;
-    
-}
-.online-rd td {
-    padding:5px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
 }
 
-.online-rd input{
-    width: 15px;
-    margin-top:10px;
-    float: right;
-}
-.online-rd img{
-  height: 35px;
-    margin-right: 7px;
-}
-.online-rd span{
- font-size:13px;
-  margin-right: 7px;
+    .online-rd td {
+        padding: 5px;
+    }
+
+    .online-rd input {
+        width: 15px;
+        margin-top: 10px;
+        float: right;
+    }
+
+    .online-rd img {
+        height: 35px;
+        margin-right: 7px;
+    }
+
+    .online-rd span {
+        font-size: 13px;
+        margin-right: 7px;
+    }
+
+#game-laws {
+    text-align: justify;
+    line-height: 30px;
 }

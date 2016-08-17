@@ -4,7 +4,7 @@
     <%this.Title = news.PageTitle; %>
     <meta name="description" content="<%=news.PageDescription %>" />
     <meta name="keywords" content="<%=news.PageKeywords %>" />
-    <link href="/assets/Guest/css/News.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/News.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
     <section  class="main-body">

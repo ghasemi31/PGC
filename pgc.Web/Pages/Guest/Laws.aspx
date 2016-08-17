@@ -9,7 +9,7 @@
       <%this.Title = OptionBusiness.GetText(OptionKey.Laws_Title); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Laws_Description) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Laws_Keywords) %>" />
-    <link href="/assets/Guest/css/AboutUs.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/AboutUs.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
     <section id="page">
@@ -19,7 +19,12 @@
         <section id="main-content">
             <div class="container">
                 <div id="about-content" class="row">
-                    <%=OptionBusiness.GetHtml(OptionKey.Laws_Content) %>
+                   <header>
+                       <h1>قوانین و مقررات بازی <%=game.Title %></h1>
+                   </header>
+                    <div>
+                        <%=game.LawsGame %>
+                    </div>
                 </div>
             </div>
         </section>

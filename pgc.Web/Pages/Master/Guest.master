@@ -15,9 +15,9 @@
 
     <link href="/assets/Plugin/bootstrap/css/bootstrap-rtl.v3.3.2.min.css" rel="stylesheet" />
     <link href="/assets/Plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/assets/Template/camera/css/camera.css" rel="stylesheet" />
-    <link href="/assets/Template/css/layout.css" rel="stylesheet" />
-    <link href="/assets/Template/css/colors.css" rel="stylesheet" />
+    <link href="/assets/Template/camera/css/camera.css?v=2" rel="stylesheet" />
+    <link href="/assets/Template/css/layout.css?v=2" rel="stylesheet" />
+    <link href="/assets/Template/css/colors.css?v=2" rel="stylesheet" />
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -112,7 +112,16 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="<%=GetRouteUrl("guest-laws",null) %>" class="firstLevel">قوانین و مقررات</a>
+                                         <a href="<%=GetRouteUrl("guest-gamecenter",null) %>" class="firstLevel">مراکز بازی</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="firstLevel">قوانین و مقررات</a>
+                                        <ul>
+                                            <%foreach (var item in business.GetGameList())
+                                              {%>
+                                                  <li><a href="<%=GetRouteUrl("guest-laws", new {urlkey=item.UrlKey })%>"><%=item.Title %></a></li>
+                                              <%} %>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="<%=GetRouteUrl("guest-awards",null) %>" class="firstLevel">جدول جوایز</a>
@@ -227,7 +236,7 @@
         <%--<script src="/assets/Template/camera/camera.min.js"></script>--%>
 
         <!-- Custom  -->
-        <script src="/assets/Template/js/custom.js"></script>
+        <script src="/assets/Template/js/custom.js?v=2"></script>
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 

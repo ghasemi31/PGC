@@ -59,6 +59,7 @@
     <Compile Include="Core\SamanOnlinePayment.cs" />
     <Compile Include="Core\SMSBusiness.cs" />
     <Compile Include="EntityManagementBusiness\AccessLevelBusiness.cs" />
+    <Compile Include="EntityManagementBusiness\AdvertismentBusiness.cs" />
     <Compile Include="EntityManagementBusiness\CityBusiness.cs" />
     <Compile Include="EntityManagementBusiness\FeedbackBusiness.cs" />
     <Compile Include="EntityManagementBusiness\GameBusiness.cs" />

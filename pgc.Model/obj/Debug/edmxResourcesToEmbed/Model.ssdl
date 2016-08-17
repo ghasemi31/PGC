@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pgcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Advertisment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ADV_Type" Type="int" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DispOrder" Type="int" Nullable="false" />
+    <Property Name="Adv_Url" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
   <EntityType Name="Feedback">
     <Key>
       <PropertyRef Name="ID" />
@@ -238,13 +249,14 @@
     <Property Name="FirstPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
     <Property Name="SecondPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
     <Property Name="ThirdPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
-    <Property Name="Laws" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AboutGame" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DispOrder" Type="int" Nullable="false" />
     <Property Name="Cost" Type="bigint" Nullable="false" />
     <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
     <Property Name="HowType_Enum" Type="int" Nullable="false" />
     <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="LawsGame" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Game_GameManager">
     <Key>
@@ -943,6 +955,7 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
   </Function>
   <Function Name="GetTablesOfDb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="pgcModelStoreContainer">
+    <EntitySet Name="Advertisment" EntityType="Self.Advertisment" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="MainSlider" EntityType="Self.MainSlider" Schema="CMS" store:Type="Tables" />
     <EntitySet Name="News" EntityType="Self.News" Schema="CMS" store:Type="Tables" />

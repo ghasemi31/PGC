@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="pgcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Advertisment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ADV_Type" Type="int" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DispOrder" Type="int" Nullable="false" />
+          <Property Name="Adv_Url" Type="nvarchar" MaxLength="300" Nullable="false" />
+        </EntityType>
         <EntityType Name="Feedback">
           <Key>
             <PropertyRef Name="ID" />
@@ -243,13 +254,14 @@
           <Property Name="FirstPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
           <Property Name="SecondPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
           <Property Name="ThirdPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
-          <Property Name="Laws" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AboutGame" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DispOrder" Type="int" Nullable="false" />
           <Property Name="Cost" Type="bigint" Nullable="false" />
           <Property Name="UrlKey" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
           <Property Name="HowType_Enum" Type="int" Nullable="false" />
           <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="LawsGame" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Game_GameManager">
           <Key>
@@ -948,6 +960,7 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
         </Function>
         <Function Name="GetTablesOfDb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="pgcModelStoreContainer">
+          <EntitySet Name="Advertisment" EntityType="Self.Advertisment" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="MainSlider" EntityType="Self.MainSlider" Schema="CMS" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="CMS" store:Type="Tables" />
@@ -1286,6 +1299,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="GameOrder" EntitySet="GameOrders" />
             <End Role="TeamMember" EntitySet="TeamMembers" />
           </AssociationSet>
+          <EntitySet Name="Advertisments" EntityType="pgcModel.Advertisment" />
         </EntityContainer>
         <EntityType Name="Feedback">
           <Key>
@@ -1545,7 +1559,6 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="FirstPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
           <Property Name="SecondPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
           <Property Name="ThirdPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
-          <Property Name="Laws" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DispOrder" Type="Int32" Nullable="false" />
           <Property Name="Cost" Type="Int64" Nullable="false" />
           <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
@@ -1554,6 +1567,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
           <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
           <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="AboutGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LawsGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GameCenter">
           <Key>
@@ -2225,6 +2240,17 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Advertisment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADV_Type" Type="Int32" Nullable="false" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DispOrder" Type="Int32" Nullable="false" />
+          <Property Name="Adv_Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2477,13 +2503,14 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="pgcModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="LawsGame" ColumnName="LawsGame" />
+                <ScalarProperty Name="AboutGame" ColumnName="AboutGame" />
                 <ScalarProperty Name="Platform" ColumnName="Platform" />
                 <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
                 <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
                 <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-                <ScalarProperty Name="Laws" ColumnName="Laws" />
                 <ScalarProperty Name="ThirdPresent" ColumnName="ThirdPresent" />
                 <ScalarProperty Name="SecondPresent" ColumnName="SecondPresent" />
                 <ScalarProperty Name="FirstPresent" ColumnName="FirstPresent" />
@@ -2828,6 +2855,18 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Advertisments">
+            <EntityTypeMapping TypeName="pgcModel.Advertisment">
+              <MappingFragment StoreEntitySet="Advertisment">
+                <ScalarProperty Name="Adv_Url" ColumnName="Adv_Url" />
+                <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="ADV_Type" ColumnName="ADV_Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2849,7 +2888,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model" ZoomLevel="63">
+      <Diagram Name="Model" ZoomLevel="82">
         <EntityTypeShape EntityType="pgcModel.Feedback" Width="1.5" PointX="10.75" PointY="9.5" />
         <EntityTypeShape EntityType="pgcModel.MainSlider" Width="1.5" PointX="12.75" PointY="7.5" />
         <EntityTypeShape EntityType="pgcModel.News" Width="1.5" PointX="12.75" PointY="10.5" />
@@ -2867,7 +2906,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <EntityTypeShape EntityType="pgcModel.SystemEvent" Width="1.5" PointX="3" PointY="3.5" />
         <EntityTypeShape EntityType="pgcModel.SystemEventAction" Width="1.5" PointX="5.25" PointY="11" />
         <EntityTypeShape EntityType="pgcModel.SystemEventVariable" Width="1.5" PointX="5.25" PointY="47.25" />
-        <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="0.75" PointY="18.875" />
+        <EntityTypeShape EntityType="pgcModel.Game" Width="1.5" PointX="8.375" PointY="19" />
         <EntityTypeShape EntityType="pgcModel.GameCenter" Width="1.5" PointX="6" PointY="7.125" />
         <EntityTypeShape EntityType="pgcModel.GameOrder" Width="1.5" PointX="8.25" PointY="11.75" />
         <EntityTypeShape EntityType="pgcModel.Payment" Width="1.5" PointX="10.5" PointY="12.75" />
@@ -2913,6 +2952,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <AssociationConnector Association="pgcModel.Permission" />
         <EntityTypeShape EntityType="pgcModel.TeamMember" Width="1.5" PointX="10.5" PointY="17.375" />
         <AssociationConnector Association="pgcModel.FK_TeamMember_GameOrder" />
+        <EntityTypeShape EntityType="pgcModel.Advertisment" Width="1.5" PointX="17.375" PointY="12.75" />
       </Diagram>
     </Diagrams>
   </Designer>

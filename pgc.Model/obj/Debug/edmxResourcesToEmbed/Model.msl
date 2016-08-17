@@ -247,13 +247,14 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="pgcModel.Game">
         <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="LawsGame" ColumnName="LawsGame" />
+          <ScalarProperty Name="AboutGame" ColumnName="AboutGame" />
           <ScalarProperty Name="Platform" ColumnName="Platform" />
           <ScalarProperty Name="HowType_Enum" ColumnName="HowType_Enum" />
           <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
           <ScalarProperty Name="UrlKey" ColumnName="UrlKey" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
-          <ScalarProperty Name="Laws" ColumnName="Laws" />
           <ScalarProperty Name="ThirdPresent" ColumnName="ThirdPresent" />
           <ScalarProperty Name="SecondPresent" ColumnName="SecondPresent" />
           <ScalarProperty Name="FirstPresent" ColumnName="FirstPresent" />
@@ -594,6 +595,18 @@
           <ScalarProperty Name="FatherName" ColumnName="FatherName" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisments">
+      <EntityTypeMapping TypeName="pgcModel.Advertisment">
+        <MappingFragment StoreEntitySet="Advertisment">
+          <ScalarProperty Name="Adv_Url" ColumnName="Adv_Url" />
+          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="ADV_Type" ColumnName="ADV_Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

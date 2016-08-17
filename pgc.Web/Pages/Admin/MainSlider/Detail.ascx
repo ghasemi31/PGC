@@ -25,8 +25,8 @@
             <kfk:FileUploader ID="fupPic" runat="server" SaveFolder="~/userfiles/MainSlider/" />
             <ul style="color: #bd0019">
                 <li>فرمت مناسب: png/jpg</li>
-                <li>width مناسب: 1400 px</li>
-                <li>height مناسب: 800 px</li>
+                <li>width مناسب: 650 px</li>
+                <li>height مناسب: 400 px</li>
             </ul>
         </td>
     </tr>

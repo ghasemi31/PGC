@@ -7,7 +7,7 @@
      <%this.Title = OptionBusiness.GetText(pgc.Model.Enums.OptionKey.NewsListTitle); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Description_NewsList) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Keywords_NewsList) %>" />
-    <link href="/assets/Guest/css/archive.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/archive.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" Runat="Server">
     <!-- BEGIN CONTENT -->

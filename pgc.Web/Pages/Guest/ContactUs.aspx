@@ -8,8 +8,8 @@
     <%this.Title = OptionBusiness.GetText(OptionKey.contact_Title); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Description_Contact) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Keywords_Contact) %>" />
-    <link href="/assets/Guest/css/Contact.css" rel="stylesheet" />
-    <link href="/assets/User/UserProfile.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/Contact.css?v=2" rel="stylesheet" />
+    <link href="/assets/User/UserProfile.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
 
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <!-- map -->
-                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <%--<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                         <div class="row">
                             <div id="map_canvas" class="col-md-12"></div>
                         </div>
@@ -32,10 +32,10 @@
                             <span><i class="fa fa-envelope" aria-hidden="true"></i><%=kFrameWork.Business.OptionBusiness.GetLargeText(OptionKey.PGC_Email) %></span>
 
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- map -->
                     <!-- contact form -->
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-offset-0 col-xs-12">
 
 
                         <asp:TextBox ID="txtFullName" CssClass="form-control" placeholder="نام و نام خانوادگی" ClientIDMode="Static" runat="server" autocomplete="off" ToolTip="نام و نام خانوادگی"></asp:TextBox>
@@ -71,7 +71,9 @@
                             ErrorMessage="لطفا متن پیام را وارد کنید." ControlToValidate="txtBody"
                             Visible="True" Font-Names="Tahoma" Font-Size="10px" ForeColor="#CC0000" Display="Dynamic">
                         </asp:RequiredFieldValidator>
-                        <asp:Button CssClass="btn btn-default btn-contact" runat="server" Text="ارسال" OnClick="btnSave_Click" />
+                        <div class="display-center">
+                            <asp:Button CssClass="btn btn-default btn-contact" runat="server" Text="ارسال" OnClick="btnSave_Click" />
+                        </div>
 
                         <div class="result"></div>
                     </div>
@@ -119,7 +121,7 @@
     </section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" runat="Server">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC--heJUlVdZJY1OjwnwZd1aVSX-Lpeo00&callback=initMap" async defer></script>
+    <%-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC--heJUlVdZJY1OjwnwZd1aVSX-Lpeo00&callback=initMap" async defer></script>
     <script>
         function initMap() {
             var longitude = <%=OptionBusiness.GetDouble(OptionKey.Longitude)%>;
@@ -141,6 +143,6 @@
                 title: title
             });
         }
-    </script>
+    </script>--%>
 </asp:Content>
 

@@ -78,6 +78,10 @@ namespace pgc.Business
             return Context.GameCenters.Where(u => u.ID == GameCenterID).SingleOrDefault();
         }
 
+        public IQueryable<GameCenter> GetGameCenterList()
+        {
+            return Context.GameCenters;
+        }
 
      
 

@@ -482,23 +482,6 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentEmailBlock> _SentEmailBlocks;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<SentSMS> SentSMS
-        {
-            get
-            {
-                if ((_SentSMS == null))
-                {
-                    _SentSMS = base.CreateObjectSet<SentSMS>("SentSMS");
-                }
-                return _SentSMS;
-            }
-        }
-        private ObjectSet<SentSMS> _SentSMS;
-
 
 
         /// <summary>
@@ -516,6 +499,22 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentSMS> _SentSMSList;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SentSMS> SentSMS
+        {
+            get
+            {
+                if ((_SentSMS == null))
+                {
+                    _SentSMS = base.CreateObjectSet<SentSMS>("SentSMS");
+                }
+                return _SentSMS;
+            }
+        }
+        private ObjectSet<SentSMS> _SentSMS;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -708,6 +707,22 @@ namespace pgc.Model
             }
         }
         private ObjectSet<TeamMember> _TeamMembers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Advertisment> Advertisments
+        {
+            get
+            {
+                if ((_Advertisments == null))
+                {
+                    _Advertisments = base.CreateObjectSet<Advertisment>("Advertisments");
+                }
+                return _Advertisments;
+            }
+        }
+        private ObjectSet<Advertisment> _Advertisments;
 
         #endregion
 
@@ -1008,6 +1023,14 @@ namespace pgc.Model
         {
             base.AddObject("TeamMembers", teamMember);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Advertisments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAdvertisments(Advertisment advertisment)
+        {
+            base.AddObject("Advertisments", advertisment);
+        }
 
         #endregion
 
@@ -1225,6 +1248,193 @@ namespace pgc.Model
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pgcModel", Name="Advertisment")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Advertisment : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Advertisment object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        /// <param name="aDV_Type">Initial value of the ADV_Type property.</param>
+        /// <param name="filePath">Initial value of the FilePath property.</param>
+        /// <param name="dispOrder">Initial value of the DispOrder property.</param>
+        /// <param name="adv_Url">Initial value of the Adv_Url property.</param>
+        public static Advertisment CreateAdvertisment(global::System.Int64 id, global::System.String title, global::System.Int32 aDV_Type, global::System.String filePath, global::System.Int32 dispOrder, global::System.String adv_Url)
+        {
+            Advertisment advertisment = new Advertisment();
+            advertisment.ID = id;
+            advertisment.Title = title;
+            advertisment.ADV_Type = aDV_Type;
+            advertisment.FilePath = filePath;
+            advertisment.DispOrder = dispOrder;
+            advertisment.Adv_Url = adv_Url;
+            return advertisment;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ADV_Type
+        {
+            get
+            {
+                return _ADV_Type;
+            }
+            set
+            {
+                OnADV_TypeChanging(value);
+                ReportPropertyChanging("ADV_Type");
+                _ADV_Type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ADV_Type");
+                OnADV_TypeChanged();
+            }
+        }
+        private global::System.Int32 _ADV_Type;
+        partial void OnADV_TypeChanging(global::System.Int32 value);
+        partial void OnADV_TypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FilePath
+        {
+            get
+            {
+                return _FilePath;
+            }
+            set
+            {
+                OnFilePathChanging(value);
+                ReportPropertyChanging("FilePath");
+                _FilePath = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FilePath");
+                OnFilePathChanged();
+            }
+        }
+        private global::System.String _FilePath;
+        partial void OnFilePathChanging(global::System.String value);
+        partial void OnFilePathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 DispOrder
+        {
+            get
+            {
+                return _DispOrder;
+            }
+            set
+            {
+                OnDispOrderChanging(value);
+                ReportPropertyChanging("DispOrder");
+                _DispOrder = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DispOrder");
+                OnDispOrderChanged();
+            }
+        }
+        private global::System.Int32 _DispOrder;
+        partial void OnDispOrderChanging(global::System.Int32 value);
+        partial void OnDispOrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Adv_Url
+        {
+            get
+            {
+                return _Adv_Url;
+            }
+            set
+            {
+                OnAdv_UrlChanging(value);
+                ReportPropertyChanging("Adv_Url");
+                _Adv_Url = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Adv_Url");
+                OnAdv_UrlChanged();
+            }
+        }
+        private global::System.String _Adv_Url;
+        partial void OnAdv_UrlChanging(global::System.String value);
+        partial void OnAdv_UrlChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -2933,13 +3143,14 @@ namespace pgc.Model
         /// <param name="firstPresent">Initial value of the FirstPresent property.</param>
         /// <param name="secondPresent">Initial value of the SecondPresent property.</param>
         /// <param name="thirdPresent">Initial value of the ThirdPresent property.</param>
-        /// <param name="laws">Initial value of the Laws property.</param>
         /// <param name="dispOrder">Initial value of the DispOrder property.</param>
         /// <param name="cost">Initial value of the Cost property.</param>
         /// <param name="urlKey">Initial value of the UrlKey property.</param>
         /// <param name="howType_Enum">Initial value of the HowType_Enum property.</param>
         /// <param name="platform">Initial value of the Platform property.</param>
-        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.String laws, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform)
+        /// <param name="aboutGame">Initial value of the AboutGame property.</param>
+        /// <param name="lawsGame">Initial value of the LawsGame property.</param>
+        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform, global::System.String aboutGame, global::System.String lawsGame)
         {
             Game game = new Game();
             game.ID = id;
@@ -2950,12 +3161,13 @@ namespace pgc.Model
             game.FirstPresent = firstPresent;
             game.SecondPresent = secondPresent;
             game.ThirdPresent = thirdPresent;
-            game.Laws = laws;
             game.DispOrder = dispOrder;
             game.Cost = cost;
             game.UrlKey = urlKey;
             game.HowType_Enum = howType_Enum;
             game.Platform = platform;
+            game.AboutGame = aboutGame;
+            game.LawsGame = lawsGame;
             return game;
         }
 
@@ -3163,30 +3375,6 @@ namespace pgc.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Laws
-        {
-            get
-            {
-                return _Laws;
-            }
-            set
-            {
-                OnLawsChanging(value);
-                ReportPropertyChanging("Laws");
-                _Laws = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Laws");
-                OnLawsChanged();
-            }
-        }
-        private global::System.String _Laws;
-        partial void OnLawsChanging(global::System.String value);
-        partial void OnLawsChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 DispOrder
         {
             get
@@ -3325,6 +3513,54 @@ namespace pgc.Model
         private global::System.String _Platform;
         partial void OnPlatformChanging(global::System.String value);
         partial void OnPlatformChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String AboutGame
+        {
+            get
+            {
+                return _AboutGame;
+            }
+            set
+            {
+                OnAboutGameChanging(value);
+                ReportPropertyChanging("AboutGame");
+                _AboutGame = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("AboutGame");
+                OnAboutGameChanged();
+            }
+        }
+        private global::System.String _AboutGame;
+        partial void OnAboutGameChanging(global::System.String value);
+        partial void OnAboutGameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LawsGame
+        {
+            get
+            {
+                return _LawsGame;
+            }
+            set
+            {
+                OnLawsGameChanging(value);
+                ReportPropertyChanging("LawsGame");
+                _LawsGame = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("LawsGame");
+                OnLawsGameChanged();
+            }
+        }
+        private global::System.String _LawsGame;
+        partial void OnLawsGameChanging(global::System.String value);
+        partial void OnLawsGameChanged();
 
         #endregion
 

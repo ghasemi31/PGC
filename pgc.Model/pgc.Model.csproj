@@ -65,6 +65,7 @@
     <Compile Include="Enums\Common\UserMessageDirection.cs" />
     <Compile Include="Enums\Common\UserMessageKey.cs" />
     <Compile Include="Enums\Common\UserMessageType.cs" />
+    <Compile Include="Enums\Project\AdvertismentType.cs" />
     <Compile Include="Enums\Project\BooleanStatus.cs" />
     <Compile Include="Enums\Project\BranchType.cs" />
     <Compile Include="Enums\Project\CommentStatus.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Patterns\Common\DateRangePattern.cs" />
     <Compile Include="Patterns\Common\NumericRangePattern.cs" />
     <Compile Include="Patterns\Project\AccessLevelPattern.cs" />
+    <Compile Include="Patterns\Project\AdvertismentPattern.cs" />
     <Compile Include="Patterns\Project\AdvPattern.cs" />
     <Compile Include="Patterns\Project\AgentBranchContactPattern.cs" />
     <Compile Include="Patterns\Project\AgentBranchPicPattern.cs" />

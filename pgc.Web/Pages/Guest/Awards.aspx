@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
   <%this.Title = "جوایز بازیها"; %>
-    <link href="/assets/User/UserProfile.css" rel="stylesheet" />
+    <link href="/assets/User/UserProfile.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
     <section>

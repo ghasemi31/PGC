@@ -9,7 +9,7 @@
       <%this.Title = OptionBusiness.GetText(OptionKey.AboutUs_Title); %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.AboutUs_Description) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.AboutUs_KeyWords) %>" />
-    <link href="/assets/Guest/css/AboutUs.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/AboutUs.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
     <section id="page">

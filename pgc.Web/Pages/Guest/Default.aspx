@@ -10,7 +10,7 @@
     <link href="/assets/Plugin/OwlCarousel2-master/dist/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="/assets/Plugin/OwlCarousel2-master/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
     <link href="/assets/Plugin/animate.css-master/animate.min.css" rel="stylesheet" />
-    <link href="/assets/Guest/css/default.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/default.css?v=2" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
@@ -24,42 +24,94 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-right-0">
+                        <%foreach (var item in adv.Take(3))
+                          {
+                              if (item.ADV_Type == (int)AdvertismentType.img || item.ADV_Type == (int)AdvertismentType.gif)
+                              {%>
                         <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_1))%>?width=335&height=120&mode=cropandscale" />
+                            <a href="<%=ResolveClientUrl(item.Adv_Url) %>">
+                                <img class="img-thumbnail" src="<%=ResolveClientUrl(item.FilePath)%>" />
+                            </a>
                         </div>
+                        <%}
+                              else if (item.ADV_Type == (int)AdvertismentType.flash)
+                              {%>
+
                         <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_2))%>?width=335&height=120&mode=cropandscale" />
+                            <a href="<%=ResolveClientUrl(item.Adv_Url) %>">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+                                    width="335"
+                                    height="120">
+                                    <param name="movie" value="<%=ResolveClientUrl(item.FilePath)%>" />
+                                    <param name="quality" value="high" />
+                                    <param name="wmode" value="transparent" />
+
+                                    <!--[if !IE]>-->
+                                    <object data="<%=ResolveClientUrl(item.FilePath)%>" width="335" height="120" type="application/x-shockwave-flash">
+                                        <param name="quality" value="high" />
+                                        <param name="wmode" value="transparent" />
+                                        <param name="pluginurl" value="http://adobe.com/go/getflashplayer" />
+                                        <%=item.Title%>
+                                    </object>
+                                    <!--> <![endif]-->
+                                </object>
+                            </a>
                         </div>
-                        <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_3))%>?width=335&height=120&mode=cropandscale" />
-                        </div>
+                        <%}
+
+                          } %>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-left-right-0">
-                        <%--<div>
-                            <img src="/assets/Guest/Image/2222.jpg" />
-                        </div>--%>
                         <div id="mainSlider" class="owl-carousel">
                             <%foreach (var item in DBusiness.GetMainSlider())
                               {
                                   var imgPath = ResolveClientUrl(item.ImgPath);
                             %>
-                            <%-- <div class="owl-slide" style="background-image: url(<%=imgPath%>)"></div>--%>
                             <div class="mainSlider-item">
                                 <img class="img-thumbnail" src="<%=ResolveClientUrl(item.ImgPath)%>?width=663&height=368&mode=cropandscale" />
                             </div>
                             <%} %>
                         </div>
                     </div>
+
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-right-0">
+                        <%foreach (var item in adv.Skip(3).Take(3))
+                          {
+                              if (item.ADV_Type == (int)AdvertismentType.img)
+                              {%>
                         <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_4))%>?width=335&height=120&mode=cropandscale" />
+                            <a href="<%=ResolveClientUrl(item.Adv_Url) %>">
+                                <img class="img-thumbnail" src="<%=ResolveClientUrl(item.FilePath)%>" />
+                            </a>
                         </div>
+                        <%}
+                              else if (item.ADV_Type == (int)AdvertismentType.flash)
+                              {%>
                         <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_5))%>?width=335&height=120&mode=cropandscale" />
+                            <a href="<%=ResolveClientUrl(item.Adv_Url) %>">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+                                    width="335"
+                                    height="120">
+                                    <param name="movie" value="<%=ResolveClientUrl(item.FilePath)%>" />
+                                    <param name="quality" value="high" />
+                                    <param name="wmode" value="transparent" />
+
+                                    <!--[if !IE]>-->
+                                    <object data="<%=ResolveClientUrl(item.FilePath)%>" width="335" height="120" type="application/x-shockwave-flash">
+                                        <param name="quality" value="high" />
+                                        <param name="wmode" value="transparent" />
+                                        <param name="pluginurl" value="http://adobe.com/go/getflashplayer" />
+                                        <%=item.Title%>
+                                    </object>
+                                    <!--> <![endif]-->
+                                </object>
+                            </a>
                         </div>
-                        <div class="col-md-12 adv">
-                            <img class="img-thumbnail" src="<%=ResolveClientUrl(OptionBusiness.GetFilePath(OptionKey.Adv_Img_6))%>?width=335&height=120&mode=cropandscale" />
-                        </div>
+                        <%}
+
+                          } %>
                     </div>
                 </div>
             </div>
@@ -175,6 +227,6 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphfoot" runat="Server">
     <script src="/assets/Plugin/OwlCarousel2-master/dist/owl.carousel.min.js"></script>
-    <script src="/assets/Guest/js/default.js?v=1"></script>
+    <script src="/assets/Guest/js/default.js?v=2"></script>
 </asp:Content>
 

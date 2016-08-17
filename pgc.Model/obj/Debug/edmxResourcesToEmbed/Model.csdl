@@ -158,6 +158,7 @@
       <End Role="GameOrder" EntitySet="GameOrders" />
       <End Role="TeamMember" EntitySet="TeamMembers" />
     </AssociationSet>
+    <EntitySet Name="Advertisments" EntityType="pgcModel.Advertisment" />
   </EntityContainer>
   <EntityType Name="Feedback">
     <Key>
@@ -417,7 +418,6 @@
     <Property Name="FirstPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
     <Property Name="SecondPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
     <Property Name="ThirdPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
-    <Property Name="Laws" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DispOrder" Type="Int32" Nullable="false" />
     <Property Name="Cost" Type="Int64" Nullable="false" />
     <Property Name="UrlKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
@@ -426,6 +426,8 @@
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_Game" FromRole="Game" ToRole="GameOrder" />
     <NavigationProperty Name="Users" Relationship="pgcModel.Game_GameManager" FromRole="Game" ToRole="User" />
     <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="AboutGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LawsGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GameCenter">
     <Key>
@@ -1097,4 +1099,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Advertisment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_Type" Type="Int32" Nullable="false" />
+    <Property Name="FilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DispOrder" Type="Int32" Nullable="false" />
+    <Property Name="Adv_Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

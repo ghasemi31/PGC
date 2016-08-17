@@ -43,6 +43,15 @@ namespace pgc.Business.General
         {
             return db.Games.Where(r => !string.IsNullOrEmpty(r.LogoPath)).OrderBy(o => o.DispOrder);
         }
+        public IQueryable<Game> GetGameList()
+        {
+            return db.Games.OrderBy(o => o.DispOrder);
+        }
 
+
+        public IQueryable<Advertisment> GetAdvertisment()
+        {
+            return db.Advertisments.OrderBy(f => f.DispOrder);
+        }
     }
 }

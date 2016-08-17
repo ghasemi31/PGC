@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Sponsor_Detail" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Detail.ascx.cs" Inherits="Pages_Admin_Advertisment_Detail" %>
 <legend><%=(this.Page as kFrameWork.UI.BasePage).Entity.UITitle %></legend>
 <table>
 
@@ -11,7 +11,7 @@
     <tr>
         <td class="caption">نوع فایل</td>
         <td class="control">
-            <kfk:LookupCombo ID="lkcGameType"
+            <kfk:LookupCombo ID="lkcAdvType"
                 runat="server"
                 EnumParameterType="pgc.Model.Enums.AdvertismentType" />
         </td>
@@ -22,6 +22,7 @@
             <kfk:NormalTextBox ID="txtLink" runat="server"  Required="true" />
         </td>
     </tr>
+
    <tr>
         <td class="caption">اولویت نمایش</td>
         <td class="control">
@@ -30,13 +31,13 @@
     </tr>
 
     <tr>
-        <td class="caption">عکس</td>
+        <td class="caption">فایل</td>
         <td class="control">
-            <kfk:FileUploader ID="fupPic" runat="server" Required="true" SaveFolder="~/userfiles/Sponsor/" />
+            <kfk:FileUploader ID="fupPic" runat="server" Required="true" SaveFolder="~/userfiles/adv/" />
             <ul style="color: #bd0019">
-                <li>فرمت مناسب: png/jpg</li>
-                <li>width مناسب: 150x</li>
-                <li>height مناسب: 100x</li>
+                <li>فرمت مناسب: gif/swf/png/jpg</li>
+                <li>width مناسب: 335x</li>
+                <li>height مناسب: 120x</li>
             </ul>
         </td>
     </tr>

@@ -11,7 +11,7 @@
     <%this.Title = "ورود به Iran PGC"; %>
     <meta name="description" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Description) %>" />
     <meta name="keywords" content="<%=OptionBusiness.GetLargeText(OptionKey.Login_Keywords) %>" />
-    <link href="/assets/Guest/css/login.css" rel="stylesheet" />
+    <link href="/assets/Guest/css/login.css?v=2" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphbdy" runat="Server">
     <section class="main-body">
