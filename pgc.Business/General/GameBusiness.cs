@@ -107,29 +107,33 @@ namespace pgc.Business.General
             else
             {
 
-               
+                res.Result = ActionResult.Failed;
+                res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم نمی توانند در مسابقات شرکت کنند."));
+                return res;
 
-                int gameCount = db.GameOrders.Where(o => o.User_ID == userID).Count();
+                
 
-                if (game.Type_Enum != (int)GameType.Mobile)
-                {
-                    res.Result = ActionResult.Failed;
-                    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در بازی های موبایلی شرکت کنند."));
-                    return res;
-                }
+                //int gameCount = db.GameOrders.Where(o => o.User_ID == userID).Count();
 
-                else if (gameCount >= 3)
-                {
-                    res.Result = ActionResult.Failed;
-                    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در 3 بازی شرکت کنند."));
-                    return res;
-                }
+                //if (game.Type_Enum != (int)GameType.Mobile)
+                //{
+                //    res.Result = ActionResult.Failed;
+                //    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در بازی های موبایلی شرکت کنند."));
+                //    return res;
+                //}
 
-                else
-                {
-                    res.Result = ActionResult.Done;
-                    return res;
-                }
+                //else if (gameCount >= 3)
+                //{
+                //    res.Result = ActionResult.Failed;
+                //    res.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم فقط می توانند در 3 بازی شرکت کنند."));
+                //    return res;
+                //}
+
+                //else
+                //{
+                //    res.Result = ActionResult.Done;
+                //    return res;
+                //}
 
 
             }

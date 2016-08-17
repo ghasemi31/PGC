@@ -37,36 +37,46 @@ public partial class Pages_Guest_Register :BasePage
         if (Captcha6.UserValidated)
         {
 
-           User user = new User();
-            OperationResult result = new OperationResult();
-
-            user.FullName = txtFullName.Text;
-            user.pwd = txtPassword.Text;
-            user.Email = txtEmail.Text;
-            user.Username = txtEmail.Text;
-            user.NationalCode = txtNationalCode.Text;
-            user.City_ID = lkcCity.GetSelectedValue<long>();
-            user.Gender = lkpSexStatus.GetSelectedValue<int>();
-            user.FatherName = txtFatherName.Text;
-            user.Address = txtAddress.Text;
-            user.Tel = txtTel.Text;
-            user.Mobile = txtMobile.Text;
-          
-
-          
-            UserBusiness uBusiness = new UserBusiness();
-            result = uBusiness.RegisterUser(user);
-            UserSession.AddMessage(result.Messages);
-
-            if (result.Result == ActionResult.Done)
+            Gender gender = lkpSexStatus.GetSelectedValue<Gender>();
+            if (gender == Gender.Female)
             {
-                UserSession.LogIn(user.Username, user.pwd);
-                if (!string.IsNullOrEmpty(Request.QueryString["redirecturl"]))
+                UserSession.AddCompeleteMessage(UserMessage.CreateUserMessage(0, "msg", 4, 2, 1, "بازیکنان خانم نمی توانند در مسابقات شرکت کنند."));
+            }
+            else
+            {
 
-                    Response.Redirect(Request.QueryString["redirecturl"]);
 
-                else
-                    Response.Redirect(GetRouteUrl("user-userprofile", null));
+                User user = new User();
+                OperationResult result = new OperationResult();
+
+                user.FullName = txtFullName.Text;
+                user.pwd = txtPassword.Text;
+                user.Email = txtEmail.Text;
+                user.Username = txtEmail.Text;
+                user.NationalCode = txtNationalCode.Text;
+                user.City_ID = lkcCity.GetSelectedValue<long>();
+                user.Gender = lkpSexStatus.GetSelectedValue<int>();
+                user.FatherName = txtFatherName.Text;
+                user.Address = txtAddress.Text;
+                user.Tel = txtTel.Text;
+                user.Mobile = txtMobile.Text;
+
+
+
+                UserBusiness uBusiness = new UserBusiness();
+                result = uBusiness.RegisterUser(user);
+                UserSession.AddMessage(result.Messages);
+
+                if (result.Result == ActionResult.Done)
+                {
+                    UserSession.LogIn(user.Username, user.pwd);
+                    if (!string.IsNullOrEmpty(Request.QueryString["redirecturl"]))
+
+                        Response.Redirect(Request.QueryString["redirecturl"]);
+
+                    else
+                        Response.Redirect(GetRouteUrl("user-userprofile", null));
+                }
             }
         }
 

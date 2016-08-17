@@ -9,11 +9,16 @@
     <section id="page">
         <div class="container">
             <div class="row">
-
+                 
+                        
                 <div id="main-content" class="col-lg-offset-2 col-md-offset-2 col-sm-offset-0 col-sm-offset-0 col-lg-8 col-md-8 col-sm-12 col-sm-12">
                     <header>
                         <h1>ثبت نام</h1>
                         <hr />
+                         <div class="alert alert-info fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                           لطفا توجه داشته باشید که بازیکنان خانم نمی توانند در مسابقات شرکت کنند.
+                          </div>
                     </header>
                    
                         <div class="row">
