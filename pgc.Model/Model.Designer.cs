@@ -498,7 +498,26 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentSMS> _SentSMS;
-    
+
+
+
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SentSMS> SentSMSList
+        {
+            get
+            {
+                if ((_SentSMSList == null))
+                {
+                    _SentSMSList = base.CreateObjectSet<SentSMS>("SentSMSList");
+                }
+                return _SentSMSList;
+            }
+        }
+        private ObjectSet<SentSMS> _SentSMSList;
+
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>

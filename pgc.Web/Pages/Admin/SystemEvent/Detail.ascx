@@ -170,7 +170,8 @@
                     <tr>
                         <td class="caption">متن ایمیل ارسالی به مدیر</td>
                         <td class="control">
-                            <kfk:HtmlEditor ID="htmlEmailAdmin" runat="server" />
+                          
+                            <kfk:CkHtmlEditor ID="htmlEmailAdmin" runat="server"  /> 
                         </td>
 
                         <td class="control">
@@ -189,7 +190,8 @@
                     <tr>
                         <td class="caption">متن ایمیل ارسالی به کاربر</td>
                         <td class="control">
-                            <kfk:HtmlEditor ID="htmlEmailUser" runat="server" />
+                      
+                             <kfk:CkHtmlEditor ID="htmlEmailUser" runat="server"  />
                         </td>
 
                         <td class="control">

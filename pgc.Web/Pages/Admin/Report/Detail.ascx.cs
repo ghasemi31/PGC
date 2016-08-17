@@ -11,7 +11,7 @@ public partial class Pages_Admin_Report_Detail : BaseDetailControl<Report>
             Data = new Report();
 
         Data.Title = txtTitle.Text;
-        Data.Body = txtBody.Text;
+        Data.Body = ckBody.GetValue();
         Data.Summary = txtSummary.Text;
         Data.MetaKeyWords = txtMetaKeyWords.Text;
         Data.MetaDescription = txtMetaDesc.Text;
@@ -24,7 +24,7 @@ public partial class Pages_Admin_Report_Detail : BaseDetailControl<Report>
     public override void SetEntity(Report Data, ManagementPageMode Mode)
     {
         txtTitle.Text = Data.Title;
-        txtBody.Text = Data.Body;
+        ckBody.SetValue(Data.Body);
         txtSummary.Text = Data.Summary;
         txtNote.Text = Data.Note;
         txtMetaDesc.Text = Data.MetaDescription;

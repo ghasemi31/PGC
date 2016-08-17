@@ -17,8 +17,9 @@
     <tr>
         <td class="caption">متن خبر</td>
         <td class="control">
-            <kfk:HtmlEditor ID="txtBody" runat="server" Required="true" />
-              
+          
+            <kfk:CkHtmlEditor ID="ckBody" runat="server"  Required="true" />  
+
         </td>
     </tr>
     <tr>

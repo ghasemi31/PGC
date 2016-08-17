@@ -19,9 +19,9 @@ public partial class Pages_Admin_SystemEvent_Detail : BaseDetailControl<SystemEv
         //Data.Title = txtTitle.Text;
         //Data.Description = txtDescirption.Text;
 
-        Data.Template_Admin_Email = htmlEmailAdmin.Text;
+        Data.Template_Admin_Email = htmlEmailAdmin.GetValue();
         Data.Template_Admin_SMS = txtSMSAdmin.TextBody;
-        Data.Template_User_Email = htmlEmailUser.Text;
+        Data.Template_User_Email = htmlEmailUser.GetValue();
         Data.Template_User_SMS = txtSMSUser.TextBody;
         
         //Data.Support_Manual_Email =((int) lkpSupport_Manual_Email.GetSelectedValue<BooleanStatus>()==1)?true:false;
@@ -93,8 +93,8 @@ public partial class Pages_Admin_SystemEvent_Detail : BaseDetailControl<SystemEv
         txtTitle.Text = Data.Title;
         txtDescription.Text = Data.Description;
 
-        htmlEmailAdmin.Text = Data.Template_Admin_Email;
-        htmlEmailUser.Text = Data.Template_User_Email;
+        htmlEmailAdmin.SetValue(Data.Template_Admin_Email);
+        htmlEmailUser.SetValue(Data.Template_User_Email);
 
         txtSMSAdmin.TextBody = Data.Template_Admin_SMS;
         txtSMSUser.TextBody = Data.Template_User_SMS;
@@ -195,7 +195,7 @@ public partial class Pages_Admin_SystemEvent_Detail : BaseDetailControl<SystemEv
         if ((   (lkpCustomRole.GetSelectedValue<int>()==(int)Role.User && chbCustom_Role_Email.Checked)||
                 chbRelated_Guest_Email.Checked ||
                 chbRelated_User_Email.Checked) &&
-                string.IsNullOrEmpty(htmlEmailUser.Text))
+                string.IsNullOrEmpty(htmlEmailUser.GetValue()))
         {
             UserSession.AddMessage(UserMessageKey.PreventSaveCauseHaveEmailUserAction);
             return false;
@@ -218,7 +218,7 @@ public partial class Pages_Admin_SystemEvent_Detail : BaseDetailControl<SystemEv
                 !string.IsNullOrEmpty(txtManual_Email.Text) ||
                 chbRelated_Branch_Email.Checked||
                 chbRelated_Doer_Email.Checked) &&
-                string.IsNullOrEmpty(htmlEmailAdmin.Text))
+                string.IsNullOrEmpty(htmlEmailAdmin.GetValue()))
         {
             UserSession.AddMessage(UserMessageKey.PreventSaveCauseHaveEmailAdminAction);
             return false;

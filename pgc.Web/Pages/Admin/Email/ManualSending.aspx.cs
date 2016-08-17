@@ -318,7 +318,7 @@ public partial class Pages_Admin_Email_ManualSending : BasePage
                 UserSession.AddMessage(UserMessageKey.NoEmailSubject);
                 isValid = false;
             }
-            if (string.IsNullOrEmpty(htmlBody.Text))
+            if (string.IsNullOrEmpty(ckBody.GetValue()))
             {
                 UserSession.AddMessage(UserMessageKey.NoEmailBody);
                 isValid = false;
@@ -329,7 +329,7 @@ public partial class Pages_Admin_Email_ManualSending : BasePage
             if (!isValid)
                 return;
             MailBusiness m = new MailBusiness();
-            SendEmailResult ser = m.Send(txtSubject.Text, htmlBody.Text, Recipients, EventType.Manual, FilePaths, null, txtDisplayAddressName.Text, "", "", chUseTemplate.Checked);
+            SendEmailResult ser = m.Send(txtSubject.Text, ckBody.GetValue(), Recipients, EventType.Manual, FilePaths, null, txtDisplayAddressName.Text, "", "", chUseTemplate.Checked);
 
             if (ser.UserMessages.Contains(UserMessageKey.Succeed))
                 UserSession.AddMessage(UserMessageKey.AllEmailSent);

@@ -50,7 +50,8 @@
                                                 <asp:View runat="server" ID="vs_Html">
                                                     <%--<kfk:NormalTextBox runat="server" ID="txt_Html" TextMode="MultiLine"  Direction="ltr"  TextBoxWidth="370" TextBoxHeight="300"/>--%>
                                                     <%--<kfk:Ckeditor ID="txt_Html" runat="server" BaseHref="~/UserControls/Common/ckeditor" Height="300" />--%>
-                                                    <kfk:HtmlEditor ID="txt_Html" runat="Server"/>
+                                                   
+                                                    <kfk:CkHtmlEditor ID="ckHtml" runat="server"  Required="true" /> 
                                                 </asp:View>
                                                 <asp:View runat="server" ID="vs_SmallInt">
                                                     <kfk:NumericTextBox runat="server" ID="nurSmallInt" SupportComma="true" SupportLetter="true" TextBoxMaxLen="6"/>

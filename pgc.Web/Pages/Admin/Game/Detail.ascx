@@ -52,7 +52,8 @@
         <tr>
         <td class="caption">قوانین و مقررات</td>
         <td class="control">
-            <kfk:HtmlEditor ID="txtLaws" runat="server" Required="true" />
+           
+            <kfk:CkHtmlEditor ID="ckLaws" runat="server"  Required="true" /> 
         </td>
     </tr>
  

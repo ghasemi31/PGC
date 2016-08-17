@@ -61,7 +61,7 @@ public partial class Pages_Admin_Option_Default : BasePage
                 break;
             case OptionType.Html:
                 //option.Value = UIUtil.ReplaceEnter(txt_Html.Value, true);
-                option.Value = UIUtil.ReplaceEnter(txt_Html.Text, true);
+                option.Value = UIUtil.ReplaceEnter(ckHtml.GetValue(), true);
                 break;
             case OptionType.Int:
                 option.Value = nur_Int.GetNumber<int>().ToString();
@@ -157,7 +157,7 @@ public partial class Pages_Admin_Option_Default : BasePage
                 break;
             case OptionType.Html:
                 //txt_Html.Value = option.Value;
-                txt_Html.Text = option.Value;
+                ckHtml.SetValue(option.Value);
                 break;
             case OptionType.Int:
                 nur_Int.SetNumber(ConvertorUtil.ToInt32(option.Value));
@@ -234,7 +234,7 @@ public partial class Pages_Admin_Option_Default : BasePage
                 break;
             case OptionType.Html:
                 //txt_Html.Value = "";
-                txt_Html.Text = "";
+                ckHtml.SetValue("");
                 break;
             case OptionType.Int:
                 nur_Int.SetNumber("");
