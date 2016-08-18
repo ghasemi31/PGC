@@ -256,6 +256,7 @@
     <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
     <Property Name="HowType_Enum" Type="int" Nullable="false" />
     <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="SumPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
     <Property Name="LawsGame" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Game_GameManager">
@@ -530,6 +531,7 @@
     <Property Name="IsGameManager" Type="bit" Nullable="false" />
     <Property Name="Visible" Type="bit" Nullable="false" />
     <Property Name="Telegram" Type="nvarchar" MaxLength="500" />
+    <Property Name="GameCenter_ID" Type="bigint" />
   </EntityType>
   <EntityType Name="UserMessage">
     <Key>
@@ -950,6 +952,18 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_GameCenter">
+    <End Role="GameCenter" Type="Self.GameCenter" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameCenter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GameCenter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="GetColumnsOfTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TableName" Type="nvarchar" Mode="In" />
   </Function>
@@ -1129,6 +1143,10 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
     </AssociationSet>
     <AssociationSet Name="FK_User_City" Association="Self.FK_User_City">
       <End Role="City" EntitySet="City" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_GameCenter" Association="Self.FK_User_GameCenter">
+      <End Role="GameCenter" EntitySet="GameCenter" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
   </EntityContainer>

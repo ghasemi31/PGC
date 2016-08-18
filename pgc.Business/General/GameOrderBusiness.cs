@@ -39,6 +39,13 @@ namespace pgc.Business.General
                 model.GameTitle = game.Title;
                 model.PayableAmount = game.Cost;
 
+                if (user.GameCenter_ID != null)
+                {
+                    GameCenter center = new GameBusiness().RetriveGameCenter((long)user.GameCenter_ID);
+                    model.GameCenter_ID = center.ID;
+                    model.GameCenterTitle = center.TItle;
+                }
+
                 db.GameOrders.AddObject(model);
                 db.SaveChanges();
 

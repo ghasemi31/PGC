@@ -19,7 +19,7 @@
     <tr>
         <td class="caption">لینک</td>
         <td class="control">
-            <kfk:NormalTextBox ID="txtLink" runat="server"  Required="true" />
+            <kfk:NormalTextBox ID="txtLink" runat="server" TextBoxWidth="212"  Required="true" />
         </td>
     </tr>
 

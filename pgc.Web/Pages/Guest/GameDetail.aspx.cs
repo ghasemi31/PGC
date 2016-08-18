@@ -71,13 +71,7 @@ public partial class Pages_Guest_GameDetail : BasePage
                 {
                     model.GroupName = txtTeamName.Text;
                 }
-                if (game.HowType_Enum == (int)GameHowType.Offline)
-                {
-                    long id = lkcGameCenetr.GetSelectedValue<long>();
-                    GameCenter center = business.RetriveGameCenter(id);
-                    model.GameCenter_ID = id;
-                    model.GameCenterTitle = center.TItle;
-                }
+
 
                 OnlineGetway getway = (OnlineGetway)(ConvertorUtil.Convert<int>(rdGetway.SelectedValue));
                 model.Getway_Enum = (int)getway;
@@ -117,13 +111,4 @@ public partial class Pages_Guest_GameDetail : BasePage
     }
 
 
-    protected void lkcGameCenetr_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        long id = lkcGameCenetr.GetSelectedValue<long>();
-        GameCenter center = business.RetriveGameCenter(id);
-        if (center != null)
-        {
-            lblDesc.Text = center.Description;
-        }
-    }
 }

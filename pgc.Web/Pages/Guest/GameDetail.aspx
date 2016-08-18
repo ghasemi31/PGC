@@ -25,59 +25,7 @@
                                 </asp:View>
                                 <asp:View runat="server">
                                    
-                                    <%if (game.HowType_Enum == (int)pgc.Model.Enums.GameHowType.Offline)
-                                      { %>
-
-
-                                     <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                                    <span class="description">لطفا قبل از ثبت نام با توجه به استان و شهر محل سکونت خود یک مرکز بازی را انتخاب کنید</span>
                                     
-                                    <br />
-                                    <br />
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        استان:
-                                <kfk:LookupCombo ID="lkcProvince" class="form-control width100"
-                                    runat="server"
-                                    BusinessTypeName="pgc.Business.Lookup.ProvinceLookupBusiness"
-                                    AutoPostBack="true"
-                                    DependantControl="lkcCity"
-                                    Required="true" />
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                شهر:
-                                <kfk:LookupCombo ID="lkcCity" class="form-control width100"
-                                    runat="server"
-                                    BusinessTypeName="pgc.Business.Lookup.CityLookupBusiness"
-                                    DependOnParameterName="Province_ID"
-                                    DependOnParameterType="Int64"
-                                    OnSelectedIndexChanged="lkcGameCenetr_SelectedIndexChanged"
-                                     AutoPostBack="true"
-                               DependantControl="lkcGameCenetr"
-                                    Required="true" />
-                            </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                مرکز بازی:
-                                <kfk:LookupCombo ID="lkcGameCenetr" class="form-control width100"
-                                    runat="server"
-                                    BusinessTypeName="pgc.Business.Lookup.GameCenterLookupBusiness"
-                                    DependOnParameterName="City_ID"
-                                    DependOnParameterType="Int64"
-                               RequireText="لطفا مرکز بازی را انتخاب کنید"
-                                   AutoPostBack="true"
-                                    OnSelectedIndexChanged="lkcGameCenetr_SelectedIndexChanged"
-                                    Required="true" />
-                            </div>
-
-
-            </ContentTemplate>
-        </asp:UpdatePanel>
-                                    <asp:Label runat="server" ID="lblDesc" Text=""></asp:Label>
-                                  
-                                    <%} %>
-                                    <br />
                                    
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 

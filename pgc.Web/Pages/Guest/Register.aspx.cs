@@ -60,7 +60,11 @@ public partial class Pages_Guest_Register :BasePage
                 user.Address = txtAddress.Text;
                 user.Tel = txtTel.Text;
                 user.Mobile = txtMobile.Text;
-
+                long id = lkcGameCenetr.GetSelectedValue<long>();
+                if (id > 0)
+                {
+                    user.GameCenter_ID = id;
+                }
 
 
                 UserBusiness uBusiness = new UserBusiness();
@@ -75,7 +79,7 @@ public partial class Pages_Guest_Register :BasePage
                         Response.Redirect(Request.QueryString["redirecturl"]);
 
                     else
-                        Response.Redirect(GetRouteUrl("user-userprofile", null));
+                        Response.Redirect(this.Page.GetRouteUrl("guest-default", null));
                 }
             }
         }
@@ -121,5 +125,14 @@ public partial class Pages_Guest_Register :BasePage
     {
         Captcha6.ValidateCaptcha(txtCaptcha.Text.Trim());
         e.IsValid = Captcha6.UserValidated;
+    }
+    protected void lkcGameCenetr_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        long id = lkcGameCenetr.GetSelectedValue<long>();
+        GameCenter center = new GameBusiness().RetriveGameCenter(id);
+        if (center != null)
+        {
+            lblGameCenterAddress.Text = center.Description;
+        }
     }
 }

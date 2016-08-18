@@ -48,6 +48,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("pgcModel", "Game_GameManager", "Game", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Game), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User))]
 [assembly: EdmRelationshipAttribute("pgcModel", "Permission", "AccessLevel", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.AccessLevel), "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.Feature))]
 [assembly: EdmRelationshipAttribute("pgcModel", "FK_TeamMember_GameOrder", "GameOrder", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(pgc.Model.GameOrder), "TeamMember", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.TeamMember), true)]
+[assembly: EdmRelationshipAttribute("pgcModel", "FK_User_GameCenter", "GameCenter", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(pgc.Model.GameCenter), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(pgc.Model.User), true)]
 
 #endregion
 
@@ -482,23 +483,6 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentEmailBlock> _SentEmailBlocks;
-
-
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<SentSMS> SentSMSList
-        {
-            get
-            {
-                if ((_SentSMSList == null))
-                {
-                    _SentSMSList = base.CreateObjectSet<SentSMS>("SentSMSList");
-                }
-                return _SentSMSList;
-            }
-        }
-        private ObjectSet<SentSMS> _SentSMSList;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -515,6 +499,22 @@ namespace pgc.Model
             }
         }
         private ObjectSet<SentSMS> _SentSMS;
+
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SentSMS> SentSMSList
+        {
+            get
+            {
+                if ((_SentSMSList == null))
+                {
+                    _SentSMSList = base.CreateObjectSet<SentSMS>("SentSMSList");
+                }
+                return _SentSMSList;
+            }
+        }
+        private ObjectSet<SentSMS> _SentSMSList;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3150,7 +3150,8 @@ namespace pgc.Model
         /// <param name="platform">Initial value of the Platform property.</param>
         /// <param name="aboutGame">Initial value of the AboutGame property.</param>
         /// <param name="lawsGame">Initial value of the LawsGame property.</param>
-        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform, global::System.String aboutGame, global::System.String lawsGame)
+        /// <param name="sumPresent">Initial value of the SumPresent property.</param>
+        public static Game CreateGame(global::System.Int64 id, global::System.String title, global::System.Int32 type_Enum, global::System.Int32 gamerCount, global::System.String imagePath, global::System.String firstPresent, global::System.String secondPresent, global::System.String thirdPresent, global::System.Int32 dispOrder, global::System.Int64 cost, global::System.String urlKey, global::System.Int32 howType_Enum, global::System.String platform, global::System.String aboutGame, global::System.String lawsGame, global::System.String sumPresent)
         {
             Game game = new Game();
             game.ID = id;
@@ -3168,6 +3169,7 @@ namespace pgc.Model
             game.Platform = platform;
             game.AboutGame = aboutGame;
             game.LawsGame = lawsGame;
+            game.SumPresent = sumPresent;
             return game;
         }
 
@@ -3561,6 +3563,30 @@ namespace pgc.Model
         private global::System.String _LawsGame;
         partial void OnLawsGameChanging(global::System.String value);
         partial void OnLawsGameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SumPresent
+        {
+            get
+            {
+                return _SumPresent;
+            }
+            set
+            {
+                OnSumPresentChanging(value);
+                ReportPropertyChanging("SumPresent");
+                _SumPresent = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("SumPresent");
+                OnSumPresentChanged();
+            }
+        }
+        private global::System.String _SumPresent;
+        partial void OnSumPresentChanging(global::System.String value);
+        partial void OnSumPresentChanged();
 
         #endregion
 
@@ -3806,6 +3832,28 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GameOrder>("pgcModel.FK_GameOrder_GameCenter", "GameOrder", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_GameCenter", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("pgcModel.FK_User_GameCenter", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("pgcModel.FK_User_GameCenter", "User", value);
                 }
             }
         }
@@ -12794,6 +12842,30 @@ namespace pgc.Model
         private global::System.String _Telegram;
         partial void OnTelegramChanging(global::System.String value);
         partial void OnTelegramChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> GameCenter_ID
+        {
+            get
+            {
+                return _GameCenter_ID;
+            }
+            set
+            {
+                OnGameCenter_IDChanging(value);
+                ReportPropertyChanging("GameCenter_ID");
+                _GameCenter_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("GameCenter_ID");
+                OnGameCenter_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _GameCenter_ID;
+        partial void OnGameCenter_IDChanging(Nullable<global::System.Int64> value);
+        partial void OnGameCenter_IDChanged();
 
         #endregion
 
@@ -12938,6 +13010,44 @@ namespace pgc.Model
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Game>("pgcModel.Game_GameManager", "Game", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("pgcModel", "FK_User_GameCenter", "GameCenter")]
+        public GameCenter GameCenter
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameCenter>("pgcModel.FK_User_GameCenter", "GameCenter").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameCenter>("pgcModel.FK_User_GameCenter", "GameCenter").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<GameCenter> GameCenterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GameCenter>("pgcModel.FK_User_GameCenter", "GameCenter");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GameCenter>("pgcModel.FK_User_GameCenter", "GameCenter", value);
                 }
             }
         }

@@ -159,6 +159,10 @@
       <End Role="TeamMember" EntitySet="TeamMembers" />
     </AssociationSet>
     <EntitySet Name="Advertisments" EntityType="pgcModel.Advertisment" />
+    <AssociationSet Name="FK_User_GameCenter" Association="pgcModel.FK_User_GameCenter">
+      <End Role="GameCenter" EntitySet="GameCenters" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Feedback">
     <Key>
@@ -428,6 +432,7 @@
     <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
     <Property Name="AboutGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LawsGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SumPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GameCenter">
     <Key>
@@ -439,6 +444,7 @@
     <Property Name="City_ID" Type="Int64" Nullable="false" />
     <NavigationProperty Name="City" Relationship="pgcModel.FK_GameCenter_City" FromRole="GameCenter" ToRole="City" />
     <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_GameCenter" FromRole="GameCenter" ToRole="GameOrder" />
+    <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_GameCenter" FromRole="GameCenter" ToRole="User" />
   </EntityType>
   <EntityType Name="GameOrder">
     <Key>
@@ -710,6 +716,8 @@
     <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
     <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
     <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
+    <Property Name="GameCenter_ID" Type="Int64" />
+    <NavigationProperty Name="GameCenter" Relationship="pgcModel.FK_User_GameCenter" FromRole="User" ToRole="GameCenter" />
   </EntityType>
   <EntityType Name="UserMessage">
     <Key>
@@ -1110,4 +1118,16 @@
     <Property Name="DispOrder" Type="Int32" Nullable="false" />
     <Property Name="Adv_Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
+  <Association Name="FK_User_GameCenter">
+    <End Type="pgcModel.GameCenter" Role="GameCenter" Multiplicity="0..1" />
+    <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameCenter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GameCenter_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

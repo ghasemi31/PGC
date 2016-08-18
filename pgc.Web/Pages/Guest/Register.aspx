@@ -52,25 +52,8 @@
                                     </asp:RequiredFieldValidator>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <kfk:LookupCombo ID="lkcProvince" class="form-control width100"
-                                    runat="server"
-                                    BusinessTypeName="pgc.Business.Lookup.ProvinceLookupBusiness"
-                                    AutoPostBack="true"
-                                    DependantControl="lkcCity"
-                                    Required="true" />
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <kfk:LookupCombo ID="lkcCity" class="form-control width100"
-                                    runat="server"
-                                    BusinessTypeName="pgc.Business.Lookup.CityLookupBusiness"
-                                    DependOnParameterName="Province_ID"
-                                    DependOnParameterType="Int64"
-                                    Required="true" />
-                            </div>
-                        </div>
-                        <div class="row">
+
+                    <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <asp:TextBox ID="txtTel" CssClass="form-control" placeholder="تلفن ثابت" ClientIDMode="Static" runat="server" autocomplete="off" ToolTip="تلفن ثابت"></asp:TextBox>
                                 <asp:RequiredFieldValidator
@@ -88,6 +71,50 @@
                                     </asp:RequiredFieldValidator>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <kfk:LookupCombo ID="lkcProvince" class="form-control width100"
+                                    runat="server"
+                                    BusinessTypeName="pgc.Business.Lookup.ProvinceLookupBusiness"
+                                    AutoPostBack="true"
+                                    DependantControl="lkcCity"
+                                    Required="true" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <kfk:LookupCombo ID="lkcCity" class="form-control width100"
+                                    runat="server"
+                                    BusinessTypeName="pgc.Business.Lookup.CityLookupBusiness"
+                                    DependOnParameterName="Province_ID"
+                                    DependOnParameterType="Int64"
+                                      AutoPostBack="true"
+                               DependantControl="lkcGameCenetr"
+                                    Required="true" />
+                            </div>
+                        </div>
+
+                    <div class="row" style="margin-bottom:20px">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                               <kfk:LookupCombo ID="lkcGameCenetr" class="form-control width100"
+                                    runat="server"
+                                   AddDefaultItem="true"
+                                   DefaultItemPlacement="First"
+                                   DefaultItemText="مرکز بازی را انتخاب کنید"
+                                   DefaultItemValue="-1"
+                                    BusinessTypeName="pgc.Business.Lookup.GameCenterLookupBusiness"
+                                    DependOnParameterName="City_ID"
+                                    AutoPostBack="true"
+                                    OnSelectedIndexChanged="lkcGameCenetr_SelectedIndexChanged"
+                                    DependOnParameterType="Int64"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top:20px">
+                                <asp:Label ID="lblGameCenterAddress" Text="" runat="server" />
+                            </div>
+                        </div>
+
+                    
+                        
+                        
                         <div class="row">
 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

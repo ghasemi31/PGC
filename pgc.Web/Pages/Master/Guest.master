@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Guest.master.cs" Inherits="Pages_Master_Guest" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Guest.master.cs" Inherits="Pages_Master_Guest" %>
 
 <%@ Register Src="~/UserControls/Common/UserMessageViewer.ascx" TagName="UserMessageViewer" TagPrefix="uc2" %>
 <%@ Import Namespace="pgc.Model.Enums" %>
@@ -94,7 +95,7 @@
                 <div class="">
                         <div class="container">
                             <%--<div class="navbar-header">--%>
-                            <a href="index.html" class="navbar-brand  ">
+                            <a href="<%=GetRouteUrl("guest-default",null) %>" class="navbar-brand  ">
                                 <img src="/assets/Guest/Image/IranPGC/logo.png" alt="iran pgc" />
                             </a>
                             <%-- </div>--%>

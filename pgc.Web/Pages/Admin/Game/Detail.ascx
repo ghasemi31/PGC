@@ -31,7 +31,7 @@
              <kfk:NormalTextBox ID="txtPlatform" runat="server" TextBoxWidth="212" Required="true" />
         </td>
     </tr>
-    <tr>
+    <%--<tr>
                 <td class="caption">مدیر بازی</td>
         <td class="control">
             <kfk:LookupCombo ID="lkpManager"
@@ -40,7 +40,7 @@
         </td>
 
            
-        </tr>
+        </tr>--%>
     <tr>
         <td class="caption">تعداد بازیکن ها</td>
         <td class="control">
@@ -59,7 +59,7 @@
     <tr>
         <td class="caption">قوانین و مقررات بازی</td>
         <td class="control">
-            <kfk:HtmlEditor ID="txtLawsGame" runat="server" Required="true" />
+            <kfk:CkHtmlEditor ID="txtLawsGame" runat="server" Required="true" />
         </td>
     </tr>
 
@@ -106,7 +106,7 @@
         <td class="caption">کلمه کلیدی Url </td>
         <td class="control" style="width: 280px">
             <kfk:NormalTextBox ID="txtUrlKey" runat="server" TextBoxWidth="212" Required="true" />
-            /www.iranpgc.com/gamedetail
+            /www.iranpgc.ir/gamedetail
            
             <br />
             <span style="color: #bd0019">ترجیحا از فاصله (space) استفاده نکنید , 

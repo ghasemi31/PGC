@@ -261,6 +261,7 @@
           <Property Name="LogoPath" Type="nvarchar" MaxLength="350" />
           <Property Name="HowType_Enum" Type="int" Nullable="false" />
           <Property Name="Platform" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="SumPresent" Type="nvarchar" MaxLength="350" Nullable="false" />
           <Property Name="LawsGame" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Game_GameManager">
@@ -535,6 +536,7 @@
           <Property Name="IsGameManager" Type="bit" Nullable="false" />
           <Property Name="Visible" Type="bit" Nullable="false" />
           <Property Name="Telegram" Type="nvarchar" MaxLength="500" />
+          <Property Name="GameCenter_ID" Type="bigint" />
         </EntityType>
         <EntityType Name="UserMessage">
           <Key>
@@ -955,6 +957,18 @@ warning 6002: The table/view 'pgc.Finance.OnlinePaymentList' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_User_GameCenter">
+          <End Role="GameCenter" Type="Self.GameCenter" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GameCenter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="GameCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="GetColumnsOfTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TableName" Type="nvarchar" Mode="In" />
         </Function>
@@ -1136,6 +1150,10 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="City" EntitySet="City" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <AssociationSet Name="FK_User_GameCenter" Association="Self.FK_User_GameCenter">
+            <End Role="GameCenter" EntitySet="GameCenter" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -1300,6 +1318,10 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
             <End Role="TeamMember" EntitySet="TeamMembers" />
           </AssociationSet>
           <EntitySet Name="Advertisments" EntityType="pgcModel.Advertisment" />
+          <AssociationSet Name="FK_User_GameCenter" Association="pgcModel.FK_User_GameCenter">
+            <End Role="GameCenter" EntitySet="GameCenters" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Feedback">
           <Key>
@@ -1569,6 +1591,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="Platform" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
           <Property Name="AboutGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LawsGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SumPresent" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GameCenter">
           <Key>
@@ -1580,6 +1603,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="City_ID" Type="Int64" Nullable="false" />
           <NavigationProperty Name="City" Relationship="pgcModel.FK_GameCenter_City" FromRole="GameCenter" ToRole="City" />
           <NavigationProperty Name="GameOrders" Relationship="pgcModel.FK_GameOrder_GameCenter" FromRole="GameCenter" ToRole="GameOrder" />
+          <NavigationProperty Name="Users" Relationship="pgcModel.FK_User_GameCenter" FromRole="GameCenter" ToRole="User" />
         </EntityType>
         <EntityType Name="GameOrder">
           <Key>
@@ -1851,6 +1875,8 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <NavigationProperty Name="AccessLevel" Relationship="pgcModel.FK_User_AccessLevel" FromRole="User" ToRole="AccessLevel" />
           <NavigationProperty Name="City" Relationship="pgcModel.FK_User_City" FromRole="User" ToRole="City" />
           <NavigationProperty Name="Games" Relationship="pgcModel.Game_GameManager" FromRole="User" ToRole="Game" />
+          <Property Name="GameCenter_ID" Type="Int64" />
+          <NavigationProperty Name="GameCenter" Relationship="pgcModel.FK_User_GameCenter" FromRole="User" ToRole="GameCenter" />
         </EntityType>
         <EntityType Name="UserMessage">
           <Key>
@@ -2251,6 +2277,18 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <Property Name="DispOrder" Type="Int32" Nullable="false" />
           <Property Name="Adv_Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
+        <Association Name="FK_User_GameCenter">
+          <End Type="pgcModel.GameCenter" Role="GameCenter" Multiplicity="0..1" />
+          <End Type="pgcModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GameCenter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="GameCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2503,6 +2541,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="pgcModel.Game">
               <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="SumPresent" ColumnName="SumPresent" />
                 <ScalarProperty Name="LawsGame" ColumnName="LawsGame" />
                 <ScalarProperty Name="AboutGame" ColumnName="AboutGame" />
                 <ScalarProperty Name="Platform" ColumnName="Platform" />
@@ -2759,6 +2798,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="pgcModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="GameCenter_ID" ColumnName="GameCenter_ID" />
                 <ScalarProperty Name="Telegram" ColumnName="Telegram" />
                 <ScalarProperty Name="Visible" ColumnName="Visible" />
                 <ScalarProperty Name="IsGameManager" ColumnName="IsGameManager" />
@@ -2953,6 +2993,7 @@ FROM [Finance].[OnlinePaymentList] AS [OnlinePaymentList]</DefiningQuery>
         <EntityTypeShape EntityType="pgcModel.TeamMember" Width="1.5" PointX="10.5" PointY="17.375" />
         <AssociationConnector Association="pgcModel.FK_TeamMember_GameOrder" />
         <EntityTypeShape EntityType="pgcModel.Advertisment" Width="1.5" PointX="17.375" PointY="12.75" />
+        <AssociationConnector Association="pgcModel.FK_User_GameCenter" />
       </Diagram>
     </Diagrams>
   </Designer>

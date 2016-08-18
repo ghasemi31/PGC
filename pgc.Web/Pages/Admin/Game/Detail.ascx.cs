@@ -18,11 +18,11 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         Data.GamerCount = ntbGamerCnt.GetNumber<int>();
 
         Data.UrlKey = txtUrlKey.Text;
-        Data.AboutGame = txtLaws.Text;
-        Data.LawsGame = txtLawsGame.Text;
+        Data.AboutGame = ckLaws.GetValue();
+        Data.LawsGame = txtLawsGame.GetValue();
         Data.HowType_Enum = lkcHowType.GetSelectedValue<int>();
         Data.SumPresent = txtSumPresent.Text;
-        var managerId=lkpManager.GetSelectedValue<long>();
+        //var managerId=lkpManager.GetSelectedValue<long>();
         //if (managerId > 0)
         //    Data.Manager_ID = managerId;
         //else
@@ -45,8 +45,8 @@ public partial class Pages_Admin_Game_Detail : BaseDetailControl<Game>
         txtThirdPresent.Text = Data.ThirdPresent;
         ntbCost.SetNumber(Data.Cost);
         ntbGamerCnt.SetNumber(Data.GamerCount);
-        txtLaws.Text = Data.AboutGame;
-        txtLawsGame.Text = Data.LawsGame;
+        ckLaws.SetValue(Data.AboutGame);
+        txtLawsGame.SetValue(Data.LawsGame);
         lkcGameType.SetSelectedValue(Data.Type_Enum);
         lkcHowType.SetSelectedValue(Data.HowType_Enum);
         txtSumPresent.Text = Data.SumPresent;

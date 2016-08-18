@@ -40,7 +40,7 @@ namespace pgc.Business.General
                     res.AddMessage(UserMessageKey.DuplicateNationalCode);
                     return res;
                 }
-                user.AccessLevel_ID = 2;
+                user.AccessLevel_ID = db.AccessLevels.FirstOrDefault(a=>a.Role==(int)Role.User).ID;
                 user.ActivityStatus = Convert.ToInt32(UserActivityStatus.Enabled);
                 user.SignUpPersianDate = DateUtil.GetPersianDateShortString(DateTime.Now);
 
